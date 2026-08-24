@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ident — what time are you back tonight?</title>
+<meta name="description" content="A flight-duty board for the wall. Ident reads your airline roster and shows where you are, when you're back, and how long they have with you. Scan the code to track the flight. Colour e-paper or LED matrix.">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.className=(window.matchMedia("(prefers-reduced-motion: reduce)").matches?"":"js");</script>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="/">IDENT<span>.</span></a>
+  <a class="l" href="#how">How it works</a>
+  <a class="l" href="displays.html">Displays</a>
+  <a class="l" href="#styles">Styles</a>
+  <a class="l" href="parts.html">Parts</a>
+  <a class="l" href="faq.html">FAQ</a>
+  <span class="sp"></span>
+  <a class="l" href="support.html">Support</a>
+</div></nav>
+
+<header><div class="wrap">
+  <h1>What time are you back tonight?</h1>
+  <p class="lead">Where you are, when you're back, how long they have with you.
+    Ident reads your roster and answers it on the wall — and keeps answering
+    when crewing changes their mind.</p>
+  <div class="cta">
+    <a class="btn primary" href="displays.html">Choose a display</a>
+    <a class="btn ghost" href="#how">See how it works</a>
+  </div>
+</div></header>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="hero-media" id="heroMedia">
+    <img src="img/photo/hero_wide.jpg"
+         srcset="img/photo/hero_wide_sm.jpg 1200w, img/photo/hero_wide.jpg 2000w"
+         sizes="(max-width:1120px) 100vw, 1120px"
+         alt="An Ident display standing on a dining table, showing DAY OFF, FRI 21 AUG, and the next duty on Sunday to NTE and BOD"
+         width="2000" height="1125" fetchpriority="high">
+  </div>
+  <p class="cap" style="text-align:left;margin-top:12px">A day off, with the next duty already showing</p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Two kinds of display</p>
+  <h2 class="reveal">Paper-quiet, or bright and alive</h2>
+  <p class="sub">Same roster, same software. Pick whichever suits the room.</p>
+
+  <div class="family reveal">
+    <div class="fam">
+      <img src="img/panels/impression_7_3_board_solari.png" alt="Colour e-paper panel showing a departure board">
+      <div class="body">
+        <h3>Colour e-paper</h3>
+        <p>Looks like printed paper. No glow, readable in direct sun, keeps its
+          picture unplugged. The quiet one — hallway, kitchen, bedroom wall.</p>
+        <div class="meta">4.0″ · 7.3″ · 13.3″ · redraws in about 30 seconds</div>
+      </div>
+    </div>
+    <div class="fam">
+      <img src="img/styles/board_dot.png" alt="Dot-matrix lettering in the style of an airport gate sign">
+      <div class="body">
+        <h3>LED matrix</h3>
+        <p>Bright, instant, unmistakably a departure board. Reads across a room.
+          The one people notice — study, office, bar.</p>
+        <div class="meta">HUB75 panels · 64×32 and up · updates in real time</div>
+      </div>
+    </div>
+  </div>
+  <p class="sub" style="margin-top:20px">Not sure? <a href="displays.html">Compare the displays</a>,
+    including what to avoid.</p>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <p class="kicker">How it works</p>
+  <h2>Point it at your roster once</h2>
+  <div class="triad reveal">
+    <div>
+      <h3>It reads your roster</h3>
+      <p>Your crew calendar link, once. It re-checks every half hour after that.</p>
+    </div>
+    <div>
+      <h3>It knows the day</h3>
+      <p>Off, standby, reported, airborne, turnaround, heading home — the screen
+        follows where you actually are.</p>
+    </div>
+    <div>
+      <h3>It works out when you're home</h3>
+      <p>On-chocks, debrief, the walk to the car, the drive. Sharpening as the day runs.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Changes on report? No problem.</p>
+  <h2 class="reveal">Nobody has to be told twice</h2>
+  <p class="sub">The board re-reads your roster every half hour. When it moves, it moves.</p>
+  <div class="triad reveal">
+    <div>
+      <h3>Called from standby?</h3>
+      <p>It's on the wall before you've finished packing. No group chat, no relay.</p>
+    </div>
+    <div>
+      <h3>Delayed?</h3>
+      <p>Landing and home times slide with the day. Nobody's working off this morning's plan.</p>
+    </div>
+    <div>
+      <h3>Know you're free</h3>
+      <p>Days off and early starts show days ahead — the rest of the family can plan
+        without asking.</p>
+    </div>
+    <div>
+      <h3>They know when to call</h3>
+      <p>Airborne, turnaround, or already driving. No calls while you're on the flight deck.</p>
+    </div>
+    <div>
+      <h3>Tomorrow, from the bedside</h3>
+      <p>Report time and where you're going. The two things worth knowing before lights out.</p>
+    </div>
+    <div>
+      <h3>The kids can read it</h3>
+      <p>Big destination, plain times. Old enough to read a clock is old enough to work
+        out when Mum or Dad lands.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="split">
+    <div>
+      <p class="kicker">Scan to track</p>
+      <p class="lede">Point a phone at the screen. Watch the flight.</p>
+      <p class="sub" style="margin:0 0 14px">While you're airborne the board carries a code
+        that opens your actual flight, live. Whoever's at home gets the map without
+        knowing your flight number, and without you sending it.</p>
+      <p class="sub" style="margin:0">Press the button on the side and it fills the screen —
+        scannable from across the kitchen. Or leave a small one in the corner of whichever
+        style you've picked. It only appears while a duty is running, and never on a day off.</p>
+    </div>
+    <img src="img/qr_corner.png" alt="The board showing IN FLIGHT LGW to NTE, with a scannable code in the bottom corner that opens the live flight" loading="lazy" width="1600" height="960">
+  </div>
+</div></section>
+
+<section class="bleed">
+  <div class="shot-full reveal">
+    <img src="img/photo/band_dining.jpg" alt="An Ident display on a dining table in a family living room, showing the day off and the next duty" loading="lazy" width="2000" height="857">
+    <div class="overlay"><div class="wrap">
+      <h2>The real fridge door roster</h2>
+      <p>Not another thing to open. A thing that is simply there — and right.</p>
+    </div></div>
+  </div>
+</section>
+
+<section><div class="wrap">
+  <div class="split">
+    <div>
+      <p class="kicker">Setup</p>
+      <p class="lede">Plug it in. Set it up from your phone.</p>
+      <p class="sub" style="margin:0">No keyboard, no monitor, nothing to type. It raises
+        its own Wi-Fi network the first time you switch it on — join it from your phone,
+        pick your home network, done.</p>
+    </div>
+    <img src="img/photo/kitchen_inflight.jpg" alt="The display on a kitchen worktop beside a plant, showing IN FLIGHT LGW to NTE, landing 09:05 and home 16:38" loading="lazy" width="1100" height="1466">
+  </div>
+</div></section>
+
+<section class="anatomy"><div class="wrap">
+  <p class="kicker reveal">What's behind it</p>
+  <h2 class="reveal">Two boards and a memory card</h2>
+  <p class="sub reveal">No enclosure to design, nothing proprietary, nothing soldered.
+    This is the whole thing.</p>
+
+  <div class="split" style="align-items:start;gap:40px">
+    <div class="sticky">
+      <div class="explode" id="explode">
+        <span class="hint">scroll to separate</span>
+        <svg viewBox="0 -50 790 610" role="img"
+             aria-label="Exploded view: the e-paper screen, the display board, a Raspberry Pi Zero and the stand, separating into layers">
+          <defs>
+            <linearGradient id="gscreen" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#2b3346"/><stop offset="1" stop-color="#161b26"/>
+            </linearGradient>
+          </defs>
+
+          <!-- screen -->
+          <g class="lyr l-screen">
+            <g transform="translate(150,60)">
+              <rect x="0" y="0" width="320" height="200" rx="6" fill="#e9e7e0" stroke="#c9c6bd" stroke-width="2"/>
+              <rect x="12" y="12" width="296" height="176" rx="3" fill="url(#gscreen)"/>
+              <text x="30" y="46" fill="#d8862f" font-family="monospace" font-size="15">DAY OFF</text>
+              <line x1="30" y1="56" x2="290" y2="56" stroke="#a5552c" stroke-width="2"/>
+              <text x="30" y="112" fill="#f2efe6" font-family="monospace" font-size="52" font-weight="bold">OFF</text>
+              <text x="30" y="140" fill="#f2efe6" font-family="monospace" font-size="17">FRI 21 AUG</text>
+              <text x="30" y="172" fill="#f2efe6" font-family="monospace" font-size="13">SUN 23 AUG  NTE/BOD</text>
+            </g>
+            <text class="lbl" x="500" y="120" fill="var(--ink)" font-size="15" font-weight="600">Colour e-paper</text>
+            <text class="lbl" x="500" y="142" fill="var(--muted)" font-size="12.5">Holds its image unpowered</text>
+          </g>
+
+          <!-- display board -->
+          <g class="lyr l-panel">
+            <g transform="translate(150,190)">
+              <rect x="0" y="0" width="320" height="120" rx="6" fill="#1c1c1f" stroke="#000" stroke-width="1.5"/>
+              <rect x="300" y="14" width="14" height="16" rx="3" fill="#cfcfd4"/>
+              <rect x="300" y="42" width="14" height="16" rx="3" fill="#cfcfd4"/>
+              <rect x="300" y="70" width="14" height="16" rx="3" fill="#cfcfd4"/>
+              <rect x="300" y="98" width="14" height="16" rx="3" fill="#cfcfd4"/>
+              <rect x="120" y="96" width="70" height="22" rx="2" fill="#c9761f"/>
+              <text x="16" y="30" fill="#8a8a92" font-size="11" font-family="monospace">display board</text>
+            </g>
+            <text class="lbl" x="500" y="236" fill="var(--ink)" font-size="15" font-weight="600">Four buttons</text>
+            <text class="lbl" x="500" y="258" fill="var(--muted)" font-size="12.5">Style, next duty, scan-to-track</text>
+          </g>
+
+          <!-- pi zero -->
+          <g class="lyr l-pi">
+            <g transform="translate(232,268)">
+              <rect x="0" y="0" width="156" height="66" rx="5" fill="#1f6b34" stroke="#14481f" stroke-width="1.5"/>
+              <rect x="10" y="6" width="136" height="10" rx="2" fill="#2b2b2f"/>
+              <rect x="52" y="26" width="34" height="26" rx="3" fill="#3b3b40"/>
+              <circle cx="128" cy="42" r="7" fill="#9ad3a6" opacity=".7"/>
+              <text x="10" y="60" fill="#bfe6c6" font-size="9" font-family="monospace">Pi Zero 2 W</text>
+            </g>
+            <text class="lbl" x="500" y="312" fill="var(--ink)" font-size="15" font-weight="600">Raspberry Pi Zero</text>
+            <text class="lbl" x="500" y="334" fill="var(--muted)" font-size="12.5">Pushes onto the header. No soldering</text>
+          </g>
+
+          <!-- stand -->
+          <g class="lyr l-stand">
+            <g transform="translate(258,344)">
+              <path d="M0 40 L52 0 L104 40 Z" fill="none" stroke="#8a8f98" stroke-width="9" stroke-linejoin="round"/>
+            </g>
+            <text class="lbl" x="500" y="392" fill="var(--ink)" font-size="15" font-weight="600">Stand or frame</text>
+            <text class="lbl" x="500" y="414" fill="var(--muted)" font-size="12.5">Desk stand, or hang it on a wall</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div class="card reveal">
+        <h3>The computer</h3>
+        <p>A Raspberry Pi Zero, about the size of a stick of gum, pushed onto the
+          display's pin header. That's the assembly — no soldering, no wiring.</p>
+      </div></div>
+      <div class="step"><div class="card reveal">
+        <h3>Four buttons</h3>
+        <p>On the edge of the frame, reachable with the display hung on a wall.
+          Power, change the look, scan-to-track code, and tomorrow's duty.</p>
+      </div></div>
+      <div class="step"><div class="card reveal">
+        <h3>The panel</h3>
+        <p>Colour e-paper joined by a ribbon cable. It holds its picture with the power
+          off, which is why the screen never glows at you in the dark.</p>
+      </div></div>
+      <div class="step"><div class="card reveal">
+        <h3>Broken-out pins</h3>
+        <p>Spare I2C and SPI along the edge. Nothing you need for Ident — but it's there
+          if you ever want to add to it.</p>
+      </div></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="styles"><div class="wrap">
+  <p class="kicker">Thirteen looks</p>
+  <h2 class="reveal">Make it suit the room</h2>
+  <p class="sub">Same duty, thirteen ways. Change it from your phone or with a button
+    on the frame.</p>
+
+  <div class="gal">
+    <div class="navbtns">
+      <button type="button" aria-label="Previous style" onclick="railScroll(-1)">&larr;</button>
+      <button type="button" aria-label="Next style" onclick="railScroll(1)">&rarr;</button>
+    </div>
+    <div class="rail" id="rail">
+      <div class="slide"><img loading="lazy" src="img/styles/board_solari.png" alt="Solari departure board style">
+        <div class="t"><h3>Solari board</h3><span>the default</span></div>
+        <p>Split-flap departure board. Route, landing time, home time, progress.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/tiles.png" alt="Tiles dashboard style">
+        <div class="t"><h3>Tiles</h3><span>most detail</span></div>
+        <p>Six panels: flight, route, landing, home, live status and time to run.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/minimal.png" alt="Minimal style">
+        <div class="t"><h3>Minimal</h3><span>read it from the hall</span></div>
+        <p>One enormous destination and the two times that matter.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/timeline.png" alt="Duty timeline style">
+        <div class="t"><h3>Duty timeline</h3><span>long days</span></div>
+        <p>The whole duty as one bar, with a marker showing where you are in it.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/board_dot.png" alt="LED dot matrix sign style">
+        <div class="t"><h3>Dot sign</h3><span>gate board</span></div>
+        <p>Dot-matrix lettering, like the sign at the gate.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/board_flip.png" alt="Flip clock style">
+        <div class="t"><h3>Flip clock</h3><span>retro</span></div>
+        <p>Mechanical flip-tile lettering, like an old station clock.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/board_yellow.png" alt="Yellow grid style">
+        <div class="t"><h3>Yellow grid</h3><span>high contrast</span></div>
+        <p>Classic yellow on black. The most legible at distance.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/board_rail.png" alt="Rail blue style">
+        <div class="t"><h3>Rail blue</h3><span>calm</span></div>
+        <p>A softer railway palette for rooms where black would shout.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/swiss.png" alt="Swiss style">
+        <div class="t"><h3>Swiss</h3><span>typographic</span></div>
+        <p>White, gridded, restrained. More poster than gadget.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/cockpit.png" alt="Cockpit EFIS style">
+        <div class="t"><h3>Cockpit</h3><span>for the nerds</span></div>
+        <p>Instrument-panel colours. Familiar if you spend your day behind one.</p></div>
+    </div>
+    <div class="galhint"><span class="arrow">&#8596;</span> Scroll or swipe · two more draw live route maps</div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="split">
+    <img src="img/panels/impression_13_3_minimal.png" alt="A 13.3 inch e-paper panel showing the minimal style with a large destination code">
+    <div>
+      <p class="kicker">Your data</p>
+      <p class="lede">Your roster never leaves the display.</p>
+      <p class="sub" style="margin:0">It fetches your roster over your own connection and
+        keeps it on the device. No account, and no service of ours holding your schedule —
+        because we never receive it.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="reveal">Worth knowing before you buy</h2>
+  <p class="sub">The things we'd want to be told.</p>
+  <div class="triad reveal">
+    <div><h3>e-paper isn't instant</h3>
+      <p>Around 30 seconds to redraw, so it updates on change rather than ticking.
+        Want live movement? Choose the LED matrix.</p></div>
+    <div><h3>Rosters vary by airline</h3>
+      <p>Built and tested against easyJet eCrew feeds. Others may need work —
+        <a href="support.html">ask before buying</a> if you fly elsewhere.</p></div>
+    <div><h3>You build it</h3>
+      <p>No soldering, but you'll flash a memory card and follow a guide.
+        An unhurried hour.</p></div>
+  </div>
+
+  <div class="reassure reveal">
+    <div><h4>Buy your own parts</h4><p>We sell the software. No hardware markup, nothing proprietary.</p></div>
+    <div><h4>It updates itself</h4><p>New versions arrive on the device. You choose when to install.</p></div>
+    <div><h4>Illustrated build guide</h4><p>Step by step, written for someone who has never used a Raspberry Pi.</p></div>
+    <div><h4>Real support</h4><p>Questions answered by someone who flies the line. <a href="support.html">Ask anything</a>.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="fl">
+    <a href="displays.html">Displays</a><a href="parts.html">Parts</a>
+    <a href="faq.html">FAQ</a><a href="support.html">Support</a><a href="legal.html">Legal</a>
+    <a href="https://github.com/captaincomplex/ident">Source</a>
+  </div>
+  <p>Ident — a flight-duty display for pilots. Your roster stays on your own device.<br>
+    Airline names and logos are the trademarks of their owners and are not supplied with
+    the software; Ident only shows image files you add yourself. Not affiliated with,
+    endorsed by, or connected to any airline.</p>
+</div></footer>
+
+<script>
+/* Reveal on scroll. One observer, unobserve once shown - no scroll handler. */
+(function(){
+  if(!document.documentElement.classList.contains('js')) return;
+  var els=[].slice.call(document.querySelectorAll('.reveal'));
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+    });
+  },{rootMargin:'0px 0px -12% 0px',threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+
+  /* Hero eases back a touch as it leaves - cheap parallax, transform only. */
+  var hero=document.getElementById('heroMedia');
+  if(hero){
+    var img=hero.querySelector('img'), ticking=false;
+    function frame(){
+      var r=hero.getBoundingClientRect();
+      var p=Math.min(Math.max(-r.top/(r.height||1),0),1);
+      img.style.transform='scale('+(1+0.05*(1-p))+') translateY('+(p*-14)+'px)';
+      ticking=false;
+    }
+    addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(frame)}},{passive:true});
+    frame();
+  }
+
+  /* Exploded view: separate the layers once the section is properly in view. */
+  var ex=document.getElementById('explode');
+  if(ex){
+    var eo=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ ex.classList.toggle('open', en.isIntersecting); });
+    },{rootMargin:'-18% 0px -30% 0px',threshold:0});
+    eo.observe(ex);
+  }
+})();
+
+function railScroll(dir){
+  var r=document.getElementById('rail'), s=r&&r.querySelector('.slide');
+  if(!r||!s)return;
+  r.scrollBy({left:dir*(s.getBoundingClientRect().width+16),behavior:'smooth'});
+}
+</script>
+</body></html>
