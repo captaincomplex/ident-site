@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ident — airline not supported? Apply for a free one</title>
+<meta name="description" content="Ident reads easyJet eCrew rosters today. Fly for someone else? Help us add your airline and the software is yours free, for good.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="index.html">IDENT<span>.</span></a>
+  <a class="l" href="index.html#how">How it works</a>
+  <a class="l" href="displays.html">Displays</a>
+  <a class="l" href="parts.html">Parts</a>
+  <a class="l" href="faq.html">FAQ</a>
+  <span class="sp"></span>
+  <a class="l" href="support.html">Support</a>
+</div></nav>
+
+<header><div class="wrap">
+  <span class="badge">free, for good</span>
+  <h1>Airline not supported? <span class="g">Apply for a free Ident</span></h1>
+  <p class="lead">Ident reads easyJet eCrew rosters today. Every other airline is a
+    format nobody has looked at yet. Help us read yours and the software is
+    yours — free, permanently, including everything that comes after.</p>
+</div></header>
+
+<section><div class="wrap">
+  <h2>The deal, plainly</h2>
+  <p class="sub">You give us the format. We do the work. You keep the software.</p>
+  <div class="triad">
+    <div>
+      <h3>You send a sample</h3>
+      <p>One roster, with your name, staff number and crew list taken out. That's
+        enough to see how your airline lays a month out.</p>
+    </div>
+    <div>
+      <h3>We write the parser</h3>
+      <p>Usually a few evenings. We'll come back with questions — duty codes are
+        never as obvious as they look.</p>
+    </div>
+    <div>
+      <h3>You test it, and keep it</h3>
+      <p>You run it against your real roster and tell us what's wrong. When it's
+        right, your licence is free. No expiry, no upgrade later.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>What we actually need</h2>
+  <p class="sub">In rough order of usefulness.</p>
+  <div class="grid">
+    <div class="card"><h3>A calendar feed</h3>
+      <p>If your airline offers an <span class="mono">.ics</span> subscription — AIMS eCrew,
+        CrewLink, Sabre and others do — that's the whole job, and the quickest route.
+        <strong>Don't send us the link itself:</strong> it's a password in URL form. Tell us
+        which system it comes from and we'll take it from there.</p></div>
+    <div class="card"><h3>Or a roster PDF</h3>
+      <p>The monthly one you already download. Black out your name, staff number and
+        anyone else who appears on it. We need the shape of the page, not who you are.</p></div>
+    <div class="card"><h3>Your duty codes</h3>
+      <p>What your airline calls a day off, standby, positioning, training, sick. This is
+        the part that actually takes the time, and the part only you know.</p></div>
+  </div>
+  <div class="note" style="margin-top:22px;max-width:640px">
+    <strong>On your data.</strong> Send a redacted sample, not a live feed. We use it to
+    write the parser and delete it when the parser works — we don't want a copy of your
+    roster and we've built the product specifically so we never hold one. Once it's
+    running, your roster stays on your own device, as it does for everyone else.
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Apply</h2>
+  <p class="sub">No form-filling marathon. Four boxes.</p>
+
+  <div class="fs-msg fs-ok" data-fs-success hidden></div>
+  <div class="fs-msg fs-bad" data-fs-error hidden></div>
+
+  <form id="support-form" action="https://formspree.io/f/xbgrepyj" method="POST">
+    <label for="name">YOUR NAME</label>
+    <input id="name" name="name" required autocomplete="name" data-fs-field>
+    <span class="fs-field-err" data-fs-error="name"></span>
+
+    <label for="email">EMAIL ADDRESS</label>
+    <input id="email" type="email" name="email" required autocomplete="email" data-fs-field>
+    <span class="fs-field-err" data-fs-error="email"></span>
+    <input type="hidden" name="_subject" value="Free Ident — new airline">
+    <input type="hidden" name="topic" value="New airline application">
+
+    <label for="airline">AIRLINE AND BASE</label>
+    <input id="airline" name="airline" required placeholder="e.g. Jet2, Manchester" data-fs-field>
+    <span class="fs-field-err" data-fs-error="airline"></span>
+
+    <label for="setup">HOW YOU GET YOUR ROSTER</label>
+    <select id="setup" name="setup" data-fs-field>
+      <option>A calendar subscription (.ics) I can add to my phone</option>
+      <option>A PDF I download each month</option>
+      <option>A crew portal or app, nothing to download</option>
+      <option>Not sure</option>
+    </select>
+
+    <label for="message">ANYTHING ELSE</label>
+    <textarea id="message" name="message" data-fs-field
+      placeholder="Which crewing system it is, if you know. Any odd duty codes. Whether you'd be happy to test."></textarea>
+
+    <!-- simple spam trap: real people leave this empty -->
+    <div style="position:absolute;left:-9999px" aria-hidden="true">
+      <label for="company">Company</label>
+      <input id="company" name="_gotcha" tabindex="-1" autocomplete="off">
+    </div>
+
+    <button type="submit" data-fs-submit-btn>Apply</button>
+  </form>
+
+  <div class="note" style="margin-top:22px;max-width:600px">
+    Don't attach anything yet — we'll ask once we've replied, so you're not sending a
+    roster into the void. Prefer email? <a href="mailto:support@xpdr.aero">support@xpdr.aero</a>.
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Honest small print</h2>
+  <div class="grid">
+    <div class="card"><h3>It might not be possible</h3>
+      <p>Some airlines publish nothing a device can read. If yours is one of them we'll
+        tell you straight rather than string you along.</p></div>
+    <div class="card"><h3>It takes as long as it takes</h3>
+      <p>This is built by a working pilot around a roster of his own. Weeks, not days —
+        and more if your airline changes its format halfway through.</p></div>
+    <div class="card"><h3>You still buy your own hardware</h3>
+      <p>The free part is the software. The display and Raspberry Pi come from the
+        usual places — see <a href="parts.html">parts</a>.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="fl"><a href="index.html">Home</a><a href="faq.html">FAQ</a>
+    <a href="support.html">Support</a><a href="legal.html">Legal</a></div>
+  <p>Ident — a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>
+</div></footer>
+
+<script>
+  window.formspree = window.formspree || function () {
+    (formspree.q = formspree.q || []).push(arguments);
+  };
+  formspree('initForm', { formElement: '#support-form', formId: 'xbgrepyj' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body></html>
