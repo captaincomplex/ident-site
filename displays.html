@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ident — which display to buy</title>
+<meta name="description" content="Which display works best with Ident: colour e-paper panels and HUB75 LED matrix panels compared, with recommendations and the ones to avoid.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="index.html">IDENT<span>.</span></a>
+  <a class="l" href="index.html#how">How it works</a>
+  <a class="l" href="displays.html">Displays</a>
+  <a class="l" href="parts.html">Parts</a>
+  <a class="l" href="faq.html">FAQ</a>
+  <span class="sp"></span>
+  <a class="l" href="support.html">Support</a>
+</div></nav>
+
+<header><div class="wrap">
+  <h1>Which display?</h1>
+  <p class="lead">Ident drives two quite different kinds of panel. Neither is better —
+    they suit different rooms. Here's how to choose, and what we'd buy.</p>
+</div></header>
+
+<section><div class="wrap">
+  <h2>Start here</h2>
+  <table>
+    <tr><th></th><th>Colour e-paper</th><th>LED matrix</th></tr>
+    <tr><td class="k">Looks like</td><td>Printed paper in a frame</td><td>An airport departure board</td></tr>
+    <tr><td class="k">In a dark room</td><td class="yes">Invisible — no light at all</td><td>Glows; dimmable, but still a light source</td></tr>
+    <tr><td class="k">Updates</td><td>~30 seconds, on change</td><td class="yes">Instantly, continuously</td></tr>
+    <tr><td class="k">Power</td><td class="yes">Under a watt; holds image unplugged</td><td>Several watts, more at full brightness</td></tr>
+    <tr><td class="k">Assembly</td><td class="yes">Push onto the header, no soldering</td><td>Ribbon cable, power injection, a bonnet</td></tr>
+    <tr><td class="k">Best in</td><td>Hall, kitchen, bedroom, lounge</td><td>Study, office, workshop, bar</td></tr>
+    <tr><td class="k">Cost</td><td>£45–£190 depending on size</td><td>£25–£70 plus a bonnet and supply</td></tr>
+  </table>
+  <div class="note" style="margin-top:18px">
+    <strong>Short version:</strong> if it's going somewhere you relax, buy e-paper. If you
+    want it to look like a departure board and update the second anything changes, buy the
+    LED matrix. If you're unsure, the <strong>7.3″ e-paper</strong> pleases most people.
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Option one</p>
+  <h2>Colour e-paper</h2>
+  <p class="sub">Pimoroni Inky Impression panels. They sit straight on the Raspberry Pi's
+    40-pin header — no soldering, no wiring — and have four buttons on the side.</p>
+
+  <table>
+    <tr><th>Panel</th><th>Resolution</th><th>Colours</th><th>Indicative</th><th>Verdict</th></tr>
+    <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-7-3-2025-edition" target="_blank" rel="noopener">Inky Impression 7.3″</a></td><td class="mono">800×480</td><td>6</td><td>£79.50</td>
+      <td><span class="yes">The one to buy.</span> Readable across a kitchen, wide enough for
+        the route maps and the full duty timeline.</td></tr>
+    <tr><td class="k"><a href="https://shop.pimoroni.com/products/inky-impression-4" target="_blank" rel="noopener">Inky Impression 4.0″</a></td><td class="mono">600×400</td><td>6</td><td>~£45</td>
+      <td>Cheapest way in and genuinely good on a desk or by the front door. Small for a wall.</td></tr>
+    <tr><td class="k"><a href="https://shop.pimoroni.com/products/inky-impression-13-3" target="_blank" rel="noopener">Inky Impression 13.3″</a></td><td class="mono">1600×1200</td><td>6</td><td>~£190</td>
+      <td>A proper wall piece, and the maps look superb. Slowest to redraw, and by far the
+        most expensive part of the build.</td></tr>
+    <tr><td class="k">Inky Impression 5.7″</td><td class="mono">600×448</td><td>7</td><td>—</td>
+      <td><span class="no">Discontinued.</span> The panel Ident was originally built on and
+        still fully supported — but don't go hunting for one.</td></tr>
+  </table>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Option two</p>
+  <h2>LED matrix</h2>
+  <p class="sub">Standard HUB75 panels, driven through hzeller's <span class="mono">rpi-rgb-led-matrix</span>
+    library. Cheap, bright, and the closest thing to a real departure board.</p>
+
+  <table>
+    <tr><th>Configuration</th><th>Pixels</th><th>Indicative</th><th>Verdict</th></tr>
+    <tr><td class="k">2 × <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 panels</a> chained</td><td class="mono">128×32</td><td>~£50 + bonnet</td>
+      <td><span class="yes">Recommended.</span> The default Ident is tuned for. Wide enough for
+        a full-width route map with a moving marker.</td></tr>
+    <tr><td class="k">Single <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 panel</a></td><td class="mono">64×32</td><td>~£25 + bonnet</td>
+      <td>Works, on the compact layout. Long routes truncate and scroll.</td></tr>
+    <tr><td class="k">Single <a href="https://thepihut.com/products/64x64-rgb-led-matrix-panel-3mm-pitch" target="_blank" rel="noopener">64×64 panel</a></td><td class="mono">64×64</td><td>~£35 + bonnet</td>
+      <td>Good compromise — squarer, more room for the map, one panel to mount.</td></tr>
+    <tr><td class="k">4 × <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 chained</a></td><td class="mono">256×32</td><td>~£95 + bonnet</td>
+      <td>Dramatic on a long wall, but needs a proper 5V supply and careful power injection.</td></tr>
+  </table>
+
+  <div class="note" style="margin-top:18px">
+    <strong>You'll also need:</strong> an <strong><a href="https://thepihut.com/products/adafruit-rgb-matrix-bonnet-for-raspberry-pi" target="_blank" rel="noopener">Adafruit RGB Matrix Bonnet</a></strong> (or HAT) to
+    drive the panel cleanly, and a <strong><a href="https://thepihut.com/products/5v-4a-power-supply-2-1mm-jack" target="_blank" rel="noopener">5V power supply sized for the panels</a></strong> — not the
+    Pi's supply. A 64×32 panel can pull 2–4A on its own at full white. Budget £15–£20 for the
+    bonnet and £10–£15 for the supply.
+  </div>
+
+  <div class="warn">
+    <strong>This one takes real assembly.</strong>
+    <p>Unlike e-paper, the LED route means ribbon cables, a separate power supply, and building
+      the driver library on the Pi — it isn't installable with pip. It's well-documented and
+      thousands of people have done it, but set aside an afternoon rather than an hour, and be
+      comfortable following a wiring guide.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>What to avoid</h2>
+  <div class="grid">
+    <div class="card"><h3>Cheap "e-ink" that isn't</h3>
+      <p>Small two-colour e-paper modules with no buttons and a ribbon you must solder.
+        They work in principle but the display area is tiny and the experience is poor.</p></div>
+    <div class="card"><h3>HDMI monitors and tablets</h3>
+      <p>Ident will happily drive one via the simulator, but a backlit screen glowing all
+        night in a hallway is exactly what e-paper exists to avoid.</p></div>
+    <div class="card"><h3>Panels with no Pi library</h3>
+      <p>SPI displays without a maintained Python driver mean writing one. If it isn't an
+        Inky or a HUB75 panel, <a href="support.html">ask first</a>.</p></div>
+    <div class="card"><h3>Undersized power supplies</h3>
+      <p>The commonest LED-matrix failure. Flicker, colour shifts and random reboots are
+        nearly always the supply, not the code.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Whichever you choose</h2>
+  <p class="sub">The software is identical. Every style adapts to the panel you own, and you can
+    switch panels later without buying anything else.</p>
+  <div class="reassure">
+    <div><h4>Same roster, same setup</h4><p>Nothing about the configuration changes between panel types.</p></div>
+    <div><h4>Detected automatically</h4><p>Ident works out which display is fitted at boot.</p></div>
+    <div><h4>Full parts list</h4><p>Including the combinations that don't work — <a href="parts.html">see parts</a>.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="fl"><a href="index.html">Home</a><a href="parts.html">Parts</a>
+    <a href="faq.html">FAQ</a><a href="support.html">Support</a><a href="legal.html">Legal</a></div>
+  <p>Prices are indicative, checked August 2026. Links go straight to a UK supplier; we take no
+    commission from any of them and you are welcome to shop elsewhere. Not affiliated with, endorsed by, or connected to any airline.</p>
+</div></footer>
+
+</body></html>

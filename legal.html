@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ident — terms, privacy and refunds</title>
+<meta name="description" content="Ident's terms of sale, privacy policy and refund policy.">
+<link rel="stylesheet" href="style.css">
+<style>
+ .legal h3{margin:26px 0 6px;font-size:17px}
+ .legal p,.legal li{color:var(--muted);font-size:15px}
+ .legal ul{padding-left:20px}
+ .legal .updated{color:var(--muted);font-size:13px}
+ .toc a{display:inline-block;margin-right:18px;font-size:14.5px}
+ .fill{background:#fff6e6;border:1px solid #e8c98a;border-radius:10px;padding:12px 14px;
+       color:#7a5500;font-size:14px;margin:14px 0}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="index.html">IDENT<span>.</span></a>
+  <a class="l" href="displays.html">Displays</a>
+  <a class="l" href="parts.html">Parts</a>
+  <a class="l" href="faq.html">FAQ</a>
+  <span class="sp"></span>
+  <a class="l" href="support.html">Support</a>
+</div></nav>
+
+<header><div class="wrap">
+  <h1>Terms, privacy and refunds</h1>
+  <p class="lead">Written to be read. If anything here is unclear,
+    <a href="support.html">ask</a> and we'll explain it in plain words.</p>
+  <p class="toc"><a href="#terms">Terms of sale</a><a href="#privacy">Privacy</a><a href="#refunds">Refunds</a></p>
+</div></header>
+
+<section class="legal" id="terms"><div class="wrap">
+  <h2>Terms of sale</h2>
+  <p class="updated">Last updated 24 August 2026.</p>
+
+  <div class="fill"><strong>Before publishing:</strong> replace [TRADER NAME], [TRADING ADDRESS],
+    [COMPANY NUMBER if applicable] and [PRICE]. UK consumer law requires a trader name and a
+    geographic address on the site. Have a solicitor read this before you take money.</div>
+
+  <h3>Who you're buying from</h3>
+  <p>Ident is supplied by [TRADER NAME], [TRADING ADDRESS], United Kingdom. You can contact us at
+    <a href="mailto:support@xpdr.aero">support@xpdr.aero</a>.</p>
+
+  <h3>What you're buying</h3>
+  <p>You are buying a licence to use the Ident software, together with the build documentation and
+    email support. <strong>You are not buying hardware.</strong> The Raspberry Pi, the display and
+    the other parts are bought by you, from suppliers of your choosing, and are covered by those
+    suppliers' own terms and warranties, not ours.</p>
+
+  <h3>Your licence</h3>
+  <p>We grant you a personal, non-exclusive licence to install and use Ident on displays you own,
+    for as many of your own devices as you like. You may modify it for your own use. You may not
+    resell it, redistribute it as your own, or sell devices with it pre-installed without our
+    written agreement.</p>
+
+  <h3>What Ident needs to work</h3>
+  <p>Ident depends on things outside our control: your airline publishing a roster feed we can
+    read, your home network, and — if you enable them — third-party flight-tracking and mapping
+    services. We cannot guarantee those will remain available or unchanged. Notably:</p>
+  <ul>
+    <li>Ident is built and tested against easyJet eCrew calendar feeds. Other airlines may not work.
+      If you fly elsewhere, ask us <em>before</em> buying.</li>
+    <li>If your airline changes or withdraws its roster feed, Ident may stop showing your duties
+      until we can adapt. We will make reasonable efforts to do so, but cannot promise it.</li>
+    <li>The Raspberry Pi Zero 2 W cannot connect to 5GHz-only Wi-Fi. This is a hardware limitation
+      and is stated clearly before purchase.</li>
+  </ul>
+
+  <h3>Updates</h3>
+  <p>Updates are published from time to time and your device can install them. We don't promise a
+    particular update schedule, or that Ident will be maintained indefinitely.</p>
+
+  <h3>Support</h3>
+  <p>Support is by email, provided by a working pilot, and is offered on a reasonable-endeavours
+    basis. We aim to reply within two working days. There is no guaranteed response time.</p>
+
+  <h3>Our liability</h3>
+  <p><strong>Ident is not a flight-planning, operational or safety tool, and must not be used as
+    one.</strong> It is a convenience display. Always rely on your airline's official roster and
+    crewing systems for anything that matters. You are responsible for reporting for duty at the
+    correct time.</p>
+  <p>We are liable for losses you suffer as a foreseeable result of our breaking this contract or
+    failing to use reasonable care and skill. We are not liable for missed duties, missed flights,
+    disciplinary consequences, lost earnings, or any business loss. Nothing in these terms limits
+    liability for death or personal injury caused by our negligence, for fraud, or for anything
+    else that cannot lawfully be limited. Your statutory rights as a consumer are not affected.</p>
+
+  <h3>Governing law</h3>
+  <p>These terms are governed by the law of England and Wales, and disputes may be brought in the
+    courts of England and Wales. If you live elsewhere in the UK you may also bring proceedings in
+    your own country's courts.</p>
+</div></section>
+
+<section class="legal" id="privacy"><div class="wrap">
+  <h2>Privacy</h2>
+  <p class="updated">Last updated 24 August 2026.</p>
+
+  <h3>The short version</h3>
+  <p><strong>Your roster never reaches us.</strong> Ident fetches it from your airline, over your
+    own internet connection, and stores it on your own device. We do not receive it, cannot see it,
+    and operate no service that holds it. There is no account to create and the software sends us
+    no analytics or telemetry.</p>
+
+  <h3>What your device does</h3>
+  <p>Your display makes outbound connections only to: your roster feed; optionally a
+    flight-tracking service and Google Maps, if you supply keys for them; GitHub, once a day, to
+    check for a software update; and once, on first run, to download coastline data for the map
+    styles. None of those requests carry personal data to us.</p>
+
+  <h3>What we actually hold</h3>
+  <p>Only what you give us directly:</p>
+  <ul>
+    <li><strong>If you buy:</strong> your name, email address and billing details, handled by our
+      payment provider [PAYMENT PROVIDER], who acts as merchant of record. We keep order records as
+      long as tax law requires.</li>
+    <li><strong>If you email support:</strong> your message and anything you attach — including a
+      diagnostics file, if you choose to send one. Diagnostics deliberately exclude your roster
+      contents, your roster URL, API keys, passwords and Wi-Fi passwords; you can read the file in
+      full before sending it.</li>
+  </ul>
+  <p>We use this only to fulfil your order and answer you. We don't sell it or use it for
+    advertising.</p>
+
+  <h3>Your rights</h3>
+  <p>Under UK GDPR you may ask for a copy of what we hold, ask us to correct or delete it, or
+    object to how we use it. Email <a href="mailto:support@xpdr.aero">support@xpdr.aero</a>. If
+    you're unhappy with our response you can complain to the Information Commissioner's Office at
+    ico.org.uk.</p>
+
+  <h3>A word to crew</h3>
+  <p>Your roster may be confidential to your airline. Because Ident keeps it on your own hardware
+    this is a far simpler position than a cloud service — but checking your employer's data and IT
+    policies is your responsibility, not ours.</p>
+
+  <h3>Cookies</h3>
+  <p>This website sets no cookies and runs no analytics. The control panel on your own device uses
+    a single session cookie to keep you logged in, which never leaves your network.</p>
+</div></section>
+
+<section class="legal" id="refunds"><div class="wrap">
+  <h2>Refunds</h2>
+  <p class="updated">Last updated 24 August 2026.</p>
+
+  <h3>Your right to cancel</h3>
+  <p>For digital products bought online you normally have 14 days to cancel. Because Ident is
+    delivered immediately, you'll be asked at checkout to agree that delivery starts straight away
+    and to acknowledge that this ends your automatic right to cancel once download begins. That is
+    the legal position — but see below, because we don't intend to hide behind it.</p>
+
+  <h3>What we'll actually do</h3>
+  <p><strong>If Ident doesn't work for you, tell us and we'll refund you.</strong> In particular:</p>
+  <ul>
+    <li>If your airline's roster can't be read and we can't make it work in reasonable time — full
+      refund, no argument.</li>
+    <li>If it won't run on hardware from our recommended parts list and we can't fix it — full
+      refund.</li>
+    <li>If you simply don't get on with it within 30 days of buying — ask, and we'll refund you.</li>
+  </ul>
+  <p>We'd rather you were happy than keep £[PRICE] from someone who isn't.</p>
+
+  <h3>What we can't refund</h3>
+  <p>Hardware you bought from someone else. If a Raspberry Pi or a display arrives faulty, that's a
+    matter for the supplier you bought it from — though we'll happily help you work out what's
+    wrong.</p>
+
+  <h3>How to ask</h3>
+  <p>Email <a href="mailto:support@xpdr.aero">support@xpdr.aero</a> with your order details and a
+    line about what went wrong. Refunds go back to the original payment method, normally within
+    five working days of us agreeing.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="fl"><a href="index.html">Home</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></div>
+  <p>Ident — a flight-duty display for pilots. Not affiliated with, endorsed by, or connected to
+    any airline. Not a flight-planning or operational tool.</p>
+</div></footer>
+
+</body></html>
