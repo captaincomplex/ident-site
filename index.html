@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ident — what time are you back tonight?</title>
+<title>Ident — the fridge door roster you were promised</title>
 <meta name="description" content="A flight-duty board for the wall. Ident reads your airline roster and shows where you are, when you're back, and how long they have with you. Scan the code to track the flight. Colour e-paper or LED matrix.">
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.className=(window.matchMedia("(prefers-reduced-motion: reduce)").matches?"":"js");</script>
@@ -17,15 +17,16 @@
   <a class="l" href="#styles">Styles</a>
   <a class="l" href="parts.html">Parts</a>
   <a class="l" href="faq.html">FAQ</a>
+  <a class="l" href="airlines.html">Your airline</a>
   <span class="sp"></span>
   <a class="l" href="support.html">Support</a>
 </div></nav>
 
 <header><div class="wrap">
-  <h1>What time are you back tonight?</h1>
+  <h1>The fridge door roster you were promised</h1>
   <p class="lead">Where you are, when you're back, how long they have with you.
-    Ident reads your roster and answers it on the wall — and keeps answering
-    when crewing changes their mind.</p>
+    Ident reads your roster and puts it on the wall — and unlike the printout,
+    it's still right after crewing change their mind.</p>
   <div class="cta">
     <a class="btn primary" href="displays.html">Choose a display</a>
     <a class="btn ghost" href="#how">See how it works</a>
@@ -93,8 +94,8 @@
 </div></section>
 
 <section><div class="wrap">
-  <p class="kicker">Changes on report? No problem.</p>
-  <h2 class="reveal">Nobody has to be told twice</h2>
+  <p class="kicker">Your roster. Always accurate.</p>
+  <h2 class="reveal">Changes on report? No problem.</h2>
   <p class="sub">The board re-reads your roster every half hour. When it moves, it moves.</p>
   <div class="triad reveal">
     <div>
@@ -139,6 +140,29 @@
         style you've picked. It only appears while a duty is running, and never on a day off.</p>
     </div>
     <img src="img/qr_corner.png" alt="The board showing IN FLIGHT LGW to NTE, with a scannable code in the bottom corner that opens the live flight" loading="lazy" width="1600" height="960">
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Commuter?</p>
+  <h2 class="reveal">Add your positioning flights</h2>
+  <p class="sub">Your roster starts at report. Your day starts a lot earlier.</p>
+  <div class="triad reveal">
+    <div>
+      <h3>Type the flight number</h3>
+      <p>Living in Amsterdam, based at Gatwick? Add the 05:00 AMS–LGW and Ident
+        looks up the route and times itself. Two boxes, once.</p>
+    </div>
+    <div>
+      <h3>It becomes part of the day</h3>
+      <p>The board follows you out of Amsterdam, then hands over to the roster duty
+        when you report. At home they see one continuous day, not a gap.</p>
+    </div>
+    <div>
+      <h3>Anything off-roster works</h3>
+      <p>Deadheading, a night before at a crashpad, the flight home on leave.
+        If it has a flight number, it can go on the board.</p>
+    </div>
   </div>
 </div></section>
 
@@ -331,11 +355,23 @@
       <p>Around 30 seconds to redraw, so it updates on change rather than ticking.
         Want live movement? Choose the LED matrix.</p></div>
     <div><h3>Rosters vary by airline</h3>
-      <p>Built and tested against easyJet eCrew feeds. Others may need work —
-        <a href="support.html">ask before buying</a> if you fly elsewhere.</p></div>
+      <p>Built and tested against easyJet eCrew feeds. Fly for someone else?
+        <a href="airlines.html">Help us add your airline and yours is free</a>.</p></div>
     <div><h3>You build it</h3>
       <p>No soldering, but you'll flash a memory card and follow a guide.
         An unhurried hour.</p></div>
+  </div>
+
+  <div class="split" style="margin-top:38px;align-items:center">
+    <div>
+      <p class="kicker">Not easyJet?</p>
+      <p class="lede">Help us read your roster, and yours is free.</p>
+      <p class="sub" style="margin:0 0 18px">Send a redacted sample and tell us what your
+        airline calls a day off. We write the parser, you test it against your real
+        roster, and your licence is free — permanently, updates included.</p>
+      <a class="btn primary" href="airlines.html">Apply for a free Ident</a>
+    </div>
+    <img src="img/panels/impression_7_3_timeline.png" alt="A duty timeline on a 7.3 inch e-paper panel" loading="lazy">
   </div>
 
   <div class="reassure reveal">
