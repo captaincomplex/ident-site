@@ -1,7 +1,7 @@
 {
-  "version": "4.8.1",
-  "url": "https://ident.xpdr.aero/releases/ident_4-8-1.zip",
-  "sha256": "925d46acb1402497787a9b6dc9d1eddecd45616c60ef8bf12b3158588cd675ef",
-  "notes": "v4.8.1 — fix ADTY becoming a phantom LGW-LGW flight",
-  "released": "2026-08-26T17:08:09Z"
+  "version": "4.9.0",
+  "url": "https://ident.xpdr.aero/releases/ident_4-9-0.zip",
+  "sha256": "db257203734c11e1577381a93bd8c3b021277cb0e03ff0fdc825a37f27a6de01",
+  "notes": "v4.9.0 — developer tools, and a roster-codes form for new airlines",
+  "released": "2026-08-26T18:59:18Z"
 }
