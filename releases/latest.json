@@ -1,7 +1,7 @@
 {
-  "version": "4.8.0",
-  "url": "https://ident.xpdr.aero/releases/ident_4-8-0.zip",
-  "sha256": "a5ffbb334d29d6dc38bf7bf63d5f5187572e89befbcae3fb8c488b8502281d4e",
-  "notes": "v4.8.0 — wake-up time, and a real commute for commuters",
-  "released": "2026-08-26T16:07:26Z"
+  "version": "4.8.1",
+  "url": "https://ident.xpdr.aero/releases/ident_4-8-1.zip",
+  "sha256": "925d46acb1402497787a9b6dc9d1eddecd45616c60ef8bf12b3158588cd675ef",
+  "notes": "v4.8.1 — fix ADTY becoming a phantom LGW-LGW flight",
+  "released": "2026-08-26T17:08:09Z"
 }
