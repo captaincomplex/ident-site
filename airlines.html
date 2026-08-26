@@ -103,9 +103,21 @@
       <option>Not sure</option>
     </select>
 
+    <label for="codes">YOUR AIRLINE'S DUTY CODES</label>
+    <textarea id="codes" name="codes" rows="12" data-fs-field
+      placeholder="One per line: CODE = what it means">ADTY = airport standby
+ESBY = standby from home
+D/O  = day off
+</textarea>
+    <div class="note" style="margin:8px 0 0;max-width:none;font-size:13px">
+      This is the part only you can supply, and the part that takes us longest to guess.
+      Overwrite the examples above with yours. Anything you're unsure of, say so — a
+      wrong guess about a code is how a standby ends up on the wall as a flight.
+    </div>
+
     <label for="message">ANYTHING ELSE</label>
     <textarea id="message" name="message" data-fs-field
-      placeholder="Which crewing system it is, if you know. Any odd duty codes. Whether you'd be happy to test."></textarea>
+      placeholder="Which crewing system it is, if you know. Whether you'd be happy to test. Anything odd about how your roster is published."></textarea>
 
     <!-- simple spam trap: real people leave this empty -->
     <div style="position:absolute;left:-9999px" aria-hidden="true">
@@ -116,9 +128,29 @@
     <button type="submit" data-fs-submit-btn>Apply</button>
   </form>
 
-  <div class="note" style="margin-top:22px;max-width:600px">
-    Don't attach anything yet — we'll ask once we've replied, so you're not sending a
-    roster into the void. Prefer email? <a href="mailto:support@xpdr.aero">support@xpdr.aero</a>.
+  <div class="note" style="margin-top:26px;max-width:640px">
+    <strong>Then send the sample roster by email.</strong> The form above can't carry a
+    file, and we'd rather not build somewhere for other people's rosters to pile up.
+    Attach it to a message to
+    <a id="mailLink" href="mailto:support@xpdr.aero?subject=Ident%20—%20sample%20roster">support@xpdr.aero</a>
+    — a month's roster as you download it, with your name, staff number and anyone else
+    on it blacked out. PDF, .ics, HTML, a screenshot of the crew portal: whatever you
+    actually get.
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>What happens to it</h2>
+  <div class="grid">
+    <div class="card"><h3>It's read once, by a person</h3>
+      <p>Your sample is opened to work out the format and write the parser. It isn't
+        uploaded anywhere, fed to a service, or kept after the work is done.</p></div>
+    <div class="card"><h3>Deleted when the parser works</h3>
+      <p>Once your airline is supported the sample is deleted. Ask for it sooner and
+        we'll delete it sooner — the codes are the useful part, not the file.</p></div>
+    <div class="card"><h3>Never send the live link</h3>
+      <p>Your calendar subscription URL is a password. Don't put it in the form or the
+        email. Tell us which crewing system it comes from instead.</p></div>
   </div>
 </div></section>
 
@@ -148,6 +180,25 @@
     (formspree.q = formspree.q || []).push(arguments);
   };
   formspree('initForm', { formElement: '#support-form', formId: 'xbgrepyj' });
+
+  // Put the airline in the email subject, so a sample arriving separately from
+  // the form can still be matched to it without asking.
+  (function () {
+    var airline = document.getElementById('airline');
+    var link = document.getElementById('mailLink');
+    if (!airline || !link) return;
+    function sync() {
+      var who = airline.value.trim();
+      link.href = 'mailto:support@xpdr.aero?subject='
+        + encodeURIComponent('Ident — sample roster' + (who ? ' — ' + who : ''))
+        + '&body=' + encodeURIComponent(
+            'Attached: a redacted sample roster' + (who ? ' for ' + who : '') + '.\n\n'
+            + 'Name/staff number removed: \n'
+            + 'Roster format: \n');
+    }
+    airline.addEventListener('input', sync);
+    sync();
+  })();
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
