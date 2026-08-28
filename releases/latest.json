@@ -1,7 +1,7 @@
 {
-  "version": "4.9.0",
-  "url": "https://ident.xpdr.aero/releases/ident_4-9-0.zip",
-  "sha256": "db257203734c11e1577381a93bd8c3b021277cb0e03ff0fdc825a37f27a6de01",
-  "notes": "v4.9.0 — developer tools, and a roster-codes form for new airlines",
-  "released": "2026-08-26T18:59:18Z"
+  "version": "4.10.0",
+  "url": "https://ident.xpdr.aero/releases/ident_4-10-0.zip",
+  "sha256": "6854a908652dc9ec9942ec24dfeaadebac46ee2e9e1bdee36b2b5102498828a0",
+  "notes": "v4.10.0 — month calendar, day-off photo, discretion for private codes",
+  "released": "2026-08-28T05:45:19Z"
 }
