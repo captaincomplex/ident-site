@@ -1,7 +1,7 @@
 {
-  "version": "4.11.0",
-  "url": "https://ident.xpdr.aero/releases/ident_4-11-0.zip",
-  "sha256": "477a79edd40b72eda632df51297c422f787321f9b813a13911bd38a4660eebb3",
-  "notes": "v4.11.0 — you choose which private codes are shown",
-  "released": "2026-08-28T08:56:36Z"
+  "version": "4.12.0",
+  "url": "https://ident.xpdr.aero/releases/ident_4-12-0.zip",
+  "sha256": "fe9a3f5df5a69c3dd68134f875e65c6ebb082890766af2fd808d6cbb02f80cef",
+  "notes": "v4.12.0 — WFTU shows as a day off, and a brief for new conversations",
+  "released": "2026-08-28T09:32:21Z"
 }
