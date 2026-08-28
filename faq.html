@@ -211,13 +211,23 @@ display style — turn it on under Display in the control panel, and pick which 
 nothing to track, so nothing is shown. Panels without buttons can still use the corner option.</p></div></details>
 
 <details><summary>Does the board show sensitive roster codes?</summary><div class="body">
-<p>No. Compassionate leave (<span class="mono">COMP</span>), unpaid compassionate leave
-(<span class="mono">CMPU</span>) and subject to operational clearance
-(<span class="mono">SOC</span>) are shown as an ordinary day off.</p>
-<p>They aren't merely hidden on screen — those codes are discarded when your roster is
-parsed, so the original never reaches the device's storage. Nothing that isn't kept can
-appear later through a new display style, a diagnostics export, or a screenshot you send
-to support. Whether to explain a day off should be your decision, not the wall's.</p></div></details>
+<p>Not unless you ask it to. Eighteen codes are hidden by default and shown as an ordinary
+day off: compassionate leave (<span class="mono">COMP</span>, <span class="mono">CMPU</span>),
+sickness and medical (<span class="mono">SICK</span>, <span class="mono">MED</span>,
+<span class="mono">LOL</span>), employment matters (<span class="mono">RESN</span>,
+<span class="mono">TERM</span>, <span class="mono">SUSP</span>, <span class="mono">DISC</span>,
+<span class="mono">GRV</span>), family leave (<span class="mono">MAT</span>,
+<span class="mono">PAT</span>, <span class="mono">PARL</span>), and the ambiguous ones where
+a routine day and a bad day look identical (<span class="mono">MEET</span>,
+<span class="mono">INT</span>, <span class="mono">SOC</span>, <span class="mono">UNPD</span>).</p>
+<p><strong>You choose which.</strong> Setup lists every one with a plain explanation of why it
+might matter, and you tick any you'd rather see. The same list is in settings. Nothing is
+revealed unless you ask.</p>
+<p>Hidden codes aren't merely kept off the screen — they're discarded when your roster is
+parsed, so the original never reaches the device's storage. Nothing that isn't kept can appear
+later through a new display style, a diagnostics export, or a screenshot you send to support.
+The trade-off: revealing a code only affects rosters read afterwards, so saving the setting
+re-reads your feed.</p></div></details>
 
 <details><summary>Can it show the whole month?</summary><div class="body">
 <p>Yes — there's a month calendar style: destinations on flying days, standby and days off
