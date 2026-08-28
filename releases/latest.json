@@ -1,7 +1,7 @@
 {
-  "version": "4.10.0",
-  "url": "https://ident.xpdr.aero/releases/ident_4-10-0.zip",
-  "sha256": "6854a908652dc9ec9942ec24dfeaadebac46ee2e9e1bdee36b2b5102498828a0",
-  "notes": "v4.10.0 — month calendar, day-off photo, discretion for private codes",
-  "released": "2026-08-28T05:45:19Z"
+  "version": "4.11.0",
+  "url": "https://ident.xpdr.aero/releases/ident_4-11-0.zip",
+  "sha256": "477a79edd40b72eda632df51297c422f787321f9b813a13911bd38a4660eebb3",
+  "notes": "v4.11.0 — you choose which private codes are shown",
+  "released": "2026-08-28T08:56:36Z"
 }
