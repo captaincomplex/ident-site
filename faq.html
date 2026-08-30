@@ -75,8 +75,20 @@ current during the ~30 second redraw, which happens a handful of times a day.</p
 <p>Call it <strong>under 1&nbsp;watt on average</strong>. Left on permanently that's roughly
 6&nbsp;kWh a year — around <strong>£1.50–£2 a year</strong> at typical UK electricity prices, or
 about the same as leaving a phone charger plugged in.</p>
-<p>A Pi 4 or Pi 5 draws considerably more (nearer 3–5&nbsp;watts idle), so if running costs matter
-and your Wi-Fi has a 2.4GHz band, the Zero 2 W is the efficient choice.</p></div></details>
+<p>Bigger boards cost more to run, though none of it is much. At the current price cap
+(26.32p per kWh) a continuously-powered watt costs about <strong>£2.30 a year</strong>, so:</p>
+<table style="margin-top:10px">
+  <tr><th>Build</th><th>Typical draw</th><th>Per year</th></tr>
+  <tr><td class="k">Pi Zero 2 W + e-paper</td><td>~0.5 W</td><td>~£1.20</td></tr>
+  <tr><td class="k">Pi 3 Model A+ + e-paper</td><td>~1.4 W</td><td>~£3</td></tr>
+  <tr><td class="k">Pi 4 + e-paper</td><td>~2.7 W</td><td>~£6</td></tr>
+  <tr><td class="k">Pi 5 + e-paper</td><td>~3 W</td><td>~£7</td></tr>
+  <tr><td class="k">Any Pi + 128×32 LED matrix</td><td>~6–9 W</td><td>~£15–£20</td></tr>
+</table>
+<p style="margin-top:10px">The LED figures depend heavily on brightness and on how much of the
+panel is lit — Ident's screens are mostly dark, which helps, but a bright board in a hall is the
+one build where the electricity is worth a thought. Board figures are typical published idle
+draws rather than our own measurements.</p></div></details>
 
 <details><summary>Does it need to stay plugged in?</summary><div class="body">
 <p>Yes, for updates. E-paper keeps its image without power, so the display doesn't go blank if you
@@ -86,8 +98,9 @@ unplug it — it simply stops changing. Power draw is very low.</p></div></detai
 
 <details><summary>Which airlines does it work with?</summary><div class="body">
 <p>Ident was built and tested against <strong>easyJet eCrew</strong> calendar feeds. Any roster
-published as a standard <span class="mono">.ics</span> calendar has a good chance of working, and
-PDF rosters can be uploaded too.</p>
+published as a standard <span class="mono">.ics</span> calendar has a good chance of working —
+either as a live feed, or by uploading the file by hand. Reading eCrew roster
+<strong>PDFs</strong> is supported as an optional extra you can install if you need it.</p>
 <p>If you fly for another airline, don't buy yet — <a href="airlines.html">apply for a free
 Ident</a> instead. Help us read your airline's roster and the licence is yours free,
 permanently. If it turns out not to be possible we'll say so rather than take your money.</p></div></details>
@@ -168,9 +181,16 @@ ports on your router.</p>
 <p>Left switched off, your display is reachable only from your own home network.</p></div></details>
 
 <details><summary>Is the control panel protected?</summary><div class="body">
-<p>You set a username and password during setup. Passwords are stored only as a salted hash. If you
-expose the panel to the internet, use one of the tunnel options above so the connection is
-encrypted.</p></div></details>
+<p>Yes, and not optionally: you set a username and password during setup, minimum six
+characters. The panel shows your roster and holds your calendar link — which is effectively a
+password for your whole schedule — so it isn't something to leave open, even on a home network.
+Passwords are stored only as a salted hash.</p>
+<p><strong>Forgotten it?</strong> Take the SD card out, put a file called
+<span class="mono">ident-reset.txt</span> on the small drive that appears when you plug the card
+into a computer, put it back and switch the display on. It clears the password and deletes the
+file — no Terminal, no reflashing. It needs the card in your hand, which is the point.</p>
+<p>If you expose the panel to the internet, use one of the tunnel options above so the connection
+is encrypted.</p></div></details>
 
 <details><summary>Can I run more than one display?</summary><div class="body">
 <p>Yes. Point each one at the same roster link and they'll stay in step by themselves — no server
