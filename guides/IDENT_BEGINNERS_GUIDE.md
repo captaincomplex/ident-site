@@ -248,14 +248,20 @@ The very first time, you'll get a **setup page**. Fill in:
 - **Airline code** — e.g. `U2` for easyJet.
 - **Roster calendar URL** — your eCrew `.ics` link, if you have it to hand. You can
   leave this blank and add it later.
-- **Username and password** — this locks the control panel. Leave the password blank
-  if you'd rather have no login (fine on a home network you trust; not fine if you
-  ever make it reachable from the internet).
+- **Username and password** — this locks the control panel, and it is required: at
+  least six characters. The panel shows your roster and holds your calendar link,
+  which is effectively a password for your whole schedule, so it isn't something to
+  leave open even on a network you trust.
+
+  **If you ever forget it:** take the SD card out, put a file called
+  `ident-reset.txt` on the small drive that appears when you plug the card into a
+  computer, put it back, and switch the display on. It clears the password and
+  deletes the file. No Terminal, no reflashing.
 
 Press **Finish setup** and you land on the control panel. From here you can, with no
 typing of code:
 
-- **Roster:** upload your eCrew PDF, or paste your roster calendar (iCal) link and
+- **Roster:** paste your roster calendar (iCal) link, or upload a `.ics` file, and
   tap **Pull feed now**.
 - **Add a personal flight:** type a flight number and date for a non-work trip — it
   looks up the route and times and tracks it (with a 90-minute "report" time).
