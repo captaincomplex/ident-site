@@ -1,7 +1,7 @@
 {
-  "version": "4.12.0",
-  "url": "https://ident.xpdr.aero/releases/ident_4-12-0.zip",
-  "sha256": "fe9a3f5df5a69c3dd68134f875e65c6ebb082890766af2fd808d6cbb02f80cef",
-  "notes": "v4.12.0 — WFTU shows as a day off, and a brief for new conversations",
-  "released": "2026-08-28T09:32:21Z"
+  "version": "4.14.0",
+  "url": "https://ident.xpdr.aero/releases/ident_4-14-0.zip",
+  "sha256": "2792442fad2f15c38c5eae909f5fbeceb3d24fd9bd6a3d252c07f1b9e3855fe4",
+  "notes": "Live drive time home, back as an option — v4.14.0",
+  "released": "2026-09-03T18:30:31Z"
 }

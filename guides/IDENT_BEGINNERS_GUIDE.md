@@ -8,7 +8,7 @@ nothing here can break your computer.
 
 Set aside about **two hours** for the first build (most of it is waiting).
 
-> **Correct as of version 4.13.0** (September 2026).
+> **Correct as of version 4.14.0** (September 2026).
 > Ident updates itself, so if your display reports a newer version some screenshots and
 > steps here may have moved on. The version is shown in the control panel; check the
 > release notes on GitHub for anything that has changed since.
@@ -376,7 +376,11 @@ manage it forever from `http://ident.local:8080` on your phone.
   later in the control panel's Advanced section. The wall works without one; you
   just won't get live times or the in-air position, so on a delayed day it will
   show the scheduled times, which is precisely the day they are wrong. Your
-  commute home is a slider you set once, not a live lookup.
+  commute home is a slider you set once. If you would rather it asked how long
+  the drive home really is, with traffic, there is a **Live drive time home**
+  switch in Advanced — it needs a Google Maps key and your home and car-park
+  coordinates, and it only asks while you are actually flying, so it costs very
+  little. It is off unless you turn it on.
 - Airline logos are trademarks, so the app doesn't come with any — it simply shows
   the image files *you* upload, which is exactly what you want for your own display.
 
@@ -397,5 +401,5 @@ and your working version is backed up first, so a failed update leaves it alone.
 
 ---
 
-*Correct as of version 4.13.0 — September 2026.*
+*Correct as of version 4.14.0 — September 2026.*
 *When Ident is updated, this guide is reviewed and this line is updated with it.*
