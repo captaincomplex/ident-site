@@ -8,7 +8,7 @@ nothing here can break your computer.
 
 Set aside about **two hours** for the first build (most of it is waiting).
 
-> **Correct as of version 4.6.0** (August 2026).
+> **Correct as of version 4.13.0** (September 2026).
 > Ident updates itself, so if your display reports a newer version some screenshots and
 > steps here may have moved on. The version is shown in the control panel; check the
 > release notes on GitHub for anything that has changed since.
@@ -219,9 +219,21 @@ Start the program:
 python -m ident.main
 ```
 
-You should see lines like `Inky detected: 800x480 (spectra6)` and
-`side buttons A/B/C/D armed`. The numbers will match whichever panel you bought —
-`600x400` for the 4.0", `1600x1200` for the 13.3", `600x448 (acep7)` for the older 5.7".
+You should see lines like
+
+```
+[ident] found a impression_7_3 panel (800x480, spectra6) — output set to e-paper
+[ident] Inky detected: 800x480 (spectra6)
+[ident] side buttons A/B/C/D armed
+```
+
+Ident asks the screen what it is and sets itself up for it — there is nothing to
+choose and nothing to type. The numbers will match whichever panel you bought:
+`600x400` for the 4.0", `800x480` for the 7.3", `1600x1200` for the 13.3", and
+`600x448 (acep7)` for the older 5.7".
+
+If it says nothing about a panel, the screen wasn't found — go back to Part 6 and
+check SPI **and** I2C are both on.
 
 Leave it running and go to Part 10 — you'll do the rest of the setup from your phone,
 with no more typing of code. (There's no settings file to edit by hand any more; the
@@ -268,7 +280,9 @@ typing of code:
 - **Airline logos:** upload your easyJet logo (use code `U2`) so the boarding-pass
   style shows it; add others (e.g. `BA`) for personal flights. Use PNG images with a
   see-through background for the best look.
-- **Display style:** tap a thumbnail to choose how the wall looks.
+- **Display style:** tap a thumbnail to choose how the wall looks. Only the styles
+  your screen is big enough to draw are shown — the month calendar needs a 7" panel
+  or larger, so it doesn't appear on a 4.0".
 - **Timing sliders:** set your commute, walk-to-car, and debrief minutes so the
   "home" time is right for you.
 - **All settings:** the section at the very bottom exposes every option if you ever
@@ -357,10 +371,12 @@ manage it forever from `http://ident.local:8080` on your phone.
 - The e-paper screen is **glass and fragile** — handle it by the edges.
 - It refreshes slowly (20-35 seconds) and isn't a touchscreen — that's normal for
   this kind of display and is why it sips power and reads like paper.
-- Live flight tracking and the home-drive-time estimate use online services
-  (AeroDataBox, Flightradar24, Google Maps) that need free/cheap API keys — you can
-  add those later in the control panel's Advanced section. The wall works fine
-  without them; you just won't get the live in-air position until they're set.
+- Live flight tracking uses an online service (AeroDataBox by default, or
+  Flightradar24 if you have a token) that needs a free or cheap API key — add it
+  later in the control panel's Advanced section. The wall works without one; you
+  just won't get live times or the in-air position, so on a delayed day it will
+  show the scheduled times, which is precisely the day they are wrong. Your
+  commute home is a slider you set once, not a live lookup.
 - Airline logos are trademarks, so the app doesn't come with any — it simply shows
   the image files *you* upload, which is exactly what you want for your own display.
 
@@ -368,12 +384,18 @@ manage it forever from `http://ident.local:8080` on your phone.
 
 ## Keeping it up to date
 
-Ident checks GitHub once a day for a newer version and tells you in the control panel
-when one is available. Installing is a single click and always your choice — nothing is
-installed behind your back. The download is checked against a published checksum and
-your current version is backed up first, so a failed update leaves the working one alone.
+Ident checks `ident.xpdr.aero` once a day for a newer version — your own display asks
+our website; nothing is reported back to us.
+
+A new version **installs itself**, but only once it has been published for three days,
+and never in the middle of a duty — only on a day off or between duties. The three-day
+wait is the safety net: a bad release sits on the author's own wall for three days
+before it can reach yours. The control panel shows your version and a button to install
+a waiting update immediately if you would rather not wait, and a switch to turn the
+automatic part off completely. Every download is checked against a published checksum
+and your working version is backed up first, so a failed update leaves it alone.
 
 ---
 
-*Correct as of version 4.6.0 — August 2026.*
+*Correct as of version 4.13.0 — September 2026.*
 *When Ident is updated, this guide is reviewed and this line is updated with it.*
