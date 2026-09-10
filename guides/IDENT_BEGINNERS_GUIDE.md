@@ -8,7 +8,7 @@ nothing here can break your computer.
 
 Set aside about **two hours** for the first build (most of it is waiting).
 
-> **Correct as of version 4.14.1** (September 2026).
+> **Correct as of version 4.14.2** (September 2026).
 > Ident updates itself, so if your display reports a newer version some screenshots and
 > steps here may have moved on. The version is shown in the control panel; check the
 > release notes on GitHub for anything that has changed since.
@@ -263,8 +263,9 @@ The very first time, you'll get a **setup page**. Fill in:
 - **Display name** — anything you like ("Kitchen"). Useful if you ever run two.
 - **Home base** — your base airport code, e.g. `LGW`.
 - **Airline code** — e.g. `U2` for easyJet.
-- **Roster calendar URL** — your eCrew `.ics` link, if you have it to hand. You can
-  leave this blank and add it later.
+- **Roster calendar URL** — your crew calendar link, if you have it to hand. You
+  can leave this blank and add it later. **Part 10a below explains where to find
+  it** — it's the one thing in this build that isn't obvious.
 - **Username and password** — this locks the control panel, and it is required: at
   least six characters. The panel shows your roster and holds your calendar link,
   which is effectively a password for your whole schedule, so it isn't something to
@@ -295,6 +296,71 @@ typing of code:
 
 Once you've set it up, go back to the Pi Terminal and press `Ctrl + C` to stop the
 test run. We'll now make it start by itself.
+
+---
+
+## Part 10a — Where to find your calendar link
+
+This trips people up, so it gets its own part.
+
+Ident wants a **web address that serves your calendar**, not a calendar file you
+downloaded. The difference matters: a file is a snapshot of today, while an
+address is re-read every half hour, so a roster change appears on the wall
+without you doing anything.
+
+Every provider names it differently — *secret address*, *private address*,
+*subscription link*, *ICS link* — and they all mean the same thing: a long,
+unguessable URL, usually ending in `.ics`.
+
+> **Treat that link like a password.** Anyone who has it can read your whole
+> roster, forever, without logging in to anything. Don't email it, don't post it
+> in a forum, and don't put it in a message to support — Ident deliberately hides
+> it from its own diagnostics for the same reason.
+
+**From your crew portal (eCrew).** Look for wording like *subscribe*, *export to
+calendar* or *iCal feed*, and take the **link** rather than the download. If your
+portal will only give you a file, that's fine — upload the `.ics` in the control
+panel instead, and re-upload it when your roster changes.
+
+**From Google Calendar** — the usual route if you already mirror your roster
+there:
+
+1. Open Google Calendar on a computer (not the phone app — the option isn't there).
+2. Settings (the gear, top right) → **Settings**.
+3. On the left, under *Settings for my calendars*, click the calendar's name.
+4. Click **Integrate calendar**.
+5. Copy the link under **Secret address in iCal format**.
+
+If you ever share it by accident, there's a **Reset** button in the same place
+that kills the old link and issues a new one. ([Google's own
+instructions](https://support.google.com/calendar/answer/37648).)
+
+**From Apple / iCloud Calendar:**
+
+1. Go to iCloud.com/calendar and sign in.
+2. Click the information button next to the calendar's name.
+3. Turn on **Public Calendar**.
+4. Click **Copy**.
+
+That link begins `webcal://` rather than `https://`. Paste it exactly as it is —
+Ident understands it. ([Apple's own
+instructions](https://support.apple.com/guide/icloud/share-a-calendar-mm6b1a9479/icloud).)
+
+**From Outlook.com or Microsoft 365:**
+
+1. In Calendar, go to Settings → **Calendar** → **Shared calendars**.
+2. Under *Publish a calendar*, pick the calendar and the option that shows all
+   details.
+3. Click **Publish**, then copy the **ICS** link — there's an HTML one beside it,
+   which is a web page, not a feed.
+
+([Microsoft's own
+instructions](https://support.microsoft.com/en-us/outlook/share-your-calendar-in-outlook-com).)
+
+**How to tell you've got the right link.** Paste it into a browser. You should
+get a download, or a screen full of text starting `BEGIN:VCALENDAR`. If you get a
+login page or a normal-looking calendar, that's the wrong link — it's the *view*
+of the calendar, not the feed.
 
 ---
 
@@ -406,5 +472,5 @@ and your working version is backed up first, so a failed update leaves it alone.
 
 ---
 
-*Correct as of version 4.14.1 — September 2026.*
+*Correct as of version 4.14.2 — September 2026.*
 *When Ident is updated, this guide is reviewed and this line is updated with it.*
