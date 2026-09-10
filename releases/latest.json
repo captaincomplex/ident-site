@@ -1,7 +1,7 @@
 {
-  "version": "4.14.1",
-  "url": "https://ident.xpdr.aero/releases/ident_4-14-1.zip",
-  "sha256": "23cc6a3f32375ee4a80cb1169fef766e6dbd567cec183e018610a351beafd2b3",
-  "notes": "Two defects the first real panel found — v4.14.1",
-  "released": "2026-09-10T11:24:41Z"
+  "version": "4.14.2",
+  "url": "https://ident.xpdr.aero/releases/ident_4-14-2.zip",
+  "sha256": "4a82d02e635a8ccff0c256ff07a397c7a65128145b6ca55c8ec041d2a34ec91b",
+  "notes": "Where to find the calendar's feed link — v4.14.2",
+  "released": "2026-09-10T11:39:46Z"
 }

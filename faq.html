@@ -133,6 +133,38 @@ or a holiday flight. (Route lookup needs a free AeroDataBox key, set once in Adv
 <p>You paste your crew calendar link into the control panel once. Ident then re-checks it every 30
 minutes, so roster changes appear without you doing anything.</p></div></details>
 
+<details><summary>Where do I find my calendar link?</summary><div class="body">
+<p>Ident needs a <em>web address that serves your calendar</em>, not a calendar file you've
+downloaded &mdash; a file is a snapshot, an address keeps up. Providers name it differently
+&mdash; secret address, private address, subscription link, ICS link &mdash; but it's the same
+thing: a long, unguessable URL, usually ending <span class="mono">.ics</span>.</p>
+<p><strong>In your crew portal,</strong> look for <em>subscribe</em>, <em>export to calendar</em>
+or <em>iCal feed</em>, and take the link rather than the download. If it will only give you a
+file, upload that in the control panel instead.</p>
+<p><strong>Google Calendar:</strong> on a computer, Settings &rarr; <em>Settings for my
+calendars</em> &rarr; the calendar &rarr; <strong>Integrate calendar</strong> &rarr; copy
+<strong>Secret address in iCal format</strong>. There's a <em>Reset</em> button beside it if the
+link ever gets out.
+(<a href="https://support.google.com/calendar/answer/37648" target="_blank" rel="noopener">Google's
+instructions</a>)</p>
+<p><strong>iCloud:</strong> iCloud.com/calendar &rarr; the info button beside the calendar &rarr;
+turn on <strong>Public Calendar</strong> &rarr; <strong>Copy</strong>. The link starts
+<span class="mono">webcal://</span> &mdash; paste it exactly as given, Ident understands it.
+(<a href="https://support.apple.com/guide/icloud/share-a-calendar-mm6b1a9479/icloud" target="_blank" rel="noopener">Apple's
+instructions</a>)</p>
+<p><strong>Outlook.com / Microsoft 365:</strong> Settings &rarr; Calendar &rarr; <em>Shared
+calendars</em> &rarr; <strong>Publish a calendar</strong>, choose the calendar and the option
+showing all details, publish, then copy the <strong>ICS</strong> link &mdash; not the HTML one.
+(<a href="https://support.microsoft.com/en-us/outlook/share-your-calendar-in-outlook-com" target="_blank" rel="noopener">Microsoft's
+instructions</a>)</p>
+<p><strong>Check it before you paste it.</strong> Opened in a browser, the right link downloads or
+displays text beginning <span class="mono">BEGIN:VCALENDAR</span>. A login page or a normal-looking
+calendar means you've got the view, not the feed.</p>
+<p><strong>And treat it as a password.</strong> Anyone holding that link can read your whole
+roster, indefinitely, without signing in to anything. Don't email it, post it, or send it to
+support &mdash; Ident keeps it out of its own diagnostics export for exactly that reason.</p>
+</div></details>
+
 <details><summary>Does it handle standby, training and days off?</summary><div class="body">
 <p>Yes. It recognises standby, training and non-flying codes and shows the right screen. On a day
 off it shows your next duty — the date, report time and where you're going.</p></div></details>
