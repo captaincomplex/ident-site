@@ -1,7 +1,7 @@
 {
-  "version": "4.14.0",
-  "url": "https://ident.xpdr.aero/releases/ident_4-14-0.zip",
-  "sha256": "2792442fad2f15c38c5eae909f5fbeceb3d24fd9bd6a3d252c07f1b9e3855fe4",
-  "notes": "Live drive time home, back as an option — v4.14.0",
-  "released": "2026-09-03T18:30:31Z"
+  "version": "4.14.1",
+  "url": "https://ident.xpdr.aero/releases/ident_4-14-1.zip",
+  "sha256": "23cc6a3f32375ee4a80cb1169fef766e6dbd567cec183e018610a351beafd2b3",
+  "notes": "Two defects the first real panel found — v4.14.1",
+  "released": "2026-09-10T11:24:41Z"
 }
