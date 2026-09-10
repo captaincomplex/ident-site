@@ -8,7 +8,7 @@ nothing here can break your computer.
 
 Set aside about **two hours** for the first build (most of it is waiting).
 
-> **Correct as of version 4.14.0** (September 2026).
+> **Correct as of version 4.14.1** (September 2026).
 > Ident updates itself, so if your display reports a newer version some screenshots and
 > steps here may have moved on. The version is shown in the control panel; check the
 > release notes on GitHub for anything that has changed since.
@@ -153,11 +153,16 @@ Enter after each:
 ```
 sudo raspi-config nonint do_spi 0
 sudo raspi-config nonint do_i2c 0
+echo "dtoverlay=spi0-0cs" | sudo tee -a /boot/firmware/config.txt
 sudo reboot
 ```
 
 ("sudo" just means "do this as the administrator." The reboot will disconnect you —
 that's expected.) Wait a minute, then reconnect with the same `ssh pilot@ident.local`.
+
+The third line matters as much as the first two. The Pi reserves one of the pins
+the screen needs for itself; that line hands it over. Skip it and Ident stops with
+"Woah there, some pins we need are in use!" and nothing appears on the screen.
 
 ---
 
@@ -352,8 +357,8 @@ manage it forever from `http://ident.local:8080` on your phone.
 
 - **Text is tiny:** the fonts didn't install. Run `sudo apt install -y fonts-dejavu-core`
   then `sudo systemctl restart ident`.
-- **Screen says "Woah there, some pins are in use":** run this once, then reboot —
-  `echo "dtoverlay=spi0-0cs" | sudo tee -a /boot/firmware/config.txt` then `sudo reboot`.
+- **Screen says "Woah there, some pins we need are in use":** you missed the third
+  line in Part 6. Run it now and reboot.
 - **Can't reach the web page:** make sure the address ends in **:8080**, and that
   your phone is on the same Wi-Fi.
 - **Want to change which Wi-Fi the Pi uses:** connect with SSH and run `sudo nmtui`,
@@ -401,5 +406,5 @@ and your working version is backed up first, so a failed update leaves it alone.
 
 ---
 
-*Correct as of version 4.14.0 — September 2026.*
+*Correct as of version 4.14.1 — September 2026.*
 *When Ident is updated, this guide is reviewed and this line is updated with it.*
