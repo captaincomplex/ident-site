@@ -1,7 +1,7 @@
 {
-  "version": "4.14.2",
-  "url": "https://ident.xpdr.aero/releases/ident_4-14-2.zip",
-  "sha256": "4a82d02e635a8ccff0c256ff07a397c7a65128145b6ca55c8ec041d2a34ec91b",
-  "notes": "Where to find the calendar's feed link — v4.14.2",
-  "released": "2026-09-10T11:39:46Z"
+  "version": "4.15.0",
+  "url": "https://ident.xpdr.aero/releases/ident_4-15-0.zip",
+  "sha256": "b96660424832ffd79b0754214a13135404e63d98be3c084225b7946329656864",
+  "notes": "v4.15.0 — one table of roster codes, and both parsers read it",
+  "released": "2026-09-11T15:43:50Z"
 }

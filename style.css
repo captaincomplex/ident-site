@@ -144,7 +144,7 @@ button[disabled]{opacity:.55;cursor:progress}
 .triad h3{font-size:19px;margin:0 0 8px;letter-spacing:-.01em}
 .triad p{color:var(--muted);margin:0;font-size:15px}
 .split{display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:center}
-.split img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);display:block;background:#111}
+.split img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);display:block;background:#111}
 .kicker{color:var(--muted);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 10px}
 .reassure{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
   border-top:1px solid var(--line);padding-top:30px;margin-top:14px}
@@ -243,4 +243,12 @@ html:not(.tabs-js) .tabpanel[hidden]{display:block}
 @media(max-width:560px){
   .tabbar{top:58px}
   .tab{padding:8px 14px;font-size:14px}
+}
+
+/* The nav is seven links; below ~700px let them wrap instead of running off
+   the side of the page. */
+@media(max-width:700px){
+  nav .wrap{flex-wrap:wrap;height:auto;gap:14px;padding-top:10px;padding-bottom:10px}
+  nav .sp{display:none}
+  nav .brand{width:100%}
 }
