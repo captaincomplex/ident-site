@@ -144,7 +144,7 @@ button[disabled]{opacity:.55;cursor:progress}
 .triad h3{font-size:19px;margin:0 0 8px;letter-spacing:-.01em}
 .triad p{color:var(--muted);margin:0;font-size:15px}
 .split{display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:center}
-.split img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);display:block;background:#111}
+.split img{width:100%;height:auto;border-radius:var(--radius);display:block;background:#111}
 .kicker{color:var(--muted);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 10px}
 .reassure{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
   border-top:1px solid var(--line);padding-top:30px;margin-top:14px}
