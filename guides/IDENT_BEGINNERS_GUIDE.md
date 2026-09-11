@@ -8,7 +8,7 @@ nothing here can break your computer.
 
 Set aside about **two hours** for the first build (most of it is waiting).
 
-> **Correct as of version 4.14.2** (September 2026).
+> **Correct as of version 4.15.0** (September 2026).
 > Ident updates itself, so if your display reports a newer version some screenshots and
 > steps here may have moved on. The version is shown in the control panel; check the
 > release notes on GitHub for anything that has changed since.
@@ -472,5 +472,5 @@ and your working version is backed up first, so a failed update leaves it alone.
 
 ---
 
-*Correct as of version 4.14.2 — September 2026.*
+*Correct as of version 4.15.0 — September 2026.*
 *When Ident is updated, this guide is reviewed and this line is updated with it.*
