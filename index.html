@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ident — the fridge door roster you were promised</title>
+<title>Ident — know when they're home</title>
 <meta name="description" content="A flight-duty board for the wall. Ident reads your airline roster and shows where you are, when you're back, and how long they have with you. Scan the code to track the flight. Colour e-paper or LED matrix.">
 <link rel="stylesheet" href="style.css">
-<script>document.documentElement.className=(window.matchMedia("(prefers-reduced-motion: reduce)").matches?"":"js");</script>
+<script>document.documentElement.classList.add("tabs-js");document.documentElement.className+=" "+(window.matchMedia("(prefers-reduced-motion: reduce)").matches?"":"js");</script>
 </head>
 <body>
+
 
 <nav><div class="wrap">
   <a class="brand" href="/">IDENT<span>.</span></a>
@@ -23,6 +24,7 @@
 </div></nav>
 
 <header><div class="wrap">
+  <p class="kicker">Always on. Always accurate.</p>
   <h1>Know when they're home.</h1>
   <p class="lead">Where you are, when you're back, how long they have with you.
     Ident reads your roster and puts it on the wall — and unlike the printout,
@@ -44,33 +46,98 @@
   <p class="cap" style="text-align:left;margin-top:12px">A day off, with the next duty already showing</p>
 </div></section>
 
-<section><div class="wrap">
-  <p class="kicker">Two kinds of display</p>
-  <h2 class="reveal">Paper-quiet, or bright and alive</h2>
-  <p class="sub">Same roster, same software. Pick whichever suits the room.</p>
+<div class="tabbar"><div class="wrap">
+  <div class="tabs" role="tablist" aria-label="Who is this for">
+    <button type="button" class="tab" id="t-family" role="tab" aria-selected="true"
+            aria-controls="p-family">Friends &amp; family</button>
+    <button type="button" class="tab" id="t-pilots" role="tab" aria-selected="false"
+            aria-controls="p-pilots">Pilots</button>
+  </div>
+</div></div>
 
-  <div class="family reveal">
-    <div class="fam">
-      <img src="img/panels/impression_7_3_board_solari.png" alt="Colour e-paper panel showing a departure board">
-      <div class="body">
-        <h3>Colour e-paper</h3>
-        <p>Looks like printed paper. No glow, readable in direct sun, keeps its
-          picture unplugged. The quiet one — hallway, kitchen, bedroom wall.</p>
-        <div class="meta">4.0″ · 7.3″ · 13.3″ · redraws in about 30 seconds</div>
-      </div>
+<div class="tabpanel" id="p-family" role="tabpanel" aria-labelledby="t-family">
+
+<section class="tabintro"><div class="wrap">
+  <p class="kicker">For the people at home</p>
+  <h2 class="reveal">Ident reads your roster and keeps up-to-date</h2>
+  <p class="sub">Say goodbye to texting screenshots of eCrew changes.</p>
+  <div class="split" style="margin-top:30px;align-items:start">
+    <div>
+      <p class="sub" style="margin:0 0 14px">Anyone who knows an airline pilot understands
+        that their day can change in an instant. The best-laid plans for your time together
+        can change drastically depending on all sorts of factors. Sometimes, by the time
+        they can tell you, it's too late.</p>
+      <p class="sub" style="margin:0">Ident gives an instant oversight of how their plans
+        change, as it happens. No more mental maths or waiting for a text back when they
+        land: <strong>if they are delayed, you are notified.</strong></p>
     </div>
-    <div class="fam">
-      <img src="img/styles/board_dot.png" alt="Dot-matrix lettering in the style of an airport gate sign">
-      <div class="body">
-        <h3>LED matrix</h3>
-        <p>Bright, instant, unmistakably a departure board. Reads across a room.
-          The one people notice — study, office, bar.</p>
-        <div class="meta">HUB75 panels · 64×32 and up · updates in real time</div>
-      </div>
+    <img src="img/photo/kitchen_inflight.jpg" style="height:auto;aspect-ratio:4/3;object-position:50% 72%" alt="The display on a kitchen worktop beside a plant, showing IN FLIGHT LGW to NTE, landing 09:05 and home 16:38" loading="lazy" width="1100" height="1466">
+  </div>
+  <div class="triad reveal">
+    <div>
+      <h3>Designed for friends and family</h3>
+      <p>Synced to eCrew and ADS-B data to give an accurate arrival time.</p>
+    </div>
+    <div>
+      <h3>Know when they're home</h3>
+      <p>Uses airline rostering (eCrew), flight tracking (AeroBox) and live traffic
+        (Google Maps) data to give a precise home arrival time. If they're delayed,
+        you'll see it.</p>
+    </div>
+    <div>
+      <h3>ETA &mdash; confirmed.</h3>
+      <p>An updated arrival time for the front door, not just the airport &mdash; recalculated
+        from live traffic as the drive gets closer.</p>
     </div>
   </div>
-  <p class="sub" style="margin-top:20px">Not sure? <a href="displays.html">Compare the displays</a>,
-    including what to avoid.</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="split">
+    <div>
+      <p class="kicker">Scan to track</p>
+      <p class="lede">Point a phone at the screen. Watch the flight.</p>
+      <p class="sub" style="margin:0 0 14px">While you're airborne the board carries a code
+        that opens your actual flight, live. Whoever's at home gets the map without
+        knowing your flight number, and without you sending it.</p>
+      <p class="sub" style="margin:0">Press the button on the side and it fills the screen —
+        scannable from across the kitchen. Or leave a small one in the corner of whichever
+        style you've picked. It only appears while a duty is running, and never on a day off.</p>
+    </div>
+    <img src="img/qr_corner.png" alt="The board showing IN FLIGHT LGW to NTE, with a scannable code in the bottom corner that opens the live flight" loading="lazy" width="1600" height="960">
+  </div>
+</div></section>
+
+<section class="bleed">
+  <div class="shot-full reveal">
+    <img src="img/photo/band_dining.jpg" alt="An Ident display on a dining table in a family living room, showing the day off and the next duty" loading="lazy" width="2000" height="857">
+    <div class="overlay"><div class="wrap">
+      <h2>The real fridge door roster</h2>
+      <p>Not another thing to open. A thing that is simply there — and right.</p>
+    </div></div>
+  </div>
+</section>
+
+<section><div class="wrap">
+  <p class="kicker">The bit that matters</p>
+  <h2 class="reveal">How long they get to keep you.</h2>
+  <p class="sub">It shows the next duty as well as this one, so the people at home can
+    always see how much time they have with you &mdash; without asking, and without waiting
+    for an answer.</p>
+</div></section>
+
+</div>
+
+<div class="tabpanel" id="p-pilots" role="tabpanel" aria-labelledby="t-pilots" hidden>
+
+<section class="tabintro"><div class="wrap">
+  <p class="kicker">For the flight deck</p>
+  <h2 class="reveal">ETA &mdash; confirmed.</h2>
+  <p class="sub" style="max-width:70ch">Ident can show your current flight, your estimated
+    arrival time, and what time you'll arrive home based on traffic conditions. It shows
+    your next duty, so your loved ones can always see how much time they have with you.</p>
+  <p class="sub" style="max-width:70ch">Ident even gives an updated ETA for when you'll be
+    home, based on live data from Google Maps.</p>
 </div></section>
 
 <section id="how"><div class="wrap">
@@ -125,22 +192,6 @@
       <p>Big destination, plain times. Old enough to read a clock is old enough to work
         out when Mum or Dad lands.</p>
     </div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="split">
-    <div>
-      <p class="kicker">Scan to track</p>
-      <p class="lede">Point a phone at the screen. Watch the flight.</p>
-      <p class="sub" style="margin:0 0 14px">While you're airborne the board carries a code
-        that opens your actual flight, live. Whoever's at home gets the map without
-        knowing your flight number, and without you sending it.</p>
-      <p class="sub" style="margin:0">Press the button on the side and it fills the screen —
-        scannable from across the kitchen. Or leave a small one in the corner of whichever
-        style you've picked. It only appears while a duty is running, and never on a day off.</p>
-    </div>
-    <img src="img/qr_corner.png" alt="The board showing IN FLIGHT LGW to NTE, with a scannable code in the bottom corner that opens the live flight" loading="lazy" width="1600" height="960">
   </div>
 </div></section>
 
@@ -204,15 +255,52 @@
   </div>
 </div></section>
 
-<section class="bleed">
-  <div class="shot-full reveal">
-    <img src="img/photo/band_dining.jpg" alt="An Ident display on a dining table in a family living room, showing the day off and the next duty" loading="lazy" width="2000" height="857">
-    <div class="overlay"><div class="wrap">
-      <h2>The real fridge door roster</h2>
-      <p>Not another thing to open. A thing that is simply there — and right.</p>
-    </div></div>
+<section id="styles"><div class="wrap">
+  <p class="kicker">Thirteen looks</p>
+  <h2 class="reveal">Make it suit the room</h2>
+  <p class="sub">Same duty, thirteen ways. Change it from your phone or with a button
+    on the frame.</p>
+
+  <div class="gal">
+    <div class="navbtns">
+      <button type="button" aria-label="Previous style" onclick="railScroll(-1)">&larr;</button>
+      <button type="button" aria-label="Next style" onclick="railScroll(1)">&rarr;</button>
+    </div>
+    <div class="rail" id="rail">
+      <div class="slide"><img loading="lazy" src="img/styles/board_solari.png" alt="Solari departure board style">
+        <div class="t"><h3>Solari board</h3><span>the default</span></div>
+        <p>Split-flap departure board. Route, landing time, home time, progress.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/tiles.png" alt="Tiles dashboard style">
+        <div class="t"><h3>Tiles</h3><span>most detail</span></div>
+        <p>Six panels: flight, route, landing, home, live status and time to run.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/minimal.png" alt="Minimal style">
+        <div class="t"><h3>Minimal</h3><span>read it from the hall</span></div>
+        <p>One enormous destination and the two times that matter.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/timeline.png" alt="Duty timeline style">
+        <div class="t"><h3>Duty timeline</h3><span>long days</span></div>
+        <p>The whole duty as one bar, with a marker showing where you are in it.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/board_dot.png" alt="LED dot matrix sign style">
+        <div class="t"><h3>Dot sign</h3><span>gate board</span></div>
+        <p>Dot-matrix lettering, like the sign at the gate.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/board_flip.png" alt="Flip clock style">
+        <div class="t"><h3>Flip clock</h3><span>retro</span></div>
+        <p>Mechanical flip-tile lettering, like an old station clock.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/board_yellow.png" alt="Yellow grid style">
+        <div class="t"><h3>Yellow grid</h3><span>high contrast</span></div>
+        <p>Classic yellow on black. The most legible at distance.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/board_rail.png" alt="Rail blue style">
+        <div class="t"><h3>Rail blue</h3><span>calm</span></div>
+        <p>A softer railway palette for rooms where black would shout.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/swiss.png" alt="Swiss style">
+        <div class="t"><h3>Swiss</h3><span>typographic</span></div>
+        <p>White, gridded, restrained. More poster than gadget.</p></div>
+      <div class="slide"><img loading="lazy" src="img/styles/cockpit.png" alt="Cockpit EFIS style">
+        <div class="t"><h3>Cockpit</h3><span>for the nerds</span></div>
+        <p>Instrument-panel colours. Familiar if you spend your day behind one.</p></div>
+    </div>
+    <div class="galhint"><span class="arrow">&#8596;</span> Scroll or swipe · two more draw live route maps</div>
   </div>
-</section>
+</div></section>
 
 <section><div class="wrap">
   <div class="split">
@@ -325,90 +413,6 @@
   </div>
 </div></section>
 
-<section id="styles"><div class="wrap">
-  <p class="kicker">Thirteen looks</p>
-  <h2 class="reveal">Make it suit the room</h2>
-  <p class="sub">Same duty, thirteen ways. Change it from your phone or with a button
-    on the frame.</p>
-
-  <div class="gal">
-    <div class="navbtns">
-      <button type="button" aria-label="Previous style" onclick="railScroll(-1)">&larr;</button>
-      <button type="button" aria-label="Next style" onclick="railScroll(1)">&rarr;</button>
-    </div>
-    <div class="rail" id="rail">
-      <div class="slide"><img loading="lazy" src="img/styles/board_solari.png" alt="Solari departure board style">
-        <div class="t"><h3>Solari board</h3><span>the default</span></div>
-        <p>Split-flap departure board. Route, landing time, home time, progress.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/tiles.png" alt="Tiles dashboard style">
-        <div class="t"><h3>Tiles</h3><span>most detail</span></div>
-        <p>Six panels: flight, route, landing, home, live status and time to run.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/minimal.png" alt="Minimal style">
-        <div class="t"><h3>Minimal</h3><span>read it from the hall</span></div>
-        <p>One enormous destination and the two times that matter.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/timeline.png" alt="Duty timeline style">
-        <div class="t"><h3>Duty timeline</h3><span>long days</span></div>
-        <p>The whole duty as one bar, with a marker showing where you are in it.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/board_dot.png" alt="LED dot matrix sign style">
-        <div class="t"><h3>Dot sign</h3><span>gate board</span></div>
-        <p>Dot-matrix lettering, like the sign at the gate.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/board_flip.png" alt="Flip clock style">
-        <div class="t"><h3>Flip clock</h3><span>retro</span></div>
-        <p>Mechanical flip-tile lettering, like an old station clock.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/board_yellow.png" alt="Yellow grid style">
-        <div class="t"><h3>Yellow grid</h3><span>high contrast</span></div>
-        <p>Classic yellow on black. The most legible at distance.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/board_rail.png" alt="Rail blue style">
-        <div class="t"><h3>Rail blue</h3><span>calm</span></div>
-        <p>A softer railway palette for rooms where black would shout.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/swiss.png" alt="Swiss style">
-        <div class="t"><h3>Swiss</h3><span>typographic</span></div>
-        <p>White, gridded, restrained. More poster than gadget.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/cockpit.png" alt="Cockpit EFIS style">
-        <div class="t"><h3>Cockpit</h3><span>for the nerds</span></div>
-        <p>Instrument-panel colours. Familiar if you spend your day behind one.</p></div>
-    </div>
-    <div class="galhint"><span class="arrow">&#8596;</span> Scroll or swipe · two more draw live route maps</div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="split">
-    <img src="img/panels/impression_13_3_minimal.png" alt="A 13.3 inch e-paper panel showing the minimal style with a large destination code">
-    <div>
-      <p class="kicker">Your data</p>
-      <p class="lede">Your roster never leaves the display.</p>
-      <p class="sub" style="margin:0">It fetches your roster over your own connection and
-        keeps it on the device. No account, and no service of ours holding your schedule —
-        because we never receive it.</p>
-    </div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <p class="kicker">Discretion</p>
-  <h2 class="reveal">Privacy when it matters most</h2>
-  <p class="sub">Some days on a roster are nobody else's business.</p>
-  <div class="split" style="align-items:center;margin-top:26px">
-    <div>
-      <p class="sub" style="margin:0 0 14px">Compassionate leave, sickness, a
-        resignation, a disciplinary, a meeting that could be either — eighteen codes
-        are hidden by default and shown as an ordinary day off.</p>
-      <p class="sub" style="margin:0 0 14px"><strong>You choose which.</strong> Setup
-        lists every one with a plain explanation of why it might matter, and you tick
-        any you'd rather see. Nothing is revealed unless you ask.</p>
-      <p class="sub" style="margin:0 0 14px">The board hangs where the whole house — and
-        everyone who visits — can read it. Whether to explain a particular day off should
-        be your decision, made in your own time. Not something a wall announces the moment
-        crewing update your roster.</p>
-      <p class="sub" style="margin:0">It isn't just hidden on screen: those codes are
-        discarded when your roster is read, so they never reach the device's storage at
-        all. Nothing that isn't kept can appear later.</p>
-    </div>
-    <img src="img/month_7_3.png" alt="A month calendar on an e-paper panel, with flying days, days off and standby" loading="lazy" width="1600" height="960">
-  </div>
-</div></section>
-
 <section><div class="wrap">
   <p class="kicker">Two more ways to see it</p>
   <h2 class="reveal">The whole month, or none of it</h2>
@@ -446,6 +450,116 @@
         An unhurried hour.</p></div>
   </div>
 
+
+  <div class="reassure reveal">
+    <div><h4>Buy your own parts</h4><p>We sell the software. No hardware markup, nothing proprietary.</p></div>
+    <div><h4>It updates itself</h4><p>New versions arrive on the device. You choose when to install.</p></div>
+    <div><h4>Illustrated build guide</h4><p>Step by step, written for someone who has never used a Raspberry Pi.</p></div>
+    <div><h4>Real support</h4><p>Questions answered by someone who flies the line. <a href="support.html">Ask anything</a>.</p></div>
+  </div>
+</div></section>
+
+</div>
+
+<section><div class="wrap">
+  <p class="kicker">Two kinds of display</p>
+  <h2 class="reveal">Paper-quiet, or bright and alive</h2>
+  <p class="sub">Same roster, same software. Pick whichever suits the room.<br>
+    Ident comes in different sizes — 4.0, 5.7 and 7.3-inch displays are available.</p>
+
+  <div class="family reveal">
+    <div class="fam">
+      <img src="img/panels/impression_7_3_board_solari.png" alt="Colour e-paper panel showing a departure board">
+      <div class="body">
+        <h3>Colour e-paper</h3>
+        <p>Looks like printed paper. No glow, readable in direct sun, keeps its
+          picture unplugged. The quiet one — hallway, kitchen, bedroom wall.</p>
+        <div class="meta">4.0″ · 5.7″ · 7.3″ · redraws in about 30 seconds</div>
+      </div>
+    </div>
+    <div class="fam">
+      <img src="img/styles/board_dot.png" alt="Dot-matrix lettering in the style of an airport gate sign">
+      <div class="body">
+        <h3>LED matrix</h3>
+        <p>Bright, instant, unmistakably a departure board. Reads across a room.
+          The one people notice — study, office, bar.</p>
+        <div class="meta">HUB75 panels · 64×32 and up · updates in real time</div>
+      </div>
+    </div>
+  </div>
+  <p class="sub" style="margin-top:20px">Not sure? <a href="displays.html">Compare the displays</a>,
+    including what to avoid.</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="split">
+    <div>
+      <p class="kicker">Building your own?</p>
+      <p class="lede"><strong>Ident software</strong> can run on almost any Raspberry Pi.</p>
+      <p class="sub" style="margin:0 0 18px">See Build for details.</p>
+      <a class="btn ghost" href="parts.html">See Build</a>
+    </div>
+    <img src="img/panels/impression_7_3_timeline.png" alt="A duty timeline on a 7.3 inch e-paper panel" loading="lazy">
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="split">
+    <img src="img/panels/impression_13_3_minimal.png" alt="A 13.3 inch e-paper panel showing the minimal style with a large destination code">
+    <div>
+      <p class="kicker">Your data</p>
+      <p class="lede">Your roster never leaves the display.</p>
+      <p class="sub" style="margin:0">It fetches your roster over your own connection and
+        keeps it on the device. No account, and no service of ours holding your schedule —
+        because we never receive it.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Privacy and control</p>
+  <h2 class="reveal">We take privacy seriously.</h2>
+  <p class="sub" style="max-width:74ch">We never see your roster or give anyone else access
+    to it &mdash; only the current flight number. During setup you can choose to enable live
+    traffic information, if you provide your home location &mdash; this is only sent to Google
+    Maps. You control your Ident on your home WiFi network, securely.</p>
+  <h2 class="reveal" style="margin-top:34px">You have control.</h2>
+  <p class="sub" style="max-width:74ch">Sensitive roster codes such as
+    <span class="mono">FTGD</span>, <span class="mono">UNFT</span>, <span class="mono">NSO</span>,
+    <span class="mono">SOC</span>, <span class="mono">MEET</span>, <span class="mono">WFTU</span>,
+    <span class="mono">HOSP</span> or <span class="mono">RESN</span> can be automatically
+    hidden &mdash; these will then show as days off or standby, depending on your preference.</p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Discretion</p>
+  <h2 class="reveal">Privacy when it matters most</h2>
+  <p class="sub">Some days on a roster are nobody else's business.</p>
+  <div class="split" style="align-items:center;margin-top:26px">
+    <div>
+      <p class="sub" style="margin:0 0 14px">Compassionate leave, sickness, a
+        resignation, a disciplinary, a meeting that could be either — eighteen codes
+        are hidden by default and shown as an ordinary day off.</p>
+      <p class="sub" style="margin:0 0 14px"><strong>You choose which.</strong> Setup
+        lists every one with a plain explanation of why it might matter, and you tick
+        any you'd rather see. Nothing is revealed unless you ask.</p>
+      <p class="sub" style="margin:0 0 14px">The board hangs where the whole house — and
+        everyone who visits — can read it. Whether to explain a particular day off should
+        be your decision, made in your own time. Not something a wall announces the moment
+        crewing update your roster.</p>
+      <p class="sub" style="margin:0">It isn't just hidden on screen: those codes are
+        discarded when your roster is read, so they never reach the device's storage at
+        all. Nothing that isn't kept can appear later.</p>
+    </div>
+    <img src="img/month_7_3.png" alt="A month calendar on an e-paper panel, with flying days, days off and standby" loading="lazy" width="1600" height="960">
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Your airline</p>
+  <h2 class="reveal">Airline not supported?</h2>
+  <p class="sub">Apply for a free Ident and we'll build support for you. See T&amp;Cs.</p>
+
   <div class="split" style="margin-top:38px;align-items:center">
     <div>
       <p class="kicker">Not easyJet?</p>
@@ -457,13 +571,7 @@
     </div>
     <img src="img/panels/impression_7_3_timeline.png" alt="A duty timeline on a 7.3 inch e-paper panel" loading="lazy">
   </div>
-
-  <div class="reassure reveal">
-    <div><h4>Buy your own parts</h4><p>We sell the software. No hardware markup, nothing proprietary.</p></div>
-    <div><h4>It updates itself</h4><p>New versions arrive on the device. You choose when to install.</p></div>
-    <div><h4>Illustrated build guide</h4><p>Step by step, written for someone who has never used a Raspberry Pi.</p></div>
-    <div><h4>Real support</h4><p>Questions answered by someone who flies the line. <a href="support.html">Ask anything</a>.</p></div>
-  </div>
+  <p class="cap" style="text-align:left;margin-top:34px">Coming soon: <strong>Ident:LED</strong></p>
 </div></section>
 
 <footer><div class="wrap">
@@ -520,5 +628,45 @@ function railScroll(dir){
   if(!r||!s)return;
   r.scrollBy({left:dir*(s.getBoundingClientRect().width+16),behavior:'smooth'});
 }
+</script>
+
+<script>
+/* Audience tabs. Deep-linkable as #pilots / #family; falls back to both panels
+   being shown when JavaScript is off (see .tabs-js in style.css). */
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  if(!tabs.length) return;
+  function show(id,push){
+    tabs.forEach(function(t){
+      var sel=t.getAttribute('aria-controls')===id;
+      t.setAttribute('aria-selected',sel?'true':'false');
+      var panel=document.getElementById(t.getAttribute('aria-controls'));
+      if(panel) panel.hidden=!sel;
+    });
+    if(push&&history.replaceState){
+      history.replaceState(null,'',id==='p-pilots'?'#pilots':'#family');
+    }
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      show(t.getAttribute('aria-controls'),true);
+      window.scrollTo({top:document.querySelector('.tabbar').offsetTop-58,behavior:'smooth'});
+    });
+    t.addEventListener('keydown',function(e){
+      if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft') return;
+      e.preventDefault();
+      var next=tabs[(tabs.indexOf(t)+1)%tabs.length];
+      next.focus(); show(next.getAttribute('aria-controls'),true);
+    });
+  });
+  /* A link to a section inside the hidden panel must open that panel first. */
+  var pilotIds=['how','styles'];
+  function fromHash(){
+    var h=(location.hash||'').replace('#','');
+    if(h==='pilots'||pilotIds.indexOf(h)>-1) show('p-pilots',false);
+    else if(h==='family') show('p-family',false);
+  }
+  addEventListener('hashchange',fromHash); fromHash();
+})();
 </script>
 </body></html>
