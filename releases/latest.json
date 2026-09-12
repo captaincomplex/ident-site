@@ -1,7 +1,7 @@
 {
-  "version": "4.15.0",
-  "url": "https://ident.xpdr.aero/releases/ident_4-15-0.zip",
-  "sha256": "f417ee6020bbe62b602245e0e2f8343dd8741ffab7bcef1b6104c076f98c5ce0",
-  "notes": "One table of roster codes, and FTGD is private \u2014 v4.15.0",
-  "released": "2026-09-12T16:44:58Z"
+  "version": "4.15.1",
+  "url": "https://ident.xpdr.aero/releases/ident_4-15-1.zip",
+  "sha256": "81139ab81cf144a400c523bb27784b7cf5e1a4e34956772ee111fb6048c2e585",
+  "notes": "Union days, unfit and uncontactable \u2014 v4.15.1",
+  "released": "2026-09-12T16:56:02Z"
 }
