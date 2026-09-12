@@ -1,7 +1,7 @@
 {
   "version": "4.15.0",
   "url": "https://ident.xpdr.aero/releases/ident_4-15-0.zip",
-  "sha256": "6d351d458e0097ce655a0ea46b904e484ba1cc6fad441939ff64b00577a30f4e",
-  "notes": "Match "fatigued" spelled out, as every other private code does",
-  "released": "2026-09-12T16:43:56Z"
+  "sha256": "f417ee6020bbe62b602245e0e2f8343dd8741ffab7bcef1b6104c076f98c5ce0",
+  "notes": "One table of roster codes, and FTGD is private \u2014 v4.15.0",
+  "released": "2026-09-12T16:44:58Z"
 }
