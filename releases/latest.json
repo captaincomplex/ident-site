@@ -1,7 +1,7 @@
 {
   "version": "4.15.0",
   "url": "https://ident.xpdr.aero/releases/ident_4-15-0.zip",
-  "sha256": "b96660424832ffd79b0754214a13135404e63d98be3c084225b7946329656864",
-  "notes": "v4.15.0 — one table of roster codes, and both parsers read it",
-  "released": "2026-09-11T15:43:50Z"
+  "sha256": "d6224dde9843c6103bdae033a4164dbfa2fb233a3d8ca66ecbe7f8e5077e6d41",
+  "notes": "FTGD is Fatigued",
+  "released": "2026-09-12T16:42:36Z"
 }
