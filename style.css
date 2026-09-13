@@ -1,24 +1,20 @@
-/* Night flight deck. The ground is near-black and slightly cool; everything
-   drawn on it follows the flight-deck colour convention (FAA HF-STD, table
-   3.7.1): white for labels and figures, amber for caution, green for engaged
-   and normal, cyan for sky and armed, red for warnings only. Amber is also the
-   colour the e-paper board itself draws its own labels in, so it carries the
-   brand. Six colours, as the guidance asks. */
+/* Dark slate ground with a warm accent. Green and red are kept for the one
+   place they carry real meaning — which panel to buy and which is discontinued. */
 :root{
-  --bg:#0b0e13;           /* ground */
-  --panel:#141a22;        /* raised surface */
-  --panel2:#1b222c;       /* recessed surface, form fields */
-  --line:#252f3b;         /* hairlines and borders */
-  --ink:#e7ecf2;          /* labels, figures, body text */
-  --muted:#93a0b1;        /* secondary text */
-  --white:#f7fafd;        /* strongest text (legacy token name) */
-  --accent:#5ec8e8;       /* cyan — links and anything interactive */
-  --accent2:#93dcf3;      /* cyan, hover */
-  --brand:#e8a33d;        /* amber — the board's own colour */
-  --brand-ink:#0b0e13;    /* text on an amber fill */
-  --warn:#f0b357; --warnbg:#221a0e;
-  --ok:#57bf8d;           /* green — engaged, normal */
-  --bad:#e8635a;          /* red — warnings, used sparingly */
+  --bg:#161b22;           /* ground */
+  --panel:#1e242d;        /* raised surface */
+  --panel2:#252d38;       /* recessed surface, form fields */
+  --line:#323c49;         /* hairlines and borders */
+  --ink:#e6ebf1;          /* body text */
+  --muted:#9aa7b6;        /* secondary text */
+  --white:#f5f8fb;        /* strongest text (legacy token name) */
+  --accent:#7fb2e8;       /* links and anything interactive */
+  --accent2:#a8ccf2;      /* link hover */
+  --brand:#e0a154;        /* the board's amber, used sparingly */
+  --brand-ink:#161b22;    /* text on an amber fill */
+  --warn:#e8b872; --warnbg:#241d12;
+  --ok:#6cc79a;           /* available */
+  --bad:#e5776e;          /* discontinued */
   --radius:16px; --max:1120px;
 }
 *{box-sizing:border-box}
@@ -34,7 +30,7 @@ a{color:var(--accent)}
 .mono{font-family:"Fira Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .k{color:var(--white);font-weight:600}
 
-nav{position:sticky;top:0;z-index:20;background:rgba(11,14,19,.95);
+nav{position:sticky;top:0;z-index:20;background:rgba(22,27,34,.95);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;gap:22px;height:58px}
 nav .brand{font-weight:700;letter-spacing:.14em;font-size:15px;color:var(--white);text-decoration:none}
@@ -246,7 +242,7 @@ button[disabled]{opacity:.55;cursor:progress}
 }
 
 /* --- Audience tabs (Friends & family / Pilots) ------------------------- */
-.tabbar{position:sticky;top:58px;z-index:15;background:rgba(11,14,19,.95);
+.tabbar{position:sticky;top:58px;z-index:15;background:rgba(22,27,34,.95);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .tabs{display:flex;gap:8px;padding:10px 0}
 .tab{appearance:none;border:1px solid var(--line);background:var(--panel);
@@ -296,7 +292,6 @@ img.sz-s,img.sz-m,img.sz-l{margin-inline:auto}
 
 
 /* --- Dark-scheme details ------------------------------------------------ */
-.kicker{color:var(--brand)}                     /* section eyebrows in board amber */
 nav .brand span{color:var(--brand)}
 a:hover{color:var(--accent2)}
 .yes{color:var(--ok)}
@@ -308,6 +303,5 @@ h1,h2{color:var(--white)}
 .family .fam,.card,.pcard{background:var(--panel);border-color:var(--line)}
 table{border-color:var(--line)}
 /* Images sit on the dark ground rather than a white block. */
-.split img,.shots img,.slide img,.fam img,.pcard img{background:#05070a}
+.split img,.shots img,.slide img,.fam img,.pcard img{background:#0f1319}
 /* A hairline in board amber under the masthead, like a display's header rule. */
-header{border-bottom:1px solid var(--line);box-shadow:inset 0 -3px 0 -2px var(--brand)}
