@@ -1,7 +1,7 @@
 {
-  "version": "4.15.1",
-  "url": "https://ident.xpdr.aero/releases/ident_4-15-1.zip",
-  "sha256": "81139ab81cf144a400c523bb27784b7cf5e1a4e34956772ee111fb6048c2e585",
-  "notes": "Union days, unfit and uncontactable \u2014 v4.15.1",
-  "released": "2026-09-12T16:56:02Z"
+  "version": "4.16.0",
+  "url": "https://ident.xpdr.aero/releases/ident_4-16-0.zip",
+  "sha256": "b244b9f83e47f137f0410037cab875ee1d19d12ab4a0c96c33fd6e0f43f047e5",
+  "notes": "Settings that reach the wall, and a rebuilt control panel \u2014 v4.16.0",
+  "released": "2026-09-13T15:58:01Z"
 }
