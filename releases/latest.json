@@ -1,7 +1,7 @@
 {
-  "version": "4.16.0",
-  "url": "https://ident.xpdr.aero/releases/ident_4-16-0.zip",
-  "sha256": "b244b9f83e47f137f0410037cab875ee1d19d12ab4a0c96c33fd6e0f43f047e5",
-  "notes": "Settings that reach the wall, and a rebuilt control panel \u2014 v4.16.0",
-  "released": "2026-09-13T15:58:01Z"
+  "version": "4.17.0",
+  "url": "https://ident.xpdr.aero/releases/ident_4-17-0.zip",
+  "sha256": "785e922929b79c1d48031568db58834f570a879b551403645eb5343d4c459510",
+  "notes": "The wordmark, live heartbeat, and a QR you can move, resize and recolour \u2014 v4.17.0",
+  "released": "2026-09-13T17:08:44Z"
 }
