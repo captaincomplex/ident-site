@@ -1,7 +1,7 @@
 {
-  "version": "4.18.0",
-  "url": "https://ident.xpdr.aero/releases/ident_4-18-0.zip",
-  "sha256": "49862e10a09ded150d7446bb96d039508b176fd924ecdd733ba93f5f479539bc",
-  "notes": "Your own photographs on days off, from an Apple Photos album \u2014 v4.18.0",
-  "released": "2026-09-13T19:31:35Z"
+  "version": "4.18.1",
+  "url": "https://ident.xpdr.aero/releases/ident_4-18-1.zip",
+  "sha256": "98fe7b91a4a6b879c50997a8c3a31271e74e55741f5cb1bf27c78f8de96d179a",
+  "notes": "Album by any name, and captions on every QR control \u2014 v4.18.1",
+  "released": "2026-09-13T19:44:19Z"
 }
