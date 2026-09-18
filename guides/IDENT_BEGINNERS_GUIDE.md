@@ -142,6 +142,19 @@ ssh pilot@ident.local
 > `ident`, note its IP address (like `192.168.1.81`), and use
 > `ssh pilot@192.168.1.81` instead.
 
+> **If the Pi never got onto your Wi-Fi at all**, it gives up after two minutes
+> and makes a Wi-Fi network of its own, called **Ident-Setup**. Join that from
+> your phone — the password is **identsetup** — and your phone will open a page
+> listing the networks the Pi can see. Pick yours, type its password, and the
+> Pi moves onto your Wi-Fi and switches its own network off. This is the way
+> back in when nothing else works, and it needs no laptop and no typing of
+> commands.
+>
+> That password is the same on every display and is published here on purpose:
+> it is there so a neighbour's phone doesn't join by accident, not to protect
+> anything. Nothing private goes over it — the setup page will not accept your
+> roster link or your panel password until the display is on your own network.
+
 ---
 
 ## Part 6 — Turn on the screen connection
@@ -430,6 +443,10 @@ manage it forever from `http://ident.local:8080` on your phone.
 - **Want to change which Wi-Fi the Pi uses:** connect with SSH and run `sudo nmtui`,
   choose *Activate a connection*, pick the new network and enter its password.
   (Remember: 2.4GHz only, and you'll briefly lose the connection while it switches.)
+- **Moved house, or the router changed:** you don't need SSH at all. The display
+  will find itself offline, raise its own **Ident-Setup** network after two
+  minutes, and wait. Join it from a phone with the password **identsetup** and
+  point it at the new Wi-Fi.
 - **Updating to a new version later:** copy the new `ident.zip` across (Part 8
   step 2), then on the Pi: `cd ~ && unzip -o ident.zip`, then
   `find ~/ident -name __pycache__ -type d -exec rm -rf {} +`, then
