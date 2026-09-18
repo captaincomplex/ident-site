@@ -2,6 +2,6 @@
   "version": "4.19.0",
   "url": "https://ident.xpdr.aero/releases/ident_4-19-0.zip",
   "sha256": "4fd81bb0b938e036ea043070b74244b6c8c09e14df114aaf3afb2962a66788d2",
-  "notes": "Write down that 4.19.0 is committed and not yet published",
+  "notes": "A setup hotspot you can actually join. Ident-Setup now has a published password, identsetup, and first-time setup happens on your home network rather than over that hotspot.",
   "released": "2026-09-18T07:33:03Z"
 }
