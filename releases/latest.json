@@ -1,7 +1,7 @@
 {
-  "version": "4.18.2",
-  "url": "https://ident.xpdr.aero/releases/ident_4-18-2.zip",
-  "sha256": "057112f873fea61ba28aa92622db67e320b66d974284cb617a47d46673c1e8ac",
-  "notes": "Roster privacy tidied, Updates out in front \u2014 v4.18.2",
-  "released": "2026-09-13T19:53:17Z"
+  "version": "4.19.0",
+  "url": "https://ident.xpdr.aero/releases/ident_4-19-0.zip",
+  "sha256": "4fd81bb0b938e036ea043070b74244b6c8c09e14df114aaf3afb2962a66788d2",
+  "notes": "Write down that 4.19.0 is committed and not yet published",
+  "released": "2026-09-18T07:33:03Z"
 }

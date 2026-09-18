@@ -199,7 +199,12 @@ conversation than a cloud service, but the responsibility is yours.</p></div></d
 <details><summary>How do I set it up?</summary><div class="body">
 <p>Flash the SD card, plug the display onto the Pi, power it up, and open the setup page in your
 browser. It walks you through your base, airline, roster link and a password. Allow an unhurried
-hour for a first build.</p></div></details>
+hour for a first build.</p>
+<p>If the display can't find a network it knows, it puts up a Wi-Fi network of its own called
+<b>Ident-Setup</b>. Join that from your phone — the password is <b>identsetup</b>, the same on every
+display — and it will ask you to pick your home Wi-Fi. Once it's on your own network you carry on
+with setup there. It won't take your roster link or your panel password over its own hotspot,
+because that hotspot's password is printed here for anyone to read.</p></div></details>
 
 <details><summary>How do I change settings later?</summary><div class="body">
 <p>Through the control panel in any browser on your home network. You can change display style,
@@ -249,7 +254,9 @@ itself within a minute or two.</p></div></details>
 <details><summary>It won't connect to my Wi-Fi.</summary><div class="body">
 <p>Check the band first — if you're on a Zero 2 W, it must be 2.4GHz. Then check the password and
 that the network name is exactly right, including capitals. You can pre-load extra networks (a
-hotel or crashpad) from the control panel while you're still on a working connection.</p></div></details>
+hotel or crashpad) from the control panel while you're still on a working connection.</p>
+<p>After two minutes offline the display gives up and raises its own <b>Ident-Setup</b> network so you
+can rescue it from a phone. The password for that is <b>identsetup</b>.</p></div></details>
 
 <details><summary>The screen looks washed out or the colours are odd.</summary><div class="body">
 <p>Colour e-paper is muted by nature — it reflects light rather than emitting it. Cold rooms make it
