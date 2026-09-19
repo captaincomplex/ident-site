@@ -1,7 +1,7 @@
 {
-  "version": "4.19.0",
-  "url": "https://ident.xpdr.aero/releases/ident_4-19-0.zip",
-  "sha256": "4fd81bb0b938e036ea043070b74244b6c8c09e14df114aaf3afb2962a66788d2",
-  "notes": "A setup hotspot you can actually join. Ident-Setup now has a published password, identsetup, and first-time setup happens on your home network rather than over that hotspot.",
-  "released": "2026-09-18T07:33:03Z"
+  "version": "4.20.0",
+  "url": "https://ident.xpdr.aero/releases/ident_4-20-0.zip",
+  "sha256": "b6afe097462f3629ea35c9b9075e5bdd0f828bfcd87fd263a6bcd142f4cbe2f1",
+  "notes": "Your Mac now sends the day-off album through the control panel - pair it under Days off, no SSH needed - and updates work on displays installed from the SD image.",
+  "released": "2026-09-19T11:37:58Z"
 }
