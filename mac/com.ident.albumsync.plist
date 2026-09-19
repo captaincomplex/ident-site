@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.ident.albumsync</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>REPLACE/WITH/FULL/PATH/sync_dayoff_album.py</string>
+    <!-- Nothing else is needed here. Pairing saved the display's address, the
+         code is in the Keychain, and the album name comes from the control
+         panel, so that is the single place to change it. -->
+  </array>
+
+  <!-- Hourly. Spotipi syncs every five minutes because its matrix cycles
+       through the album continuously; Ident shows one picture per day off and
+       chooses it by the date, so anything more often is just waking the Mac
+       and re-reading the Photos library for nothing. -->
+  <key>StartInterval</key>
+  <integer>3600</integer>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/ident-albumsync.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/ident-albumsync.err</string>
+</dict>
+</plist>
