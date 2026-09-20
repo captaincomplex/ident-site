@@ -225,7 +225,7 @@ Passwords are stored only as a salted hash.</p>
 <p><strong>Forgotten it?</strong> Take the SD card out, put a file called
 <span class="mono">ident-reset.txt</span> on the small drive that appears when you plug the card
 into a computer, put it back and switch the display on. It clears the password and deletes the
-file — no Terminal, no reflashing. It needs the card in your hand, which is the point.</p>
+file — nothing to install, no reflashing. It needs the card in your hand, which is the point.</p>
 <p>If you expose the panel to the internet, use one of the tunnel options above so the connection
 is encrypted.</p></div></details>
 
@@ -272,18 +272,11 @@ display style — turn it on under Display in the control panel, and pick which 
 nothing to track, so nothing is shown. Panels without buttons can still use the corner option.</p></div></details>
 
 <details><summary>Does the board show sensitive roster codes?</summary><div class="body">
-<p>Not unless you ask it to. Eighteen codes are hidden by default and shown as an ordinary
-day off: compassionate leave (<span class="mono">COMP</span>, <span class="mono">CMPU</span>),
-sickness and medical (<span class="mono">SICK</span>, <span class="mono">MED</span>,
-<span class="mono">LOL</span>), employment matters (<span class="mono">RESN</span>,
-<span class="mono">TERM</span>, <span class="mono">SUSP</span>, <span class="mono">DISC</span>,
-<span class="mono">GRV</span>), family leave (<span class="mono">MAT</span>,
-<span class="mono">PAT</span>, <span class="mono">PARL</span>), and the ambiguous ones where
-a routine day and a bad day look identical (<span class="mono">MEET</span>,
-<span class="mono">INT</span>, <span class="mono">SOC</span>, <span class="mono">UNPD</span>).</p>
-<p><strong>You choose which.</strong> Setup lists every one with a plain explanation of why it
-might matter, and you tick any you'd rather see. The same list is in settings. Nothing is
-revealed unless you ask.</p>
+<p>Not unless you ask it to. These are hidden by default and shown as an ordinary day off, in
+three groups: fitness and absence (<span class="mono">SICK</span>, <span class="mono">S/L</span>, <span class="mono">MED</span>, <span class="mono">LOL</span>, <span class="mono">UNFT</span>, <span class="mono">FTGD</span>, <span class="mono">NSO</span>, <span class="mono">UNCT</span>, <span class="mono">NAVB</span>); work and HR (<span class="mono">MEET</span>, <span class="mono">INT</span>, <span class="mono">SOC</span>, <span class="mono">DISC</span>, <span class="mono">GRV</span>, <span class="mono">SUSP</span>, <span class="mono">TERM</span>, <span class="mono">RESN</span>); and leave and family (<span class="mono">COMP</span>, <span class="mono">CMPU</span>, <span class="mono">MAT</span>, <span class="mono">PAT</span>, <span class="mono">PARL</span>, <span class="mono">UNPD</span>).</p>
+<p><strong>You choose which.</strong> Setup lists them by group, with a select all / none,
+and you tick any you'd rather see. The same list is in settings. Nothing is revealed unless
+you ask.</p>
 <p>Hidden codes aren't merely kept off the screen — they're discarded when your roster is
 parsed, so the original never reaches the device's storage. Nothing that isn't kept can appear
 later through a new display style, a diagnostics export, or a screenshot you send to support.

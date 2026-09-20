@@ -8,7 +8,7 @@ nothing here can break your computer.
 
 Set aside about **two hours** for the first build (most of it is waiting).
 
-> **Correct as of version 4.18.2** (September 2026).
+> **Correct as of version 4.21.0** (September 2026).
 > Ident updates itself, so if your display reports a newer version some screenshots and
 > steps here may have moved on. The version is shown in the control panel; check the
 > release notes on GitHub for anything that has changed since.
@@ -242,7 +242,7 @@ You should see lines like
 ```
 [ident] found a impression_7_3 panel (800x480, spectra6) — output set to e-paper
 [ident] Inky detected: 800x480 (spectra6)
-[ident] side buttons A/B/C/D armed
+[ident] side buttons armed: A=power, B=style, C=qr, D=next_duty
 ```
 
 Ident asks the screen what it is and sets itself up for it — there is nothing to
@@ -424,11 +424,17 @@ manage it forever from `http://ident.local:8080` on your phone.
 
 ## The four buttons on the screen
 
+Out of the box:
+
 - **Button A** — turn the display on/off
 - **Button B** — change the style (it remembers your choice)
-- **Button C** — boost the colour/contrast, then back to normal
+- **Button C** — show the flight's QR code full-screen, to scan with a phone
 - **Button D** — show a **next-duty card** for 7 seconds: the date, where you're going,
   your report time and first departure. Handy on a day off without reaching for a phone.
+
+Hold any button for two seconds to switch stronger colours on or off.
+
+You can change what each button does in the control panel, under **Buttons**.
 
 ---
 
@@ -489,5 +495,5 @@ and your working version is backed up first, so a failed update leaves it alone.
 
 ---
 
-*Correct as of version 4.18.2 — September 2026.*
+*Correct as of version 4.21.0 — September 2026.*
 *When Ident is updated, this guide is reviewed and this line is updated with it.*
