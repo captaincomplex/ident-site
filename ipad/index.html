@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Ident">
+<meta name="robots" content="noindex">
+<title>Ident</title>
+<style>
+:root{--ground:#101012;--sheet:#1b1b1e;--field:#26262a;--line:#3a3a40;--ink:#eceae0;
+  --muted:#a9a79c;--gold:#d0b24a;--warn:#e0875a;color-scheme:dark}
+/* Old iPads too (Safari on iOS 10): no inset, aspect-ratio, max() or flex gap. */
+[hidden]{display:none!important}
+html,body{height:100%;margin:0;background:var(--ground);color:var(--ink);
+  font:16px/1.45 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
+#stage{position:fixed;top:0;right:0;bottom:0;left:0;
+  display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;
+  -webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;
+  padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);
+  background:#161618;cursor:pointer;-webkit-tap-highlight-color:transparent}
+#board{width:100%;height:auto;max-width:100%;max-height:100%;display:block}
+#hint{position:fixed;right:12px;bottom:10px;color:#55544e;font-size:12px;letter-spacing:.06em;pointer-events:none}
+#sheet{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(8,8,10,.72);overflow-y:auto;-webkit-overflow-scrolling:touch}
+.panel{background:var(--sheet);border:1px solid var(--line);border-radius:12px;max-width:560px;
+  margin:16px auto 40px;padding:20px 20px 24px;box-sizing:border-box}
+@media (max-width:592px){.panel{margin:16px 16px 40px}}
+.panel h1{margin:0 0 4px;font-size:22px;letter-spacing:.08em}
+.panel h1 span{color:var(--gold)}
+.panel h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:26px 0 8px}
+.panel p{margin:6px 0;color:var(--muted);font-size:14.5px}
+.status{background:var(--field);border-radius:8px;padding:10px 12px;color:var(--ink);font-size:15px;
+  font-variant-numeric:tabular-nums}
+.status.err{background:#4a211c}
+label{display:block;margin:12px 0 0;font-size:15px}
+label small{display:block;color:var(--muted);font-size:13px;margin-top:3px}
+input[type=text],input[type=url],input[type=number],select{display:block;width:100%;box-sizing:border-box;margin-top:5px;
+  padding:10px;font-size:16px;border-radius:7px;border:1px solid var(--line);background:var(--field);color:var(--ink)}
+.row{overflow:hidden}
+.row label{float:left;width:48%;margin-right:4%}
+.row label:nth-child(2n){margin-right:0}
+.row label:nth-child(2n+1){clear:left}
+.buttons{margin-top:14px}
+.buttons>*{display:inline-block;margin:0 10px 10px 0;vertical-align:top}
+button,.filebtn{font:inherit;font-weight:650;font-size:16px;padding:12px 16px;border-radius:8px;border:1px solid var(--line);
+  background:var(--field);color:var(--ink);cursor:pointer}
+button.primary,.filebtn{background:var(--gold);color:#161618;border-color:var(--gold)}
+button.danger{color:var(--warn)}
+button:focus-visible,.filebtn:focus-within,input:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.filebtn input{position:absolute;width:1px;height:1px;opacity:0}
+.tips{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+@media (max-width:420px){.row label{float:none;width:auto;margin-right:0}}
+.filebtn{position:relative}
+</style>
+</head>
+<body>
+<div id="stage" role="button" tabindex="0" aria-label="Ident board. Tap for settings.">
+  <canvas id="board" width="800" height="480"></canvas>
+</div>
+<div id="hint">TAP FOR SETTINGS</div>
+
+<div id="sheet" hidden>
+ <form class="panel" id="form" autocomplete="off">
+  <h1>IDENT<span>.</span></h1>
+  <p>Your duty board, on this screen.</p>
+
+  <h2>Roster</h2>
+  <div class="status" id="rstatus">No roster loaded yet.</div>
+  <div class="buttons">
+    <label class="filebtn" for="file" style="margin:0">Load roster file (.ics)
+      <input type="file" id="file" accept=".ics,text/calendar"></label>
+  </div>
+  <p>Save your roster calendar as an .ics file, then choose it here. The file is read on this
+    device: private codes are dropped while it is read, the calendar text is thrown away, and
+    only your duties are kept. Nothing is sent anywhere. Load a fresh file whenever your
+    roster changes.</p>
+
+  <h2>Automatic updates</h2>
+  <div id="relayOff"><p>Not switched on in this version. For now, load a new roster file when
+    your roster changes.</p></div>
+  <div id="relayOn" hidden>
+    <label for="feed">Calendar link
+      <input type="url" id="feed" placeholder="https://… or webcal://…" autocapitalize="off" spellcheck="false">
+      <small>With a link here, this screen fetches your roster every 15 minutes through Ident's
+        update service, because iPads can't fetch a calendar from another site directly. The
+        service passes the calendar straight through and keeps nothing, but your roster does
+        pass through it on the way. Leave it empty to keep everything on this device.</small></label>
+    <div class="buttons"><button type="button" id="fetchNow">Update now</button></div>
+  </div>
+
+  <h2>Your details</h2>
+  <div class="row">
+    <label for="base">Home base<input type="text" id="base" maxlength="3" autocapitalize="characters"></label>
+    <label for="prefix">Flight prefix<input type="text" id="prefix" maxlength="4" autocapitalize="characters"></label>
+  </div>
+  <label for="tz">Times shown in
+    <select id="tz"><option value="base">Home-base local time</option><option value="utc">UTC (Z)</option>
+      <option value="station">Local time at each airport</option></select></label>
+  <div class="row">
+    <label for="debrief">Debrief (minutes)<input type="number" id="debrief" min="0" max="180" inputmode="numeric"></label>
+    <label for="walk">Walk to the car (minutes)<input type="number" id="walk" min="0" max="120" inputmode="numeric"></label>
+    <label for="commute">Drive home (minutes)<input type="number" id="commute" min="0" max="600" inputmode="numeric"></label>
+    <label for="wake">Wake before report (minutes)<input type="number" id="wake" min="0" max="600" inputmode="numeric"></label>
+  </div>
+  <label for="show">Private codes to show
+    <input type="text" id="show" autocapitalize="characters" spellcheck="false">
+    <small>Codes such as SICK or COMP show as a day off unless listed here. Normally empty.
+      Home base and this list take effect the next time the roster is loaded.</small></label>
+
+  <div class="buttons">
+    <button type="submit" class="primary">Save and close</button>
+    <button type="button" id="close">Close</button>
+  </div>
+
+  <h2>Keeping it on the wall</h2>
+  <ul class="tips">
+    <li>Turn the iPad sideways: the board is wide.</li>
+    <li>Add this page to the Home Screen (Share → Add to Home Screen) so it opens full screen.</li>
+    <li>Keep the screen on: Settings → Display &amp; Brightness → Auto-Lock → Never, and keep it on charge.</li>
+  </ul>
+
+  <h2>Remove</h2>
+  <div class="buttons"><button type="button" class="danger" id="forget">Remove my roster from this device</button></div>
+  <p id="forgetConfirm" hidden>Tap again to remove the roster and your details from this device.</p>
+ </form>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  // Ident's update service. Empty = automatic updates are off and nothing
+  // ever leaves the device. See ipad/relay/README.md before setting it.
+  var RELAY = "";
+  var FETCH_EVERY = 15 * 60 * 1000;
+
+  var K = { settings: "ident.settings", roster: "ident.roster", loaded: "ident.loadedAt",
+            source: "ident.source", feed: "ident.feed", fetchOk: "ident.fetchOk", fetchErr: "ident.fetchErr" };
+  function get(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
+  function put(k, v) {
+    try { if (v === null || v === undefined) window.localStorage.removeItem(k); else window.localStorage.setItem(k, String(v)); }
+    catch (e) { /* private browsing: works for this visit only */ }
+  }
+  var DEFAULTS = { base: "LGW", prefix: "EZY", tz: "base", debrief: 30, walk: 8, commute: 45, wake: 90, show: "" };
+  function settings() {
+    var s = {}, saved = {};
+    try { saved = JSON.parse(get(K.settings) || "{}") || {}; } catch (e) { saved = {}; }
+    for (var k in DEFAULTS) s[k] = saved.hasOwnProperty(k) ? saved[k] : DEFAULTS[k];
+    return s;
+  }
+
+  var core = null, api = null, fetching = false, lock = null;
+  var canvas = document.getElementById("board"), ctx = canvas.getContext("2d");
+  var sheet = document.getElementById("sheet");
+  var el = function (id) { return document.getElementById(id); };
+
+  function applySettings() {
+    var s = settings();
+    api.settings(String(s.base).toUpperCase(), String(s.prefix).toUpperCase(), s.tz,
+                 +s.debrief || 0, +s.walk || 0, +s.commute || 0, +s.wake || 0);
+  }
+
+  var DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function two(n) { return (n < 10 ? "0" : "") + n; }
+  function when(ms) {
+    var d = new Date(ms);
+    return DAYS[d.getDay()] + " " + d.getDate() + " " + MONTHS[d.getMonth()] + " " + two(d.getHours()) + ":" + two(d.getMinutes());
+  }
+
+  // The strip along the bottom appears only when the board may be out of date.
+  function note() {
+    var now = Date.now(), loaded = +get(K.loaded) || 0;
+    if (!get(K.roster)) return "";
+    if (get(K.source) === "relay") {
+      var ok = +get(K.fetchOk) || 0;
+      if (now - ok > 2 * 3600 * 1000)
+        return "roster from " + when(ok) + " - could not update: " + (get(K.fetchErr) || "no connection");
+      return "";
+    }
+    if (now - loaded > 24 * 3600 * 1000) return "roster loaded " + when(loaded) + " - load a new file when it changes";
+    return "";
+  }
+
+  function draw() {
+    if (!api) return;
+    var now = Date.now() / 1000;
+    var ptr = api.render(now, note());
+    var n = 800 * 480 * 4;
+    var img = ctx.createImageData(800, 480);
+    img.data.set(core.HEAPU8.subarray(ptr, ptr + n));
+    ctx.putImageData(img, 0, 0);
+    try {
+      var b = JSON.parse(api.board(now));
+      document.title = b.title ? "Ident - " + b.title + " " + b.hero : "Ident";
+      el("stage").setAttribute("aria-label", (b.title ? b.title + ". " + b.hero + ". " + b.sub + ". " : "") + "Tap for settings.");
+    } catch (e) {}
+  }
+
+  function keep(count) {
+    put(K.roster, api.rosterText());
+    put(K.loaded, Date.now());
+    return count;
+  }
+
+  function parseText(text) {
+    var s = settings();
+    var n = api.parse(text, String(s.show || ""), Date.now() / 1000);
+    return n < 0 ? -1 : keep(n);
+  }
+
+  function showStatus(msg, bad) {
+    var st = el("rstatus");
+    st.textContent = msg;
+    st.className = bad ? "status err" : "status";
+  }
+  function describe() {
+    if (!get(K.roster)) return showStatus("No roster loaded yet.");
+    var src = get(K.source) === "relay" ? "updated automatically" : "loaded from a file";
+    showStatus("Roster " + src + ", " + when(+get(K.loaded) || 0) + ".");
+  }
+
+  function feedUrl(u) {
+    u = (u || "").trim();
+    if (/^webcal:\/\//i.test(u)) u = "https://" + u.slice(9);
+    return u;
+  }
+
+  function fetchRoster() {
+    var link = feedUrl(get(K.feed));
+    if (!RELAY || !link || fetching || !api || !window.fetch) return Promise.resolve();
+    fetching = true;
+    return fetch(RELAY, { method: "POST", headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify({ url: link }), cache: "no-store", credentials: "omit" })
+      .then(function (r) {
+        if (!r.ok) return r.text().then(function (t) { throw new Error(t || ("update service answered " + r.status)); });
+        return r.text();
+      })
+      .then(function (text) {
+        if (parseText(text) < 0) throw new Error("the calendar link returned no events");
+        put(K.source, "relay"); put(K.fetchOk, Date.now()); put(K.fetchErr, null);
+      })
+      .catch(function (e) { put(K.fetchErr, String(e && e.message || e).slice(0, 80)); })
+      .then(function () { fetching = false; draw(); if (!sheet.hidden) describe(); });
+  }
+
+  // ---- settings sheet
+  function openSheet() {
+    var s = settings();
+    ["base", "prefix", "tz", "debrief", "walk", "commute", "wake", "show"].forEach(function (k) { el(k).value = s[k]; });
+    el("feed").value = get(K.feed) || "";
+    el("relayOff").hidden = !!RELAY; el("relayOn").hidden = !RELAY;
+    el("forgetConfirm").hidden = true;
+    describe();
+    sheet.hidden = false;
+  }
+  function closeSheet() { sheet.hidden = true; draw(); }
+
+  el("stage").addEventListener("click", function () { wake(); openSheet(); });
+  el("stage").addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openSheet(); } });
+  el("close").addEventListener("click", closeSheet);
+  sheet.addEventListener("click", function (e) { if (e.target === sheet) closeSheet(); });
+
+  el("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var s = {};
+    ["base", "prefix", "tz", "show"].forEach(function (k) { s[k] = el(k).value.trim(); });
+    ["debrief", "walk", "commute", "wake"].forEach(function (k) { s[k] = Math.max(0, parseInt(el(k).value, 10) || 0); });
+    if (!/^[A-Za-z]{3}$/.test(s.base)) s.base = DEFAULTS.base;
+    put(K.settings, JSON.stringify(s));
+    var before = get(K.feed) || "";
+    var link = el("feed").value.trim();
+    put(K.feed, link || null);
+    if (api) applySettings();
+    closeSheet();
+    if (RELAY && link && link !== before) fetchRoster();
+  });
+
+  el("fetchNow").addEventListener("click", function () {
+    put(K.feed, el("feed").value.trim() || null);
+    showStatus("Updating…");
+    fetchRoster();
+  });
+
+  el("file").addEventListener("change", function () {
+    var f = this.files && this.files[0];
+    if (!f) return;
+    var reader = new FileReader();
+    reader.onload = function () {
+      var n = api ? parseText(String(reader.result)) : -1;
+      reader = null;                                   // drop the calendar text
+      if (n < 0) return showStatus("That file has no calendar events in it. Choose your roster's .ics file.", true);
+      put(K.source, "file"); put(K.fetchErr, null);
+      showStatus(n + " duties loaded, " + when(Date.now()) + ".");
+      draw();
+    };
+    reader.onerror = function () { showStatus("That file could not be read. Try saving it again.", true); };
+    reader.readAsText(f);
+    this.value = "";
+  });
+
+  var armed = false;
+  el("forget").addEventListener("click", function () {
+    if (!armed) { armed = true; el("forgetConfirm").hidden = false; return; }
+    armed = false;
+    [K.settings, K.roster, K.loaded, K.source, K.feed, K.fetchOk, K.fetchErr].forEach(function (k) { put(k, null); });
+    location.reload();
+  });
+
+  // ---- keep the screen awake where the browser allows it
+  function wake() {
+    if (!("wakeLock" in navigator) || lock) return;
+    navigator.wakeLock.request("screen").then(function (l) {
+      lock = l; l.addEventListener("release", function () { lock = null; });
+    }).catch(function () {});
+  }
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "visible") { wake(); draw(); fetchRoster(); }
+  });
+
+  // ---- start
+  function tick() {
+    draw();
+    var ms = 60000 - (Date.now() % 60000) + 250;       // just after each minute
+    setTimeout(tick, ms);
+  }
+
+  // iPads with WebAssembly (iOS 11+) get the fast build; older ones (iOS
+  // 10.3) get the same code compiled to plain JavaScript. Both are built from
+  // firmware/e1002/lib/identcore by build.sh.
+  var modern = typeof WebAssembly === "object" && typeof WebAssembly.instantiate === "function";
+  var tag = document.createElement("script");
+  tag.src = modern ? "identcore.js" : "identcore-legacy.js";
+  tag.onerror = function () { showStatus("This page could not load its board. Check the connection and reload.", true); openSheet(); };
+  tag.onload = boot;
+  document.body.appendChild(tag);
+
+  function boot() {
+  window.IdentCore().then(function (M) {
+    core = M;
+    api = {
+      settings: M.cwrap("ident_settings", null, ["string", "string", "string", "number", "number", "number", "number"]),
+      parse: M.cwrap("ident_parse", "number", ["string", "string", "number"]),
+      rosterText: M.cwrap("ident_roster_text", "string", []),
+      load: M.cwrap("ident_load", "number", ["string"]),
+      render: M.cwrap("ident_render", "number", ["number", "string"]),
+      board: M.cwrap("ident_board_json", "string", ["number"])
+    };
+    applySettings();
+    var saved = get(K.roster);
+    if (saved && !api.load(saved)) put(K.roster, null);
+    tick();
+    wake();
+    fetchRoster();
+    setInterval(fetchRoster, FETCH_EVERY);
+    if (!get(K.roster)) openSheet();
+  });
+  }
+})();
+</script>
+</body>
+</html>
