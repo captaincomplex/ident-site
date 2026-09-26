@@ -271,6 +271,11 @@ a web browser and go to:
 http://ident.local:8080
 ```
 
+**Then add it to your home screen**, so you never type that address again:
+on an iPhone or iPad tap **Share → Add to Home Screen**; on Android tap the
+**⋮** menu → **Add to Home screen** (or **Install app**). You now have an Ident
+icon that opens full screen, like an app.
+
 The very first time, you'll get a **setup page**. Fill in:
 
 - **Display name** — anything you like ("Kitchen"). Useful if you ever run two.
@@ -465,6 +470,8 @@ You can change what each button does in the control panel, under **Buttons**.
 - The e-paper screen is **glass and fragile** — handle it by the edges.
 - It refreshes slowly (20-35 seconds) and isn't a touchscreen — that's normal for
   this kind of display and is why it sips power and reads like paper.
+- **The screen flashes while it redraws.** A colour panel runs through its colours
+  several times before it settles. That's normal, not a fault.
 - Live flight tracking uses an online service (AeroDataBox by default, or
   Flightradar24 if you have a token) that needs a free or cheap API key — add it
   later in the control panel's Advanced section. The wall works without one; you

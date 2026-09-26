@@ -22,12 +22,72 @@
 <header><div class="wrap">
   <span class="badge">buy your own parts · no markup</span>
   <h1>What to buy, <span class="g">and what not to pair</span></h1>
-  <p class="lead">Ident is software — you source the hardware yourself. Here's the reference build,
-    every supported alternative, and the combinations that will waste your money.</p>
+  <p class="lead">Ident is software — you source the hardware yourself. Start with how much you
+    want to build, then pick the parts. Every supported option is here, and so are the
+    combinations that will waste your money.</p>
 </div></header>
 
-<section><div class="wrap">
-  <h2>The reference build</h2>
+<section id="choose"><div class="wrap">
+  <h2>Three ways to run Ident</h2>
+  <p class="sub">Pick by how much you want to do yourself.</p>
+  <div class="grid">
+    <div class="card"><h3>Beginner — a ready-made display</h3>
+      <p>Seeed Studio's reTerminal: screen, battery, case and stand in one box. Nothing to
+        assemble — you install Ident from a computer with a USB-C cable.
+        <strong>In testing; not on sale yet.</strong>
+        <a href="#reterminal">The two models</a></p></div>
+    <div class="card"><h3>Intermediate — build it on a Raspberry Pi</h3>
+      <p>A Raspberry Pi and a Pimoroni e-paper panel, or an LED departure board. A little
+        assembly, no soldering, and every style and feature Ident has today.
+        <a href="#reference">The reference build</a></p></div>
+    <div class="card"><h3>Already got an iPad at home?</h3>
+      <p>If you run Ident on a Pi, an old iPad, tablet or laptop can show the board too — open
+        its display page in the browser. A stand-alone iPad version, with nothing else to
+        buy, is being planned.</p></div>
+  </div>
+</div></section>
+
+<section id="reterminal"><div class="wrap">
+  <h2>Beginner: the reTerminal</h2>
+  <p class="sub">Seeed Studio's reTerminal E series is a finished e-paper display with its own
+    small computer, battery and Wi-Fi. Ident is being written for both models below — same
+    board, different screen — and reads your roster on the display itself, as it does on a
+    Pi. <strong>It is in testing and not on sale yet</strong>; buy one now only if you are
+    joining the test.</p>
+  <table>
+    <tr><th>Model</th><th>Screen</th><th>Price</th><th>Battery</th><th>Redraw</th></tr>
+    <tr><td class="k"><a href="https://www.seeedstudio.com/reTerminal-E1002-p-6533.html" target="_blank" rel="noopener">E1002</a> (colour)</td>
+      <td>7.3″ colour e-paper (E Ink Spectra 6), 800×480</td>
+      <td><strong>£100.62</strong> at <a href="https://uk.robotshop.com/products/seeedstudio-reterminal-e1002-full-color-epaper-display" target="_blank" rel="noopener">RobotShop UK</a>,
+        including VAT — made to order, no change-of-mind returns.
+        Or US$99 direct from Seeed, shipped from China, with import VAT and a handling fee
+        to pay on delivery.</td>
+      <td>2000&nbsp;mAh. Seeed quote up to 3 months</td>
+      <td>15–30 seconds</td></tr>
+    <tr><td class="k"><a href="https://www.seeedstudio.com/reTerminal-E1001-p-6534.html" target="_blank" rel="noopener">E1001</a> (black &amp; white)</td>
+      <td>7.5″ black-and-white e-paper, 800×480</td>
+      <td><strong>£79.99</strong> at <a href="https://smarthomeshopuk.com/products/reterminal-e1001-7-5-monochrome-epaper-display-esp32-s3/" target="_blank" rel="noopener">Smart Home Shop UK</a>,
+        including VAT. Or US$73.99 direct from Seeed, with import charges as above.</td>
+      <td>2000&nbsp;mAh. Seeed quote up to 3 months</td>
+      <td>2–5 seconds</td></tr>
+  </table>
+  <div class="note" style="margin-top:16px"><strong>Battery life.</strong> Seeed's three months
+    is on their own software and settings. Ident checks your roster every 20 minutes while
+    you're working and hourly otherwise, but only redraws the screen when something has
+    changed — the redraw is where most of the power goes — and once a day regardless, to
+    keep the screen healthy. We'll publish a measured figure once testing is done; until
+    then, treat three months as the best case, not a promise. The colour screen uses more
+    per redraw than the black-and-white one. Both charge from any USB-C charger.</div>
+  <div class="note" style="margin-top:12px"><strong>The screen flashes when it redraws — that's
+    normal.</strong> The colour E1002 runs through its colours several times over 15–30
+    seconds before it settles; the black-and-white E1001 flickers briefly. It is how these
+    screens work, not a fault.</div>
+  <p class="sub" style="margin-top:14px">Prices checked 26 September 2026. The E1002 was out of
+    stock at Smart Home Shop UK (£116.99) and RS (£125.86) that day.</p>
+</div></section>
+
+<section id="reference"><div class="wrap">
+  <h2>Intermediate: the Raspberry Pi reference build</h2>
   <p class="sub">If you don't want to think about it, buy these four things. This is the
     combination the software is developed and tested against.</p>
   <table>
@@ -77,10 +137,13 @@
     <tr><td class="k">Charging</td>
       <td>Any USB-C phone charger. It charges in place, and keeps running while it does.</td><td>—</td></tr>
   </table>
+  <p class="sub" style="margin-top:14px">Why not a Witty Pi? It sits on the same pins as the
+    display and shares one of them, and on a Pi Zero 2 W the display can stop updating.
+    The PiSugar boards clip on underneath instead.</p>
   <div class="note" style="margin-top:16px">How long a charge lasts depends on your roster
     and your settings, and the control panel works it out for you. On the default
     settings and a five-on, four-off roster, our estimate is about four days on the
-    1200&nbsp;mAh PiSugar&nbsp;3 and about eleven on the 5000&nbsp;mAh PiSugar&nbsp;3&nbsp;Plus;
+    1200&nbsp;mAh PiSugar&nbsp;3 and about thirteen on the 5000&nbsp;mAh PiSugar&nbsp;3&nbsp;Plus;
     low power mode roughly doubles that, and always-on lasts under a day.
     <strong>These are estimates — battery running has not yet been measured on a finished
     unit.</strong> Prices from the maker's shop on 26 September 2026, before UK import
