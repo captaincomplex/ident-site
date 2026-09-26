@@ -51,6 +51,10 @@ button.danger{color:var(--warn)}
 button:focus-visible,.filebtn:focus-within,input:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .filebtn input{position:absolute;width:1px;height:1px;opacity:0}
 .tips{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+.tips li{margin:4px 0}
+details{margin-top:18px;border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+summary{cursor:pointer;font-weight:650}
+code{font:13px/1.4 Menlo,Consolas,monospace;color:var(--ink);word-break:break-all}
 @media (max-width:420px){.row label{float:none;width:auto;margin-right:0}}
 .filebtn{position:relative}
 </style>
@@ -78,17 +82,40 @@ button:focus-visible,.filebtn:focus-within,input:focus-visible,select:focus-visi
     roster changes.</p>
 
   <h2>Automatic updates</h2>
-  <div id="relayOff"><p>Not switched on in this version. For now, load a new roster file when
-    your roster changes.</p></div>
-  <div id="relayOn" hidden>
-    <label for="feed">Calendar link
-      <input type="url" id="feed" placeholder="https://… or webcal://…" autocapitalize="off" spellcheck="false">
-      <small>With a link here, this screen fetches your roster every 15 minutes through Ident's
-        update service, because iPads can't fetch a calendar from another site directly. The
-        service passes the calendar straight through and keeps nothing, but your roster does
-        pass through it on the way. Leave it empty to keep everything on this device.</small></label>
-    <div class="buttons"><button type="button" id="fetchNow">Update now</button></div>
-  </div>
+  <label for="feed">Calendar link
+    <input type="url" id="feed" placeholder="Paste https://… or webcal://…" autocapitalize="off" autocorrect="off" spellcheck="false">
+    <small>Paste your roster calendar's address. If that calendar lets web pages read it, this
+      screen fetches it every 15 minutes, straight from the calendar and through no one else.
+      Google Calendar doesn't allow that; if yours doesn't either, this screen will say so and
+      the Shortcut below does the job instead.</small></label>
+  <div class="buttons"><button type="button" id="fetchNow">Save link and update now</button></div>
+  <p id="relayNote" hidden>Where a calendar won't allow it, this screen fetches it through
+    Ident's update service instead. The service passes the calendar straight through and
+    keeps nothing, but your roster does pass through it on the way.</p>
+
+  <details id="shortcutHelp">
+    <summary>Update with an iPad Shortcut</summary>
+    <p>A Shortcut can fetch your calendar and hand it to this screen, so it stays up to date
+      without anything passing through anyone else. Needs iPadOS 13 or later and the
+      Shortcuts app. Set it up once:</p>
+    <ol class="tips">
+      <li>In Shortcuts, make a new shortcut and name it <strong>Ident roster</strong>.</li>
+      <li>Add <strong>URL</strong> and paste your calendar link. If it starts with
+        <code>webcal://</code>, change that to <code>https://</code>.</li>
+      <li>Add <strong>Get Contents of URL</strong>.</li>
+      <li>Add <strong>Base64 Encode</strong>; tap its arrow and set <em>Line Breaks</em> to <em>None</em>.</li>
+      <li>Add <strong>Text</strong>, type <code id="shortcutUrl">https://ident.xpdr.aero/ipad/#ics64=</code>
+        and put the <em>Base64 Encoded</em> result straight after the <code>=</code>.</li>
+      <li>Add <strong>Open URLs</strong>.</li>
+      <li>Run it once: this page opens and shows the new roster.</li>
+      <li>Then in the <strong>Automation</strong> tab, add a <em>Time of Day</em> automation for each
+        time you want an update (say 06:00, 12:00 and 18:00) that runs <strong>Ident roster</strong>,
+        with <em>Ask Before Running</em> off.</li>
+    </ol>
+    <p>The calendar goes from your calendar server to the Shortcut and into this page. The
+      part of the address after <code>#</code> is never sent to any website, so it stays on
+      this iPad.</p>
+  </details>
 
   <h2>Your details</h2>
   <div class="row">
@@ -136,7 +163,8 @@ button:focus-visible,.filebtn:focus-within,input:focus-visible,select:focus-visi
   var FETCH_EVERY = 15 * 60 * 1000;
 
   var K = { settings: "ident.settings", roster: "ident.roster", loaded: "ident.loadedAt",
-            source: "ident.source", feed: "ident.feed", fetchOk: "ident.fetchOk", fetchErr: "ident.fetchErr" };
+            source: "ident.source", feed: "ident.feed", fetchOk: "ident.fetchOk", fetchErr: "ident.fetchErr",
+            blocked: "ident.blocked" };
   function get(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
   function put(k, v) {
     try { if (v === null || v === undefined) window.localStorage.removeItem(k); else window.localStorage.setItem(k, String(v)); }
@@ -171,12 +199,16 @@ button:focus-visible,.filebtn:focus-within,input:focus-visible,select:focus-visi
 
   // The strip along the bottom appears only when the board may be out of date.
   function note() {
-    var now = Date.now(), loaded = +get(K.loaded) || 0;
+    var now = Date.now(), loaded = +get(K.loaded) || 0, src = get(K.source);
     if (!get(K.roster)) return "";
-    if (get(K.source) === "relay") {
+    if (src === "direct" || src === "relay") {
       var ok = +get(K.fetchOk) || 0;
       if (now - ok > 2 * 3600 * 1000)
         return "roster from " + when(ok) + " - could not update: " + (get(K.fetchErr) || "no connection");
+      return "";
+    }
+    if (src === "shortcut") {
+      if (now - loaded > 24 * 3600 * 1000) return "roster from " + when(loaded) + " - check the Ident roster Shortcut is running";
       return "";
     }
     if (now - loaded > 24 * 3600 * 1000) return "roster loaded " + when(loaded) + " - load a new file when it changes";
@@ -216,9 +248,11 @@ button:focus-visible,.filebtn:focus-within,input:focus-visible,select:focus-visi
     st.className = bad ? "status err" : "status";
   }
   function describe() {
-    if (!get(K.roster)) return showStatus("No roster loaded yet.");
-    var src = get(K.source) === "relay" ? "updated automatically" : "loaded from a file";
-    showStatus("Roster " + src + ", " + when(+get(K.loaded) || 0) + ".");
+    var err = get(K.fetchErr);
+    if (!get(K.roster)) return showStatus(err ? "No roster yet: " + err + "." : "No roster loaded yet.", !!err);
+    var how = { direct: "fetched from your calendar link", relay: "fetched through the update service",
+                shortcut: "sent by the Shortcut", file: "loaded from a file" }[get(K.source)] || "loaded";
+    showStatus("Roster " + how + ", " + when(+get(K.loaded) || 0) + "." + (err ? " Last try: " + err + "." : ""), !!err);
   }
 
   function feedUrl(u) {
@@ -227,30 +261,69 @@ button:focus-visible,.filebtn:focus-within,input:focus-visible,select:focus-visi
     return u;
   }
 
-  function fetchRoster() {
+  // 1. The calendar itself, if it allows web pages to read it (CORS): the
+  //    roster then comes straight to this device and nowhere else.
+  // 2. Otherwise Ident's update service, if one is configured (RELAY).
+  // 3. Otherwise say so, and stop polling that link: the Shortcut or a file
+  //    is the way in.
+  function fetchRoster(asked) {
     var link = feedUrl(get(K.feed));
-    if (!RELAY || !link || fetching || !api || !window.fetch) return Promise.resolve();
+    if (!link || fetching || !api || !window.fetch) return Promise.resolve();
+    if (!asked && get(K.blocked) === link && !RELAY) return Promise.resolve();
     fetching = true;
-    return fetch(RELAY, { method: "POST", headers: { "Content-Type": "application/json" },
-                          body: JSON.stringify({ url: link }), cache: "no-store", credentials: "omit" })
+    function took(text, how) {
+      if (parseText(text) < 0) throw new Error("the calendar link returned no events");
+      put(K.source, how); put(K.fetchOk, Date.now()); put(K.fetchErr, null); put(K.blocked, null);
+    }
+    return fetch(link, { cache: "no-store", credentials: "omit" })
       .then(function (r) {
-        if (!r.ok) return r.text().then(function (t) { throw new Error(t || ("update service answered " + r.status)); });
-        return r.text();
+        if (!r.ok) throw new Error("calendar server answered " + r.status);
+        return r.text().then(function (t) { took(t, "direct"); });
+      }, function () {
+        // A refused read looks like a network error to the page. If the
+        // calendar is reachable at all, it is almost always this.
+        if (!RELAY) {
+          put(K.blocked, link);
+          throw new Error("this calendar doesn't let web pages read it - use the Shortcut or load a file");
+        }
+        return fetch(RELAY, { method: "POST", headers: { "Content-Type": "application/json" },
+                              body: JSON.stringify({ url: link }), cache: "no-store", credentials: "omit" })
+          .then(function (r) {
+            if (!r.ok) return r.text().then(function (t) { throw new Error(t || ("update service answered " + r.status)); });
+            return r.text().then(function (t) { took(t, "relay"); });
+          });
       })
-      .then(function (text) {
-        if (parseText(text) < 0) throw new Error("the calendar link returned no events");
-        put(K.source, "relay"); put(K.fetchOk, Date.now()); put(K.fetchErr, null);
-      })
-      .catch(function (e) { put(K.fetchErr, String(e && e.message || e).slice(0, 80)); })
+      .catch(function (e) { put(K.fetchErr, String(e && e.message || e).slice(0, 110)); })
       .then(function () { fetching = false; draw(); if (!sheet.hidden) describe(); });
   }
+
+  // A Shortcut hands the calendar over in the address, after "#ics64=". The
+  // part after # never leaves the device; it is cleared as soon as it is read.
+  function takeHash() {
+    var m = /^#ics64=(.+)$/.exec(location.hash || "");
+    if (!m || !api) return;
+    try { history.replaceState(null, "", location.pathname + location.search); } catch (e) { location.hash = ""; }
+    var b64 = m[1], text = null;
+    try { b64 = decodeURIComponent(b64); } catch (e) {}
+    b64 = b64.replace(/\s/g, "").replace(/-/g, "+").replace(/_/g, "/");
+    try { text = window.atob(b64); } catch (e) { text = null; }
+    if (text !== null) { try { text = decodeURIComponent(escape(text)); } catch (e) { /* not UTF-8: use as is */ } }
+    if (text === null || parseText(text) < 0) {
+      put(K.fetchErr, "the Shortcut sent something that isn't a calendar - check its steps");
+    } else {
+      put(K.source, "shortcut"); put(K.fetchOk, Date.now()); put(K.fetchErr, null);
+    }
+    draw();
+    if (!sheet.hidden) describe();
+  }
+  window.addEventListener("hashchange", takeHash);
 
   // ---- settings sheet
   function openSheet() {
     var s = settings();
     ["base", "prefix", "tz", "debrief", "walk", "commute", "wake", "show"].forEach(function (k) { el(k).value = s[k]; });
     el("feed").value = get(K.feed) || "";
-    el("relayOff").hidden = !!RELAY; el("relayOn").hidden = !RELAY;
+    el("relayNote").hidden = !RELAY;
     el("forgetConfirm").hidden = true;
     describe();
     sheet.hidden = false;
@@ -274,13 +347,14 @@ button:focus-visible,.filebtn:focus-within,input:focus-visible,select:focus-visi
     put(K.feed, link || null);
     if (api) applySettings();
     closeSheet();
-    if (RELAY && link && link !== before) fetchRoster();
+    if (link && link !== before) fetchRoster(true);
   });
 
   el("fetchNow").addEventListener("click", function () {
     put(K.feed, el("feed").value.trim() || null);
+    if (!el("feed").value.trim()) return showStatus("Paste your calendar link first.", true);
     showStatus("Updating…");
-    fetchRoster();
+    fetchRoster(true);
   });
 
   el("file").addEventListener("change", function () {
@@ -304,7 +378,7 @@ button:focus-visible,.filebtn:focus-within,input:focus-visible,select:focus-visi
   el("forget").addEventListener("click", function () {
     if (!armed) { armed = true; el("forgetConfirm").hidden = false; return; }
     armed = false;
-    [K.settings, K.roster, K.loaded, K.source, K.feed, K.fetchOk, K.fetchErr].forEach(function (k) { put(k, null); });
+    [K.settings, K.roster, K.loaded, K.source, K.feed, K.fetchOk, K.fetchErr, K.blocked].forEach(function (k) { put(k, null); });
     location.reload();
   });
 
@@ -350,6 +424,8 @@ button:focus-visible,.filebtn:focus-within,input:focus-visible,select:focus-visi
     applySettings();
     var saved = get(K.roster);
     if (saved && !api.load(saved)) put(K.roster, null);
+    el("shortcutUrl").textContent = location.href.split("#")[0] + "#ics64=";
+    takeHash();
     tick();
     wake();
     fetchRoster();
