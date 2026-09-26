@@ -37,9 +37,10 @@
     <tr><td class="k">Computer</td>
       <td><a href="https://thepihut.com/products/raspberry-pi-3-model-a-plus" target="_blank" rel="noopener">Raspberry Pi 3 Model A+</a> — header already fitted, and
         <strong>dual-band Wi-Fi</strong>, so no 2.4GHz-only problem<br>
-        <span style="opacity:.7">The Pi Zero 2 W (£17.30 with header) is the smaller, lower-power
-        choice and works just as well — but it is out of stock everywhere at the time of
-        writing.</span></td><td>£24.00</td></tr>
+        <span style="opacity:.7">The Pi Zero 2 W (£17.30 with header) is smaller and draws less
+        power, so it is the first choice whenever it is in stock — at the time of writing it is
+        sold out almost everywhere. If the 3 Model A+ is sold out too, a Pi 4 (1GB) is the
+        fallback; see <a href="#computers">Computers</a> below.</span></td><td>£24.00</td></tr>
     <tr><td class="k">Power supply</td>
       <td><a href="https://thepihut.com/products/raspberry-pi-zero-uk-power-supply" target="_blank" rel="noopener">Official 12.5W micro-USB supply, UK plug</a></td><td>£7.70</td></tr>
     <tr><td class="k">microSD card</td>
@@ -52,8 +53,8 @@
         only describe video recording speed.</span></td><td>~£15</td></tr>
     <tr><td class="k"></td><td><strong>Total</strong></td><td><strong>~£126</strong></td></tr>
   </table>
-  <div class="note" style="margin-top:16px">Prices checked at The Pi Hut in August 2026 and include
-    UK VAT. They move — treat them as indicative, not a quote. You'll also need a microSD card reader
+  <div class="note" style="margin-top:16px">Board and power-supply prices checked at The Pi Hut on 26 September
+    2026, everything else in August 2026; all include UK VAT. They move — treat them as indicative, not a quote. You'll also need a microSD card reader
     if your computer hasn't got one, and a frame or stand.</div>
 </div></section>
 
@@ -103,23 +104,30 @@
   </table>
 </div></section>
 
-<section><div class="wrap">
+<section id="computers"><div class="wrap">
   <h2>Computers</h2>
-  <p class="sub">Any Raspberry Pi with a 40-pin header works. The Wi-Fi band is the thing that
-    catches people out.</p>
+  <p class="sub">Ident supports three Raspberry Pis, listed in order of preference. Stock comes and
+    goes — if your first choice is sold out, buy the next one down. The Wi-Fi band is the thing
+    that catches people out.</p>
   <table>
     <tr><th>Board</th><th>2.4GHz</th><th>5GHz</th><th>Power connector</th><th>Notes</th></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-zero-2-w" target="_blank" rel="noopener">Zero 2 WH</a></td><td class="yes">Yes</td><td class="no">No</td><td>micro-USB</td>
-      <td>The default choice. Header pre-fitted. Lowest power draw.</td></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-zero-2-w" target="_blank" rel="noopener">Zero 2 W</a></td><td class="yes">Yes</td><td class="no">No</td><td>micro-USB</td>
-      <td>£3 cheaper but you must solder a 40-pin header yourself.</td></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-3-model-b-plus" target="_blank" rel="noopener">Pi 3 Model B+</a></td><td class="yes">Yes</td><td class="yes">Yes</td><td>micro-USB</td>
-      <td>Dual-band and has Ethernet. Bulkier behind a frame.</td></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-4-model-b" target="_blank" rel="noopener">Pi 4 Model B</a></td><td class="yes">Yes</td><td class="yes">Yes</td><td>USB-C 3A</td>
-      <td>Dual-band, fast, runs warm. Needs its own USB-C supply.</td></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-5" target="_blank" rel="noopener">Pi 5</a></td><td class="yes">Yes</td><td class="yes">Yes</td><td>USB-C 5A</td>
-      <td>Overkill, and needs the 27W supply. Works fine.</td></tr>
+    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-zero-2" target="_blank" rel="noopener">1. Zero 2 WH</a></td><td class="yes">Yes</td><td class="no">No</td><td>micro-USB</td>
+      <td><strong>£17.30.</strong> First choice. Smallest, lowest power draw, header pre-fitted. Choose the
+        “with header” option.</td></tr>
+    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-zero-2" target="_blank" rel="noopener">1. Zero 2 W</a></td><td class="yes">Yes</td><td class="no">No</td><td>micro-USB</td>
+      <td><strong>£14.40.</strong> The same board without a header. Fit one yourself — solder it, or press on a
+        <a href="https://thepihut.com/products/gpio-hammer-header-solderless" target="_blank" rel="noopener">solderless hammer header</a>.</td></tr>
+    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-3-model-a-plus" target="_blank" rel="noopener">2. Pi 3 Model A+</a></td><td class="yes">Yes</td><td class="yes">Yes</td><td>micro-USB</td>
+      <td><strong>£24.00.</strong> Second choice, and the reference build. Same chip family and software as the Zero 2 W,
+        twice the footprint, header fitted, dual-band.</td></tr>
+    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-4-model-b" target="_blank" rel="noopener">3. Pi 4 Model B (1GB)</a></td><td class="yes">Yes</td><td class="yes">Yes</td><td>USB-C 3A</td>
+      <td><strong>£33.60.</strong> Third choice. Bigger and warmer; 1GB is plenty — don't pay for more. Needs a
+        <a href="https://thepihut.com/products/raspberry-pi-psu-uk" target="_blank" rel="noopener">USB-C supply</a>, not the micro-USB one.
+        Not yet confirmed with the LED board.</td></tr>
   </table>
+  <div class="note" style="margin-top:16px">Other Raspberry Pis with a 40-pin header, such as the
+    Pi 3 Model B+ and Pi 5, should drive the e-ink display, but they are not boards we test on.
+    The original single-core Pi Zero W is not supported.</div>
 </div></section>
 
 <section><div class="wrap">
@@ -142,8 +150,8 @@
 
   <div class="warn">
     <strong>Plain Zero 2 W (no header) + any Inky panel</strong>
-    <p>There's nothing to plug the display into. Either solder a 40-pin header or buy the “WH”
-      version with one already fitted. This is the single most common ordering mistake.</p>
+    <p>There's nothing to plug the display into. Fit a 40-pin header — soldered, or a
+      solderless hammer header — or buy the “WH” version with one already fitted. This is the single most common ordering mistake.</p>
   </div>
 
   <div class="warn">
