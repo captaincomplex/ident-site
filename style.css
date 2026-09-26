@@ -325,3 +325,8 @@ table{border-color:var(--line)}
 /* Images sit on the dark ground rather than a white block. */
 .split img,.shots img,.slide img,.fam img,.pcard img{background:#0f1319}
 /* A hairline in board amber under the masthead, like a display's header rule. */
+
+/* Phone screenshots in a rail: narrower slides, tall images, no letterbox. */
+.slide.phone{flex:0 0 clamp(200px,58vw,280px)}
+.slide.phone img{height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top;border-radius:22px;
+  border:1px solid var(--line);background:#0a0e14}

@@ -58,6 +58,35 @@
     if your computer hasn't got one, and a frame or stand.</div>
 </div></section>
 
+<section id="battery"><div class="wrap">
+  <h2>Or run it on a battery</h2>
+  <p class="sub">E-paper keeps its picture with no power at all, so Ident can live on a
+    battery: it wakes, updates the wall, and switches itself off until the next check.
+    Checks come every 20 minutes while you're rostered to work and once an hour
+    otherwise, and you choose the times in the control panel's <em>Power</em> card.
+    Add one of these to the reference build — they fit underneath the Pi and leave
+    the display's connector free.</p>
+  <table>
+    <tr><th>Part</th><th>Which one</th><th>Indicative</th></tr>
+    <tr><td class="k">Battery for a Pi Zero 2 W</td>
+      <td><a href="https://www.pisugar.com/products/pisugar-3-raspberry-pi-zero-battery" target="_blank" rel="noopener">PiSugar 3</a>,
+        1200&nbsp;mAh, with the clock that switches the Pi back on</td><td>US$39.99</td></tr>
+    <tr><td class="k">Battery for a Pi 3 A+</td>
+      <td><a href="https://www.pisugar.com/products/pisugar-3-plus-raspberry-pi-ups" target="_blank" rel="noopener">PiSugar 3 Plus</a>,
+        5000&nbsp;mAh — the bigger cell, and the longer life</td><td>US$49.99</td></tr>
+    <tr><td class="k">Charging</td>
+      <td>Any USB-C phone charger. It charges in place, and keeps running while it does.</td><td>—</td></tr>
+  </table>
+  <div class="note" style="margin-top:16px">How long a charge lasts depends on your roster
+    and your settings, and the control panel works it out for you. On the default
+    settings and a five-on, four-off roster, our estimate is about four days on the
+    1200&nbsp;mAh PiSugar&nbsp;3 and about eleven on the 5000&nbsp;mAh PiSugar&nbsp;3&nbsp;Plus;
+    low power mode roughly doubles that, and always-on lasts under a day.
+    <strong>These are estimates — battery running has not yet been measured on a finished
+    unit.</strong> Prices from the maker's shop on 26 September 2026, before UK import
+    charges; both showed as sold out that day.</div>
+</div></section>
+
 <section><div class="wrap">
   <h2>Or the LED departure board</h2>
   <p class="sub">The other supported build. Brighter, livelier, and it looks like the board
@@ -114,6 +143,10 @@
     <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-zero-2" target="_blank" rel="noopener">1. Zero 2 WH</a></td><td class="yes">Yes</td><td class="no">No</td><td>micro-USB</td>
       <td><strong>£17.30.</strong> First choice. Smallest, lowest power draw, header pre-fitted. Choose the
         “with header” option — the plain Zero 2 W has nothing to plug the display into.</td></tr>
+    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-zero-2" target="_blank" rel="noopener">Zero 2 W</a></td><td class="yes">Yes</td><td class="no">No</td><td>micro-USB</td>
+      <td><strong>£14.40.</strong> Only if the WH is sold out and this isn't. It has no header, so add a
+        <a href="https://thepihut.com/products/gpio-hammer-header-solderless" target="_blank" rel="noopener">solderless press-fit header</a>
+        (£7.20 with its fitting jig). No soldering.</td></tr>
     <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-3-model-a-plus" target="_blank" rel="noopener">2. Pi 3 Model A+</a></td><td class="yes">Yes</td><td class="yes">Yes</td><td>micro-USB</td>
       <td><strong>£24.00.</strong> Second choice, and the reference build. Same chip family and software as the Zero 2 W,
         twice the footprint, header fitted, dual-band.</td></tr>
@@ -148,7 +181,8 @@
   <div class="warn">
     <strong>Plain Zero 2 W (no header) + any Inky panel</strong>
     <p>There's nothing to plug the display into. Buy the “WH” version, which has the
-      header already fitted. This is the single most common ordering mistake.</p>
+      header already fitted — or, if only the plain board is in stock, add a solderless
+      press-fit header. This is the single most common ordering mistake.</p>
   </div>
 
   <div class="warn">
@@ -183,8 +217,9 @@
       <p>The cheap route to 5GHz on a Zero 2 W: a Linux-compatible dual-band adapter plus a
         micro-USB OTG adapter. Fiddlier, and driver support varies — check before buying.</p></div>
     <div class="card"><h3>Frame or stand</h3>
-      <p>A deep-rebate photo frame or 3D-printed stand. The 7.3″ panel is about 170×110mm; leave
-        room behind for the Pi and the cable.</p></div>
+      <p>The 7.3″ panel fits IKEA's <a href="https://www.ikea.com/gb/en/p/roedalm-frame-black-10548867/" target="_blank" rel="noopener">RÖDALM frame, black, 13×18cm</a>
+        (£3). Otherwise any deep-rebate photo frame or a 3D-printed stand — the panel is about
+        170×110mm, so leave room behind for the Pi and the cable.</p></div>
     <div class="card"><h3>microSD card reader</h3>
       <p><a href="https://thepihut.com/products/microsd-card-usb-reader" target="_blank" rel="noopener">A reader</a> is needed once, to flash the card — and again if you ever need to recover a device that
         won't join Wi-Fi. Worth owning.</p></div>
