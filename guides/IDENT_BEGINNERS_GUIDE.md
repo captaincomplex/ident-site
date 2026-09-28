@@ -335,10 +335,44 @@ unguessable URL, usually ending in `.ics`.
 > in a forum, and don't put it in a message to support — Ident deliberately hides
 > it from its own diagnostics for the same reason.
 
-**From your crew portal (eCrew).** Look for wording like *subscribe*, *export to
-calendar* or *iCal feed*, and take the **link** rather than the download. If your
-portal will only give you a file, that's fine — upload the `.ics` in the control
-panel instead, and re-upload it when your roster changes.
+### Getting your roster from eCrew
+
+eCrew doesn't give you a calendar link to paste. What it does instead is copy
+your duties into a calendar on your phone or iPad. You then get the link from
+*that* calendar. There are three steps.
+
+**Step 1 — Have eCrew write your roster into a calendar.** In the eCrew app,
+open Settings, turn on **Upload to Calendar** and **Auto Sync**, and choose which
+calendar it writes to. (These are the names used in the eCrew Mobile user guide;
+your airline's version may word them slightly differently.) Then open your
+phone's Calendar app and check your duties have appeared.
+
+- Pick a calendar that lives in your **Google** or **iCloud** account — not one
+  marked *On My iPhone* or *On My iPad*. Only an online calendar has a link that
+  Ident can read.
+- Ident has been tested with one calendar event per flight. eCrew's **Combined
+  Flights** option, which merges a day's flights, has not been tested with
+  Ident yet, so leave it off for now.
+- eCrew can only copy what it has downloaded. After a roster change, open eCrew
+  so it syncs. (How often Auto Sync runs on its own with the app closed hasn't
+  been checked.)
+
+**Step 2 — Get that calendar's link.** Follow the Google or iCloud steps below.
+Google's is called the *secret address in iCal format*; iCloud's is the *public
+calendar* link. Ident has been tested with Google's. The iCloud route should
+work the same way but **has not been tested with Ident yet**.
+
+**Step 3 — Give the link to Ident.** Paste it into the control panel (Pi), the
+setup page (reTerminal), or the settings sheet (iPad).
+
+**On an iPad there's a simpler route.** The iPad version can't read Google
+calendar links directly — Google doesn't allow web pages to — so instead an
+iPad Shortcut reads the calendar eCrew writes to and hands it to the board.
+Nothing passes through anyone else, and the calendar doesn't need to be
+online. Tap the board, open **Roster from eCrew (no link to paste)**, and follow
+the steps there. That Shortcut has been tested with sample data but not yet on a
+real iPad with a real eCrew calendar.
+
 
 **From Google Calendar** — the usual route if you already mirror your roster
 there:

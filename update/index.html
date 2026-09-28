@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ident — update your reTerminal</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Update Ident on a reTerminal E1002 or E1001 over a USB-C cable, keeping your settings.">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .steps li{margin:.5rem 0}
+  .install{display:flex;flex-wrap:wrap;gap:16px;margin:1rem 0}
+  .install .card{flex:1 1 240px}
+  #status{padding:.75rem 1rem;border-radius:8px;border:1px solid currentColor;opacity:.9}
+  esp-web-install-button[hidden]{display:none}
+</style>
+<script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="../index.html">IDENT<span>.</span></a>
+  <a class="l" href="../displays.html">Displays</a>
+  <a class="l" href="../parts.html">Parts</a>
+  <a class="l" href="../faq.html">FAQ</a>
+  <a class="l" href="../airlines.html">Your airline</a>
+  <span class="sp"></span>
+  <a class="l" href="../support.html">Support</a>
+</div></nav>
+
+<header><div class="wrap">
+  <span class="badge">reTerminal E1002 · E1001</span>
+  <h1>Update over <span class="g">USB-C</span></h1>
+  <p class="lead">Your display normally updates itself over Wi-Fi once a day. If it can't — or
+    you'd rather not wait — you can install the latest version from a computer here. Your
+    Wi-Fi, calendar link and other settings are kept.</p>
+</div></header>
+
+<section><div class="wrap">
+  <p id="status">Checking which version is available…</p>
+
+  <h2>What you need</h2>
+  <ul class="steps">
+    <li>A computer with <strong>Google Chrome</strong> or <strong>Microsoft Edge</strong>. Phones and
+      iPads can't do this: their browsers can't talk to USB devices.</li>
+    <li>A USB-C cable that carries data, not only charge. If the computer doesn't see the
+      display, try another cable first.</li>
+    <li><strong>On a Mac:</strong> Seeed say the display's USB connection needs WCH's
+      <em>CH34x</em> driver, approved afterwards under <em>System Settings → Privacy &amp; Security</em>.
+      See <a href="https://wiki.seeedstudio.com/getting_started_with_reterminal_e1002/">Seeed's getting-started page</a>.</li>
+  </ul>
+
+  <h2>Steps</h2>
+  <ol class="steps">
+    <li>Plug the display into the computer with the USB-C cable.</li>
+    <li><strong>Keep it awake:</strong> hold any of its three buttons for three seconds, until the
+      screen shows <strong>SETUP</strong>. Between updates the display is asleep, and a sleeping display
+      can't be updated. It stays awake on the setup screen for 15 minutes.</li>
+    <li>Click the button for your model below, choose the port that appears, then
+      <strong>Install</strong>.</li>
+    <li>When asked <em>Erase device?</em>, <strong>leave it unticked</strong>. Ticking it wipes your
+      settings and you'd have to set the display up again.</li>
+    <li>Wait for <em>Installation complete</em> — about a minute or two. The display restarts and shows
+      your board; the screen flashing through its colours as it redraws is normal.</li>
+  </ol>
+
+  <div class="install">
+    <div class="card"><h3>E1002 — colour</h3>
+      <esp-web-install-button id="b1002" manifest="https://licence.xpdr.aero/firmware/usb-e1002.json" hidden>
+        <button slot="activate">Install on an E1002</button>
+        <span slot="unsupported">This browser can't reach USB devices. Use Chrome or Edge on a computer.</span>
+        <span slot="not-allowed">This page must be opened over https.</span>
+      </esp-web-install-button></div>
+    <div class="card"><h3>E1001 — black and white</h3>
+      <esp-web-install-button id="b1001" manifest="https://licence.xpdr.aero/firmware/usb-e1001.json" hidden>
+        <button slot="activate">Install on an E1001</button>
+        <span slot="unsupported">This browser can't reach USB devices. Use Chrome or Edge on a computer.</span>
+        <span slot="not-allowed">This page must be opened over https.</span>
+      </esp-web-install-button></div>
+  </div>
+
+  <h2>If it doesn't work</h2>
+  <ul class="steps">
+    <li><em>No port appears:</em> check the driver (Mac), the cable, and that the screen says SETUP.</li>
+    <li><em>It stops part-way:</em> nothing is lost — the old version stays until the new one is
+      complete. Hold a button for three seconds and try again.</li>
+    <li>Still stuck? <a href="../support.html">Support</a>.</li>
+  </ul>
+</div></section>
+
+<script>
+// Shows the install buttons only once the files are actually downloadable.
+(function () {
+  var st = document.getElementById("status");
+  fetch("https://licence.xpdr.aero/firmware/usb-e1002.json", { cache: "no-store" })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (m) {
+      st.textContent = "Latest version: " + m.version + ".";
+      document.getElementById("b1002").hidden = false;
+      document.getElementById("b1001").hidden = false;
+    })
+    .catch(function () {
+      st.textContent = "USB updates aren't available yet. The reTerminal version of Ident is still in testing.";
+    });
+})();
+</script>
+</body>
+</html>
