@@ -53,9 +53,10 @@ a{color:var(--accent)}
 nav{position:sticky;top:0;z-index:20;background:rgba(22,27,34,.95);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;gap:22px;height:58px}
-/* The logo is an image (img/ident-lockup.svg): tile, IDENT. and the amber stop, outlined. */
+/* The name is an image (img/ident-wordmark.svg): IDENT. with the amber stop, outlined. Its
+   height is the capital height. The tile is the icon and is never shown beside it. */
 nav .brand{display:flex;align-items:center;text-decoration:none}
-nav .brand img{display:block;height:32px;width:auto}
+nav .brand img{display:block;height:16px;width:auto}
 nav a.l{color:var(--muted);text-decoration:none;font-size:14.5px}
 nav a.l:hover{color:var(--ink)}
 nav .sp{margin-left:auto}

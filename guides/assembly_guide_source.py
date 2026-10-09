@@ -1,4 +1,14 @@
-"""Ident — illustrated assembly guide. Original line-art, drawn with reportlab."""
+"""Ident — illustrated assembly guide. Original line-art, drawn with reportlab.
+
+    python3 assembly_guide_source.py [output.pdf]     (default /tmp/asm/ident_assembly_guide.pdf)
+
+The name on the cover and in every page header is the Ident wordmark (IDENT. with the amber
+stop), drawn from ident/fonts/BarlowSemiCondensed-Bold.ttf (SIL OFL); see brand/logo/.
+"""
+import os
+import sys
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import mm
@@ -13,7 +23,13 @@ RED = (0.80, 0.25, 0.25)
 GREEN = (0.20, 0.60, 0.42)
 PAPER = (0.98, 0.98, 0.97)
 
-c = canvas.Canvas("/tmp/asm/ident_assembly_guide.pdf", pagesize=A4)
+OUT = sys.argv[1] if len(sys.argv) > 1 else "/tmp/asm/ident_assembly_guide.pdf"
+os.makedirs(os.path.dirname(os.path.abspath(OUT)), exist_ok=True)
+pdfmetrics.registerFont(TTFont("BarlowSC-Bold", os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "..", "..", "ident", "fonts", "BarlowSemiCondensed-Bold.ttf")))
+AMBER = (0xE0 / 255, 0xA1 / 255, 0x54 / 255)        # #E0A154 on every ground, light included
+
+c = canvas.Canvas(OUT, pagesize=A4)
 c.setTitle("Ident — Assembly Guide")
 c.setAuthor("Ident")
 c.setSubject("How to assemble your Ident roster display")
@@ -150,10 +166,23 @@ def wifi(x, y, s=1.0, bars=3, col=INK):
     fill(col); c.circle(x, y, 1.8*s, stroke=0, fill=1)
 
 
+def wordmark(x, baseline, cap, col=INK):
+    """IDENT. with its visible left edge at x and its letters standing on `baseline`; `cap` is
+    the height of the capitals in points. Letter-spacing 0.10 em, a square stop 0.155 em
+    across: the same drawing as brand/logo/marks.py (the stop starts 2.92 em in)."""
+    size = cap / 0.700
+    left = x - 0.053 * size
+    c.saveState()           # letter-spacing is a PDF text-state setting that stays on until reset:
+    t = c.beginText(left, baseline)     # without save/restore it would spread out every line after
+    t.setFont("BarlowSC-Bold", size); t.setCharSpace(0.10 * size)
+    fill(col); t.textOut("IDENT"); c.drawText(t)
+    fill(AMBER); c.rect(left + 2.92 * size, baseline, 0.155 * size, 0.155 * size, stroke=0, fill=1)
+    c.restoreState()
+
+
 # ---------- page furniture ----------
 def page_header(title, n, total):
-    fill(INK); c.setFont("Helvetica-Bold", 8.5)
-    c.drawString(20*mm, H - 15*mm, "IDENT")
+    wordmark(20*mm, H - 15*mm, 7.0)
     fill(GREY); c.setFont("Helvetica", 8.5)
     c.drawRightString(W - 20*mm, H - 15*mm, f"{n} / {total}")
     stroke(LIGHT, 1.0); c.line(20*mm, H - 18*mm, W - 20*mm, H - 18*mm)
@@ -171,8 +200,7 @@ TOTAL = 8
 
 # ============================== PAGE 1 — COVER ==============================
 fill(PAPER); c.rect(0, 0, W, H, stroke=0, fill=1)
-fill(INK); c.setFont("Helvetica-Bold", 42)
-c.drawString(20*mm, H - 55*mm, "IDENT")
+wordmark(20*mm, H - 55*mm, 30.0)
 fill(GREY); c.setFont("Helvetica", 13)
 c.drawString(20*mm, H - 65*mm, "Assembly guide")
 stroke(ACC, 2.5); c.line(20*mm, H - 72*mm, 62*mm, H - 72*mm)
