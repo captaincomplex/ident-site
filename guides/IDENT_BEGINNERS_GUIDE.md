@@ -1,167 +1,197 @@
-# Ident — Complete Beginner's Guide
+# Ident — Beginner's Guide
 
-This guide builds a small screen that hangs on your wall and shows your next
-flight, your current flight's progress, and your estimated time home. It assumes
-you have **never written code or used a Raspberry Pi before**. If you can follow
-a recipe and copy-and-paste, you can do this. Take it slowly; there's no rush and
-nothing here can break your computer.
+This guide gets a small screen onto your wall that shows your next flight, the
+flight you are on, and when you will be home. It assumes you have **never written
+code or used a Raspberry Pi before**. If you can follow a recipe, you can do this.
+Take it slowly; nothing here can break your computer.
 
-Set aside about **two hours** for the first build (most of it is waiting).
+> **Correct as of version 4.26.0** (October 2026).
+> Ident updates itself, so if your display reports a newer version some screens
+> here may have moved on. The version is shown in the control panel.
 
-> **Correct as of version 4.21.0** (September 2026).
-> Ident updates itself, so if your display reports a newer version some screenshots and
-> steps here may have moved on. The version is shown in the control panel; check the
-> release notes on GitHub for anything that has changed since.
+## Pick your route
+
+| | **Route A — ready-made card** | **Route B — build it yourself** |
+|---|---|---|
+| **For** | Everyone. Start here. | People who like to see how it works |
+| **You do** | Write a ready-made memory card, plug in, set up from your phone | Install Raspberry Pi's operating system, then Ident, by typing commands |
+| **Typing commands** | **None.** No Terminal, no SSH | About 15 lines, copy-pasted |
+| **Time** | About an hour, mostly waiting | About two hours |
+| **Where** | Part 3 | Part 4 |
+
+Both routes end in the same place: the same setup page on your phone (Part 5) and the
+same control panel. Everything from Part 5 onward is the same for both.
 
 ---
 
 ## Part 1 — What you're building, in plain English
 
-A **Raspberry Pi** is a tiny, cheap computer the size of a stick of gum. It has no
-screen or keyboard of its own. We'll give it instructions from your normal laptop.
+A **Raspberry Pi** is a tiny, cheap computer. It has no screen or keyboard of its
+own.
 
-An **e-paper display** (the "Inky") is a screen like a Kindle — it looks like
+An **e-paper display** (the "Inky") is a screen like a Kindle's — it looks like
 printed paper, uses almost no power, and holds its picture even when switched off.
-It clips onto the Raspberry Pi. This is what shows your flight info on the wall.
+It clips onto the Raspberry Pi. This is what shows your flight on the wall.
 
-The Pi runs a small program (the "Ident" software you've been given). The
-program reads your easyJet roster, works out what to show, and draws it on the
-e-paper screen. You control everything from a **web page** on your phone — no
-keyboard needed once it's set up.
+The Pi runs the **Ident** software. It reads your roster, works out what to show,
+and draws it on the screen. **Your roster stays on the Pi in your house** — it is
+not sent to us or anyone else. You control everything from a web page on your phone.
 
-That's the whole thing: **a tiny computer + a paper-like screen + the program.**
+That's the whole thing: **a tiny computer + a paper-like screen + the software.**
 
 ---
 
 ## Part 2 — Shopping list
 
-Prices checked August 2026 at The Pi Hut and include VAT. They move — check the page
-for the current price. Links are UK shops; all of these ship from the UK.
+Prices are from The Pi Hut in August 2026 and include VAT. They move, so check the
+page. Raspberry Pi stock changes week to week (see the note under the table).
 
 | # | What | Why you need it | Price | Where |
 |---|------|-----------------|-------|-------|
-| 1 | **Raspberry Pi Zero 2 W — *with pre-soldered header*** | The tiny computer. "With header" means the row of pins is already attached, so **no soldering**. This is important — don't buy the plain version. | £17.30 | [The Pi Hut](https://thepihut.com/products/raspberry-pi-zero-2-w) (choose "Zero 2 W (with header)") |
-| 2 | **Pimoroni Inky Impression 7.3" (2025 Edition)** | The colour e-paper screen with the four buttons. Clips straight onto the Pi's pins, no soldering. | £79.50 | [The Pi Hut](https://thepihut.com/products/inky-impression-7-3-2025-edition) |
-| 3 | **Official Raspberry Pi 12.5W micro-USB power supply** | Powers the Pi. A phone charger *might* work but an official one avoids "not enough power" gremlins. | £7.70 | [The Pi Hut](https://thepihut.com/products/raspberry-pi-zero-uk-power-supply) |
-| 4 | **microSD card, 16–32GB (A1/A2 class)** | This is the Pi's "hard drive". 16GB is plenty. | ~£8 | [The Pi Hut](https://thepihut.com/products/sandisk-microsd-card-class-10-a1) |
-| 5 | **microSD-to-USB adapter** *(only if your laptop has no SD slot)* | Lets you plug the tiny card into your laptop to set it up. | ~£6 | [The Pi Hut](https://thepihut.com/products/microsd-card-usb-reader) |
+| 1 | **Raspberry Pi 3 Model A+** | The tiny computer. The header (the row of pins) is already fitted, so **no soldering**. | £24.00 | [The Pi Hut](https://thepihut.com/products/raspberry-pi-3-model-a-plus) |
+| 2 | **Pimoroni Inky Impression 7.3" (2025 Edition)** | The colour e-paper screen with the four buttons. Clips straight onto the Pi's pins. | £79.50 | [The Pi Hut](https://thepihut.com/products/inky-impression-7-3-2025-edition) |
+| 3 | **Official Raspberry Pi 12.5W micro-USB power supply** | Powers the Pi. A phone charger *might* work, but the official one avoids "not enough power" problems. | £7.70 | [The Pi Hut](https://thepihut.com/products/raspberry-pi-zero-uk-power-supply) |
+| 4 | **microSD card, 16–32GB (A1/A2 class)** | The Pi's "hard drive". 16GB is plenty. **Route A:** if you bought the card from us it already has Ident on it. | ~£8 | [The Pi Hut](https://thepihut.com/products/sandisk-microsd-card-class-10-a1) |
+| 5 | **microSD-to-USB adapter** *(only if your computer has no SD slot)* | Lets you plug the card into your computer to write it. | ~£6 | [The Pi Hut](https://thepihut.com/products/microsd-card-usb-reader) |
 
-**Optional but nice:** a small desk stand or a 5×7" photo frame to mount it in,
-and a short USB cable + plug if you don't already have a spare.
+**Optional:** a small desk stand or a 5×7" photo frame to mount it in.
 
-> **Three things people get wrong when buying:**
-> 1. Get the Pi **"with header"** (pins already attached). Without it you'd need to solder.
-> 2. The Pi Zero 2 W only does **2.4GHz Wi-Fi**, not 5GHz. That matters in Part 4 — if your
->    router only broadcasts 5GHz, or hides both bands behind one name and pushes devices onto
->    5GHz, the Zero will never connect. Enable 2.4GHz, or buy a Pi 3B+/4/5 instead (they're
->    dual-band, but note the Pi 4 and 5 need **USB-C** supplies, not the micro-USB one above).
-> 3. The older **5.7" Inky Impression** — which earlier versions of this guide recommended — has
->    been discontinued by Pimoroni. Ident still supports it if you already own one, but buy the
->    7.3" for a new build. The 4.0" and 13.3" panels also work.
-
----
-
-## Part 3 — Get the software onto the memory card
-
-The Pi needs an "operating system" (its basic software, like Windows or macOS is
-for your laptop) plus our Ident program. We put the operating system on the
-card first.
-
-1. On your **laptop**, download and install **Raspberry Pi Imager** from the
-   official site: <https://www.raspberrypi.com/software/>. It's a free, official app.
-2. Put the microSD card into your laptop (using the USB adapter if needed).
-3. Open Raspberry Pi Imager. You'll see three buttons:
-   - **Choose Device** → pick *Raspberry Pi Zero 2 W*.
-   - **Choose OS** → click *Raspberry Pi OS (other)* → *Raspberry Pi OS Lite (64-bit)*.
-     ("Lite" means no desktop — we don't need one. Don't worry that it looks bare.)
-   - **Choose Storage** → pick your SD card. **Double-check** you picked the card and
-     not your laptop's own drive.
-4. Click **Next**. It will ask *"Would you like to apply OS customisation settings?"*
-   Click **Edit Settings**. This is the most important screen — it sets the Pi up so
-   it works without a keyboard or monitor:
-   - **Set hostname:** type `ident`
-   - **Set username and password:** username `pilot` (or your name), and a password
-     you'll remember. **Write the password down.**
-   - **Configure wireless LAN:** type your home Wi-Fi **name** and **password**
-     exactly (capital letters matter), and set **Wireless LAN country** to `GB`.
-     Remember: it must be your **2.4GHz** network.
-   - **Set locale / time zone:** `Europe/London`.
-   - Click the **Services** tab at the top → tick **Enable SSH** → choose
-     *Use password authentication*. ("SSH" is just the way your laptop will send
-     instructions to the Pi.)
-5. Click **Save**, then **Yes** to write. It takes a few minutes and will erase the
-   card. When it says it's finished, take the card out.
+> **Which Pi, and what is in stock.** The smallest, lowest-power choice is the **Pi Zero 2 W**, but
+> on 10 October 2026 I could not confirm it can be bought anywhere: the most recent stock
+> report I found, [from 14 September](https://raspberry.tips/en/raspberrypi-infos/raspberry-pi-zero-2-w-alternative-sold-out),
+> had it sold out at Pimoroni and The Pi Hut. That is why the list says **Pi 3 Model A+**.
+> A search snapshot showed the 3A+ [in stock at The Pi Hut](https://thepihut.com/products/raspberry-pi-3-model-a-plus)
+> but its date was unclear, so check the page before you order. The **Pi 4 (1GB)** also works;
+> it needs a **USB-C** power supply instead of the micro-USB one above. The Pi 5 should work but is
+> not a board we test on. Don't pay for more memory than 1GB; it makes no difference here.
+>
+> **Wi-Fi bands.** The Pi Zero 2 W only does **2.4GHz** Wi-Fi. If you use one and your router only
+> broadcasts 5GHz (or hides both bands behind one name), it will never connect, so turn 2.4GHz on
+> first. The 3A+ and the 4 do both bands.
+>
+> **Screens.** The older **5.7" Inky Impression** is discontinued; Ident still supports it if you
+> own one, but buy the 7.3" for a new build. The 4.0" and 13.3" panels also work.
 
 ---
 
-## Part 4 — First switch-on
+## Part 3 — Route A: the ready-made card (start here)
 
-1. **Gently** push the Inky screen onto the Pi's pins (line up the 40 pins; it only
-   fits one way). Hold the boards by their **edges** — the screen is glass and cracks
-   if you press on it.
-2. Put the microSD card into the Pi's card slot.
-3. Plug the power into the Pi's **PWR IN** socket — on the Pi Zero that's the
-   micro-USB socket **nearest the corner**, *not* the middle one. The middle one is
-   for data and won't power it properly.
-4. Wait **2–3 minutes** for it to start up the first time. A tiny green light will
-   flicker — that's normal and good.
+You will use the **Ident card image**: a complete, ready-made memory card with the operating
+system and Ident already on it. When you have your licence key you get an email with a
+download link. You write that download to the card, plug it in, and do the rest from your
+phone. **You never type a command.**
 
-The Pi is now (hopefully) on your Wi-Fi. It has no screen output we can see yet —
-we talk to it from the laptop next.
+*Bought the card from us?* It is already written. Skip step 1.
+
+### Step 1 — Put Ident on the memory card (on your computer, not the Pi)
+
+1. Open your order email and click **Download the SD card image**. It is about 1 GB.
+   **Do not unzip it** — keep it exactly as it downloaded.
+2. Download and install **Raspberry Pi Imager** from <https://www.raspberrypi.com/software/>.
+   It is a free, official app.
+3. Put the card in your computer (use the USB adapter if needed) and open Imager:
+   - **Choose Device** → the Pi you bought.
+   - **Choose OS** → scroll to the bottom → **Use custom** → pick the file you downloaded.
+   - **Choose Storage** → your card. **Double-check** it is the card and not your
+     computer's own drive.
+   - **Write.** If it asks whether to apply settings, say **No**.
+4. Wait for it to finish (a few minutes; it erases the card), then take the card out.
+
+### Step 2 — Fit the display
+
+Switch everything **off** first. Line up the 40 pins of the Inky with the Pi's pins and press
+straight down, evenly. All 40 pins should be engaged, with no pin hanging over at either end.
+Hold both boards by their **edges**: the screen is glass and cracks if you press on it. If
+your kit came with standoffs (little spacers), use those screws — longer ones can crack the glass.
+
+### Step 3 — Card in, power on
+
+Put the card in the Pi's card slot, contacts down. Plug the power into the socket marked
+**PWR IN**. On a Pi Zero that is the micro-USB socket nearest the corner, *not* the middle one
+(the middle one is data only).
+
+**Now wait 3 to 5 minutes.** The display does not know your Wi-Fi yet, so after about two
+minutes it starts its own Wi-Fi network called **Ident-Setup**. A flickering green light is
+normal, and the screen may stay blank for now.
+
+### Step 4 — Tell it your Wi-Fi, from your phone
+
+1. On your phone open **Settings → Wi-Fi** and join **Ident-Setup**. The password is
+   **identsetup**. It is the same on every display and public on purpose: it only stops a
+   neighbour's phone joining by accident. Nothing private goes over it.
+2. Your phone may say there is no internet. That is expected: stay connected.
+3. In your phone's browser, go to **`10.42.0.1:8080`**. A page called *Connect your display*
+   opens. (It will not pop up by itself; you type the address.)
+4. Pick your home Wi-Fi from the list, type its password, and press **Connect**. With a
+   Pi Zero 2 W it must be a 2.4GHz network.
+5. The display leaves Ident-Setup and joins your Wi-Fi. Join **your own Wi-Fi** on the phone again.
+
+### Step 5 — Finish setting up
+
+Now on your own Wi-Fi, open **`ident.local:8080`** in your phone's browser. Fill in the setup
+page (Part 5 explains each box) and press **Finish setup**. You will need your **licence key**
+(`IDNT-XXXX-…`, in your email); it is checked online, once. Then add it to your home screen
+(iPhone: **Share → Add to Home Screen**; Android: **⋮ → Add to Home screen**).
+
+If `ident.local` does not open, use the display's IP address from your router's device list,
+with `:8080` on the end.
+
+**That's it — you're done.** Go on to Part 5 and Part 6. Move it to the wall, plug it in, and a
+minute or so later it lights up.
+
+> **Not yet tried on real hardware.** This route is written from how the software behaves. The
+> exact words on Imager's screens, the 3–5 minute wait and what your phone says on Ident-Setup
+> have not been run through on a real card and phone. If a screen differs, trust the screen and
+> tell us.
 
 ---
 
-## Part 5 — Talk to the Pi from your laptop
+## Part 4 — Route B: build it yourself
 
-We'll open a "Terminal", which is just a window where you type instructions. It
-looks intimidating but you'll only copy-and-paste.
+For people who want to build it by hand: you install Raspberry Pi's operating system, then copy
+Ident on. You will use a Terminal (a window where you type instructions). Everything is
+copy-and-paste. Route A needs none of this.
 
-- **On a Mac:** press `Cmd + Space`, type `Terminal`, press Enter.
-- **On Windows:** click Start, type `Terminal` (or `PowerShell`), press Enter.
+### B1 — Flash Raspberry Pi OS
 
-In that window, type this and press Enter:
+1. On your computer install **Raspberry Pi Imager** (<https://www.raspberrypi.com/software/>).
+2. Put the card in. **Choose Device** → your Pi. **Choose OS** → *Raspberry Pi OS (other)* →
+   *Raspberry Pi OS Lite (64-bit)*. ("Lite" means no desktop; we don't need one.)
+   **Choose Storage** → the card (double-check it).
+3. Click **Next**, then **Edit Settings**. This is the important screen:
+   - **Hostname:** `ident`
+   - **Username and password:** username `pilot`, and a password you will remember. **Write it down.**
+   - **Wireless LAN:** your Wi-Fi name and password exactly (capitals matter), country `GB`.
+     On a Pi Zero 2 W it must be a **2.4GHz** network.
+   - **Locale / time zone:** `Europe/London`.
+   - **Services** tab → **Enable SSH** → *Use password authentication*. ("SSH" is how your
+     computer sends instructions to the Pi.)
+4. **Save**, **Yes**, and wait. Take the card out.
+
+### B2 — First switch-on
+
+Push the Inky onto the Pi's pins (40 pins, one way round, **edges only**). Put the card in, plug
+the power into **PWR IN**, and wait **2–3 minutes**.
+
+### B3 — Talk to the Pi
+
+Open a Terminal (Mac: `Cmd + Space`, type `Terminal`; Windows: Start, type `Terminal`). Type this
+and press Enter:
 
 ```
 ssh pilot@ident.local
 ```
 
-(Use the username you chose if it wasn't `pilot`.)
+Type `yes` if asked about continuing. Type your password when asked — **nothing appears as you
+type; that is normal.** When the line ends in `ident:~ $`, you're in.
 
-- The first time, it asks *"Are you sure you want to continue connecting?"* — type
-  `yes` and Enter.
-- Then it asks for a password — type the password you set in Part 3. **The screen
-  won't show anything as you type the password — no dots, no stars. That's normal.**
-  Press Enter.
-- When the line changes to something ending in `ident:~ $`, **you're in.** You're
-  now typing instructions *to the Pi*.
+If it can't connect, wait a few more minutes, check your computer is on the same Wi-Fi, or use the
+Pi's IP address from your router (`ssh pilot@192.168.1.81`). If the Pi never reached your Wi-Fi it
+makes its own **Ident-Setup** network after two minutes: do Route A step 4 instead.
 
-> **If it can't connect** ("could not resolve hostname" or it just hangs): give the
-> Pi another few minutes (first boot is slow), make sure your laptop is on the **same
-> Wi-Fi**, and that you typed the Wi-Fi details correctly in Part 3. If `ident.local`
-> never works, log into your home router's admin page, find the device called
-> `ident`, note its IP address (like `192.168.1.81`), and use
-> `ssh pilot@192.168.1.81` instead.
+### B4 — Switch on the screen connection
 
-> **If the Pi never got onto your Wi-Fi at all**, it gives up after two minutes
-> and makes a Wi-Fi network of its own, called **Ident-Setup**. Join that from
-> your phone — the password is **identsetup** — and your phone will open a page
-> listing the networks the Pi can see. Pick yours, type its password, and the
-> Pi moves onto your Wi-Fi and switches its own network off. This is the way
-> back in when nothing else works, and it needs no laptop and no typing of
-> commands.
->
-> That password is the same on every display and is published here on purpose:
-> it is there so a neighbour's phone doesn't join by accident, not to protect
-> anything. Nothing private goes over it — the setup page will not accept your
-> roster link or your panel password until the display is on your own network.
-
----
-
-## Part 6 — Turn on the screen connection
-
-The e-paper screen talks to the Pi over two little data channels called SPI and
-I2C. We switch them on, then restart. Type these **one line at a time**, pressing
-Enter after each:
+The screen talks to the Pi over two data channels called SPI and I2C. Type these one line at a time:
 
 ```
 sudo raspi-config nonint do_spi 0
@@ -170,22 +200,11 @@ echo "dtoverlay=spi0-0cs" | sudo tee -a /boot/firmware/config.txt
 sudo reboot
 ```
 
-("sudo" just means "do this as the administrator." The reboot will disconnect you —
-that's expected.) Wait a minute, then reconnect with the same `ssh pilot@ident.local`.
+(`sudo` means "do this as administrator". The reboot disconnects you.) The third line matters as
+much as the first two: skip it and Ident stops with "Woah there, some pins we need are in use!".
+Wait a minute, then `ssh pilot@ident.local` again.
 
-The third line matters as much as the first two. The Pi reserves one of the pins
-the screen needs for itself; that line hands it over. Skip it and Ident stops with
-"Woah there, some pins we need are in use!" and nothing appears on the screen.
-
----
-
-## Part 7 — Install the helper software and the fonts
-
-These commands fetch the bits the program needs. Copy-paste each line, press Enter,
-and wait for it to finish before the next.
-
-First, the system tools and — importantly — the **fonts** (without these, all the
-text comes out microscopic):
+### B5 — Install the helper software and fonts
 
 ```
 sudo apt update
@@ -193,30 +212,21 @@ sudo apt full-upgrade -y
 sudo apt install -y python3-venv python3-pip unzip fonts-dejavu-core python3-lgpio
 ```
 
----
+### B6 — Put Ident on the Pi
 
-## Part 8 — Put the Ident program on the Pi
-
-The program came to you as a file called `ident.zip`. We copy it from your
-laptop to the Pi.
-
-1. Open a **second** Terminal window **on your laptop** (leave the Pi one open).
-   Don't type `ssh` in this one — this is your laptop.
-2. Assuming the zip is in your Downloads folder, type (one line):
-   ```
-   scp ~/Downloads/ident.zip pilot@ident.local:~/
-   ```
-   Enter your Pi password when asked. This copies the file across.
-3. Switch **back to the Pi Terminal** window and unpack it:
-   ```
-   cd ~
-   unzip -o ident.zip
-   cd ident
-   ```
-
-Now set up the program's own little workspace and install its parts:
+You have a file called `ident.zip`. In a **second** Terminal on your computer (do not `ssh` in this
+one), with the zip in Downloads:
 
 ```
+scp ~/Downloads/ident.zip pilot@ident.local:~/
+```
+
+Back in the Pi's Terminal:
+
+```
+cd ~
+unzip -o ident.zip
+cd ident
 python3 -m venv .venv --system-site-packages
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -224,78 +234,70 @@ pip install -r requirements-epaper.txt
 pip install gpiozero
 ```
 
-(You'll see lots of text scroll by — that's normal. The `--system-site-packages`
-bit lets the program use the button software we installed earlier.)
+Lots of text scrolls by; that is normal.
 
----
-
-## Part 9 — Tell it to use the e-paper screen, and start it
-
-Start the program:
+### B7 — Test it
 
 ```
 python -m ident.main
 ```
 
-You should see lines like
+You should see lines like `found a impression_7_3 panel (800x480, spectra6) — output set to
+e-paper`. Ident asks the screen what it is; there is nothing to choose. If it says nothing about a
+panel, the screen wasn't found: check SPI **and** I2C are both on (B4).
+
+Leave it running and, on your phone, open `http://ident.local:8080` to do the setup page (Part 5).
+When you have finished, press `Ctrl + C` in the Terminal to stop the test.
+
+### B8 — Make it start by itself
+
+Copy-paste this **whole block** (if your username isn't `pilot`, change both `pilot`s):
 
 ```
-[ident] found a impression_7_3 panel (800x480, spectra6) — output set to e-paper
-[ident] Inky detected: 800x480 (spectra6)
-[ident] side buttons armed: A=power, B=style, C=qr, D=next_duty
+sudo tee /etc/systemd/system/ident.service >/dev/null <<EOF
+[Unit]
+Description=Ident
+After=network-online.target
+
+[Service]
+User=pilot
+WorkingDirectory=/home/pilot/ident
+ExecStart=/home/pilot/ident/.venv/bin/python -m ident.main
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload
+sudo systemctl enable --now ident
 ```
 
-Ident asks the screen what it is and sets itself up for it — there is nothing to
-choose and nothing to type. The numbers will match whichever panel you bought:
-`600x400` for the 4.0", `800x480` for the 7.3", `1600x1200` for the 13.3", and
-`600x448 (acep7)` for the older 5.7".
-
-If it says nothing about a panel, the screen wasn't found — go back to Part 6 and
-check SPI **and** I2C are both on.
-
-Leave it running and go to Part 10 — you'll do the rest of the setup from your phone,
-with no more typing of code. (There's no settings file to edit by hand any more; the
-first-run wizard handles it.)
-
-> **Older versions:** guides before v4.2.0 told you to run `--no-web` and edit
-> `~/.ident/config.json` in `nano`. That still works, but it isn't necessary now.
+Check it (press `q` to leave the view): `systemctl status ident`. You're done: move it to the wall,
+plug it in, and it starts by itself. The short, technical version of this route is
+[`INSTALL_PI.md`](../../INSTALL_PI.md).
 
 ---
 
-## Part 10 — Load your roster and settings from your phone
+## Part 5 — The setup page and the control panel
 
-While the program is running, on your **phone** (connected to the same Wi-Fi) open
-a web browser and go to:
+Both routes land here. On the first visit to `ident.local:8080` you get a **setup page**. Fill in:
 
-```
-http://ident.local:8080
-```
-
-**Then add it to your home screen**, so you never type that address again:
-on an iPhone or iPad tap **Share → Add to Home Screen**; on Android tap the
-**⋮** menu → **Add to Home screen** (or **Install app**). You now have an Ident
-icon that opens full screen, like an app.
-
-The very first time, you'll get a **setup page**. Fill in:
-
+- **Display style** — how the wall looks. You can change it later.
 - **Display name** — anything you like ("Kitchen"). Useful if you ever run two.
 - **Home base** — your base airport code, e.g. `LGW`.
 - **Airline code** — e.g. `U2` for easyJet.
-- **Roster calendar URL** — your crew calendar link, if you have it to hand. You
-  can leave this blank and add it later. **Part 10a below explains where to find
-  it** — it's the one thing in this build that isn't obvious.
-- **Username and password** — this locks the control panel, and it is required: at
-  least six characters. The panel shows your roster and holds your calendar link,
-  which is effectively a password for your whole schedule, so it isn't something to
-  leave open even on a network you trust.
+- **Roster calendar URL** — your calendar link. Leave it blank and add it later if you like;
+  **Part 6 explains where to find it**, the one thing that isn't obvious.
+- **Licence key** — `IDNT-XXXX-…`, from your email.
+- **Username and password** — locks the control panel, and it is required: at least six
+  characters. The panel shows your roster and holds your calendar link, which is effectively a
+  password for your whole schedule.
 
-  **If you ever forget it:** take the SD card out, put a file called
-  `ident-reset.txt` on the small drive that appears when you plug the card into a
-  computer, put it back, and switch the display on. It clears the password and
-  deletes the file. No Terminal, no reflashing.
+  **If you ever forget it:** take the SD card out, put a file called `ident-reset.txt` on the
+  small drive that appears when you plug the card into a computer, put it back, and switch the
+  display on. It clears the password and deletes the file. No Terminal, no reflashing.
 
-Press **Finish setup** and you land on the control panel. From here you can, with no
-typing of code:
+Press **Finish setup** and you land on the control panel. From here you can:
 
 - **Roster:** paste your roster calendar (iCal) link, or upload a `.ics` file, and
   tap **Pull feed now**.
@@ -312,12 +314,9 @@ typing of code:
 - **All settings:** the section at the very bottom exposes every option if you ever
   want to fine-tune.
 
-Once you've set it up, go back to the Pi Terminal and press `Ctrl + C` to stop the
-test run. We'll now make it start by itself.
-
 ---
 
-## Part 10a — Where to find your calendar link
+## Part 6 — Where to find your calendar link
 
 This trips people up, so it gets its own part.
 
@@ -416,49 +415,6 @@ of the calendar, not the feed.
 
 ---
 
-## Part 11 — Make it run automatically forever
-
-Right now the wall only runs while your Terminal is open. This step makes the Pi
-start it on its own every time it's powered on, so you can unplug the Terminal and
-forget about it.
-
-Copy-paste this **whole block** at once and press Enter (it writes a small startup
-instruction file). If your username isn't `pilot`, change both `pilot` words:
-
-```
-sudo tee /etc/systemd/system/ident.service >/dev/null <<EOF
-[Unit]
-Description=Ident
-After=network-online.target
-
-[Service]
-User=pilot
-WorkingDirectory=/home/pilot/ident
-ExecStart=/home/pilot/ident/.venv/bin/python -m ident.main
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-EOF
-```
-
-Then switch it on:
-
-```
-sudo systemctl daemon-reload
-sudo systemctl enable --now ident
-```
-
-Check it's happy (press `q` to exit the view):
-
-```
-systemctl status ident
-```
-
-That's it. **You're done.** You can close everything, unplug the Pi, move it to the
-wall, plug it back in, and a minute later your Ident lights up by itself. You
-manage it forever from `http://ident.local:8080` on your phone.
-
 ---
 
 ## The four buttons on the screen
@@ -477,25 +433,29 @@ You can change what each button does in the control panel, under **Buttons**.
 
 ---
 
+---
+
 ## If something goes wrong
 
-- **Text is tiny:** the fonts didn't install. Run `sudo apt install -y fonts-dejavu-core`
-  then `sudo systemctl restart ident`.
-- **Screen says "Woah there, some pins we need are in use":** you missed the third
-  line in Part 6. Run it now and reboot.
-- **Can't reach the web page:** make sure the address ends in **:8080**, and that
-  your phone is on the same Wi-Fi.
-- **Want to change which Wi-Fi the Pi uses:** connect with SSH and run `sudo nmtui`,
-  choose *Activate a connection*, pick the new network and enter its password.
-  (Remember: 2.4GHz only, and you'll briefly lose the connection while it switches.)
-- **Moved house, or the router changed:** you don't need SSH at all. The display
-  will find itself offline, raise its own **Ident-Setup** network after two
-  minutes, and wait. Join it from a phone with the password **identsetup** and
-  point it at the new Wi-Fi.
-- **Updating to a new version later:** copy the new `ident.zip` across (Part 8
-  step 2), then on the Pi: `cd ~ && unzip -o ident.zip`, then
-  `find ~/ident -name __pycache__ -type d -exec rm -rf {} +`, then
-  `sudo systemctl restart ident`. Check the version it prints on startup.
+**Either route**
+
+- **Can't reach the web page:** the address ends in **:8080**, and your phone must be on the same
+  Wi-Fi as the display. Failing that, use the display's IP address from your router.
+- **Moved house, or the router changed:** you don't need a computer. After two minutes offline the
+  display raises its own **Ident-Setup** network. Join it from a phone with the password
+  **identsetup**, open `10.42.0.1:8080`, and point it at the new Wi-Fi.
+- **Forgot the panel password:** use the `ident-reset.txt` trick in Part 5.
+- **A Pi Zero 2 W won't join your Wi-Fi:** it only does 2.4GHz.
+
+**Route B only**
+
+- **Text is tiny:** the fonts didn't install. Run `sudo apt install -y fonts-dejavu-core` then
+  `sudo systemctl restart ident`.
+- **"Woah there, some pins we need are in use":** you missed the third line in B4. Run it now and
+  reboot.
+- **Change Wi-Fi from the Terminal:** `sudo nmtui`, then *Activate a connection*.
+- **Updating by hand:** copy the new `ident.zip` across (B6), then on the Pi: `cd ~ && unzip -o ident.zip`,
+  then `find ~/ident -name __pycache__ -type d -exec rm -rf {} +`, then `sudo systemctl restart ident`.
 
 ---
 
@@ -521,12 +481,14 @@ You can change what each button does in the control panel, under **Buttons**.
 
 ---
 
+---
+
 ## Keeping it up to date
 
 Ident checks `ident.xpdr.aero` once a day for a newer version — your own display asks
 our website; nothing is reported back to us.
 
-A new version **installs itself**, but only once it has been published for three days,
+A new version **installs itself** (on both routes), but only once it has been published for three days,
 and never in the middle of a duty — only on a day off or between duties. The three-day
 wait is the safety net: a bad release sits on the author's own wall for three days
 before it can reach yours. The control panel shows your version and a button to install
@@ -536,5 +498,5 @@ and your working version is backed up first, so a failed update leaves it alone.
 
 ---
 
-*Correct as of version 4.21.0 — September 2026.*
+*Correct as of version 4.26.0 — October 2026.*
 *When Ident is updated, this guide is reviewed and this line is updated with it.*

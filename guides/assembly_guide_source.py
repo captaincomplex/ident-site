@@ -2,10 +2,19 @@
 
     python3 assembly_guide_source.py [output.pdf]     (default /tmp/asm/ident_assembly_guide.pdf)
 
+The steps are for the pre-built SD image, which is what ships to the customer: after the licence key is
+issued they download the image, write it to a card with Raspberry Pi Imager ("Use custom"), and the
+display sets itself up over its own Ident-Setup Wi-Fi network. Nobody types a command or uses SSH.
+(INSTALL_PI.md is the by-hand route for people who build their own.) Each claim below is checked
+against ident/onboarding.py, ident/web/app.py and image/README.md; see TODO.md for what is not yet
+tested on a real card and a real phone.
+
 The name on the cover and in every page header is the Ident wordmark (IDENT. with the amber
 stop), drawn from ident/fonts/BarlowSemiCondensed-Bold.ttf (SIL OFL); see brand/logo/.
 """
+import datetime
 import os
+import re
 import sys
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
@@ -24,6 +33,13 @@ GREEN = (0.20, 0.60, 0.42)
 PAPER = (0.98, 0.98, 0.97)
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else "/tmp/asm/ident_assembly_guide.pdf"
+HERE = os.path.dirname(os.path.abspath(__file__))
+# The footer says which Ident this PDF was built with and when. It used to say "Correct as of
+# version 4.3.0", a claim nobody had re-checked since: the steps no longer match INSTALL_PI.md.
+with open(os.path.join(HERE, "..", "..", "ident", "__init__.py")) as _f:
+    VERSION = re.search(r'"([^"]+)"', _f.read()).group(1)
+_today = datetime.date.today()
+BUILT = f"Ident {VERSION} \u00b7 guide of {_today.day} {_today:%B %Y}"
 os.makedirs(os.path.dirname(os.path.abspath(OUT)), exist_ok=True)
 pdfmetrics.registerFont(TTFont("BarlowSC-Bold", os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "..", "..", "ident", "fonts", "BarlowSemiCondensed-Bold.ttf")))
@@ -194,9 +210,9 @@ def footer(note=""):
     stroke(LIGHT, 1.0); c.line(20*mm, 18*mm, W - 20*mm, 18*mm)
     fill(GREY); c.setFont("Helvetica", 7.5)
     c.drawString(20*mm, 13*mm, note or "ident.xpdr.aero")
-    c.drawRightString(W - 20*mm, 13*mm, "Correct as of version 4.3.0")
+    c.drawRightString(W - 20*mm, 13*mm, BUILT)
 
-TOTAL = 8
+TOTAL = 9
 
 # ============================== PAGE 1 — COVER ==============================
 fill(PAPER); c.rect(0, 0, W, H, stroke=0, fill=1)
@@ -223,10 +239,10 @@ c.showPage()
 # ============================== PAGE 2 — PARTS ==============================
 page_header("What's in front of you", 2, TOTAL)
 fill(GREY); c.setFont("Helvetica", 9.5)
-c.drawString(20*mm, H - 38*mm, "Lay everything out and check it off. Nothing here is supplied by us — you bought it yourself.")
+c.drawString(20*mm, H - 38*mm, "Lay everything out and check it off. You also need the things in the box at the bottom.")
 
 col1, col2 = 28*mm, 115*mm
-row = H - 62*mm
+row = H - 80*mm      # was 62: the first item's text sat level with the title and ran into the subtitle
 display(col1, row - 6*mm, 0.62, screen_text=False)
 label(col1 + 56*mm, row + 34*mm, "Inky Impression display", 10.5, INK, "Helvetica-Bold")
 label(col1 + 56*mm, row + 27*mm, "7.3\" recommended. 4.0\" and 13.3\"", 9, GREY)
@@ -254,9 +270,12 @@ label(col1 + 56*mm, row + 13*mm, "Micro-USB for a Pi Zero. A Pi 4 or 5", 9, GREY
 label(col1 + 56*mm, row + 7*mm, "needs USB-C instead.", 9, GREY)
 label(col1 + 56*mm, row - 2*mm, "x 1", 9.5, INK, "Helvetica-Bold")
 
-rrect(20*mm, 26*mm, W - 40*mm, 22*mm, 4, LIGHT, (0.99, 0.99, 0.98), 1.2)
-label(26*mm, 40*mm, "Tools needed", 10, INK, "Helvetica-Bold")
-label(26*mm, 33*mm, "None. If you find yourself reaching for a screwdriver or a soldering iron, stop and check the parts list.", 9, GREY)
+rrect(20*mm, 22*mm, W - 40*mm, 36*mm, 4, LIGHT, (0.99, 0.99, 0.98), 1.2)
+label(26*mm, 51*mm, "Also needed", 10, INK, "Helvetica-Bold")
+label(26*mm, 44*mm, "Your licence key (IDNT-..., from your order email) and a computer that can read an SD card.", 9, GREY)
+label(26*mm, 38*mm, "Your phone, and your home Wi-Fi name and password.", 9, GREY)
+label(26*mm, 32*mm, "No tools. If you find yourself reaching for a screwdriver or a soldering iron,", 9, GREY)
+label(26*mm, 27*mm, "stop and check the parts list.", 9, GREY)
 footer()
 c.showPage()
 
@@ -300,30 +319,31 @@ c.showPage()
 # ============================== PAGE 4 — STEP 1: CARD ==============================
 page_header("", 4, TOTAL)
 stepnum(24*mm, H - 32*mm, 1, 10)
-label(34*mm, H - 35.5*mm, "Prepare the memory card", 15, INK, "Helvetica-Bold")
+label(34*mm, H - 35.5*mm, "Put Ident on the memory card", 15, INK, "Helvetica-Bold")
 label(34*mm, H - 43*mm, "On your computer, not the Pi.", 9.5, GREY)
 
 laptop(35*mm, H - 105*mm, 1.5)
 sd_card(140*mm, H - 96*mm, 1.4)
-arrow(132*mm, H - 88*mm, 108*mm, H - 88*mm, ACC, 2.0, 6)
-label(35*mm, H - 118*mm, "Install Raspberry Pi Imager, choose your Pi model,", 9.5, INK)
-label(35*mm, H - 125*mm, "and pick Raspberry Pi OS Lite (64-bit).", 9.5, INK)
+arrow(108*mm, H - 88*mm, 132*mm, H - 88*mm, ACC, 2.0, 6)      # the file goes from the computer to the card
+label(35*mm, H - 118*mm, "Open your order email and click Download the SD card image.", 9.5, INK)
+label(35*mm, H - 125*mm, "It is about 1 GB. Keep it as it is: do not unzip it.", 9.5, INK)
 
 by = H - 196*mm
 rrect(20*mm, by, W - 40*mm, 66*mm, 4, LIGHT, (0.99, 0.99, 0.98), 1.2)
-label(26*mm, by + 57*mm, "In Imager, click Edit Settings and fill in all of this:", 10, INK, "Helvetica-Bold")
-items = [("Hostname", "ident"),
-         ("Username", "pilot  (and a password you write down)"),
-         ("Wi-Fi", "your 2.4GHz network name and password, country GB"),
-         ("Time zone", "Europe/London"),
-         ("Services tab", "tick Enable SSH, password authentication")]
+label(26*mm, by + 57*mm, "Then write it to the card with Raspberry Pi Imager (raspberrypi.com/software):", 10, INK, "Helvetica-Bold")
+items = [("Open", "Imager, with the card in your computer."),
+         ("Choose Device", "your Pi model."),
+         ("Choose OS", "scroll down to Use custom, then pick the file you downloaded."),
+         ("Choose Storage", "your SD card. Check it is the card, not another drive."),
+         ("Write", "If it asks about settings, say No. Wait until it says it is done.")]
 yy = by + 47*mm
 for k, v in items:
     fill(ACC); c.circle(29*mm, yy + 1.2*mm, 1.4*mm, stroke=0, fill=1)
     label(34*mm, yy, k, 9.5, INK, "Helvetica-Bold")
     label(66*mm, yy, v, 9.5, GREY)
     yy -= 8*mm
-label(26*mm, by + 5*mm, "Then Save, Write, and wait. This erases the card.", 9, GREY)
+label(26*mm, by + 5*mm, "Writing erases the card.", 9, GREY)
+label(20*mm, by - 8*mm, "Bought the SD card from us? It already has Ident on it. Skip this page and start at step 2.", 9, GREY)
 footer()
 c.showPage()
 
@@ -387,61 +407,114 @@ label(wxp + 12*mm, py - 18*mm, "power the Pi properly", 9, RED)
 by = H - 178*mm
 rrect(20*mm, by, W - 40*mm, 44*mm, 4, LIGHT, (0.99, 0.99, 0.98), 1.2)
 clockface(38*mm, by + 24*mm, 12)
-label(58*mm, by + 30*mm, "Now wait 2 to 3 minutes.", 10.5, INK, "Helvetica-Bold")
-label(58*mm, by + 21*mm, "The first start-up is slow. A small green light will flicker — that is normal", 9, GREY)
-label(58*mm, by + 15*mm, "and means it is working. The screen stays blank for now.", 9, GREY)
-label(58*mm, by + 6*mm, "Nothing on the display yet? That is expected at this stage.", 9, GREY)
+label(58*mm, by + 30*mm, "Now wait 3 to 5 minutes.", 10.5, INK, "Helvetica-Bold")
+label(58*mm, by + 21*mm, "It does not know your Wi-Fi yet, so after about two minutes it starts", 9, GREY)
+label(58*mm, by + 15*mm, "its own network called Ident-Setup. A flickering green light is normal.", 9, GREY)
+label(58*mm, by + 6*mm, "The screen may stay blank for now. That is expected at this stage.", 9, GREY)
 footer()
 c.showPage()
 
-# ============================== PAGE 7 — STEP 4: SETUP ==============================
+# ============================== PAGE 7 — STEP 4: JOIN THE DISPLAY'S OWN WI-FI ==============================
+# ident/onboarding.py: after about two minutes with no known network the display starts the hotspot
+# AP_SSID "Ident-Setup", password AP_PASSWORD "identsetup" (published on purpose). Address 10.42.0.1,
+# the web page is on port 8080; setup is refused while on the hotspot and bounces to /wifi, whose
+# page is titled "Connect your display" (ident/web/app.py). No pop-up page is implemented, so the
+# customer types the address.
 page_header("", 7, TOTAL)
 stepnum(24*mm, H - 32*mm, 4, 10)
-label(34*mm, H - 35.5*mm, "Set it up from your phone", 15, INK, "Helvetica-Bold")
-label(34*mm, H - 43*mm, "Same Wi-Fi as the display. No cables, no typing of code.", 9.5, GREY)
+label(34*mm, H - 35.5*mm, "Join Ident-Setup from your phone", 15, INK, "Helvetica-Bold")
+label(34*mm, H - 43*mm, "The display makes its own Wi-Fi network for this. Nothing to install.", 9.5, GREY)
 
-ph = 62*mm
-phone(ph, H - 118*mm, 1.45)
+px0, py0, ps = 26*mm, H - 132*mm, 2.6
+phone(px0, py0, ps)
 fill(INK); c.setFont("Helvetica-Bold", 7)
-c.drawString(ph + 7*mm, H - 76*mm, "Set up your display")
-fill(GREY); c.setFont("Helvetica", 5.5)
-for i, t in enumerate(["Display name", "Home base", "Airline code", "Roster calendar URL", "Password"]):
-    c.drawString(ph + 7*mm, H - 82*mm - i*7*mm, t)
-    stroke(LIGHT, 0.8); c.rect(ph + 7*mm, H - 85*mm - i*7*mm, 26*mm, 2.6*mm, stroke=1, fill=0)
-fill(ACC); c.roundRect(ph + 7*mm, H - 116*mm, 26*mm, 5*mm, 1.2, stroke=0, fill=1)
-fill((1,1,1)); c.setFont("Helvetica-Bold", 5.5)
-c.drawCentredString(ph + 20*mm, H - 114.5*mm, "Finish setup")
+c.drawString(px0 + 6*ps, py0 + 44*ps, "Wi-Fi")
+for k, (t, sel) in enumerate([("Your home Wi-Fi", False), ("Ident-Setup", True), ("Neighbour", False)]):
+    ry = py0 + 37*ps - k*8*ps
+    if sel:
+        fill(ACC); c.roundRect(px0 + 5*ps, ry - 2*ps, 20*ps, 6*ps, 1.5, stroke=0, fill=1); fill((1, 1, 1))
+    else:
+        fill(GREY)
+    c.setFont("Helvetica-Bold" if sel else "Helvetica", 6.2)
+    c.drawString(px0 + 7*ps, ry, t)
 
-label(115*mm, H - 72*mm, "In any browser, go to:", 9.5, GREY)
-fill(INK); c.setFont("Courier-Bold", 12)
-c.drawString(115*mm, H - 81*mm, "ident.local:8080")
-label(115*mm, H - 92*mm, "The first time, you get a setup page.", 9.5, INK)
-label(115*mm, H - 99*mm, "Fill it in and press Finish.", 9.5, INK)
-label(115*mm, H - 104*mm, "Then add it to your home screen:", 9.5, INK)
-label(115*mm, H - 110*mm, "Share > Add to Home Screen. It opens", 9.5, INK)
-label(115*mm, H - 116*mm, "full screen with its own icon.", 9.5, INK)
-label(115*mm, H - 125*mm, "Can't reach it? Use the device's IP from", 9, GREY)
-label(115*mm, H - 130.5*mm, "your router's device list, with :8080.", 9, GREY)
+label(70*mm, H - 72*mm, "1   On your phone, open Settings > Wi-Fi.", 9.5, INK)
+label(70*mm, H - 80*mm, "2   Join the network called", 9.5, INK)
+fill(INK); c.setFont("Courier-Bold", 12); c.drawString(70*mm + 52*mm, H - 80*mm, "Ident-Setup")
+label(70*mm, H - 89*mm, "3   Its password is", 9.5, INK)
+fill(INK); c.setFont("Courier-Bold", 12); c.drawString(70*mm + 36*mm, H - 89*mm, "identsetup")
+label(70*mm, H - 100*mm, "It is the same on every display, and it is meant to be public.", 9, GREY)
+label(70*mm, H - 106*mm, "Your phone may say there is no internet. That is expected: stay connected.", 9, GREY)
 
-by = H - 190*mm
-rrect(20*mm, by, W - 40*mm, 52*mm, 4, LIGHT, (0.99, 0.99, 0.98), 1.2)
-label(26*mm, by + 43*mm, "What to enter", 10, INK, "Helvetica-Bold")
-rows = [("Display name", "Anything. \"Kitchen\". Useful if you build a second one."),
-        ("Home base", "Your base airport code, e.g. LGW."),
-        ("Airline code", "Two letters, e.g. U2."),
-        ("Roster calendar", "Your crew .ics link. Can be left blank and added later."),
-        ("Password", "Locks the control panel. Leave blank for no login.")]
-yy = by + 34*mm
+by = H - 205*mm
+rrect(20*mm, by, W - 40*mm, 62*mm, 4, LIGHT, (0.99, 0.99, 0.98), 1.2)
+label(26*mm, by + 53*mm, "Then, in your phone's browser, go to:", 10, INK, "Helvetica-Bold")
+fill(INK); c.setFont("Courier-Bold", 14); c.drawString(26*mm, by + 44*mm, "10.42.0.1:8080")
+label(26*mm, by + 35*mm, "A page called Connect your display opens. If it says to connect to your home", 9, GREY)
+label(26*mm, by + 29.5*mm, "Wi-Fi first, that is exactly what you are doing.", 9, GREY)
+rows = [("Choose", "your home Wi-Fi from the list. Only 2.4GHz networks are shown."),
+        ("Type", "its password, then press Connect."),
+        ("Then", "Ident-Setup switches off and your phone drops off it. Rejoin your own Wi-Fi.")]
+yy = by + 20*mm
 for k, v in rows:
     fill(ACC); c.circle(29*mm, yy + 1.2*mm, 1.4*mm, stroke=0, fill=1)
     label(34*mm, yy, k, 9.5, INK, "Helvetica-Bold")
-    label(72*mm, yy, v, 9.5, GREY)
-    yy -= 7.5*mm
+    label(50*mm, yy, v, 9, GREY)
+    yy -= 7*mm
 footer()
 c.showPage()
 
-# ============================== PAGE 8 — DONE ==============================
-page_header("Done", 8, TOTAL)
+# ============================== PAGE 8 — STEP 5: FINISH SETUP ==============================
+# The first-time setup page (SETUP_PAGE in ident/web/app.py), over the home network. Required there:
+# the licence key (checked online) and a password of at least 6 characters; a username is asked too.
+page_header("", 8, TOTAL)
+stepnum(24*mm, H - 32*mm, 5, 10)
+label(34*mm, H - 35.5*mm, "Finish setting up", 15, INK, "Helvetica-Bold")
+label(34*mm, H - 43*mm, "Now on your own Wi-Fi, same as the display. No cables, no typing of code.", 9.5, GREY)
+
+px0, py0, ps = 26*mm, H - 132*mm, 2.6
+phone(px0, py0, ps)
+fill(INK); c.setFont("Helvetica-Bold", 5.4)
+c.drawString(px0 + 6*ps, py0 + 44*ps, "Set up your display")
+fill(GREY); c.setFont("Helvetica", 5)
+for k, t in enumerate(["Display name", "Home base", "Airline code", "Licence key", "Password"]):
+    fy = py0 + 38*ps - k*7*ps
+    c.drawString(px0 + 6*ps, fy, t)
+    stroke(LIGHT, 0.8); c.rect(px0 + 6*ps, fy - 4.2*ps, 18*ps, 2.8*ps, stroke=1, fill=0)
+fill(ACC); c.roundRect(px0 + 6*ps, py0 + 5.5*ps, 18*ps, 4*ps, 1.2, stroke=0, fill=1)
+fill((1, 1, 1)); c.setFont("Helvetica-Bold", 5.5)
+c.drawCentredString(px0 + 15*ps, py0 + 6.8*ps, "Finish setup")
+
+label(70*mm, H - 72*mm, "In any browser, go to:", 9.5, GREY)
+fill(INK); c.setFont("Courier-Bold", 12)
+c.drawString(70*mm, H - 81*mm, "ident.local:8080")
+label(70*mm, H - 92*mm, "Fill in the setup page and press Finish setup.", 9.5, INK)
+label(70*mm, H - 98*mm, "Then add it to your home screen: Share > Add to", 9.5, INK)
+label(70*mm, H - 104*mm, "Home Screen. It opens full screen with its own icon.", 9.5, INK)
+label(70*mm, H - 113*mm, "Can't reach it? Use the display's IP address from your", 9, GREY)
+label(70*mm, H - 118.5*mm, "router's device list, with :8080 on the end.", 9, GREY)
+
+by = H - 207*mm
+rrect(20*mm, by, W - 40*mm, 66*mm, 4, LIGHT, (0.99, 0.99, 0.98), 1.2)
+label(26*mm, by + 57*mm, "What to enter", 10, INK, "Helvetica-Bold")
+rows = [("Display style", "Pick the look you like. You can change it any time."),
+        ("Display name", "Anything. \"Kitchen\". Useful if you build a second one."),
+        ("Home base", "Your base airport code, e.g. LGW."),
+        ("Airline code", "Two letters, e.g. U2."),
+        ("Roster calendar", "Your crew .ics link. Can be left blank and added later."),
+        ("Licence key", "From your order email: IDNT-XXXX-XXXX-XXXX-XXXX. Checked online."),
+        ("Login", "A username and a password of at least 6 characters. It locks the panel.")]
+yy = by + 48*mm
+for k, v in rows:
+    fill(ACC); c.circle(29*mm, yy + 1.2*mm, 1.4*mm, stroke=0, fill=1)
+    label(34*mm, yy, k, 9.5, INK, "Helvetica-Bold")
+    label(68*mm, yy, v, 9, GREY)
+    yy -= 7*mm
+footer()
+c.showPage()
+
+# ============================== PAGE 9 — DONE ==============================
+page_header("Done", 9, TOTAL)
 
 dx, dy = 58*mm, H - 112*mm
 display(dx, dy, 1.15)

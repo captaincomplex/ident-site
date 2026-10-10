@@ -114,6 +114,14 @@ th{color:var(--accent2);font-weight:600}
 td.k{white-space:nowrap;color:var(--white);font-weight:600}
 .yes{color:var(--ok);font-weight:600}
 .no{color:var(--bad);font-weight:600}
+/* Feature comparison (parts.html#compare): the feature name may wrap, and a
+   tick or cross can carry a short reason in muted text. */
+.tablewrap{overflow-x:auto}
+table.cmp td.k{white-space:normal}
+table.cmp th:not(:first-child),table.cmp td:not(.k){width:32%}
+.cmp .yes,.cmp .no{font-size:17px;margin-right:4px}
+.soon{color:var(--brand);font-weight:600}
+.why{display:block;color:var(--muted);font-size:13px;margin-top:2px}
 
 details{background:var(--panel);border:1px solid var(--line);border-radius:11px;
   padding:0;margin-bottom:10px;overflow:hidden}
