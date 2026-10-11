@@ -306,9 +306,9 @@ Press **Finish setup** and you land on the control panel. From here you can:
 - **Airline logos:** upload your easyJet logo (use code `U2`) so the boarding-pass
   style shows it; add others (e.g. `BA`) for personal flights. Use PNG images with a
   see-through background for the best look.
-- **Display style:** tap a thumbnail to choose how the wall looks. Only the styles
-  your screen is big enough to draw are shown — the month calendar needs a 7" panel
-  or larger, so it doesn't appear on a 4.0".
+- **Display style:** tap a thumbnail to choose how the wall looks. The departure board
+  comes in three colours (**Board colours**). The month calendar is on a button
+  (**Buttons**), not a style.
 - **Timing sliders:** set your commute, walk-to-car, and debrief minutes so the
   "home" time is right for you.
 - **All settings:** the section at the very bottom exposes every option if you ever
