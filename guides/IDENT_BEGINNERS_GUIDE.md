@@ -307,8 +307,8 @@ Press **Finish setup** and you land on the control panel. From here you can:
   style shows it; add others (e.g. `BA`) for personal flights. Use PNG images with a
   see-through background for the best look.
 - **Display style:** tap a thumbnail to choose how the wall looks. The departure board
-  comes in three colours (**Board colours**). The month calendar is on a button
-  (**Buttons**), not a style.
+  comes in three colours (**Board colours**). The month calendar can fill the wall
+  on days off (**Days off**) or come up on a button (**Buttons**).
 - **Timing sliders:** set your commute, walk-to-car, and debrief minutes so the
   "home" time is right for you.
 - **All settings:** the section at the very bottom exposes every option if you ever
