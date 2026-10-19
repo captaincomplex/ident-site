@@ -9,6 +9,7 @@
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#14110a">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,6 +18,7 @@
   <a class="brand" href="index.html"><img src="/img/ident-wordmark.svg" alt="Ident" width="70" height="16"></a>
   <a class="l" href="index.html#how">How it works</a>
   <a class="l" href="displays.html">Displays</a>
+  <a class="l" href="index.html#styles">Styles</a>
   <a class="l" href="parts.html">Parts</a>
   <a class="l" href="faq.html">FAQ</a>
   <a class="l" href="airlines.html">Your airline</a>
@@ -24,14 +26,22 @@
   <a class="l" href="support.html">Support</a>
 </div></nav>
 
-<header><div class="wrap">
-  <h1>Which display?</h1>
-  <p class="lead">Ident drives two quite different kinds of panel. Neither is better —
-    they suit different rooms. Here's how to choose, and what we'd buy.</p>
+<header><div class="wrap herogrid">
+  <div class="herotext">
+    <h1>Which display?</h1>
+    <p class="lead">Ident drives two quite different kinds of panel. Neither is better —
+      they suit different rooms. Here's how to choose, and what we'd buy.</p>
+  </div>
+  <div class="hero-dev">
+    <div class="hero-pair">
+      <figure><figure class="dev "><img src="img/scenes/d_hero_poster_palma.png" alt="The travel poster style on a colour e-paper panel: Mallorca, flying to Palma, home 15:48" width="1600" height="960" loading="lazy"></figure><figcaption>Colour e-paper</figcaption></figure>
+      <figure><figure class="dev "><img src="img/scenes/d_led_128x32_helsinki.png" alt="A 128 by 32 LED matrix panel: in flight from Manchester to Helsinki" width="1024" height="256" loading="lazy"></figure><figcaption>LED matrix</figcaption></figure>
+    </div>
+    <p class="rnd">Both drawn by Ident's own software from sample rosters. The software is the same either way.</p>
+  </div>
 </div></header>
 
 <section><div class="wrap">
-  <p class="kicker">Statement piece &mdash; or understated</p>
   <p class="lede" style="margin-top:0">Blend in or stand out.</p>
   <p class="sub">Put the display behind a mount in a picture frame and it reads as a print
     on the wall. Or leave the Raspberry Pi on show behind the glass, wires and all, for
@@ -41,13 +51,13 @@
   <h2>Start here</h2>
   <table>
     <tr><th></th><th>Colour e-paper</th><th>LED matrix</th></tr>
-    <tr><td class="k">Looks like</td><td>Printed paper in a frame</td><td>An airport departure board</td></tr>
-    <tr><td class="k">In a dark room</td><td class="yes">Invisible — no light at all</td><td>Glows; dimmable, but still a light source</td></tr>
-    <tr><td class="k">Updates</td><td>~30 seconds, on change</td><td class="yes">Instantly, continuously</td></tr>
-    <tr><td class="k">Power</td><td class="yes">Under a watt; holds image unplugged</td><td>Several watts, more at full brightness</td></tr>
-    <tr><td class="k">Assembly</td><td class="yes">Push onto the header, no soldering</td><td>Ribbon cable, power injection, a bonnet</td></tr>
-    <tr><td class="k">Best in</td><td>Hall, kitchen, bedroom, lounge</td><td>Study, office, workshop, bar</td></tr>
-    <tr><td class="k">Cost</td><td>£50–£230 depending on size</td><td>£25–£70 plus a bonnet and supply</td></tr>
+    <tr><td class="k">Looks like</td><td data-label="Colour e-paper">Printed paper in a frame</td><td data-label="LED matrix">An airport departure board</td></tr>
+    <tr><td class="k">In a dark room</td><td class="yes" data-label="Colour e-paper">Invisible — no light at all</td><td data-label="LED matrix">Glows; dimmable, but still a light source</td></tr>
+    <tr><td class="k">Updates</td><td data-label="Colour e-paper">~30 seconds, on change</td><td class="yes" data-label="LED matrix">Instantly, continuously</td></tr>
+    <tr><td class="k">Power</td><td class="yes" data-label="Colour e-paper">Under a watt; holds image unplugged</td><td data-label="LED matrix">Several watts, more at full brightness</td></tr>
+    <tr><td class="k">Assembly</td><td class="yes" data-label="Colour e-paper">Push onto the header, no soldering</td><td data-label="LED matrix">Ribbon cable, power injection, a bonnet</td></tr>
+    <tr><td class="k">Best in</td><td data-label="Colour e-paper">Hall, kitchen, bedroom, lounge</td><td data-label="LED matrix">Study, office, workshop, bar</td></tr>
+    <tr><td class="k">Cost</td><td data-label="Colour e-paper">£50–£230 depending on size</td><td data-label="LED matrix">£25–£70 plus a bonnet and supply</td></tr>
   </table>
   <div class="note" style="margin-top:18px">
     <strong>Short version:</strong> if it's going somewhere you relax, buy e-paper. If you
@@ -57,46 +67,57 @@
 </div></section>
 
 <section><div class="wrap">
-  <p class="kicker">Option one</p>
   <h2>Colour e-paper</h2>
   <p class="sub">Pimoroni Inky Impression panels. They sit straight on the Raspberry Pi's
     40-pin header — no soldering, no wiring — and have four buttons on the side.</p>
+  <div class="sizes">
+    <figure class="size" style="--w:3.33"><figure class="dev "><img src="img/scenes/d_size_4_0.png" alt="A 4.0 inch e-paper panel showing the Solari board in flight, Manchester to Gran Canaria" width="1200" height="800" loading="lazy"></figure><figcaption>4.0″</figcaption></figure>
+    <figure class="size" style="--w:4.56"><figure class="dev "><img src="img/scenes/d_size_5_7.png" alt="A 5.7 inch e-paper panel showing the Solari board in flight, Manchester to Gran Canaria" width="1200" height="896" loading="lazy"></figure><figcaption>5.7″</figcaption></figure>
+    <figure class="size" style="--w:6.26"><figure class="dev "><img src="img/scenes/d_size_7_3.png" alt="A 7.3 inch e-paper panel showing the Solari board in flight, Manchester to Gran Canaria" width="1600" height="960" loading="lazy"></figure><figcaption>7.3″</figcaption></figure>
+    <figure class="size" style="--w:10.64"><figure class="dev "><img src="img/scenes/d_size_13_3.png" alt="A 13.3 inch e-paper panel showing the Solari board in flight, Manchester to Gran Canaria" width="1600" height="1200" loading="lazy"></figure><figcaption>13.3″</figcaption></figure>
+  </div>
+  <p class="rnd">The same board at the four sizes<span class="scale-note">, roughly to scale</span>.</p>
 
   <table>
     <tr><th>Panel</th><th>Resolution</th><th>Colours</th><th>Indicative</th><th>Verdict</th></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-7-3-2025-edition" target="_blank" rel="noopener">Inky Impression 7.3″</a> <span class="mono" style="opacity:.65;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono">800×480</td><td>6</td><td>£79.50</td>
-      <td><span class="yes">The one to buy.</span> Readable across a kitchen, wide enough for
+    <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-7-3-2025-edition" target="_blank" rel="noopener">Inky Impression 7.3″</a> <span class="mono" style="opacity:.65;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono" data-label="Resolution">800×480</td><td data-label="Colours">6</td><td data-label="Indicative">£79.50</td>
+      <td data-label="Verdict"><span class="yes">The one to buy.</span> Readable across a kitchen, wide enough for
         the route maps and the full duty timeline.</td></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-4-0" target="_blank" rel="noopener">Inky Impression 4.0″</a> <span class="mono" style="opacity:.65;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono">600×400</td><td>6</td><td>£49.50</td>
-      <td>Cheapest way in and genuinely good on a desk or by the front door. Small for a wall.</td></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-13-3-2025-edition" target="_blank" rel="noopener">Inky Impression 13.3″</a> <span class="mono" style="opacity:.65;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono">1600×1200</td><td>6</td><td>£229.50</td>
-      <td>A proper wall piece, and the maps look superb. Slowest to redraw, and by far the
+    <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-4-0" target="_blank" rel="noopener">Inky Impression 4.0″</a> <span class="mono" style="opacity:.65;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono" data-label="Resolution">600×400</td><td data-label="Colours">6</td><td data-label="Indicative">£49.50</td>
+      <td data-label="Verdict">Cheapest way in and genuinely good on a desk or by the front door. Small for a wall.</td></tr>
+    <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-13-3-2025-edition" target="_blank" rel="noopener">Inky Impression 13.3″</a> <span class="mono" style="opacity:.65;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono" data-label="Resolution">1600×1200</td><td data-label="Colours">6</td><td data-label="Indicative">£229.50</td>
+      <td data-label="Verdict">A proper wall piece, and the maps look superb. Slowest to redraw, and by far the
         most expensive part of the build.</td></tr>
-    <tr><td class="k">Inky Impression 5.7″</td><td class="mono">600×448</td><td>7</td><td>—</td>
-      <td><span class="no">Discontinued.</span> The panel Ident was originally built on and
+    <tr><td class="k">Inky Impression 5.7″</td><td class="mono" data-label="Resolution">600×448</td><td data-label="Colours">7</td><td data-label="Indicative">—</td>
+      <td data-label="Verdict"><span class="no">Discontinued.</span> The panel Ident was originally built on and
         still fully supported — but don't go hunting for one.</td></tr>
   </table>
 </div></section>
 
 <section><div class="wrap">
-  <p class="kicker">Option two</p>
   <h2>LED matrix</h2>
   <p class="sub">Standard HUB75 panels, driven through hzeller's <span class="mono">rpi-rgb-led-matrix</span>
     library. Cheap, bright, and the closest thing to a real departure board.</p>
+  <div class="leds">
+    <figure class="led w1"><figure class="dev ledf"><img src="img/scenes/d_led_128x32_helsinki.png" alt="A 128 by 32 LED matrix panel: IN FLIGHT, EZY8101, a route arc from Gatwick to Lanzarote, land and home times" width="1024" height="256" loading="lazy"></figure><figcaption>128×32 · in flight, Gatwick to Lanzarote</figcaption></figure>
+    <figure class="led w2"><figure class="dev ledf"><img src="img/scenes/d_led_64x32_copenhagen.png" alt="A 64 by 32 LED matrix panel: flight EZY2901 from Edinburgh to Copenhagen, land and home times" width="1024" height="512" loading="lazy"></figure><figcaption>64×32 · in flight, Edinburgh to Copenhagen</figcaption></figure>
+    <figure class="led w3"><figure class="dev ledf"><img src="img/scenes/d_led_64x32_oslo.png" alt="A 128 by 32 LED matrix panel on a turnaround in Oslo, with the departure time and home time" width="1024" height="512" loading="lazy"></figure><figcaption>64×32 · turnaround in Oslo</figcaption></figure>
+    <figure class="led w4"><figure class="dev ledf"><img src="img/scenes/d_led_64x32_vienna.png" alt="A 64 by 32 LED matrix panel on a turnaround in Vienna, with the departure time and home time" width="1024" height="512" loading="lazy"></figure><figcaption>64×32 · turnaround in Vienna</figcaption></figure>
+  </div>
 
   <table>
     <tr><th>Configuration</th><th>Pixels</th><th>Indicative</th><th>Verdict</th></tr>
-    <tr><td class="k">2 × <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 panels</a> chained</td><td class="mono">128×32</td><td>~£50 + bonnet</td>
-      <td><span class="yes">Recommended.</span> The default Ident is tuned for. Wide enough for
+    <tr><td class="k">2 × <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 panels</a> chained</td><td class="mono" data-label="Pixels">128×32</td><td data-label="Indicative">~£50 + bonnet</td>
+      <td data-label="Verdict"><span class="yes">Recommended.</span> The default Ident is tuned for. Wide enough for
         a full-width route map with a moving marker.</td></tr>
-    <tr><td class="k">Single <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 panel</a></td><td class="mono">64×32</td><td>~£25 + bonnet</td>
-      <td>Works, on the compact layout. Long routes truncate and scroll.</td></tr>
-    <tr><td class="k">Single <a href="https://thepihut.com/products/64x64-rgb-led-matrix-panel-3mm-pitch" target="_blank" rel="noopener">64×64 panel</a></td><td class="mono">64×64</td><td>~£35 + bonnet</td>
-      <td><span class="no">Not yet.</span> One panel to mount and a lovely shape, but the
+    <tr><td class="k">Single <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 panel</a></td><td class="mono" data-label="Pixels">64×32</td><td data-label="Indicative">~£25 + bonnet</td>
+      <td data-label="Verdict">Works, on the compact layout. Long routes truncate and scroll.</td></tr>
+    <tr><td class="k">Single <a href="https://thepihut.com/products/64x64-rgb-led-matrix-panel-3mm-pitch" target="_blank" rel="noopener">64×64 panel</a></td><td class="mono" data-label="Pixels">64×64</td><td data-label="Indicative">~£35 + bonnet</td>
+      <td data-label="Verdict"><span class="no">Not yet.</span> One panel to mount and a lovely shape, but the
         LED layouts are currently drawn for a 32-pixel-high panel — on a 64-high one the
         text sits in the top half. Support is being added; ask before buying for Ident.</td></tr>
-    <tr><td class="k">4 × <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 chained</a></td><td class="mono">256×32</td><td>~£95 + bonnet</td>
-      <td>Dramatic on a long wall, but needs a proper 5V supply and careful power injection.</td></tr>
+    <tr><td class="k">4 × <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 chained</a></td><td class="mono" data-label="Pixels">256×32</td><td data-label="Indicative">~£95 + bonnet</td>
+      <td data-label="Verdict">Dramatic on a long wall, but needs a proper 5V supply and careful power injection.</td></tr>
   </table>
 
   <div class="note" style="margin-top:18px">
@@ -118,27 +139,26 @@
 
 <section><div class="wrap">
   <h2>What to avoid</h2>
-  <div class="grid">
-    <div class="card"><h3>Cheap "e-ink" that isn't</h3>
+  <div class="ruled">
+    <div><h3>Cheap "e-ink" that isn't</h3>
       <p>Small two-colour e-paper modules with no buttons and a ribbon you must solder.
         They work in principle but the display area is tiny and the experience is poor.</p></div>
-    <div class="card"><h3>HDMI monitors and tablets</h3>
+    <div><h3>HDMI monitors and tablets</h3>
       <p>Ident will happily drive one via the simulator, but a backlit screen glowing all
         night in a hallway is exactly what e-paper exists to avoid.</p></div>
-    <div class="card"><h3>Panels with no Pi library</h3>
+    <div><h3>Panels with no Pi library</h3>
       <p>SPI displays without a maintained Python driver mean writing one. If it isn't an
         Inky or a HUB75 panel, <a href="support.html">ask first</a>.</p></div>
-    <div class="card"><h3>Undersized power supplies</h3>
+    <div><h3>Undersized power supplies</h3>
       <p>The commonest LED-matrix failure. Flicker, colour shifts and random reboots are
-        nearly always the supply, not the code.</p></div>
-  </div>
+        nearly always the supply, not the code.</p></div></div>
 </div></section>
 
 <section><div class="wrap">
   <h2>Whichever you choose</h2>
   <p class="sub">The software is identical. Every style adapts to the panel you own, and you can
     switch panels later without buying anything else.</p>
-  <div class="reassure">
+  <div class="ruled">
     <div><h4>Same roster, same setup</h4><p>Nothing about the configuration changes between panel types.</p></div>
     <div><h4>Detected automatically</h4><p>Ident works out which display is fitted at boot.</p></div>
     <div><h4>Full parts list</h4><p>Including the combinations that don't work — <a href="parts.html">see parts</a>.</p></div>
@@ -146,6 +166,7 @@
 </div></section>
 
 <footer><div class="wrap">
+  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
   <div class="fl"><a href="index.html">Home</a><a href="parts.html">Parts</a>
     <a href="faq.html">FAQ</a><a href="support.html">Support</a><a href="legal.html">Legal</a></div>
   <p>Prices are indicative, checked 28 August 2026, and each panel links to two UK

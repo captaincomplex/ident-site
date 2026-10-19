@@ -9,13 +9,16 @@
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#14110a">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav><div class="wrap">
   <a class="brand" href="index.html"><img src="/img/ident-wordmark.svg" alt="Ident" width="70" height="16"></a>
+  <a class="l" href="index.html#how">How it works</a>
   <a class="l" href="displays.html">Displays</a>
+  <a class="l" href="index.html#styles">Styles</a>
   <a class="l" href="parts.html">Parts</a>
   <a class="l" href="faq.html">FAQ</a>
   <a class="l" href="airlines.html">Your airline</a>
@@ -24,7 +27,6 @@
 </div></nav>
 
 <header><div class="wrap">
-  <span class="badge">buy your own parts · no markup</span>
   <h1>What to buy, <span class="g">and what not to pair</span></h1>
   <p class="lead">Ident is software — you source the hardware yourself. Start with how much you
     want to build, then pick the parts. Every supported option is here, and so are the
@@ -34,23 +36,22 @@
 <section id="choose"><div class="wrap">
   <h2>Three ways to run Ident</h2>
   <p class="sub">Pick by how much you want to do yourself.</p>
-  <div class="grid">
-    <div class="card"><h3>Beginner — a ready-made display</h3>
+  <div class="ruled three">
+    <div><h3>Beginner — a ready-made display</h3>
       <p>Seeed Studio's reTerminal: screen, battery, case and stand in one box. Nothing to
         assemble — you install Ident from a computer with a USB-C cable. <strong>Runs on
         battery power</strong>, charged over USB-C.
         <strong>In testing; not on sale yet.</strong>
         <a href="#reterminal">The two models</a> · <a href="#compare">Compared with a Pi</a></p></div>
-    <div class="card"><h3>Intermediate — build it on a Raspberry Pi</h3>
+    <div><h3>Intermediate — build it on a Raspberry Pi</h3>
       <p>A Raspberry Pi and a Pimoroni e-paper panel, or an LED departure board. A little
         assembly, no soldering, and every style and feature Ident has today.
         <strong>Designed to be plugged in</strong>; it can run on a battery if you add one.
         <a href="#reference">The reference build</a></p></div>
-    <div class="card"><h3>Already got an iPad at home?</h3>
+    <div><h3>Already got an iPad at home?</h3>
       <p>Ident as a web page: the board full-screen on an iPad you already own, with nothing to
         buy. Load your roster from its calendar file and it's read on the iPad itself.
-        Works on iPads back to iOS 10.3. <strong>In testing; not on sale yet.</strong></p></div>
-  </div>
+        Works on iPads back to iOS 10.3. <strong>In testing; not on sale yet.</strong></p></div></div>
 </div></section>
 
 <section id="compare"><div class="wrap">
@@ -59,24 +60,24 @@
     for the reTerminal now. Correct as of 10 October 2026.</p>
   <div class="tablewrap"><table class="cmp">
     <tr><th>Feature</th><th>Raspberry Pi build</th><th>reTerminal</th></tr>
-    <tr><td class="k">Always on: changes the moment the roster does</td><td><span class="yes" aria-label="Yes">✓</span></td><td><span class="no" aria-label="No">✗</span> <span class="why">Checks every 20 minutes while you’re working, hourly otherwise, at once on a button press</span></td></tr>
-    <tr><td class="k">Runs for weeks on its own battery</td><td><span class="no" aria-label="No">✗</span> <span class="why">Plugged in; an add-on battery lasts days</span></td><td><span class="yes" aria-label="Yes">✓</span> <span class="why">Built in, charged over USB-C</span></td></tr>
-    <tr><td class="k">Nothing to assemble</td><td><span class="no" aria-label="No">✗</span></td><td><span class="yes" aria-label="Yes">✓</span></td></tr>
-    <tr><td class="k">Case and stand included</td><td><span class="no" aria-label="No">✗</span></td><td><span class="yes" aria-label="Yes">✓</span></td></tr>
-    <tr><td class="k">No SD card to wear out</td><td><span class="no" aria-label="No">✗</span></td><td><span class="yes" aria-label="Yes">✓</span></td></tr>
-    <tr><td class="k">Your roster stays in your house</td><td><span class="yes" aria-label="Yes">✓</span></td><td><span class="yes" aria-label="Yes">✓</span></td></tr>
-    <tr><td class="k">Private codes hidden by default</td><td><span class="yes" aria-label="Yes">✓</span></td><td><span class="yes" aria-label="Yes">✓</span></td></tr>
-    <tr><td class="k">Colour screen</td><td><span class="yes" aria-label="Yes">✓</span></td><td><span class="yes" aria-label="Yes">✓</span> <span class="why">E1002; the E1001 is black and white</span></td></tr>
-    <tr><td class="k">Choice of screen size</td><td><span class="yes" aria-label="Yes">✓</span> <span class="why">4.0″, 7.3″, 13.3″</span></td><td><span class="no" aria-label="No">✗</span> <span class="why">7.3″ or 7.5″</span></td></tr>
-    <tr><td class="k">LED departure-board panels</td><td><span class="yes" aria-label="Yes">✓</span></td><td><span class="no" aria-label="No">✗</span></td></tr>
-    <tr><td class="k">All 14 display styles</td><td><span class="yes" aria-label="Yes">✓</span></td><td><span class="soon">Coming</span> <span class="why">Six written and tested: Solari (in all three colours), boarding pass, flight strips, chart, minimal and 24-hour dial. The other eight to follow</span></td></tr>
-    <tr><td class="k">Scan-to-track QR code</td><td><span class="yes" aria-label="Yes">✓</span></td><td><span class="soon">Coming</span></td></tr>
-    <tr><td class="k">Live flight tracking</td><td><span class="yes" aria-label="Yes">✓</span></td><td><span class="soon">Coming</span></td></tr>
-    <tr><td class="k">Airport weather</td><td><span class="yes" aria-label="Yes">✓</span></td><td><span class="soon">Coming</span></td></tr>
-    <tr><td class="k">Day-off photographs</td><td><span class="yes" aria-label="Yes">✓</span></td><td><span class="soon">Coming</span></td></tr>
-    <tr><td class="k">Settings from your phone at any time</td><td><span class="yes" aria-label="Yes">✓</span></td><td><span class="no" aria-label="No">✗</span> <span class="why">Hold a button for its setup page; it sleeps the rest of the time</span></td></tr>
-    <tr><td class="k">PDF roster upload</td><td><span class="yes" aria-label="Yes">✓</span></td><td><span class="no" aria-label="No">✗</span> <span class="why">Calendar link only</span></td></tr>
-    <tr><td class="k">Updates itself</td><td><span class="yes" aria-label="Yes">✓</span></td><td><span class="soon">Coming</span></td></tr>
+    <tr><td class="k">Always on: changes the moment the roster does</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span> <span class="why">Checks every 20 minutes while you’re working, hourly otherwise, at once on a button press</span></td></tr>
+    <tr><td class="k">Runs for weeks on its own battery</td><td data-label="Raspberry Pi build"><span class="no" aria-label="No">✗</span> <span class="why">Plugged in; an add-on battery lasts days</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span> <span class="why">Built in, charged over USB-C</span></td></tr>
+    <tr><td class="k">Nothing to assemble</td><td data-label="Raspberry Pi build"><span class="no" aria-label="No">✗</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span></td></tr>
+    <tr><td class="k">Case and stand included</td><td data-label="Raspberry Pi build"><span class="no" aria-label="No">✗</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span></td></tr>
+    <tr><td class="k">No SD card to wear out</td><td data-label="Raspberry Pi build"><span class="no" aria-label="No">✗</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span></td></tr>
+    <tr><td class="k">Your roster stays in your house</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span></td></tr>
+    <tr><td class="k">Private codes hidden by default</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span></td></tr>
+    <tr><td class="k">Colour screen</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span> <span class="why">E1002; the E1001 is black and white</span></td></tr>
+    <tr><td class="k">Choice of screen size</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span> <span class="why">4.0″, 7.3″, 13.3″</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span> <span class="why">7.3″ or 7.5″</span></td></tr>
+    <tr><td class="k">LED departure-board panels</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span></td></tr>
+    <tr><td class="k">All 14 display styles</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="soon">Coming</span> <span class="why">Six written and tested: Solari (in all three colours), boarding pass, flight strips, chart, minimal and 24-hour dial. The other eight to follow</span></td></tr>
+    <tr><td class="k">Scan-to-track QR code</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="soon">Coming</span></td></tr>
+    <tr><td class="k">Live flight tracking</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="soon">Coming</span></td></tr>
+    <tr><td class="k">Airport weather</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="soon">Coming</span></td></tr>
+    <tr><td class="k">Day-off photographs</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="soon">Coming</span></td></tr>
+    <tr><td class="k">Settings from your phone at any time</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span> <span class="why">Hold a button for its setup page; it sleeps the rest of the time</span></td></tr>
+    <tr><td class="k">PDF roster upload</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span> <span class="why">Calendar link only</span></td></tr>
+    <tr><td class="k">Updates itself</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="soon">Coming</span></td></tr>
   </table></div>
 </div></section>
 
@@ -90,19 +91,19 @@
   <table>
     <tr><th>Model</th><th>Screen</th><th>Price</th><th>Battery</th><th>Redraw</th></tr>
     <tr><td class="k"><a href="https://www.seeedstudio.com/reTerminal-E1002-p-6533.html" target="_blank" rel="noopener">E1002</a> (colour)</td>
-      <td>7.3″ colour e-paper (E Ink Spectra 6), 800×480</td>
-      <td><strong>£100.62</strong> at <a href="https://uk.robotshop.com/products/seeedstudio-reterminal-e1002-full-color-epaper-display" target="_blank" rel="noopener">RobotShop UK</a>,
+      <td data-label="Screen">7.3″ colour e-paper (E Ink Spectra 6), 800×480</td>
+      <td data-label="Price"><strong>£100.62</strong> at <a href="https://uk.robotshop.com/products/seeedstudio-reterminal-e1002-full-color-epaper-display" target="_blank" rel="noopener">RobotShop UK</a>,
         including VAT — made to order, no change-of-mind returns.
         Or US$99 direct from Seeed, shipped from China, with import VAT and a handling fee
         to pay on delivery.</td>
-      <td>2000&nbsp;mAh. Seeed quote up to 3 months</td>
-      <td>15–30 seconds</td></tr>
+      <td data-label="Battery">2000&nbsp;mAh. Seeed quote up to 3 months</td>
+      <td data-label="Redraw">15–30 seconds</td></tr>
     <tr><td class="k"><a href="https://www.seeedstudio.com/reTerminal-E1001-p-6534.html" target="_blank" rel="noopener">E1001</a> (black &amp; white)</td>
-      <td>7.5″ black-and-white e-paper, 800×480</td>
-      <td><strong>£79.99</strong> at <a href="https://smarthomeshopuk.com/products/reterminal-e1001-7-5-monochrome-epaper-display-esp32-s3/" target="_blank" rel="noopener">Smart Home Shop UK</a>,
+      <td data-label="Screen">7.5″ black-and-white e-paper, 800×480</td>
+      <td data-label="Price"><strong>£79.99</strong> at <a href="https://smarthomeshopuk.com/products/reterminal-e1001-7-5-monochrome-epaper-display-esp32-s3/" target="_blank" rel="noopener">Smart Home Shop UK</a>,
         including VAT. Or US$73.99 direct from Seeed, with import charges as above.</td>
-      <td>2000&nbsp;mAh. Seeed quote up to 3 months</td>
-      <td>2–5 seconds</td></tr>
+      <td data-label="Battery">2000&nbsp;mAh. Seeed quote up to 3 months</td>
+      <td data-label="Redraw">2–5 seconds</td></tr>
   </table>
   <div class="note" style="margin-top:16px"><strong>Battery life.</strong> Seeed's three months
     is on their own software and settings. Ident checks your roster every 20 minutes while
@@ -126,25 +127,25 @@
   <table>
     <tr><th>Part</th><th>Which one</th><th>Indicative</th></tr>
     <tr><td class="k">Display</td>
-      <td><a href="https://thepihut.com/products/inky-impression-7-3-2025-edition" target="_blank" rel="noopener">Pimoroni Inky Impression 7.3″ (2025 Edition)</a> — 800×480, Spectra 6</td><td>£79.50</td></tr>
+      <td data-label="Which one"><a href="https://thepihut.com/products/inky-impression-7-3-2025-edition" target="_blank" rel="noopener">Pimoroni Inky Impression 7.3″ (2025 Edition)</a> — 800×480, Spectra 6</td><td data-label="Indicative">£79.50</td></tr>
     <tr><td class="k">Computer</td>
-      <td><a href="https://thepihut.com/products/raspberry-pi-3-model-a-plus" target="_blank" rel="noopener">Raspberry Pi 3 Model A+</a> — header already fitted, and
+      <td data-label="Which one"><a href="https://thepihut.com/products/raspberry-pi-3-model-a-plus" target="_blank" rel="noopener">Raspberry Pi 3 Model A+</a> — header already fitted, and
         <strong>dual-band Wi-Fi</strong>, so no 2.4GHz-only problem<br>
         <span style="opacity:.7">The Pi Zero 2 WH (£17.30, header fitted) is smaller and draws less
         power, so it is the first choice whenever it is in stock — at the time of writing it is
         sold out almost everywhere. If the 3 Model A+ is sold out too, a Pi 4 (1GB) is the
-        fallback; see <a href="#computers">Computers</a> below.</span></td><td>£24.00</td></tr>
+        fallback; see <a href="#computers">Computers</a> below.</span></td><td data-label="Indicative">£24.00</td></tr>
     <tr><td class="k">Power supply</td>
-      <td><a href="https://thepihut.com/products/raspberry-pi-zero-uk-power-supply" target="_blank" rel="noopener">Official 12.5W micro-USB supply, UK plug</a></td><td>£7.70</td></tr>
+      <td data-label="Which one"><a href="https://thepihut.com/products/raspberry-pi-zero-uk-power-supply" target="_blank" rel="noopener">Official 12.5W micro-USB supply, UK plug</a></td><td data-label="Indicative">£7.70</td></tr>
     <tr><td class="k">microSD card</td>
-      <td>Any branded <strong>16–32GB</strong> card, ideally <strong>A1</strong>-rated
+      <td data-label="Which one">Any branded <strong>16–32GB</strong> card, ideally <strong>A1</strong>-rated
         (<a href="https://thepihut.com/products/sandisk-microsd-card-class-10-a1" target="_blank" rel="noopener">example</a>, though
         twin packs elsewhere are usually far better value). Ident and the operating
         system together use under 4GB — a bigger card buys longer life, not more room.
         <br><span style="opacity:.7">"A1" is the rating that matters: it promises small
         random reads and writes, which is what running an OS is. "Class 10" and "U1"
-        only describe video recording speed.</span></td><td>~£15</td></tr>
-    <tr><td class="k"></td><td><strong>Total</strong></td><td><strong>~£126</strong></td></tr>
+        only describe video recording speed.</span></td><td data-label="Indicative">~£15</td></tr>
+    <tr><td class="k"></td><td data-label="Which one"><strong>Total</strong></td><td data-label="Indicative"><strong>~£126</strong></td></tr>
   </table>
   <div class="note" style="margin-top:16px">Board and power-supply prices checked at The Pi Hut on 26 September
     2026, everything else in August 2026; all include UK VAT. They move — treat them as indicative, not a quote. You'll also need a microSD card reader
@@ -164,13 +165,13 @@
   <table>
     <tr><th>Part</th><th>Which one</th><th>Indicative</th></tr>
     <tr><td class="k">Battery for a Pi Zero 2 W</td>
-      <td><a href="https://www.amazon.co.uk/dp/B09QS12N1W" target="_blank" rel="noopener">PiSugar 3</a>,
-        1200&nbsp;mAh, with the clock that switches the Pi back on</td><td>£39.99</td></tr>
+      <td data-label="Which one"><a href="https://www.amazon.co.uk/dp/B09QS12N1W" target="_blank" rel="noopener">PiSugar 3</a>,
+        1200&nbsp;mAh, with the clock that switches the Pi back on</td><td data-label="Indicative">£39.99</td></tr>
     <tr><td class="k">Battery for a Pi 3 A+</td>
-      <td><a href="https://www.pisugar.com/products/pisugar-3-plus-raspberry-pi-ups" target="_blank" rel="noopener">PiSugar 3 Plus</a>,
-        5000&nbsp;mAh — the bigger cell, and the longer life</td><td>US$49.99</td></tr>
+      <td data-label="Which one"><a href="https://www.pisugar.com/products/pisugar-3-plus-raspberry-pi-ups" target="_blank" rel="noopener">PiSugar 3 Plus</a>,
+        5000&nbsp;mAh — the bigger cell, and the longer life</td><td data-label="Indicative">US$49.99</td></tr>
     <tr><td class="k">Charging</td>
-      <td>Any USB-C phone charger. It charges in place, and keeps running while it does.</td><td>—</td></tr>
+      <td data-label="Which one">Any USB-C phone charger. It charges in place, and keeps running while it does.</td><td data-label="Indicative">—</td></tr>
   </table>
   <p class="sub" style="margin-top:14px">Why not a Witty Pi? It sits on the same pins as the
     display and shares one of them, and on a Pi Zero 2 W the display can stop updating.
@@ -190,21 +191,22 @@
   <p class="sub">The other supported build. Brighter, livelier, and it looks like the board
     at the gate — but it glows, it needs its own power supply, and it is more of a project.
     Mains only; there is no battery version of an LED panel.</p>
+  <div class="pair-one"><figure class="led"><figure class="dev ledf"><img src="img/scenes/p_led_128x32_athens.png" alt="A 128 by 32 LED matrix panel: in flight from Birmingham to Athens, land and home times" width="1024" height="256" loading="lazy"></figure><figcaption>128×32 · the recommended pair of 64×32 panels</figcaption></figure></div>
   <table>
     <tr><th>Part</th><th>Which one</th><th>Indicative</th></tr>
     <tr><td class="k">Panels</td>
-      <td>2 × <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 HUB75 panels</a>, chained to 128×32 — the size the
-        layouts are drawn for</td><td>~£50</td></tr>
+      <td data-label="Which one">2 × <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 HUB75 panels</a>, chained to 128×32 — the size the
+        layouts are drawn for</td><td data-label="Indicative">~£50</td></tr>
     <tr><td class="k">Driver</td>
-      <td><a href="https://thepihut.com/products/adafruit-rgb-matrix-bonnet-for-raspberry-pi-ada3211" target="_blank" rel="noopener">Adafruit RGB Matrix Bonnet</a>, or the
-        <a href="https://thepihut.com/products/adafruit-rgb-matrix-hat-rtc-for-raspberry-pi-mini-kit" target="_blank" rel="noopener">Matrix HAT + RTC</a> when the bonnet is out of stock</td><td>£14.40</td></tr>
+      <td data-label="Which one"><a href="https://thepihut.com/products/adafruit-rgb-matrix-bonnet-for-raspberry-pi-ada3211" target="_blank" rel="noopener">Adafruit RGB Matrix Bonnet</a>, or the
+        <a href="https://thepihut.com/products/adafruit-rgb-matrix-hat-rtc-for-raspberry-pi-mini-kit" target="_blank" rel="noopener">Matrix HAT + RTC</a> when the bonnet is out of stock</td><td data-label="Indicative">£14.40</td></tr>
     <tr><td class="k">Panel supply</td>
-      <td><a href="https://thepihut.com/products/5v-4a-power-supply-2-1mm-jack" target="_blank" rel="noopener">5V 4A supply</a> — <strong>separate from the Pi's</strong>, straight
-        into the bonnet</td><td>~£12</td></tr>
+      <td data-label="Which one"><a href="https://thepihut.com/products/5v-4a-power-supply-2-1mm-jack" target="_blank" rel="noopener">5V 4A supply</a> — <strong>separate from the Pi's</strong>, straight
+        into the bonnet</td><td data-label="Indicative">~£12</td></tr>
     <tr><td class="k">Computer</td>
-      <td><a href="https://thepihut.com/products/raspberry-pi-3-model-a-plus" target="_blank" rel="noopener">Raspberry Pi 3 Model A+</a>, plus its own
-        <a href="https://thepihut.com/products/raspberry-pi-zero-uk-power-supply" target="_blank" rel="noopener">12.5W micro-USB supply</a> and a microSD card</td><td>~£40</td></tr>
-    <tr><td class="k"></td><td><strong>Total</strong></td><td><strong>~£116</strong></td></tr>
+      <td data-label="Which one"><a href="https://thepihut.com/products/raspberry-pi-3-model-a-plus" target="_blank" rel="noopener">Raspberry Pi 3 Model A+</a>, plus its own
+        <a href="https://thepihut.com/products/raspberry-pi-zero-uk-power-supply" target="_blank" rel="noopener">12.5W micro-USB supply</a> and a microSD card</td><td data-label="Indicative">~£40</td></tr>
+    <tr><td class="k"></td><td data-label="Which one"><strong>Total</strong></td><td data-label="Indicative"><strong>~£116</strong></td></tr>
   </table>
   <div class="note" style="margin-top:16px">
     <strong>What works today:</strong> 128×32 (two panels chained) and 64×32 (one panel).
@@ -218,16 +220,18 @@
   <h2>Displays</h2>
   <p class="sub">All are Pimoroni Inky Impression panels and all are supported. Layouts adapt to
     whichever you choose.</p>
+  <div class="pair-one narrow"><figure class="size1"><figure class="dev"><img src="img/scenes/p_epaper_7_3.png" alt="A 7.3 inch e-paper panel showing the Solari board in flight from Glasgow to Ibiza" width="1600" height="960" loading="lazy"></figure><figcaption>7.3″ &mdash; the one to buy</figcaption></figure></div>
+  <p class="rnd">Drawn by Ident's own software from a sample roster.</p>
   <table>
     <tr><th>Panel</th><th>Resolution</th><th>Colours</th><th>Verdict</th></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-7-3-2025-edition" target="_blank" rel="noopener">7.3″ (2025)</a> <span style="opacity:.6;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono">800×480</td><td>6 (Spectra)</td>
-      <td><span class="yes">Recommended.</span> Best balance of size, price and legibility.</td></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-4-0" target="_blank" rel="noopener">4.0″</a> <span style="opacity:.6;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono">600×400</td><td>6 (Spectra)</td>
-      <td>Cheapest entry. Fine on a desk; small for a wall.</td></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-13-3-2025-edition" target="_blank" rel="noopener">13.3″</a> <span style="opacity:.6;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono">1600×1200</td><td>6 (Spectra)</td>
-      <td>Superb but expensive, and noticeably slower to redraw.</td></tr>
-    <tr><td class="k">5.7″</td><td class="mono">600×448</td><td>7 (ACeP)</td>
-      <td><span class="no">Discontinued.</span> Supported if you own one; don't hunt for it.</td></tr>
+    <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-7-3-2025-edition" target="_blank" rel="noopener">7.3″ (2025)</a> <span style="opacity:.6;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono" data-label="Resolution">800×480</td><td data-label="Colours">6 (Spectra)</td>
+      <td data-label="Verdict"><span class="yes">Recommended.</span> Best balance of size, price and legibility.</td></tr>
+    <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-4-0" target="_blank" rel="noopener">4.0″</a> <span style="opacity:.6;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono" data-label="Resolution">600×400</td><td data-label="Colours">6 (Spectra)</td>
+      <td data-label="Verdict">Cheapest entry. Fine on a desk; small for a wall.</td></tr>
+    <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-13-3-2025-edition" target="_blank" rel="noopener">13.3″</a> <span style="opacity:.6;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono" data-label="Resolution">1600×1200</td><td data-label="Colours">6 (Spectra)</td>
+      <td data-label="Verdict">Superb but expensive, and noticeably slower to redraw.</td></tr>
+    <tr><td class="k">5.7″</td><td class="mono" data-label="Resolution">600×448</td><td data-label="Colours">7 (ACeP)</td>
+      <td data-label="Verdict"><span class="no">Discontinued.</span> Supported if you own one; don't hunt for it.</td></tr>
   </table>
 </div></section>
 
@@ -238,18 +242,18 @@
     that catches people out.</p>
   <table>
     <tr><th>Board</th><th>2.4GHz</th><th>5GHz</th><th>Power connector</th><th>Notes</th></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-zero-2" target="_blank" rel="noopener">1. Zero 2 WH</a></td><td class="yes">Yes</td><td class="no">No</td><td>micro-USB</td>
-      <td><strong>£17.30.</strong> First choice. Smallest, lowest power draw, header pre-fitted. Choose the
+    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-zero-2" target="_blank" rel="noopener">1. Zero 2 WH</a></td><td class="yes" data-label="2.4GHz">Yes</td><td class="no" data-label="5GHz">No</td><td data-label="Power connector">micro-USB</td>
+      <td data-label="Notes"><strong>£17.30.</strong> First choice. Smallest, lowest power draw, header pre-fitted. Choose the
         “with header” option — the plain Zero 2 W has nothing to plug the display into.</td></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-zero-2" target="_blank" rel="noopener">Zero 2 W</a></td><td class="yes">Yes</td><td class="no">No</td><td>micro-USB</td>
-      <td><strong>£14.40.</strong> Only if the WH is sold out and this isn't. It has no header, so add a
+    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-zero-2" target="_blank" rel="noopener">Zero 2 W</a></td><td class="yes" data-label="2.4GHz">Yes</td><td class="no" data-label="5GHz">No</td><td data-label="Power connector">micro-USB</td>
+      <td data-label="Notes"><strong>£14.40.</strong> Only if the WH is sold out and this isn't. It has no header, so add a
         <a href="https://thepihut.com/products/gpio-hammer-header-solderless" target="_blank" rel="noopener">solderless press-fit header</a>
         (£7.20 with its fitting jig). No soldering.</td></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-3-model-a-plus" target="_blank" rel="noopener">2. Pi 3 Model A+</a></td><td class="yes">Yes</td><td class="yes">Yes</td><td>micro-USB</td>
-      <td><strong>£24.00.</strong> Second choice, and the reference build. Same chip family and software as the Zero 2 W,
+    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-3-model-a-plus" target="_blank" rel="noopener">2. Pi 3 Model A+</a></td><td class="yes" data-label="2.4GHz">Yes</td><td class="yes" data-label="5GHz">Yes</td><td data-label="Power connector">micro-USB</td>
+      <td data-label="Notes"><strong>£24.00.</strong> Second choice, and the reference build. Same chip family and software as the Zero 2 W,
         twice the footprint, header fitted, dual-band.</td></tr>
-    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-4-model-b" target="_blank" rel="noopener">3. Pi 4 Model B (1GB)</a></td><td class="yes">Yes</td><td class="yes">Yes</td><td>USB-C 3A</td>
-      <td><strong>£33.60.</strong> Third choice. Bigger and warmer; 1GB is plenty — don't pay for more. Needs a
+    <tr><td class="k"><a href="https://thepihut.com/products/raspberry-pi-4-model-b" target="_blank" rel="noopener">3. Pi 4 Model B (1GB)</a></td><td class="yes" data-label="2.4GHz">Yes</td><td class="yes" data-label="5GHz">Yes</td><td data-label="Power connector">USB-C 3A</td>
+      <td data-label="Notes"><strong>£33.60.</strong> Third choice. Bigger and warmer; 1GB is plenty — don't pay for more. Needs a
         <a href="https://thepihut.com/products/raspberry-pi-psu-uk" target="_blank" rel="noopener">USB-C supply</a>, not the micro-USB one.
         Not yet confirmed with the LED board.</td></tr>
   </table>
@@ -261,70 +265,37 @@
 <section><div class="wrap">
   <h2>Combinations that don't work</h2>
   <p class="sub">Every one of these has cost somebody an evening.</p>
-
-  <div class="warn">
-    <strong>Pi Zero 2 W + a 5GHz-only network</strong>
-    <p>The Zero's radio is 2.4GHz only. If your router broadcasts one network name and steers
-      devices to 5GHz, or 2.4GHz is switched off, it will never connect and no amount of
-      configuration will fix it. Enable 2.4GHz, split the band names, or buy a dual-band Pi.</p>
-  </div>
-
-  <div class="warn">
-    <strong>Pi 4 or Pi 5 + a micro-USB power supply</strong>
-    <p>Wrong connector entirely — these need USB-C. A Pi 5 also needs a 5A/27W supply; feed it less
-      and it will brown out mid-refresh and corrupt the SD card. Buy the supply that matches
-      the board.</p>
-  </div>
-
-  <div class="warn">
-    <strong>Plain Zero 2 W (no header) + any Inky panel</strong>
-    <p>There's nothing to plug the display into. Buy the “WH” version, which has the
+  <div class="warn"><strong>Plain Zero 2 W (no header) + any Inky panel</strong><p>There's nothing to plug the display into. Buy the “WH” version, which has the
       header already fitted — or, if only the plain board is in stock, add a solderless
-      press-fit header. This is the single most common ordering mistake.</p>
-  </div>
-
-  <div class="warn">
-    <strong>Any Pi case + a display fitted</strong>
-    <p>The panel sits on the GPIO header, so almost no standard case will close with it attached.
-      Plan on a frame or open mount instead of a case.</p>
-  </div>
-
-  <div class="warn">
-    <strong>Another HAT (PoE, fan, audio) + the display</strong>
-    <p>The Inky uses the GPIO header, SPI and I2C. Stacking a second HAT will usually conflict.
-      Run one HAT only.</p>
-  </div>
-
-  <div class="warn">
-    <strong>Your own longer screws or standoffs</strong>
-    <p>Pimoroni warn that fixings with longer threads than the supplied ones can crack the glass.
-      Use what comes in the box.</p>
-  </div>
-
-  <div class="warn">
-    <strong>Raspberry Pi 400 + the display</strong>
-    <p>Technically compatible, but the GPIO header points backwards out of the keyboard, so the
-      panel ends up at an absurd angle. You'd need a GPIO extension cable.</p>
-  </div>
-</div></section>
+      press-fit header. This is the single most common ordering mistake.</p></div>
+  <div class="ruled"><div><h3>Pi Zero 2 W + a 5GHz-only network</h3><p>The Zero's radio is 2.4GHz only. If your router broadcasts one network name and steers
+      devices to 5GHz, or 2.4GHz is switched off, it will never connect and no amount of
+      configuration will fix it. Enable 2.4GHz, split the band names, or buy a dual-band Pi.</p></div><div><h3>Pi 4 or Pi 5 + a micro-USB power supply</h3><p>Wrong connector entirely — these need USB-C. A Pi 5 also needs a 5A/27W supply; feed it less
+      and it will brown out mid-refresh and corrupt the SD card. Buy the supply that matches
+      the board.</p></div><div><h3>Any Pi case + a display fitted</h3><p>The panel sits on the GPIO header, so almost no standard case will close with it attached.
+      Plan on a frame or open mount instead of a case.</p></div><div><h3>Another HAT (PoE, fan, audio) + the display</h3><p>The Inky uses the GPIO header, SPI and I2C. Stacking a second HAT will usually conflict.
+      Run one HAT only.</p></div><div><h3>Your own longer screws or standoffs</h3><p>Pimoroni warn that fixings with longer threads than the supplied ones can crack the glass.
+      Use what comes in the box.</p></div><div><h3>Raspberry Pi 400 + the display</h3><p>Technically compatible, but the GPIO header points backwards out of the keyboard, so the
+      panel ends up at an absurd angle. You'd need a GPIO extension cable.</p></div></div>
+  </div></section>
 
 <section><div class="wrap">
   <h2>Optional extras</h2>
-  <div class="grid">
-    <div class="card"><h3>Dual-band USB Wi-Fi</h3>
+  <div class="ruled">
+    <div><h3>Dual-band USB Wi-Fi</h3>
       <p>The cheap route to 5GHz on a Zero 2 W: a Linux-compatible dual-band adapter plus a
         micro-USB OTG adapter. Fiddlier, and driver support varies — check before buying.</p></div>
-    <div class="card"><h3>Frame or stand</h3>
+    <div><h3>Frame or stand</h3>
       <p>The 7.3″ panel fits IKEA's <a href="https://www.ikea.com/gb/en/p/roedalm-frame-black-10548867/" target="_blank" rel="noopener">RÖDALM frame, black, 13×18cm</a>
         (£3). Otherwise any deep-rebate photo frame or a 3D-printed stand — the panel is about
         170×110mm, so leave room behind for the Pi and the cable.</p></div>
-    <div class="card"><h3>microSD card reader</h3>
+    <div><h3>microSD card reader</h3>
       <p><a href="https://thepihut.com/products/microsd-card-usb-reader" target="_blank" rel="noopener">A reader</a> is needed once, to flash the card — and again if you ever need to recover a device that
-        won't join Wi-Fi. Worth owning.</p></div>
-  </div>
+        won't join Wi-Fi. Worth owning.</p></div></div>
 </div></section>
 
 <footer><div class="wrap">
+  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
   <div class="fl"><a href="index.html">Home</a><a href="faq.html">FAQ</a><a href="support.html">Support</a><a href="legal.html">Legal</a></div>
   <p>Ident — a roster display for pilots. We don't sell hardware and take no commission from any
     supplier listed. Not affiliated with, endorsed by, or connected to any airline.</p>

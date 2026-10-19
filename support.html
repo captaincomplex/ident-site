@@ -9,6 +9,7 @@
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#14110a">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,6 +18,7 @@
   <a class="brand" href="index.html"><img src="/img/ident-wordmark.svg" alt="Ident" width="70" height="16"></a>
   <a class="l" href="index.html#how">How it works</a>
   <a class="l" href="displays.html">Displays</a>
+  <a class="l" href="index.html#styles">Styles</a>
   <a class="l" href="parts.html">Parts</a>
   <a class="l" href="faq.html">FAQ</a>
   <a class="l" href="airlines.html">Your airline</a>
@@ -25,7 +27,6 @@
 </div></nav>
 
 <header><div class="wrap">
-  <span class="badge">we read every message</span>
   <h1>Get <span class="g">help</span></h1>
   <p class="lead">Check the <a href="faq.html">FAQ</a> first — it covers most things. If your
     question isn't there, use the form below and we'll come back to you.</p>
@@ -91,33 +92,32 @@
   <h2>The guides</h2>
   <p class="sub">Both of these ship with the software as well. Start with the first one if
     you have never used a Raspberry Pi.</p>
-  <div class="grid">
-    <div class="card"><h3><a href="guides/IDENT_BEGINNERS_GUIDE.md">Complete beginner's guide</a></h3>
+  <div class="ruled">
+    <div><h3><a href="guides/IDENT_BEGINNERS_GUIDE.md">Complete beginner's guide</a></h3>
       <p>What to buy, then two routes: a ready-made memory card set up entirely from your phone, or
         build it yourself step by step. Written for someone who has never written a line of code.</p></div>
-    <div class="card"><h3><a href="guides/ident_assembly_guide.pdf">Illustrated assembly guide</a></h3>
-      <p>The physical build, step by step, in pictures. PDF.</p></div>
-  </div>
+    <div><h3><a href="guides/ident_assembly_guide.pdf">Illustrated assembly guide</a></h3>
+      <p>The physical build, step by step, in pictures. PDF.</p></div></div>
 </div></section>
 
 <section><div class="wrap">
   <h2>Before you write</h2>
   <p class="sub">These three cover the majority of messages.</p>
-  <div class="grid">
-    <div class="card"><h3>Wrong date on screen</h3>
+  <div class="ruled">
+    <div><h3>Wrong date on screen</h3>
       <p>The Pi has no battery clock. If it loses Wi-Fi it freezes on the last date it knew.
         Reconnect it and the clock fixes itself in a minute or two.</p></div>
-    <div class="card"><h3>Won't join Wi-Fi</h3>
+    <div><h3>Won't join Wi-Fi</h3>
       <p>On a Pi Zero 2 W the network <em>must</em> be 2.4GHz — it cannot see 5GHz at all. Check
         that before anything else.</p></div>
-    <div class="card"><h3>Roster not appearing</h3>
+    <div><h3>Roster not appearing</h3>
       <p>Check the calendar link is the full <span class="mono">.ics</span> URL and hasn't expired.
         Failing that, export a <span class="mono">.ics</span> from the crew portal and upload
-        that instead.</p></div>
-  </div>
+        that instead.</p></div></div>
 </div></section>
 
 <footer><div class="wrap">
+  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
   <div class="fl"><a href="index.html">Home</a><a href="faq.html">FAQ</a>
     <a href="https://github.com/captaincomplex/ident">Source on GitHub</a></div>
   <p>Ident — a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>

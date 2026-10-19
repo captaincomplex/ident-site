@@ -9,8 +9,9 @@
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#14110a">
 <link rel="stylesheet" href="style.css">
-<script>document.documentElement.classList.add("tabs-js");document.documentElement.className+=" "+(window.matchMedia("(prefers-reduced-motion: reduce)").matches?"":"js");</script>
+<script>document.documentElement.className+=" "+(window.matchMedia("(prefers-reduced-motion: reduce)").matches?"":"js");</script>
 </head>
 <body>
 
@@ -26,280 +27,190 @@
   <a class="l" href="support.html">Support</a>
 </div></nav>
 
-<header><div class="wrap">
-  <p class="kicker">Always on. Always accurate.</p>
-  <h1>Know when they're home.</h1>
-  <p class="lead">Where you are, when you're back, how long they have with you.
-    Ident reads your roster and puts it on the wall - and unlike the printout,
-    it's still right after crewing change their mind.</p>
-  <div class="cta">
-    <a class="btn primary" href="displays.html">Choose a display</a>
-    <a class="btn ghost" href="#how">See how it works</a>
+<header id="family"><div class="wrap herogrid">
+  <div class="herotext">
+    <h1>Know when they're home.</h1>
+    <p class="lead">Where you are, when you're back, how long they have with you.
+      Ident reads your roster and puts it on the wall &mdash; and unlike the printout,
+      it's still right after crewing change their mind.</p>
+    <div class="cta">
+      <a class="btn primary" href="displays.html">Choose a display</a>
+      <a class="btn ghost" href="#how">See how it works</a>
+    </div>
+  </div>
+  <div class="hero-dev">
+    <figure class="dev big"><img src="img/scenes/hero_solari_inflight.png" alt="The Ident display in flight: LGW-NTE, landing 09:25, home 13:43, with a progress bar" width="1600" height="960" fetchpriority="high"></figure>
+    <p class="rnd">The default style, drawn by Ident's own software from a sample roster.</p>
   </div>
 </div></header>
 
-<section style="padding-top:0"><div class="wrap">
-  <div class="hero-media" id="heroMedia">
-    <img src="img/photo/hero_wide.jpg"
-         srcset="img/photo/hero_wide_sm.jpg 1200w, img/photo/hero_wide.jpg 2000w"
-         sizes="(max-width:1120px) 100vw, 1120px"
-         alt="An Ident display standing on a dining table, showing DAY OFF, FRI 21 AUG, and the next duty on Sunday to NTE and BOD"
-         width="2000" height="1125" fetchpriority="high">
-  </div>
-  <p class="cap" style="text-align:left;margin-top:12px">Say goodbye to texting screenshots of eCrew changes - Ident shows the important information at a glance.</p>
+<div class="bento">
+
+<section class="c4 tile-q"><div class="wrap">
+  <figure class="dev "><img src="img/scenes/q_where_poster_seville.png" alt="The travel poster style: Seville, with the line In Seville, leaves 10:30, and home 14:38 along the foot" width="1600" height="960" loading="lazy"></figure>
+  <h2>Where are they?</h2>
+  <p class="sub">Today's destination as a poster, and when they're home along the foot.</p>
 </div></section>
 
-<div class="tabbar"><div class="wrap">
-  <div class="tabs" role="tablist" aria-label="Who is this for">
-    <button type="button" class="tab" id="t-family" role="tab" aria-selected="true"
-            aria-controls="p-family">Friends &amp; family</button>
-    <button type="button" class="tab" id="t-pilots" role="tab" aria-selected="false"
-            aria-controls="p-pilots">Pilots</button>
-  </div>
-</div></div>
+<section class="c4 tile-q dark"><div class="wrap">
+  <figure class="dev "><img src="img/scenes/q_when_countdown.png" alt="The countdown style: HOME IN 4 h 45, with a block for every hour still to go" width="1600" height="960" loading="lazy"></figure>
+  <h2>When are they back?</h2>
+  <p class="sub">&ldquo;Home in 4 h 45&rdquo;, with a block for every hour still to go. Old enough to read a clock is old enough to work out when Mum or Dad lands.</p>
+</div></section>
 
-<div class="tabpanel" id="p-family" role="tabpanel" aria-labelledby="t-family">
+<section class="c4 tile-q"><div class="wrap">
+  <figure class="dev "><img src="img/scenes/q_howlong_solari_dayoff.png" alt="The Solari board on a day off: OFF, then the next duty THU 22 OCT 07:10 NTE with wake 04:40" width="1600" height="960" loading="lazy"></figure>
+  <h2>How long do you have?</h2>
+  <p class="sub">It shows the next duty as well as this one, so the people at home can always see how much time they have with you. On a day off it's already there.</p>
+</div></section>
 
-<section class="tabintro"><div class="wrap">
-  
+<section class="c7 saf"><div class="wrap">
   <h2 class="reveal">Ident reads your roster and keeps up-to-date</h2>
-  <p class="sub">Anyone who knows an airline pilot understands that their day can change in an instant. The best-laid plans for your time together can change drastically depending on all sorts of factors.<br><br>Sometimes, by the time they can tell you, it's too late.</p>
-  <div class="split" style="margin-top:30px;align-items:start">
-    <div>
-      
-      <p class="sub" style="margin:0">Ident gives an instant oversight of how their plans
-        change, as it happens. No more mental maths or waiting for a text back when they
-        land: <strong>if they are delayed, you are notified.</strong></p>
-    </div>
-    <img src="img/photo/kitchen_inflight.jpg" style="height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 72%" alt="The display on a kitchen worktop beside a plant, showing IN FLIGHT LGW to NTE, landing 09:05 and home 16:38" loading="lazy" width="1100" height="1466">
-  </div>
-  <div class="triad reveal">
-    <div>
-      <h3>Designed for friends and family</h3>
-      <p>Synced to eCrew and ADS-B data to give an accurate arrival time.</p>
-    </div>
-    <div>
-      <h3>Know when they're home</h3>
-      <p>Uses airline rostering (eCrew), flight tracking (AeroDataBox/Flightradar24) and live traffic
-        (Google Maps) data to give a precise home arrival time. If they're delayed,
-        you'll see it.</p>
-    </div>
-    <div>
-      <h3>ETA &mdash; confirmed.</h3>
-      <p>A constantly-updated arrival time for the front door, not just the airport - recalculated
-        using live traffic data.</p>
-    </div>
+  <p class="sub" style="max-width:58ch">Anyone who knows an airline pilot understands that their day can change in an instant. The best-laid plans for your time together can change drastically depending on all sorts of factors. Sometimes, by the time they can tell you, it's too late.</p>
+  <p class="sub" style="max-width:58ch;margin-bottom:0">Ident gives an instant oversight of how their plans change, as it happens. No more mental maths or waiting for a text back when they land: <strong>if they are delayed, the wall shows it.</strong></p>
+</div></section>
+
+<section class="c5 red" id="private"><div class="wrap">
+  <h2>Your roster never leaves the device.</h2>
+  <ol class="flow" aria-label="How the roster travels: from your airline, to the Ident in your house, onto the wall. It never goes to us.">
+    <li><b>Your airline</b><span>publishes your roster</span></li>
+    <li><svg class="down" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Your Ident</b><span>fetches it over your own connection and keeps it there</span></li>
+    <li><svg class="down" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><b>The wall</b><span>shows only what you choose</span></li>
+  </ol>
+  <p class="sub" style="margin:0">We never receive it. Only the current flight number goes to a tracking service, and a home location to Google Maps if you switch live traffic on.</p>
+</div></section>
+
+<section class="c12 dark colourband"><div class="wrap">
+  <h2 class="reveal">The colour answers before the words do.</h2>
+  <p class="sub" style="max-width:60ch">Status colour turns the whole board one colour: blue flying, red at work, green home. Read it from the door.</p>
+  <div class="trio">
+    <figure><figure class="dev "><img src="img/scenes/status_blue_flying.png" alt="Status colour in blue: Flying to Málaga, home 15:48" width="1600" height="960" loading="lazy"></figure><figcaption>Flying</figcaption></figure>
+    <figure><figure class="dev "><img src="img/scenes/status_red_work.png" alt="Status colour in red: In Jersey, leaves 09:40, home 12:53" width="1600" height="960" loading="lazy"></figure><figcaption>At work</figcaption></figure>
+    <figure><figure class="dev "><img src="img/scenes/status_green_home.png" alt="Status colour in green: day off, home all day, next duty THU 22 OCT 07:10" width="1600" height="960" loading="lazy"></figure><figcaption>Home</figcaption></figure>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <div class="split">
-    <div>
-      <p class="kicker">Scan to track</p>
-      <p class="lede">Point a phone at the screen. Watch the flight.</p>
-      <p class="sub" style="margin:0 0 14px">While you're airborne, Ident shows a QR code
-        that opens your actual flight, live on Flightradar24. Whoever's at home can follow your flight.</p>
-      <p class="sub" style="margin:0">Press the button on the side and it fills the screen - scannable from across the room. Or leave a small QR code in the corner of your display.</p>
-    </div>
-    <img src="img/qr_corner.png" alt="The board showing IN FLIGHT LGW to NTE, with a scannable code in the bottom corner that opens the live flight" loading="lazy" width="1600" height="960">
+<section class="c12 paper" id="how"><div class="wrap">
+  <h2>Point it at your roster once. Ident does the rest.</h2>
+  <div class="ruled three"><div><h3>It reads your roster</h3><p>Add your eCrew calendar link, once. Ident regularly and silently checks for changes.</p></div><div><h3>It knows the plan</h3><p>Off, standby, report time, airborne, turnaround, heading home &mdash; the screen follows where you actually are.</p></div><div><h3>It stays accurate</h3><p>On-chocks, debrief, the walk to the car, the drive home - it's all accounted for.</p></div></div>
+</div></section>
+
+<section class="c7 dark"><div class="wrap">
+  <h2 class="reveal">Point a phone at the screen. Watch the flight.</h2>
+  <p class="sub">While you're airborne, Ident shows a QR code that opens your actual flight, live on Flightradar24. Whoever's at home can follow your flight. Press the button on the side and it fills the screen &mdash; scannable from across the room. Or leave a small QR code in the corner of your display.</p>
+  <div class="pair">
+    <figure class="dev "><img src="img/scenes/qr_corner_lisbon.png" alt="The board showing IN FLIGHT MAN-LIS, with a small scannable code in the bottom corner" width="1600" height="960" loading="lazy"></figure>
+    <figure class="dev "><img src="img/scenes/qr_full_lisbon.png" alt="The full-screen scan-to-track code for flight EZY5101, Manchester to Lisbon" width="1600" height="960" loading="lazy"></figure>
   </div>
 </div></section>
 
-<section class="bleed">
-  <div class="shot-full reveal">
-    <img src="img/photo/band_dining.jpg" alt="An Ident display on a dining table in a family living room, showing the day off and the next duty" loading="lazy" width="2000" height="857">
-    <div class="overlay"><div class="wrap">
-      <h2>The real fridge door roster.</h2>
-      
-    </div></div>
+<section class="c5 paper"><div class="wrap">
+  <h2 class="reveal">Privacy when it matters most</h2>
+  <figure class="dev "><img src="img/scenes/month_dayoff.png" alt="A month calendar on an e-paper panel: flying days with their destinations, standby days and days off" width="1600" height="960" loading="lazy"></figure>
+  <p class="sub" style="margin:18px 0 0">Compassionate leave, sickness, fatigue, a meeting - Ident hides sensitive roster codes by default, showing instead as an ordinary day off. <strong>You choose which.</strong> Nothing is revealed unless you ask.</p>
+</div></section>
+
+<section class="c12 dark" id="styles"><div class="wrap">
+  <h2 class="reveal">Make it suit your room.</h2>
+  <p class="sub">Fifteen styles to choose from: change it from your phone or with a button on the frame. Each is shown here on a day that suits it.</p>
+  <div class="styles">
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_board_solari.png" alt="The Solari board on an airport duty day at Gatwick, 06:00 to 14:00, home 14:53" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>Solari board <span>the default</span></h3><p>Split-flap departure board. Route, landing time, home time, progress.</p><p class="on">Airport duty at base</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_boarding.png" alt="The boarding pass style on a flight from Bristol to Palma" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>Boarding pass <span>your airline's logo</span></h3><p>Upload your airline's logo for the header; until then it carries a plain aircraft mark.</p><p class="on">Outbound to Palma</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_status.png" alt="The status colour style in yellow: on standby until 19:00, home now, could be called in" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>Status colour <span>read it from the door</span></h3><p>The whole board one colour: blue flying, red at work, green home, yellow on standby. The colour answers before the words do.</p><p class="on">Home standby, could be called in</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_poster.png" alt="The travel poster style: Corfu, with home 17:28 along the foot" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>Travel poster <span>where they are</span></h3><p>Today's destination as a screen-printed poster, and when they're home along the foot.</p><p class="on">Flying to Corfu</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_sky.png" alt="The sky style with the aircraft on its way from Edinburgh to Alicante, home 16:53" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>Sky <span>outside the window</span></h3><p>The sky at this hour, the aircraft on its way, and the time they're home.</p><p class="on">Flying to Alicante</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_clock.png" alt="The 12-hour clock style: home at 1:43 pm today" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>12-hour clock <span>for the children</span></h3><p>A clock face, shaded from now until they're home. "Home at 1:43 pm."</p><p class="on">Landed, on the way home</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_countdown.png" alt="The countdown style: home in 2 hours 15 minutes" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>Countdown <span>how long now</span></h3><p>"Home in 2 h 15", with a block for every hour still to go.</p><p class="on">A turnaround in Geneva</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_minimal.png" alt="The minimal style: BCN in huge letters, with landing and home times" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>Minimal <span>read it from the hall</span></h3><p>One enormous destination and the two times that matter.</p><p class="on">Outbound to Barcelona</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_timeline.png" alt="The duty timeline style: Gatwick to Menorca and back as one bar with a marker for now" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>Duty timeline <span>long days</span></h3><p>The whole duty as one bar, with a marker showing where you are in it.</p><p class="on">A Menorca day, mid-sector</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_board_rail.png" alt="The departure board in blue, on a turnaround in Dubrovnik, home 18:03" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>Board colours <span>your choice</span></h3><p>The departure board in amber, yellow, or white on railway blue for rooms where black would shout.</p><p class="on">A turnaround in Dubrovnik</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_swiss.png" alt="The Swiss style the night before an early start: next duty Belfast to Bristol, home 09:48" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>Swiss <span>typographic</span></h3><p>White, gridded, restrained. More poster than gadget.</p><p class="on">The night before an early start</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_dial.png" alt="The 24-hour dial style on a day flying to Prague and Zurich" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>24-hour dial <span>the day at a glance</span></h3><p>The whole day on one clock face: duty, flying and home, with a hand for now.</p><p class="on">A Prague and Zurich day</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_strips.png" alt="The flight strips style on a four-sector day from Bristol to Lisbon and Bordeaux" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>Flight strips <span>the whole day</span></h3><p>Every sector as a controller's strip, with off and on times.</p><p class="on">Lisbon and Bordeaux</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_chart.png" alt="The enroute chart style with the aircraft on its way from Manchester to Faro" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>Enroute chart <span>live map</span></h3><p>The route drawn on a chart, with the aircraft where it is now.</p><p class="on">Outbound to Faro</p></figcaption></figure>
+    <figure class="sty"><figure class="dev "><img src="img/scenes/g_greatcircle.png" alt="The great circle map style with the aircraft on its way from Gatwick to Nice" width="1600" height="960" loading="lazy"></figure>
+      <figcaption><h3>Great circle <span>live map, after dark</span></h3><p>The same map on deep blue, with landing and home along the foot.</p><p class="on">Outbound to Nice</p></figcaption></figure>
   </div>
-</section>
-
-</div>
-
-<div class="tabpanel" id="p-pilots" role="tabpanel" aria-labelledby="t-pilots" hidden>
-
-<section><div class="wrap">
-  
-  <h2 class="reveal">How long they get to keep you.</h2>
-  <p class="sub">It shows the next duty as well as this one, so the people at home can
-    always see how much time they have with you. No need to ask, or wait for an answer.</p>
+  <p class="rnd" style="margin-top:22px">The display pictures on this page are renderings of sample rosters, drawn by Ident's own software; each shows a different flight or kind of day (the row of four sizes is one flight at four sizes). The phone pictures are screenshots of the control panel, and one picture further down is a photograph, marked as one.</p>
 </div></section>
 
-<section class="tabintro"><div class="wrap">
-  
-  <h2 class="reveal">ETA &mdash; confirmed.</h2>
-  <p class="sub" style="max-width:70ch">Ident can show your current flight, your estimated
-    arrival time, and even what time you'll arrive home based on traffic conditions. It shows
-    your next duty, so your loved ones can always see how much time they have with you.</p>
-  <p class="sub" style="max-width:70ch">Ident uses live data from Google Maps for estimating commute time, and AeroDataBox or Flightradar24 for an up-to-date flight time.</p>
+<section class="c12 cream"><div class="wrap">
+  <h2 class="reveal">Paper-quiet.</h2>
+  <p class="sub" style="max-width:66ch">E-paper looks like paper. No glow, readable in direct sun, keeps its picture unplugged. Understated; the quiet one. Best for a bedroom, hallway, or kitchen. Four sizes<span class="scale-note">, drawn here roughly to scale</span>.</p>
+  <div class="sizes">
+    <figure class="size" style="--w:3.33"><figure class="dev "><img src="img/scenes/size_4_0.png" alt="A 4.0 inch e-paper panel showing the Solari board in flight, Birmingham to Heraklion" width="1200" height="800" loading="lazy"></figure><figcaption>4.0″</figcaption></figure>
+    <figure class="size" style="--w:4.56"><figure class="dev "><img src="img/scenes/size_5_7.png" alt="A 5.7 inch e-paper panel showing the Solari board in flight, Birmingham to Heraklion" width="1200" height="896" loading="lazy"></figure><figcaption>5.7″</figcaption></figure>
+    <figure class="size" style="--w:6.26"><figure class="dev "><img src="img/scenes/size_7_3.png" alt="A 7.3 inch e-paper panel showing the Solari board in flight, Birmingham to Heraklion" width="1600" height="960" loading="lazy"></figure><figcaption>7.3″</figcaption></figure>
+    <figure class="size" style="--w:10.64"><figure class="dev "><img src="img/scenes/size_13_3.png" alt="A 13.3 inch e-paper panel showing the Solari board in flight, Birmingham to Heraklion" width="1600" height="1200" loading="lazy"></figure><figcaption>13.3″</figcaption></figure>
+  </div>
+  <p class="meta" style="margin-top:18px">4.0″ · 5.7″ · 7.3″ · 13.3″ · redraws in about 30 seconds</p>
 </div></section>
 
-<section><div class="wrap">
-  <p class="kicker">Your roster. Always accurate.</p>
+<section class="c12 dark"><div class="wrap">
+  <h2 class="reveal">Bright and alive.</h2>
+  <p class="sub" style="max-width:66ch">The LED matrix is bright, instant, and looks like a departure board. Reads across a room. The one people notice. Good for a study, office, or bar.</p>
+  <div class="leds">
+    <figure class="led w1"><figure class="dev ledf"><img src="img/scenes/led_128x32_krakow.png" alt="A 128 by 32 LED matrix panel: IN FLIGHT, EZY8101, a route arc from Glasgow to Krakow, land and home times" width="1024" height="256" loading="lazy"></figure><figcaption>128×32 · in flight, Glasgow to Krakow</figcaption></figure>
+    <figure class="led w2"><figure class="dev ledf"><img src="img/scenes/led_64x32_venice.png" alt="A 64 by 32 LED matrix panel: flight EZY2901 from Bristol to Venice, land and home times" width="1024" height="512" loading="lazy"></figure><figcaption>64×32 · in flight, Bristol to Venice</figcaption></figure>
+    <figure class="led w3"><figure class="dev ledf"><img src="img/scenes/led_128x32_marrakech.png" alt="A 128 by 32 LED matrix panel on a turnaround in Marrakech, with the departure time and home time" width="1024" height="256" loading="lazy"></figure><figcaption>128×32 · turnaround in Marrakech</figcaption></figure>
+    <figure class="led w4"><figure class="dev ledf"><img src="img/scenes/led_64x32_naples.png" alt="A 64 by 32 LED matrix panel on a turnaround in Naples, with the departure time and home time" width="1024" height="512" loading="lazy"></figure><figcaption>64×32 · turnaround in Naples</figcaption></figure>
+  </div>
+  <p class="meta" style="margin-top:18px">HUB75 panels · 64×32 and up · updates in real time</p>
+  <p class="sub" style="margin:18px 0 0">Not sure? <a href="displays.html">Compare the displays</a>, including what to avoid.</p>
+</div></section>
+
+<section class="c12 saf" id="pilots"><div class="wrap">
+  <h2 class="reveal">For the pilot: ETA &mdash; confirmed.</h2>
+  <p class="sub" style="max-width:70ch">Ident can show your current flight, your estimated arrival time, and even what time you'll arrive home based on traffic conditions. It shows your next duty, so your loved ones can always see how much time they have with you. Ident uses live data from Google Maps for estimating commute time, and AeroDataBox or Flightradar24 for an up-to-date flight time.</p>
+</div></section>
+
+<section class="c12 paper"><div class="wrap">
   <h2 class="reveal">Changes on report? No problem.</h2>
   <p class="sub">The board re-reads your roster regularly. When it moves, it moves.</p>
-  <div class="triad reveal">
-    <div>
-      <h3>Called from standby?</h3>
-      <p>It's on the wall before you've finished packing. No group chat, no relay.</p>
-    </div>
-    <div>
-      <h3>Delayed?</h3>
-      <p>Landing and home times slide with the day. Nobody's working off this morning's plan.</p>
-    </div>
-    <div>
-      <h3>Know you're free</h3>
-      <p>Days off and early starts show days ahead — the rest of the family can plan
-        without asking.</p>
-    </div>
-    <div>
-      <h3>They know when to call</h3>
-      <p>Airborne, turnaround, or already driving. No worrying about whether you can talk.</p>
-    </div>
-    <div>
-      <h3>Tomorrow, from the bedside</h3>
-      <p>Report time and where you're going. The two things worth knowing before lights out.</p>
-    </div>
-    <div>
-      <h3>The kids can read it</h3>
-      <p>Big destination, plain times. Old enough to read a clock is old enough to work
-        out when Mum or Dad lands.</p>
-    </div>
-  </div>
+  <div class="ruled "><div><h3>Called from standby?</h3><p>It's on the wall before you've finished packing. No group chat, no relay.</p></div><div><h3>Delayed?</h3><p>Landing and home times slide with the day. Nobody's working off this morning's plan.</p></div><div><h3>Know you're free</h3><p>Days off and early starts show days ahead &mdash; the rest of the family can plan without asking.</p></div><div><h3>They know when to call</h3><p>Airborne, turnaround, or already driving. No worrying about whether you can talk.</p></div><div><h3>Tomorrow, from the bedside</h3><p>Report time and where you're going. The two things worth knowing before lights out.</p></div><div><h3>The kids can read it</h3><p>Big destination, plain times. Old enough to read a clock is old enough to work out when Mum or Dad lands.</p></div></div>
 </div></section>
 
-<section><div class="wrap">
-  <p class="kicker">Commuter?</p>
-  <h2 class="reveal">Add your positioning flights.</h2>
-  <p class="sub">Ident makes your planning a little easier.</p>
-  <div class="triad reveal">
-    <div>
-      <h3>Type the flight number</h3>
-      <p>Living in Amsterdam, based at Gatwick? Add the 05:00 AMS–LGW and Ident
-        looks up the route and times itself. Two boxes, once.</p>
-    </div>
-    <div>
-      <h3>It becomes part of the day</h3>
-      <p>The board follows you out of Amsterdam, then hands over to the roster duty
-        when you report. At home they see one continuous day, not a gap.</p>
-    </div>
-    <div>
-      <h3>Anything off-roster works</h3>
-      <p>Deadheading, a night before at a crashpad, the flight home on leave.
-        If it has a flight number, it can go on the board.</p>
-    </div>
-    <div>
-      <h3>All of your travel included</h3>
-      <p>Ten minutes from the crashpad mid-block; a two-hour flight home after the
-        last sector. Set both, and the home time is right on the day it matters.</p>
-    </div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  
+<section class="c7 cream"><div class="wrap">
   <h2 class="reveal">Ident shows everything you need for the day.</h2>
-  <p class="sub">If you tell Ident how long you take to get ready, Ident gives you an alarm time to set.</p>
-  <div class="triad reveal">
-    <div>
-      <h3>Set it once</h3>
-      <p>Ninety minutes before report, or whatever your morning actually takes.
-        It shows on days off and while the board counts down to report.</p>
-    </div>
-    <div>
-      <h3>It follows the roster</h3>
-      <p>When crewing move your report time, the wake time moves with it. There is
-        no second thing to remember to change.</p>
-    </div>
-    <div>
-      <h3>Commuting? It adds up.</h3>
-      <p>Optionally counts the journey to report as well — so if you need to get to your base before day 1, Ident accounts for the extra commute time.</p>
-    </div>
-  </div>
-  <div class="split" style="margin-top:34px;align-items:center">
-    <img src="img/next_duty_wake.png" alt="The next-duty card showing TUE 08 SEP, NTE, WAKE 04:00 and REPORT 07:30" loading="lazy" width="1600" height="960">
-    <div>
-      <p class="lede" style="margin-top:0">The question before the light goes off.</p>
-      <p class="sub" style="margin:0">Press the button on the frame and the next duty
-        comes up: the date, where you're going, what time to be awake and what time to
-        report. On a day off it's already there.</p>
-    </div>
-  </div>
+  <p class="sub">If you tell Ident how long you take to get ready, Ident gives you an alarm time to set. Ninety minutes before report, or whatever your morning actually takes. When crewing move your report time, the wake time moves with it. Optionally counts the journey to report as well &mdash; so if you need to get to your base before day 1, Ident accounts for the extra commute time.</p>
+  <h3 class="lede" style="margin-bottom:8px">The question before the light goes off.</h3>
+  <p class="sub" style="margin:0">Press the button on the frame and the next duty comes up: the date, where you're going, what time to be awake and what time to report. On a day off it's already there.</p>
 </div></section>
 
-<section id="styles"><div class="wrap">
-  
-  <h2 class="reveal">Make it suit your room.</h2>
-  <p class="sub">Many different styles to choose from: change it from your phone or with a button
-    on the frame.</p>
-
-  <div class="gal">
-    <div class="navbtns">
-      <button type="button" aria-label="Previous style" onclick="railScroll(-1)">&larr;</button>
-      <button type="button" aria-label="Next style" onclick="railScroll(1)">&rarr;</button>
-    </div>
-    <div class="rail" id="rail">
-      <div class="slide"><img loading="lazy" src="img/styles/board_solari.png" alt="Solari departure board style">
-        <div class="t"><h3>Solari board</h3><span>the default</span></div>
-        <p>Split-flap departure board. Route, landing time, home time, progress.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/boarding.png" alt="Boarding pass style">
-        <div class="t"><h3>Boarding pass</h3><span>your airline's logo</span></div>
-        <p>Upload your airline's logo for the header; until then it carries a plain aircraft mark.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/status.png" alt="Status colour style: the whole board blue while flying">
-        <div class="t"><h3>Status colour</h3><span>read it from the door</span></div>
-        <p>The whole board one colour: blue flying, red at work, green home. The colour answers before the words do.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/poster.png" alt="Travel poster style">
-        <div class="t"><h3>Travel poster</h3><span>where they are</span></div>
-        <p>Today's destination as a screen-printed poster, and when they're home along the foot.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/sky.png" alt="Sky style with the aircraft on its route">
-        <div class="t"><h3>Sky</h3><span>outside the window</span></div>
-        <p>The sky at this hour, the aircraft on its way, and the time they're home.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/clock.png" alt="12-hour clock style">
-        <div class="t"><h3>12-hour clock</h3><span>for the children</span></div>
-        <p>A clock face, shaded from now until they're home. "Home at 1:43 pm."</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/countdown.png" alt="Countdown style">
-        <div class="t"><h3>Countdown</h3><span>how long now</span></div>
-        <p>"Home in 5 h 15", with a block for every hour still to go.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/minimal.png" alt="Minimal style">
-        <div class="t"><h3>Minimal</h3><span>read it from the hall</span></div>
-        <p>One enormous destination and the two times that matter.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/timeline.png" alt="Duty timeline style">
-        <div class="t"><h3>Duty timeline</h3><span>long days</span></div>
-        <p>The whole duty as one bar, with a marker showing where you are in it.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/board_rail.png" alt="The departure board in white on blue">
-        <div class="t"><h3>Board colours</h3><span>your choice</span></div>
-        <p>The departure board in amber, yellow, or white on railway blue for rooms where black would shout.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/swiss.png" alt="Swiss style">
-        <div class="t"><h3>Swiss</h3><span>typographic</span></div>
-        <p>White, gridded, restrained. More poster than gadget.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/dial.png" alt="24-hour dial style">
-        <div class="t"><h3>24-hour dial</h3><span>the day at a glance</span></div>
-        <p>The whole day on one clock face: duty, flying and home, with a hand for now.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/strips.png" alt="Flight strips style">
-        <div class="t"><h3>Flight strips</h3><span>the whole day</span></div>
-        <p>Every sector as a controller's strip, with off and on times.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/chart.png" alt="Enroute chart style">
-        <div class="t"><h3>Enroute chart</h3><span>live map</span></div>
-        <p>The route drawn on a chart, with the aircraft where it is now.</p></div>
-      <div class="slide"><img loading="lazy" src="img/styles/greatcircle.png" alt="Great circle map style">
-        <div class="t"><h3>Great circle</h3><span>live map, after dark</span></div>
-        <p>The same map on deep blue, with landing and home along the foot.</p></div>
-    </div>
-    <div class="galhint"><span class="arrow">&#8596;</span> Scroll or swipe</div>
-  </div>
+<section class="c5 dark" style="align-self:stretch"><div class="wrap" style="display:flex;flex-direction:column;justify-content:center;height:100%">
+  <figure class="dev "><img src="img/scenes/nextduty_wake.png" alt="The next-duty card showing THU 22 OCT, NTE, WAKE 04:40 and REPORT 06:10" width="1600" height="960" loading="lazy"></figure>
+  <p class="rnd" style="margin-top:14px">The next-duty card, with wake time and report time.</p>
 </div></section>
 
-<section id="app"><div class="wrap">
-  <p class="kicker reveal">The control panel</p>
+<section class="c12 paper"><div class="wrap">
+  <h2 class="reveal">Commuter? Add your positioning flights.</h2>
+  <p class="sub">Ident makes your planning a little easier.</p>
+  <div class="ruled "><div><h3>Type the flight number</h3><p>Living in Amsterdam, based at Gatwick? Add the 05:00 AMS–LGW and Ident looks up the route and times itself. Two boxes, once.</p></div><div><h3>It becomes part of the day</h3><p>The board follows you out of Amsterdam, then hands over to the roster duty when you report. At home they see one continuous day, not a gap.</p></div><div><h3>Anything off-roster works</h3><p>Deadheading, a night before at a crashpad, the flight home on leave. If it has a flight number, it can go on the board.</p></div><div><h3>All of your travel included</h3><p>Ten minutes from the crashpad mid-block; a two-hour flight home after the last sector. Set both, and the home time is right on the day it matters.</p></div></div>
+</div></section>
+
+<section id="app" class="c12 paper"><div class="wrap">
   <h2 class="reveal">Control by app.</h2>
   <p class="sub">Everything is set from your phone: the style, the lettering, your
     commute, the battery. Add it to your home screen once and it opens full screen with
     its own icon &mdash; no App Store, nothing to update.</p>
   <div class="gal">
     <div class="navbtns">
-      <button type="button" aria-label="Previous screen" onclick="railScroll(-1,'railApp')">&larr;</button>
-      <button type="button" aria-label="Next screen" onclick="railScroll(1,'railApp')">&rarr;</button>
+      <button type="button" aria-label="Previous screen" onclick="railScroll(-1,'railApp')"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M13 8H3m4.5-4.5L3 8l4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" aria-label="Next screen" onclick="railScroll(1,'railApp')"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
     <div class="rail" id="railApp">
       <div class="slide phone"><img loading="lazy" src="img/app/panel-wall.jpg" alt="The control panel on a phone, showing the wall as it is now: in flight, Gatwick to Nantes, landing 09:25, home 13:43" width="780" height="1688">
@@ -318,32 +229,23 @@
         <div class="t"><h3>Fits your frame</h3></div>
         <p>Measure the window in your mount and the board is drawn inside it.</p></div>
     </div>
-    <div class="galhint"><span class="arrow">&#8596;</span> Scroll or swipe</div>
+    <div class="galhint">Scroll or swipe</div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <div class="split">
-    <div>
-      <p class="kicker">Setup</p>
-      <p class="lede">Easy to set up. Plug it in, then use your phone.</p>
-      <p class="sub" style="margin:0">No keyboard, no monitor, nothing to type. It raises
-        its own Wi-Fi network the first time you switch it on — join it from your phone,
-        pick your home network, done.</p>
-    </div>
-    <img src="img/photo/kitchen_inflight.jpg" alt="The display on a kitchen worktop beside a plant, showing IN FLIGHT LGW to NTE, landing 09:05 and home 16:38" loading="lazy" width="1100" height="1466">
-  </div>
+<section class="c12 cream tile-setup"><div class="wrap">
+  <h2>Easy to set up. Plug it in, then use your phone.</h2>
+  <p class="sub" style="max-width:60ch;margin-bottom:0">No keyboard, no monitor, nothing to type. It raises its own Wi-Fi network the first time you switch it on &mdash; join it from your phone, pick your home network, done.</p>
 </div></section>
 
-<section class="anatomy"><div class="wrap">
-  <p class="kicker reveal">What's behind it</p>
+<section class="anatomy c12 cream"><div class="wrap">
   <h2 class="reveal">Two parts. A memory card. Simple.</h2>
   <p class="sub reveal">No enclosure to design, nothing proprietary, nothing soldered.
     This is all you need.</p>
 
   <div class="split" style="align-items:start;gap:40px">
     <div class="sticky">
-      <div class="explode" id="explode">
+      <div class="explode open" id="explode">
         <span class="hint">scroll to separate</span>
         <svg viewBox="0 -50 790 610" role="img"
              aria-label="Exploded view: the e-paper screen, the display board, a Raspberry Pi Zero and the stand, separating into layers">
@@ -431,7 +333,7 @@
   </div>
 </div></section>
 
-<section><div class="wrap">
+<section class="c12 paper"><div class="wrap">
   <h2 class="reveal">Worth knowing before you buy</h2>
   <p class="sub">The things we'd want to be told.</p>
   <div class="triad reveal">
@@ -454,173 +356,33 @@
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <p class="kicker">Privacy and control</p>
+<section class="c12 cream" id="privacy"><div class="wrap">
   <h2 class="reveal">We take privacy seriously.</h2>
-  <p class="sub" style="max-width:74ch">We never see your roster or give anyone else access
-    to it — only the current flight number.&nbsp; You can choose to use a calendar link or an offline copy of your roster. During setup you can choose to enable live
-    traffic information, if you provide your home location — this is only sent to Google
-    Maps. You control your Ident on your home WiFi network, securely.</p>
+  <p class="sub" style="max-width:74ch">We never see your roster or give anyone else access to it — only the current flight number.&nbsp; You can choose to use a calendar link or an offline copy of your roster. During setup you can choose to enable live traffic information, if you provide your home location — this is only sent to Google Maps. You control your Ident on your home WiFi network, securely.</p>
   <h2 class="reveal" style="margin-top:34px">You have control.</h2>
-  <p class="sub" style="max-width:74ch">Sensitive roster codes such as
+  <p class="sub" style="max-width:74ch;margin-bottom:0">Sensitive roster codes such as
     <span class="mono">FTGD</span>, <span class="mono">UNFT</span>, <span class="mono">NSO</span>,
     <span class="mono">SOC</span>, <span class="mono">MEET</span>, <span class="mono">WFTU</span>,
     <span class="mono">HOSP</span> or <span class="mono">RESN</span> can be automatically
-    hidden &mdash; these will then show as days off or standby, depending on your preference.</p>
+    hidden &mdash; these will then show as days off or standby, depending on your preference.
+    It isn't just hidden on screen: those codes are discarded when your roster is read, so they never reach the device's storage at all. Nothing that isn't kept can appear later.</p>
 </div></section>
 
-<section><div class="wrap">
-  <p class="kicker">Discretion</p>
-  <h2 class="reveal">Privacy when it matters most</h2>
-  <p class="sub">Some days on a roster are nobody else's business.</p>
-  <div class="split" style="align-items:center;margin-top:26px">
-    <div>
-      <p class="sub" style="margin:0 0 14px">Compassionate leave, sickness, fatigue, a meeting - Ident hides sensitive roster codes by default, showing instead as an ordinary day off.</p>
-      <p class="sub" style="margin:0 0 14px"><strong>You choose which.</strong> Setup
-        lists every sensitive roster code, and you can tick
-        any you'd rather show. Nothing is revealed unless you ask.</p>
-      <p class="sub" style="margin:0 0 14px">What you tell others should be your decision, made in your own time. Ident is designed to be displayed prominently, without having to worry about what it shows.</p>
-      <p class="sub" style="margin:0">It isn't just hidden on screen: those codes are
-        discarded when your roster is read, so they never reach the device's storage at
-        all. Nothing that isn't kept can appear later.</p>
-    </div>
-    <img src="img/month_7_3.png" alt="A month calendar on an e-paper panel, with flying days, days off and standby" loading="lazy" width="1600" height="960">
-  </div>
+<section class="c5 paper photo-tile"><div class="wrap">
+  <h2>A photograph, for once.</h2>
+  <figure class="real"><img src="img/photo/inky57_dining.jpg" alt="A 5.7 inch Ident on a dining table showing DAY OFF, FRI 21 AUG and the next duty on Sunday" loading="lazy" width="1024" height="768"><figcaption class="cap">The one photograph on this page: a 5.7-inch display on a dining table.</figcaption></figure>
 </div></section>
 
-<section><div class="wrap">
-  <div class="split">
-    <img src="img/panels/impression_13_3_minimal.png" alt="A 13.3 inch e-paper panel showing the minimal style with a large destination code" width="1600" height="1200">
-    <div>
-      
-      <p class="lede">Your roster never leaves the display.</p>
-      <p class="sub" style="margin:0">Ident fetches your roster over your own connection, and
-        keeps it on the device. Nobody else sees your schedule - because we never receive it.</p>
-    </div>
-  </div>
+<section class="c7 red"><div class="wrap" style="display:flex;flex-direction:column;justify-content:center;height:100%">
+  <h2 class="reveal">Airline not supported? Help us read your roster, and yours is free.</h2>
+  <p class="sub">Send a sample roster and help us understand your rostering system - and we'll give you a fully-built Ident for free. See T&amp;Cs.</p>
+  <div class="cta"><a class="btn primary" href="airlines.html">Apply for a free Ident</a></div>
 </div></section>
 
 </div>
 
-<section id="how"><div class="wrap">
-  <p class="kicker">How it works</p>
-  <h2>Point it at your roster once. Ident does the rest.</h2>
-  <div class="triad reveal">
-    <div>
-      <h3>It reads your roster</h3>
-      <p>Add your eCrew calendar link, once. Ident regularly and silently checks for changes.</p>
-    </div>
-    <div>
-      <h3>It knows the plan</h3>
-      <p>Off, standby, report time, airborne, turnaround, heading home — the screen
-        follows where you actually are.</p>
-    </div>
-    <div>
-      <h3>It stays accurate</h3>
-      <p>On-chocks, debrief, the walk to the car, the drive home - it's all accounted for.</p>
-    </div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  
-  <h2 class="reveal">Paper-quiet, or bright and alive</h2>
-  <p class="sub">Same software, different displays. Pick whichever suits the room.<br>ePaper Ident comes in different sizes — 4.0, 5.7, 7.3 and 13.3-inch panels are supported.<br>The Raspberry Pi build is designed to be plugged in, and can run on a battery if you add one.<br>Rather not build anything, or want no cable at all? A ready-made battery display is in testing — <a href="parts.html#choose">see the three ways to run Ident</a>.</p>
-
-  <div class="family reveal">
-    <div class="fam">
-      <img src="img/panels/impression_7_3_board_solari.png" alt="Colour e-paper panel showing a departure board">
-      <div class="body">
-        <h3>Colour e-paper</h3>
-        <p>Looks like paper. No glow, readable in direct sun, keeps its
-          picture unplugged. Understated; the quiet one. Best for a bedroom, hallway, or kitchen.</p>
-        <div class="meta">4.0″ · 5.7″ · 7.3″ · 13.3″ · redraws in about 30 seconds</div>
-      </div>
-    </div>
-    <div class="fam">
-      <img src="img/led_64x32_inflight.png" alt="A 64 by 32 LED matrix panel showing IN FLIGHT, LGW-NTE, LAND 09:25 and HOME 12:50" style="height:auto;aspect-ratio:2/1;object-fit:contain;background:#06080c" width="1024" height="512">
-      <div class="body">
-        <h3>LED matrix</h3>
-        <p>Bright, instant, looks like a departure board. Reads across a room.
-          The one people notice. Good for a study, office, or bar.</p>
-        <div class="meta">HUB75 panels · 64×32 and up · updates in real time</div>
-      </div>
-    </div>
-  </div>
-  <p class="sub" style="margin-top:20px">Not sure? <a href="displays.html">Compare the displays</a>,
-    including what to avoid.</p>
-</div></section>
-
-<section><div class="wrap">
-  <p class="kicker">PHOTOGRAPHS</p>
-  <h2 class="reveal">The final product.</h2>
-  <div class="shots reveal">
-    <figure>
-      <img src="img/photo/inky57_dining.jpg" alt="A 5.7 inch Ident on a dining table showing DAY OFF, FRI 21 AUG and the next duty on Sunday" loading="lazy" width="1024" height="768">
-      <figcaption class="cap">5.7-inch, on a dining table</figcaption>
-    </figure>
-    <figure>
-      <img src="img/photo/inky40_desk.jpg" alt="A 4.0 inch Ident on a desk stand showing NO ROSTER before setup" loading="lazy" width="480" height="360">
-      <figcaption class="cap">4.0-inch, before a roster is added</figcaption>
-    </figure>
-    <figure>
-      <img src="img/photo/inky57_back.jpg" alt="The back of the panel, with a Raspberry Pi Zero 2 W pushed onto the pin header" loading="lazy" width="1024" height="768">
-      <figcaption class="cap">A Pi Zero 2 W on the back. No soldering</figcaption>
-    </figure>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="split">
-    <div>
-      <p class="kicker">Easy to assemble</p>
-      <p class="lede"><strong>Ident software</strong> can run on almost any Raspberry Pi.</p>
-      <p class="sub" style="margin:0 0 18px">See Build for details.</p>
-      <a class="btn ghost" href="parts.html">See Build</a>
-    </div>
-    <img src="img/panels/impression_7_3_timeline.png" alt="A duty timeline on a 7.3 inch e-paper panel" loading="lazy" width="1600" height="960">
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <p class="kicker">EVEN more ways to see it</p>
-  <h2 class="reveal">The whole month, or none of it</h2>
-  <div class="triad reveal">
-    <div>
-      <h3>Month calendar</h3>
-      <p>The full month as a grid — destinations on flying days, standby and days off
-        marked, today boxed. Show it on days off, or press a button for it at any time.</p>
-    </div>
-    <div>
-      <h3>A picture on days off</h3>
-      <p>Upload any photo and you can choose for it to display on days off. Only stored locally for privacy.</p>
-    </div>
-    <div>
-      <h3>Next duty (if you want it)</h3>
-      <p>Keep a single line across the foot of the picture with your next report —
-        or switch it off, if you prefer not to think about work.</p>
-    </div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  
-  <h2 class="reveal">Airline not supported?</h2>
-  <p class="sub">Apply for a free Ident and we'll build support for you. See T&amp;Cs.</p>
-
-  <div class="split" style="margin-top:38px;align-items:center">
-    <div>
-      <p class="kicker">Not easyJet?</p>
-      <p class="lede">Help us read your roster, and yours is free.</p>
-      <p class="sub" style="margin:0 0 18px">Send a sample roster and help us understand your rostering system - and we'll give you a fully-built Ident for free. See T&amp;Cs.</p>
-      <a class="btn primary" href="airlines.html">Apply for a free Ident</a>
-    </div>
-    <img src="img/panels/impression_7_3_timeline.png" alt="A duty timeline on a 7.3 inch e-paper panel" loading="lazy" width="1600" height="960">
-  </div>
-  
-</div></section>
-
 <footer><div class="wrap">
+  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
   <div class="fl">
     <a href="displays.html">Displays</a><a href="parts.html">Parts</a>
     <a href="faq.html">FAQ</a><a href="support.html">Support</a><a href="legal.html">Legal</a>
@@ -662,6 +424,7 @@
   /* Exploded view: separate the layers once the section is properly in view. */
   var ex=document.getElementById('explode');
   if(ex){
+    ex.classList.remove('open');   /* shipped open; closes, then separates as it scrolls into view */
     var eo=new IntersectionObserver(function(entries){
       entries.forEach(function(en){ ex.classList.toggle('open', en.isIntersecting); });
     },{rootMargin:'-18% 0px -30% 0px',threshold:0});
@@ -674,45 +437,5 @@ function railScroll(dir,id){
   if(!r||!s)return;
   r.scrollBy({left:dir*(s.getBoundingClientRect().width+16),behavior:'smooth'});
 }
-</script>
-
-<script>
-/* Audience tabs. Deep-linkable as #pilots / #family; falls back to both panels
-   being shown when JavaScript is off (see .tabs-js in style.css). */
-(function(){
-  var tabs=[].slice.call(document.querySelectorAll('.tab'));
-  if(!tabs.length) return;
-  function show(id,push){
-    tabs.forEach(function(t){
-      var sel=t.getAttribute('aria-controls')===id;
-      t.setAttribute('aria-selected',sel?'true':'false');
-      var panel=document.getElementById(t.getAttribute('aria-controls'));
-      if(panel) panel.hidden=!sel;
-    });
-    if(push&&history.replaceState){
-      history.replaceState(null,'',id==='p-pilots'?'#pilots':'#family');
-    }
-  }
-  tabs.forEach(function(t){
-    t.addEventListener('click',function(){
-      show(t.getAttribute('aria-controls'),true);
-      window.scrollTo({top:document.querySelector('.tabbar').offsetTop-58,behavior:'smooth'});
-    });
-    t.addEventListener('keydown',function(e){
-      if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft') return;
-      e.preventDefault();
-      var next=tabs[(tabs.indexOf(t)+1)%tabs.length];
-      next.focus(); show(next.getAttribute('aria-controls'),true);
-    });
-  });
-  /* A link to a section inside the hidden panel must open that panel first. */
-  var pilotIds=['how','styles'];
-  function fromHash(){
-    var h=(location.hash||'').replace('#','');
-    if(h==='pilots'||pilotIds.indexOf(h)>-1) show('p-pilots',false);
-    else if(h==='family') show('p-family',false);
-  }
-  addEventListener('hashchange',fromHash); fromHash();
-})();
 </script>
 </body></html>

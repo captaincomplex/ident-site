@@ -9,6 +9,7 @@
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#14110a">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,6 +18,7 @@
   <a class="brand" href="index.html"><img src="/img/ident-wordmark.svg" alt="Ident" width="70" height="16"></a>
   <a class="l" href="index.html#how">How it works</a>
   <a class="l" href="displays.html">Displays</a>
+  <a class="l" href="index.html#styles">Styles</a>
   <a class="l" href="parts.html">Parts</a>
   <a class="l" href="faq.html">FAQ</a>
   <a class="l" href="airlines.html">Your airline</a>
@@ -25,7 +27,6 @@
 </div></nav>
 
 <header><div class="wrap">
-  <span class="badge">questions &amp; answers</span>
   <h1>Frequently asked <span class="g">questions</span></h1>
   <p class="lead">If your question isn't here, <a href="support.html">send it over</a> — real
     answers, from someone who flies the line.</p>
@@ -33,7 +34,7 @@
 
 <section><div class="wrap">
 
-<div class="faqcat">BUYING &amp; HARDWARE</div>
+<h2 class="faqcat">Buying &amp; hardware</h2>
 
 <details open><summary>What exactly am I buying?</summary><div class="body">
 <p>The Ident software, plus a step-by-step illustrated build guide and support. You buy the
@@ -71,7 +72,9 @@ the commute time you set yourself.</p></div></details>
 <p>The <strong>7.3″ Inky Impression</strong> is the one to get if you're unsure — readable across
 a room and wide enough for the route maps. The <strong>4.0″</strong> is the budget option and works
 well on a desk. The <strong>13.3″</strong> is a proper wall piece but costs considerably more.</p>
-<p>All of them use Pimoroni's Spectra 6 colour e-paper and all are fully supported.</p></div></details>
+<p>All of them use Pimoroni's Spectra 6 colour e-paper and all are fully supported.</p>
+  <div class="qa-figs"><figure><figure class="dev "><img src="img/scenes/f_epaper_7_3.png" alt="A 7.3 inch e-paper panel showing the Solari board in flight from Edinburgh to Tenerife" width="1600" height="960" loading="lazy"></figure><figcaption>7.3″ e-paper</figcaption></figure><figure><figure class="dev "><img src="img/scenes/f_led_128x32_split.png" alt="A 128 by 32 LED matrix panel in flight from Bristol to Split" width="1024" height="256" loading="lazy"></figure><figcaption>LED matrix, 128×32</figcaption></figure></div>
+</div></details>
 
 <details><summary>I already own the 5.7″ Inky Impression. Will it work?</summary><div class="body">
 <p>Yes, fully. That's the panel Ident was originally built on, and it has seven colours rather than
@@ -110,11 +113,11 @@ about the same as leaving a phone charger plugged in.</p>
 (26.32p per kWh) a continuously-powered watt costs about <strong>£2.30 a year</strong>, so:</p>
 <table style="margin-top:10px">
   <tr><th>Build</th><th>Typical draw</th><th>Per year</th></tr>
-  <tr><td class="k">Pi Zero 2 W + e-paper</td><td>~0.5 W</td><td>~£1.20</td></tr>
-  <tr><td class="k">Pi 3 Model A+ + e-paper</td><td>~1.4 W</td><td>~£3</td></tr>
-  <tr><td class="k">Pi 4 + e-paper</td><td>~2.7 W</td><td>~£6</td></tr>
-  <tr><td class="k">Pi 5 + e-paper</td><td>~3 W</td><td>~£7</td></tr>
-  <tr><td class="k">Any Pi + 128×32 LED matrix</td><td>~6–9 W</td><td>~£15–£20</td></tr>
+  <tr><td class="k">Pi Zero 2 W + e-paper</td><td data-label="Typical draw">~0.5 W</td><td data-label="Per year">~£1.20</td></tr>
+  <tr><td class="k">Pi 3 Model A+ + e-paper</td><td data-label="Typical draw">~1.4 W</td><td data-label="Per year">~£3</td></tr>
+  <tr><td class="k">Pi 4 + e-paper</td><td data-label="Typical draw">~2.7 W</td><td data-label="Per year">~£6</td></tr>
+  <tr><td class="k">Pi 5 + e-paper</td><td data-label="Typical draw">~3 W</td><td data-label="Per year">~£7</td></tr>
+  <tr><td class="k">Any Pi + 128×32 LED matrix</td><td data-label="Typical draw">~6–9 W</td><td data-label="Per year">~£15–£20</td></tr>
 </table>
 <p style="margin-top:10px">The LED figures depend heavily on brightness and on how much of the
 panel is lit — Ident's screens are mostly dark, which helps, but a bright board in a hall is the
@@ -125,7 +128,7 @@ draws rather than our own measurements.</p></div></details>
 <p>Yes, for updates. E-paper keeps its image without power, so the display doesn't go blank if you
 unplug it — it simply stops changing. Power draw is very low.</p></div></details>
 
-<div class="faqcat">ROSTERS</div>
+<h2 class="faqcat">Rosters</h2>
 
 <details><summary>Which airlines does it work with?</summary><div class="body">
 <p>Ident was built and tested against <strong>easyJet eCrew</strong> calendar feeds. Any roster
@@ -198,17 +201,21 @@ support &mdash; Ident keeps it out of its own diagnostics export for exactly tha
 
 <details><summary>Does it handle standby, training and days off?</summary><div class="body">
 <p>Yes. It recognises standby, training and non-flying codes and shows the right screen. On a day
-off it shows your next duty — the date, report time and where you're going.</p></div></details>
+off it shows your next duty — the date, report time and where you're going.</p>
+  <div class="qa-figs"><figure><figure class="dev "><img src="img/scenes/f_adty.png" alt="Airport duty on the Solari board" width="1600" height="960" loading="lazy"></figure><figcaption>Airport standby</figcaption></figure><figure><figure class="dev "><img src="img/scenes/f_esby.png" alt="Home standby, as the Swiss style shows it" width="1600" height="960" loading="lazy"></figure><figcaption>Standby from home</figcaption></figure><figure><figure class="dev "><img src="img/scenes/f_dayoff.png" alt="A day off with the next duty underneath" width="1600" height="960" loading="lazy"></figure><figcaption>Day off</figcaption></figure></div>
+</div></details>
 
 <details><summary>What about multi-sector days?</summary><div class="body">
 <p>All destinations are shown, not just the first. A four-sector day reads as
-<span class="mono">NTE/BOD</span>, and a button press gives report time and sector count.</p></div></details>
+<span class="mono">NTE/BOD</span>, and a button press gives report time and sector count.</p>
+  <div class="qa-figs"><figure><figure class="dev"><img src="img/scenes/f_strips_nte_bod.png" alt="The flight strips style on a four-sector day: Bristol to Nantes and back, then Bordeaux and back" width="1600" height="960" loading="lazy"></figure><figcaption>Every sector as a strip: NTE, then BOD</figcaption></figure></div>
+</div></details>
 
 <details><summary>Can it show flights I'm travelling on as a passenger?</summary><div class="body">
 <p>Yes — personal flights can be added by flight number and are tracked the same way, with the
 report time set for leisure travel rather than duty.</p></div></details>
 
-<div class="faqcat">PRIVACY &amp; DATA</div>
+<h2 class="faqcat">Privacy &amp; data</h2>
 
 <details open><summary>Where is my roster stored?</summary><div class="body">
 <p>On your device, and nowhere else. It is fetched by your Raspberry Pi, from your airline, over
@@ -225,7 +232,7 @@ software updates.</p></div></details>
 crew data may be processed. Because Ident keeps everything on your own hardware, it's a far easier
 conversation than a cloud service, but the responsibility is yours.</p></div></details>
 
-<div class="faqcat">ACCESS &amp; SETUP</div>
+<h2 class="faqcat">Access &amp; setup</h2>
 
 <details><summary>How do I set it up?</summary><div class="body">
 <p>Flash the SD card, plug the display onto the Pi, power it up, and open the setup page in your
@@ -267,7 +274,7 @@ is encrypted.</p></div></details>
 <p>Yes. Point each one at the same roster link and they'll stay in step by themselves — no server
 in the middle. Give each a name (Kitchen, Study) so you can tell them apart.</p></div></details>
 
-<div class="faqcat">RUNNING IT</div>
+<h2 class="faqcat">Running it</h2>
 
 <details><summary>How often does the screen update?</summary><div class="body">
 <p>Colour e-paper takes roughly 30 seconds to redraw, so Ident refreshes when something meaningful
@@ -305,7 +312,9 @@ site. Press the third button and it fills the screen, big enough to scan from ac
 goes back to the duty after twenty seconds. You can also leave a small one in the corner of any
 display style — turn it on under Display in the control panel, and pick which corner.</p>
 <p>The code only exists while a duty is running. On days off, standby and between duties there's
-nothing to track, so nothing is shown. Panels without buttons can still use the corner option.</p></div></details>
+nothing to track, so nothing is shown. Panels without buttons can still use the corner option.</p>
+  <div class="qa-figs"><figure><figure class="dev "><img src="img/scenes/f_qr_corner.png" alt="A small scannable code in the corner of the board" width="1600" height="960" loading="lazy"></figure><figcaption>In the corner</figcaption></figure><figure><figure class="dev "><img src="img/scenes/f_qr_full.png" alt="The code filling the screen" width="1600" height="960" loading="lazy"></figure><figcaption>Full screen</figcaption></figure></div>
+</div></details>
 
 <details><summary>Does the board show sensitive roster codes?</summary><div class="body">
 <p>Not unless you ask it to. These are hidden by default and shown as an ordinary day off, in
@@ -324,7 +333,9 @@ re-reads your feed.</p></div></details>
 calendar on days off</em>: on a day off the wall shows the whole month as a grid —
 destinations on flying days, standby and days off marked, today boxed. Or set one of the
 buttons to <em>Month calendar</em> to bring it up for a minute at any time. Either needs a
-7&Prime; panel or larger, where there's room to read it.</p></div></details>
+7&Prime; panel or larger, where there's room to read it.</p>
+  <div class="qa-figs"><figure><figure class="dev "><img src="img/scenes/f_month.png" alt="The month calendar on a day off" width="1600" height="960" loading="lazy"></figure><figcaption>The month, on a day off</figcaption></figure></div>
+</div></details>
 
 <details><summary>Can I show a photo instead on days off?</summary><div class="body">
 <p>Yes. Upload a picture in the control panel and it takes over the screen on days off only,
@@ -342,6 +353,7 @@ If Ident won't work with your airline's roster, tell us and we'll sort it out.</
 </div></section>
 
 <footer><div class="wrap">
+  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
   <div class="fl"><a href="index.html">Home</a><a href="support.html">Support</a><a href="legal.html">Legal</a>
     <a href="https://github.com/captaincomplex/ident">Source on GitHub</a></div>
   <p>Ident — a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>

@@ -9,6 +9,7 @@
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#14110a">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,14 +18,15 @@
   <a class="brand" href="index.html"><img src="/img/ident-wordmark.svg" alt="Ident" width="70" height="16"></a>
   <a class="l" href="index.html#how">How it works</a>
   <a class="l" href="displays.html">Displays</a>
+  <a class="l" href="index.html#styles">Styles</a>
   <a class="l" href="parts.html">Parts</a>
   <a class="l" href="faq.html">FAQ</a>
+  <a class="l" href="airlines.html">Your airline</a>
   <span class="sp"></span>
   <a class="l" href="support.html">Support</a>
 </div></nav>
 
 <header><div class="wrap">
-  <span class="badge">free, for good</span>
   <h1>Airline not supported? <span class="g">Apply for a free Ident</span></h1>
   <p class="lead">Ident reads easyJet eCrew rosters today. Every other airline is a
     format nobody has looked at yet. Help us read yours and the software is
@@ -34,7 +36,7 @@
 <section><div class="wrap">
   <h2>The deal, plainly</h2>
   <p class="sub">You give us the format. We do the work. You keep the software.</p>
-  <div class="triad">
+  <div class="ruled three">
     <div>
       <h3>You send a sample</h3>
       <p>One roster, with your name, staff number and crew list taken out. That's
@@ -54,21 +56,31 @@
 </div></section>
 
 <section><div class="wrap">
+  <h2>Your codes, in plain words on the wall</h2>
+  <p class="sub" style="max-width:62ch">Whatever your airline calls a day, Ident shows it in words a family can read. Here are three of the examples from the form below, as they come out.</p>
+  <div class="trio">
+    <figure><figure class="dev "><img src="img/scenes/a_adty.png" alt="The Solari board showing AIRPORT DUTY, LGW, ADTY 06:00 to 14:00 and home 14:53" width="1600" height="960" loading="lazy"></figure><figcaption>ADTY &mdash; airport standby</figcaption></figure>
+    <figure><figure class="dev "><img src="img/scenes/a_esby.png" alt="The status colour style in yellow: on standby until 19:00, could be called in" width="1600" height="960" loading="lazy"></figure><figcaption>ESBY &mdash; standby from home</figcaption></figure>
+    <figure><figure class="dev "><img src="img/scenes/a_dayoff.png" alt="The Solari board on a day off: OFF, then the next duty and wake time" width="1600" height="960" loading="lazy"></figure><figcaption>D/O &mdash; day off</figcaption></figure>
+  </div>
+  <p class="rnd">Renderings drawn by Ident's own software from a sample roster.</p>
+</div></section>
+
+<section><div class="wrap">
   <h2>What we actually need</h2>
   <p class="sub">In rough order of usefulness.</p>
-  <div class="grid">
-    <div class="card"><h3>A calendar feed</h3>
+  <div class="ruled three">
+    <div><h3>A calendar feed</h3>
       <p>If your airline offers an <span class="mono">.ics</span> subscription — AIMS eCrew,
         CrewLink, Sabre and others do — that's the whole job, and the quickest route.
         <strong>Don't send us the link itself:</strong> it's a password in URL form. Tell us
         which system it comes from and we'll take it from there.</p></div>
-    <div class="card"><h3>Or a roster PDF</h3>
+    <div><h3>Or a roster PDF</h3>
       <p>The monthly one you already download. Black out your name, staff number and
         anyone else who appears on it. We need the shape of the page, not who you are.</p></div>
-    <div class="card"><h3>Your duty codes</h3>
+    <div><h3>Your duty codes</h3>
       <p>What your airline calls a day off, standby, positioning, training, sick. This is
-        the part that actually takes the time, and the part only you know.</p></div>
-  </div>
+        the part that actually takes the time, and the part only you know.</p></div></div>
   <div class="note" style="margin-top:22px;max-width:640px">
     <strong>On your data.</strong> Send a redacted sample, not a live feed. We use it to
     write the parser and delete it when the parser works — we don't want a copy of your
@@ -145,35 +157,34 @@ D/O  = day off
 
 <section><div class="wrap">
   <h2>What happens to it</h2>
-  <div class="grid">
-    <div class="card"><h3>It's read once, by a person</h3>
+  <div class="ruled">
+    <div><h3>It's read once, by a person</h3>
       <p>Your sample is opened to work out the format and write the parser. It isn't
         uploaded anywhere, fed to a service, or kept after the work is done.</p></div>
-    <div class="card"><h3>Deleted when the parser works</h3>
+    <div><h3>Deleted when the parser works</h3>
       <p>Once your airline is supported the sample is deleted. Ask for it sooner and
         we'll delete it sooner — the codes are the useful part, not the file.</p></div>
-    <div class="card"><h3>Never send the live link</h3>
+    <div><h3>Never send the live link</h3>
       <p>Your calendar subscription URL is a password. Don't put it in the form or the
-        email. Tell us which crewing system it comes from instead.</p></div>
-  </div>
+        email. Tell us which crewing system it comes from instead.</p></div></div>
 </div></section>
 
 <section><div class="wrap">
   <h2>Honest small print</h2>
-  <div class="grid">
-    <div class="card"><h3>It might not be possible</h3>
+  <div class="ruled">
+    <div><h3>It might not be possible</h3>
       <p>Some airlines publish nothing a device can read. If yours is one of them we'll
         tell you straight rather than string you along.</p></div>
-    <div class="card"><h3>It takes as long as it takes</h3>
+    <div><h3>It takes as long as it takes</h3>
       <p>This is built by a working pilot around a roster of his own. Weeks, not days —
         and more if your airline changes its format halfway through.</p></div>
-    <div class="card"><h3>You still buy your own hardware</h3>
+    <div><h3>You still buy your own hardware</h3>
       <p>The free part is the software. The display and Raspberry Pi come from the
-        usual places — see <a href="parts.html">parts</a>.</p></div>
-  </div>
+        usual places — see <a href="parts.html">parts</a>.</p></div></div>
 </div></section>
 
 <footer><div class="wrap">
+  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
   <div class="fl"><a href="index.html">Home</a><a href="faq.html">FAQ</a>
     <a href="support.html">Support</a><a href="legal.html">Legal</a></div>
   <p>Ident — a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>

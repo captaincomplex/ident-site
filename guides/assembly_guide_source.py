@@ -306,13 +306,14 @@ label(bx2, by - 14*mm, "Edges only, both hands.", 9, GREY)
 # 2.4GHz warning
 wy = 62*mm
 rrect(20*mm, wy, W - 40*mm, 46*mm, 4, RED, (1.0, 0.97, 0.96), 1.4)
-wifi(42*mm, wy + 26*mm, 1.0, 3, RED)
-crossout(42*mm, wy + 26*mm, 14*mm)
-label(64*mm, wy + 34*mm, "Check your Wi-Fi first", 11, RED, "Helvetica-Bold")
-label(64*mm, wy + 26*mm, "The Pi Zero 2 W cannot see 5GHz networks. Only 2.4GHz.", 9.5, INK)
-label(64*mm, wy + 19*mm, "If your router only broadcasts 5GHz, or hides both bands behind one", 9, GREY)
-label(64*mm, wy + 13*mm, "name and pushes devices onto 5GHz, this build will not connect —", 9, GREY)
-label(64*mm, wy + 7*mm, "and no amount of setting up will fix it. Turn 2.4GHz on first.", 9, GREY)
+wifi(42*mm, wy + 22*mm, 1.0, 3, RED)
+crossout(42*mm, wy + 22*mm, 14*mm)
+label(64*mm, wy + 37*mm, "Check your Wi-Fi first", 11, RED, "Helvetica-Bold")
+label(64*mm, wy + 30*mm, "Some Pis, such as the Zero 2 W, only do 2.4GHz Wi-Fi.", 9.5, INK, "Helvetica-Bold")
+label(64*mm, wy + 24*mm, "They cannot see 5GHz networks. The Pi 3 A+ and Pi 4 can see both.", 9, GREY)
+label(64*mm, wy + 18*mm, "If your router only broadcasts 5GHz, or hides both bands behind one", 9, GREY)
+label(64*mm, wy + 12*mm, "name and pushes devices onto 5GHz, a 2.4GHz-only Pi will never connect.", 9, GREY)
+label(64*mm, wy + 6*mm, "Turn 2.4GHz on first. Not sure which Pi you have? Do it anyway.", 9, GREY)
 footer()
 c.showPage()
 
@@ -452,7 +453,7 @@ label(26*mm, by + 53*mm, "Then, in your phone's browser, go to:", 10, INK, "Helv
 fill(INK); c.setFont("Courier-Bold", 14); c.drawString(26*mm, by + 44*mm, "10.42.0.1:8080")
 label(26*mm, by + 35*mm, "A page called Connect your display opens. If it says to connect to your home", 9, GREY)
 label(26*mm, by + 29.5*mm, "Wi-Fi first, that is exactly what you are doing.", 9, GREY)
-rows = [("Choose", "your home Wi-Fi from the list. Only 2.4GHz networks are shown."),
+rows = [("Choose", "your home Wi-Fi from the list. A 2.4GHz-only Pi (Zero 2 W) lists only 2.4GHz networks."),
         ("Type", "its password, then press Connect."),
         ("Then", "Ident-Setup switches off and your phone drops off it. Rejoin your own Wi-Fi.")]
 yy = by + 20*mm

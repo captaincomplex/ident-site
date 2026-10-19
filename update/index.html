@@ -24,7 +24,9 @@
 
 <nav><div class="wrap">
   <a class="brand" href="../index.html"><img src="/img/ident-wordmark.svg" alt="Ident" width="70" height="16"></a>
+  <a class="l" href="../index.html#how">How it works</a>
   <a class="l" href="../displays.html">Displays</a>
+  <a class="l" href="../index.html#styles">Styles</a>
   <a class="l" href="../parts.html">Parts</a>
   <a class="l" href="../faq.html">FAQ</a>
   <a class="l" href="../airlines.html">Your airline</a>
@@ -33,7 +35,6 @@
 </div></nav>
 
 <header><div class="wrap">
-  <span class="badge">reTerminal E1002 · E1001</span>
   <h1>Update over <span class="g">USB-C</span></h1>
   <p class="lead">Your display normally updates itself over Wi-Fi once a day. If it can't — or
     you'd rather not wait — you can install the latest version from a computer here. Your
@@ -68,7 +69,7 @@
       your board; the screen flashing through its colours as it redraws is normal.</li>
   </ol>
 
-  <div class="install">
+  <div class="install" id="installbox" hidden>
     <div class="card"><h3>E1002 — colour</h3>
       <esp-web-install-button id="b1002" manifest="https://licence.xpdr.aero/firmware/usb-e1002.json" hidden>
         <button slot="activate">Install on an E1002</button>
@@ -102,6 +103,7 @@
       st.textContent = "Latest version: " + m.version + ".";
       document.getElementById("b1002").hidden = false;
       document.getElementById("b1001").hidden = false;
+      document.getElementById("installbox").hidden = false;
     })
     .catch(function () {
       st.textContent = "USB updates aren't available yet. The reTerminal version of Ident is still in testing.";
