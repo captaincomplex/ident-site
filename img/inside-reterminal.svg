@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 700" role="img" aria-labelledby="t d">
+  <title id="t">Exploded view: Seeed reTerminal E1002</title><desc id="d">The reTerminal E1002 taken apart along one axis: front case, 7.3 inch colour e-paper panel, mainboard with the ESP32-S3 and its USB-C port, a 2000 milliamp-hour battery, and the back case.</desc>
+  <polygon points="134.0,527.0 315.8,632.0 315.8,620.0 134.0,515.0" fill="#26211a" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="431.9,565.0 315.8,632.0 315.8,620.0 431.9,553.0" fill="#1b1710" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="250.0,448.0 431.9,553.0 315.8,620.0 134.0,515.0" fill="#3a3426" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="192.8,429.0 305.4,494.0 305.4,482.0 192.8,417.0" fill="#a9a595" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <polygon points="373.0,455.0 305.4,494.0 305.4,482.0 373.0,443.0" fill="#8f8b7b" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <polygon points="260.4,378.0 373.0,443.0 305.4,482.0 192.8,417.0" fill="#c9c5b8" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <polygon points="147.8,319.0 315.8,416.0 315.8,411.0 147.8,314.0" fill="#2d7347" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="418.0,357.0 315.8,416.0 315.8,411.0 418.0,352.0" fill="#235a38" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="250.0,255.0 418.0,352.0 315.8,411.0 147.8,314.0" fill="#3f9a63" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="243.1,321.0 265.6,334.0 265.6,329.0 243.1,316.0" fill="#120f09" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="288.1,321.0 265.6,334.0 265.6,329.0 288.1,316.0" fill="#0b0907" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="265.6,303.0 288.1,316.0 265.6,329.0 243.1,316.0" fill="#1d1910" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="364.3,367.0 378.2,375.0 378.2,369.0 364.3,361.0" fill="#a9a595" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="393.8,366.0 378.2,375.0 378.2,369.0 393.8,360.0" fill="#8f8b7b" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="379.9,352.0 393.8,360.0 378.2,369.0 364.3,361.0" fill="#c9c5b8" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="134.0,211.0 315.8,316.0 315.8,309.0 134.0,204.0" fill="#120f09" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="431.9,249.0 315.8,316.0 315.8,309.0 431.9,242.0" fill="#0b0907" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="250.0,137.0 431.9,242.0 315.8,309.0 134.0,204.0" fill="#1d1910" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="250.0,147.0 414.5,242.0 315.8,299.0 151.3,204.0" fill="#0b0907" stroke="#6b6350" stroke-width="1" stroke-linejoin="round"/>
+  <line x1="170.3" y1="201.0" x2="175.5" y2="204.0" stroke="#d8381a" stroke-width="3" stroke-linecap="butt"/>
+  <line x1="177.3" y1="205.0" x2="182.5" y2="208.0" stroke="#f2b705" stroke-width="3" stroke-linecap="butt"/>
+  <line x1="184.2" y1="209.0" x2="189.4" y2="212.0" stroke="#3f9a63" stroke-width="3" stroke-linecap="butt"/>
+  <line x1="191.1" y1="213.0" x2="196.3" y2="216.0" stroke="#3a6fb0" stroke-width="3" stroke-linecap="butt"/>
+  <line x1="198.0" y1="217.0" x2="203.2" y2="220.0" stroke="#fbf8ef" stroke-width="3" stroke-linecap="butt"/>
+  <line x1="205.0" y1="221.0" x2="210.2" y2="224.0" stroke="#14110a" stroke-width="3" stroke-linecap="butt"/>
+  <polygon points="123.6,97.0 315.8,208.0 315.8,194.0 123.6,83.0" fill="#26211a" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="442.3,135.0 315.8,208.0 315.8,194.0 442.3,121.0" fill="#1b1710" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M250.0,10.0 L442.3,121.0 L315.8,194.0 L123.6,83.0 Z M250.0,26.0 L414.5,121.0 L315.8,178.0 L151.3,83.0 Z" fill="#3a3426" stroke="#14110a" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd"/>
+  <line x1="134.0" y1="515.0" x2="134.0" y2="423.0" stroke="#14110a" stroke-width="1" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="134.0" y1="314.0" x2="134.0" y2="211.0" stroke="#14110a" stroke-width="1" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="134.0" y1="204.0" x2="134.0" y2="97.0" stroke="#14110a" stroke-width="1" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="315.8" y1="620.0" x2="315.8" y2="528.0" stroke="#14110a" stroke-width="1" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="315.8" y1="419.0" x2="315.8" y2="316.0" stroke="#14110a" stroke-width="1" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="315.8" y1="309.0" x2="315.8" y2="202.0" stroke="#14110a" stroke-width="1" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="431.9" y1="553.0" x2="431.9" y2="461.0" stroke="#14110a" stroke-width="1" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="431.9" y1="352.0" x2="431.9" y2="249.0" stroke="#14110a" stroke-width="1" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="431.9" y1="242.0" x2="431.9" y2="135.0" stroke="#14110a" stroke-width="1" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <line x1="515.0" y1="150.0" x2="402.4" y2="150.0" stroke="#14110a" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="402.4" cy="150.0" r="2.6" fill="#14110a"/>
+  <circle cx="515.0" cy="150.0" r="13" fill="#fbf8ef" stroke="#14110a" stroke-width="1.5"/>
+  <text x="515.0" y="155.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="14" fill="#14110a">1</text>
+  <line x1="515.0" y1="281.0" x2="371.2" y2="281.0" stroke="#14110a" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="371.2" cy="281.0" r="2.6" fill="#14110a"/>
+  <circle cx="515.0" cy="281.0" r="13" fill="#fbf8ef" stroke="#14110a" stroke-width="1.5"/>
+  <text x="515.0" y="286.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="14" fill="#14110a">2</text>
+  <line x1="515.0" y1="371.5" x2="386.0" y2="371.5" stroke="#14110a" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="386.0" cy="371.5" r="2.6" fill="#14110a"/>
+  <circle cx="515.0" cy="371.5" r="13" fill="#fbf8ef" stroke="#14110a" stroke-width="1.5"/>
+  <text x="515.0" y="376.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="14" fill="#14110a">3</text>
+  <line x1="515.0" y1="470.0" x2="336.6" y2="470.0" stroke="#14110a" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="336.6" cy="470.0" r="2.6" fill="#14110a"/>
+  <circle cx="515.0" cy="470.0" r="13" fill="#fbf8ef" stroke="#14110a" stroke-width="1.5"/>
+  <text x="515.0" y="475.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="14" fill="#14110a">4</text>
+  <line x1="515.0" y1="604.0" x2="353.9" y2="604.0" stroke="#14110a" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="353.9" cy="604.0" r="2.6" fill="#14110a"/>
+  <circle cx="515.0" cy="604.0" r="13" fill="#fbf8ef" stroke="#14110a" stroke-width="1.5"/>
+  <text x="515.0" y="609.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="14" fill="#14110a">5</text>
+</svg>
