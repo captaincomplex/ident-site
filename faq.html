@@ -216,7 +216,7 @@ off it shows your next duty — the date, report time and where you're going.</p
 <p>Yes — personal flights can be added by flight number and are tracked the same way, with the
 report time set for leisure travel rather than duty.</p></div></details>
 
-<h2 class="faqcat">Privacy &amp; data</h2>
+<h2 class="faqcat" id="privacy">Privacy &amp; data</h2>
 
 <details open><summary>Where is my roster stored?</summary><div class="body">
 <p>On your device, and nowhere else. It is fetched by your Raspberry Pi, from your airline, over
@@ -224,9 +224,74 @@ your own internet connection. We never receive it, cannot see it, and don't oper
 holds it.</p></div></details>
 
 <details><summary>Do I need an account?</summary><div class="body">
-<p>No. There's no sign-up, no cloud login and no telemetry. The only outbound connections your
-device makes are to your roster feed, an optional flight-tracking service, and a daily check for
-software updates.</p></div></details>
+<p>No. There's no sign-up and no cloud login. Nothing about how your display is working is sent to
+us unless you switch on optional diagnostics reporting (see below). The only outbound connections
+your device makes are to your roster feed, an optional flight-tracking service, and our licence
+server for activation and a daily update check.</p></div></details>
+
+<details open><summary>Does Ident send you any data about my display?</summary><div class="body">
+<p><strong>No data about how your display is working is sent unless you choose to send it.</strong>
+Diagnostics reporting is off when you buy it, stays off until you switch it on, and never switches
+itself on or off. The switch lives on the developer page of the control panel, not in everyday
+settings.</p>
+<p>Two things are different, and we'd rather say so plainly than leave you to find out. They are
+about your licence, not about how your display is working, and they happen whether or not you switch
+reporting on:</p>
+<ul>
+  <li><strong>Licence check at setup.</strong> When you enter your licence key, your display contacts
+    our licence server once to activate it. That request carries your licence key and your display's
+    serial number, so the server can tie the licence to that one display.</li>
+  <li><strong>Daily update check.</strong> Once a day your display asks the same server whether a
+    newer version of Ident is available. That request carries your licence certificate, which
+    names your licence and your display's serial number, so the server knows you are licensed.
+    You can turn off automatic installing in the control panel, but the daily check itself can't be turned off.</li>
+</ul>
+<p>Neither carries your roster, your settings or any diagnostics. Everything else your display connects to is a service you set up yourself: your roster feed,
+and optionally flight tracking or Google Maps.</p>
+<p>If you do switch reporting on, your display sends one small report a day. It is made only of numbers and
+fixed words, so there is nowhere in it for a roster to travel. This is the complete list of what it
+can contain &mdash; nothing outside this list is accepted, by your display or by our server:</p>
+<ul>
+  <li><code>version</code> &mdash; the Ident software version, such as 4.26.0</li>
+  <li><code>product</code> &mdash; which Ident product it is</li>
+  <li><code>hardware</code> &mdash; the kind of device it runs on (for example a Pi Zero 2 W or a Pi 5)</li>
+  <li><code>os</code> &mdash; which Raspberry Pi OS release it runs (bookworm, trixie or other)</li>
+  <li><code>panel</code> &mdash; the screen setting, such as impression_7_3</li>
+  <li><code>style</code> &mdash; the display style you chose, such as board_solari</li>
+  <li><code>uptime_days</code> &mdash; days since the device last restarted</li>
+  <li><code>disk_free</code> &mdash; roughly how much storage is left, in one of four bands</li>
+  <li><code>feed_ok</code> &mdash; how many roster refreshes worked since the last report</li>
+  <li><code>feed_failed_network</code> &mdash; refreshes that failed because something could not be reached</li>
+  <li><code>feed_failed_http</code> &mdash; refreshes where the feed answered with an error</li>
+  <li><code>feed_failed_parse</code> &mdash; refreshes where the feed arrived but could not be read</li>
+  <li><code>render_errors</code> &mdash; how many times drawing the screen failed</li>
+  <li><code>update_check_failed</code> &mdash; how many update checks failed</li>
+  <li><code>unrecognised_days</code> &mdash; how many days in your roster have a code Ident doesn't recognise &mdash; a number, never the code</li>
+  <li><code>custom_codes</code> &mdash; how many roster codes you have described yourself &mdash; a number, never the codes</li>
+</ul>
+<p><strong>It never contains:</strong> your roster, flights, dates or places; your calendar link;
+the roster codes themselves; your licence key or your device's serial number; your name, address or
+home location; Wi-Fi names or passwords; or your internet address (our server does not keep it).</p>
+<p>Each display makes a random ID of its own when you switch reporting on. It is not linked to your
+licence, your order or you. The report is not tied to who bought the display.</p>
+<p><strong>You can check before anything is sent.</strong> The developer page shows the exact report
+as it would go out now, a list of every send, a <em>Send now</em> button, and a button that asks our
+server to delete everything held for your display and makes your display forget its ID. Reports we
+keep are removed automatically after 180 days.</p>
+<p>What we use it for: seeing, for example, that one software version fails to read a roster, or
+that a screen setting errors. It tells us how many displays hit a problem, never whose.</p>
+<p>Reporting is separate from the support file you can download from the same page. That file
+stays on your device until you choose to email it to us, and you can read it first.</p>
+</div></details>
+
+<details><summary>Roster codes: what if Ident doesn't know one?</summary><div class="body">
+<p>Airlines add and change roster codes, and a new one can appear before a software update catches
+up. When your roster contains a code Ident doesn't recognise, the control panel tells you at the
+top of the page and offers to learn it: choose a day off, a day off with the code kept private,
+standby at home or at the airport, training, or a working day that shows its code. Until you do,
+that day appears on the wall as a plain duty showing the code, so nothing is hidden or invented.
+You can also add codes ahead of time under <em>Airline &middot; tracking &middot; maps &middot;
+hardware</em>. These codes stay on your display; they are never sent to us.</p></div></details>
 
 <details><summary>Is my roster confidential to my airline?</summary><div class="body">
 <p>Worth checking your own company's IT and data policies — some airlines have rules about where
@@ -355,8 +420,7 @@ If Ident won't work with your airline's roster, tell us and we'll sort it out.</
 
 <footer><div class="wrap">
   <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
-  <div class="fl"><a href="index.html">Home</a><a href="support.html">Support</a><a href="legal.html">Legal</a>
-    <a href="https://github.com/captaincomplex/ident">Source on GitHub</a></div>
+  <div class="fl"><a href="index.html">Home</a><a href="support.html">Support</a><a href="legal.html">Legal</a></div>
   <p>Ident — a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>
 </div></footer>
 

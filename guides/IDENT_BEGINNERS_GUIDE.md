@@ -5,7 +5,7 @@ flight you are on, and when you will be home. It assumes you have **never writte
 code or used a Raspberry Pi before**. If you can follow a recipe, you can do this.
 Take it slowly; nothing here can break your computer.
 
-> **Correct as of version 4.26.0** (October 2026).
+> **Correct as of version 4.27.0** (October 2026).
 > Ident updates itself, so if your display reports a newer version some screens
 > here may have moved on. The version is shown in the control panel.
 
@@ -314,6 +314,33 @@ Press **Finish setup** and you land on the control panel. From here you can:
 - **All settings:** the section at the very bottom exposes every option if you ever
   want to fine-tune.
 
+### When your roster has a code Ident doesn't know
+
+Airlines add and change roster codes — the short labels like `ADTY` or `SIM` that say what a
+day is — and Ident can't always know about a new one the day it appears. When that happens:
+
+1. A box appears at the top of the control panel: **"Ident doesn't recognise `XYZ1` in your
+   roster."** Until you answer, that day shows on the wall as an ordinary working day with the
+   code printed on it, so nothing is hidden or invented.
+2. Next to the code, choose what it means and press **Save**:
+   - **A day off**
+   - **A day off, and keep the code private** — the wall says plain *D/O* and the code itself
+     is never stored. Use this for anything you wouldn't want a visitor reading.
+   - **Standby at home** or **Standby at the airport**
+   - **Training**
+   - **A working day (shows its code)** — the wall shows the code as it is.
+3. Ident re-reads your roster straight away and the box disappears.
+
+You can also add a code before it turns up: open **Airline · tracking · maps · hardware**,
+find **Roster codes you've added**, type the code, choose what it means, add a note for
+yourself if you like, and press **Add**. **Remove** takes one away again.
+
+Two things to know. Codes Ident already treats as private (sickness, compassionate leave and
+so on) can't be changed here — they stay hidden unless you reveal them under **Roster
+privacy**. And the list lives on your display only; it is never sent anywhere. If you load
+your roster as a PDF rather than a calendar link, upload it again after adding a code, because
+a stored roster isn't re-read automatically.
+
 ---
 
 ## Part 6 — Where to find your calendar link
@@ -498,5 +525,5 @@ and your working version is backed up first, so a failed update leaves it alone.
 
 ---
 
-*Correct as of version 4.26.0 — October 2026.*
+*Correct as of version 4.27.0 — October 2026.*
 *When Ident is updated, this guide is reviewed and this line is updated with it.*
