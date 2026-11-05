@@ -113,6 +113,8 @@ p.sub{color:var(--muted);margin:0 0 26px;max-width:62ch;line-height:1.55}
 .btn.ghost{border-color:currentColor;color:var(--ink);background:transparent}
 .btn:hover{transform:scale(.97);color:inherit}
 .btn.primary:hover{color:var(--btn-fg)}
+.btn.soon{opacity:.55;cursor:default}
+.btn.soon:hover{transform:none}
 
 /* ---- screenshots, cards ------------------------------------------------ */
 .shot{background:var(--panel);border-radius:var(--radius);padding:14px;margin-top:8px}
@@ -414,6 +416,8 @@ header .rnd{color:#14110a}
 .tile-q .sub{font-size:.9375rem}
 .sty .on{margin-top:6px;font-weight:600;font-size:.8125rem;color:var(--ink)}
 .sty .on::before{content:"On the board: ";font-weight:500;color:var(--muted)}
+.sty .runs{margin-top:2px;font-size:.8125rem}
+.sty .runs::before{content:"Runs on: "}
 .colourband .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}
 .trio figure{margin:0}.trio figcaption{margin-top:12px;font-weight:700;font-size:1.0625rem;letter-spacing:-.01em}
 @media(max-width:800px){.colourband .trio{grid-template-columns:1fr}}

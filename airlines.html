@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ident — airline not supported? Apply for a free one</title>
+<title>Ident: airline not supported? Apply for a free one</title>
 <meta name="description" content="Ident reads easyJet eCrew rosters today. Fly for someone else? Help us add your airline and the software is yours free, for good.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
@@ -24,6 +24,7 @@
   <a class="l" href="faq.html">FAQ</a>
   <a class="l" href="airlines.html">Your airline</a>
   <span class="sp"></span>
+  <a class="l" href="buy.html">Buy</a>
   <a class="l" href="support.html">Support</a>
 </div></nav>
 
@@ -31,7 +32,7 @@
   <h1>Airline not supported? <span class="g">Apply for a free Ident</span></h1>
   <p class="lead">Ident reads easyJet eCrew rosters today. Every other airline is a
     format nobody has looked at yet. Help us read yours and the software is
-    yours — free, permanently, including everything that comes after.</p>
+    yours, free, permanently, including everything that comes after.</p>
 </div></header>
 
 <section><div class="wrap">
@@ -45,7 +46,7 @@
     </div>
     <div>
       <h3>We write the parser</h3>
-      <p>Usually a few evenings. We'll come back with questions — duty codes are
+      <p>Usually a few evenings. We'll come back with questions: duty codes are
         never as obvious as they look.</p>
     </div>
     <div>
@@ -60,9 +61,9 @@
   <h2>Your codes, in plain words on the wall</h2>
   <p class="sub" style="max-width:62ch">Whatever your airline calls a day, Ident shows it in words a family can read. Here are three of the examples from the form below, as they come out.</p>
   <div class="trio">
-    <figure><figure class="dev "><img src="img/scenes/a_adty.png" alt="The Solari board showing AIRPORT DUTY, LGW, ADTY 06:00 to 14:00 and home 14:53" width="1600" height="960" loading="lazy"></figure><figcaption>ADTY &mdash; airport standby</figcaption></figure>
-    <figure><figure class="dev "><img src="img/scenes/a_esby.png" alt="The status colour style in yellow: on standby until 19:00, could be called in" width="1600" height="960" loading="lazy"></figure><figcaption>ESBY &mdash; standby from home</figcaption></figure>
-    <figure><figure class="dev "><img src="img/scenes/a_dayoff.png" alt="The Solari board on a day off: OFF, then the next duty and wake time" width="1600" height="960" loading="lazy"></figure><figcaption>D/O &mdash; day off</figcaption></figure>
+    <figure><figure class="dev "><img src="img/scenes/a_adty.png" alt="The Solari board showing AIRPORT DUTY, LGW, ADTY 06:00 to 14:00 and home 14:53" width="1600" height="960" loading="lazy"></figure><figcaption>ADTY: airport standby</figcaption></figure>
+    <figure><figure class="dev "><img src="img/scenes/a_esby.png" alt="The status colour style in yellow: on standby until 19:00, could be called in" width="1600" height="960" loading="lazy"></figure><figcaption>ESBY: standby from home</figcaption></figure>
+    <figure><figure class="dev "><img src="img/scenes/a_dayoff.png" alt="The Solari board on a day off: OFF, then the next duty and wake time" width="1600" height="960" loading="lazy"></figure><figcaption>D/O: day off</figcaption></figure>
   </div>
   <p class="rnd">Renderings drawn by Ident's own software from a sample roster.</p>
 </div></section>
@@ -72,8 +73,8 @@
   <p class="sub">In rough order of usefulness.</p>
   <div class="ruled three">
     <div><h3>A calendar feed</h3>
-      <p>If your airline offers an <span class="mono">.ics</span> subscription — AIMS eCrew,
-        CrewLink, Sabre and others do — that's the whole job, and the quickest route.
+      <p>If your airline offers an <span class="mono">.ics</span> subscription, AIMS eCrew,
+        CrewLink, Sabre and others do: that's the whole job, and the quickest route.
         <strong>Don't send us the link itself:</strong> it's a password in URL form. Tell us
         which system it comes from and we'll take it from there.</p></div>
     <div><h3>Or a roster PDF</h3>
@@ -84,7 +85,7 @@
         the part that actually takes the time, and the part only you know.</p></div></div>
   <div class="note" style="margin-top:22px;max-width:640px">
     <strong>On your data.</strong> Send a redacted sample, not a live feed. We use it to
-    write the parser and delete it when the parser works — we don't want a copy of your
+    write the parser and delete it when the parser works: we don't want a copy of your
     roster and we've built the product specifically so we never hold one. Once it's
     running, your roster stays on your own device, as it does for everyone else.
   </div>
@@ -105,7 +106,7 @@
     <label for="email">EMAIL ADDRESS</label>
     <input id="email" type="email" name="email" required autocomplete="email" data-fs-field>
     <span class="fs-field-err" data-fs-error="email"></span>
-    <input type="hidden" name="_subject" value="Free Ident — new airline">
+    <input type="hidden" name="_subject" value="Free Ident: new airline">
     <input type="hidden" name="topic" value="New airline application">
 
     <label for="airline">AIRLINE AND BASE</label>
@@ -128,7 +129,7 @@ D/O  = day off
 </textarea>
     <div class="note" style="margin:8px 0 0;max-width:none;font-size:13px">
       This is the part only you can supply, and the part that takes us longest to guess.
-      Overwrite the examples above with yours. Anything you're unsure of, say so — a
+      Overwrite the examples above with yours. Anything you're unsure of, say so: a
       wrong guess about a code is how a standby ends up on the wall as a flight.
     </div>
 
@@ -149,8 +150,8 @@ D/O  = day off
     <strong>Then send the sample roster by email.</strong> The form above can't carry a
     file, and we'd rather not build somewhere for other people's rosters to pile up.
     Attach it to a message to
-    <a id="mailLink" href="mailto:support@xpdr.aero?subject=Ident%20—%20sample%20roster">support@xpdr.aero</a>
-    — a month's roster as you download it, with your name, staff number and anyone else
+    <a id="mailLink" href="mailto:support@xpdr.aero?subject=Ident%3A%20sample%20roster">support@xpdr.aero</a>,
+    a month's roster as you download it, with your name, staff number and anyone else
     on it blacked out. PDF, .ics, HTML, a screenshot of the crew portal: whatever you
     actually get.
   </div>
@@ -164,7 +165,7 @@ D/O  = day off
         uploaded anywhere, fed to a service, or kept after the work is done.</p></div>
     <div><h3>Deleted when the parser works</h3>
       <p>Once your airline is supported the sample is deleted. Ask for it sooner and
-        we'll delete it sooner — the codes are the useful part, not the file.</p></div>
+        we'll delete it sooner: the codes are the useful part, not the file.</p></div>
     <div><h3>Never send the live link</h3>
       <p>Your calendar subscription URL is a password. Don't put it in the form or the
         email. Tell us which crewing system it comes from instead.</p></div></div>
@@ -177,18 +178,18 @@ D/O  = day off
       <p>Some airlines publish nothing a device can read. If yours is one of them we'll
         tell you straight rather than string you along.</p></div>
     <div><h3>It takes as long as it takes</h3>
-      <p>This is built by a working pilot around a roster of his own. Weeks, not days —
+      <p>This is built by a working pilot around a roster of his own. Weeks, not days,
         and more if your airline changes its format halfway through.</p></div>
     <div><h3>You still buy your own hardware</h3>
       <p>The free part is the software. The display and Raspberry Pi come from the
-        usual places — see <a href="parts.html">parts</a>.</p></div></div>
+        usual places: see <a href="parts.html">parts</a>.</p></div></div>
 </div></section>
 
 <footer><div class="wrap">
   <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
   <div class="fl"><a href="index.html">Home</a><a href="faq.html">FAQ</a>
     <a href="support.html">Support</a><a href="legal.html">Legal</a></div>
-  <p>Ident — a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>
+  <p>Ident is a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>
 </div></footer>
 
 <script>
@@ -206,7 +207,7 @@ D/O  = day off
     function sync() {
       var who = airline.value.trim();
       link.href = 'mailto:support@xpdr.aero?subject='
-        + encodeURIComponent('Ident — sample roster' + (who ? ' — ' + who : ''))
+        + encodeURIComponent('Ident: sample roster' + (who ? ', ' + who : ''))
         + '&body=' + encodeURIComponent(
             'Attached: a redacted sample roster' + (who ? ' for ' + who : '') + '.\n\n'
             + 'Name/staff number removed: \n'

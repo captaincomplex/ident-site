@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ident: buy</title>
+<meta name="description" content="Ident in three modes: Mode A, £19.99 once, shows your roster; Mode C (£2.99 a month or £29.99 a year) adds live landing times; Mode S (£3.99 a month or £39.99 a year) adds the drive time home in traffic.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#14110a">
+<link rel="stylesheet" href="style.css">
+<style>
+  .modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+  .mode{background:var(--panel);border-radius:var(--radius);padding:22px 22px 20px;display:flex;flex-direction:column}
+  .mode h3{font-size:1.5rem;letter-spacing:-.02em;margin:0}
+  .mode .price{font-size:1.25rem;font-weight:700;margin:6px 0 2px}
+  .mode .per{color:var(--muted);font-size:.875rem;margin:0 0 14px}
+  .mode .says{font-weight:600;margin:0 0 10px}
+  .mode ul{margin:0 0 18px;padding-left:18px;color:var(--muted);font-size:.9375rem;line-height:1.5}
+  .mode .acts{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+  .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 28px;margin-top:18px}
+  .facts h3{font-size:1.05rem;margin:0 0 4px}
+  .facts p{margin:0;color:var(--muted);font-size:.9375rem;line-height:1.5}
+  @media(max-width:800px){.facts{grid-template-columns:1fr}}
+  table.modes-t th:not(:first-child),table.modes-t td:not(.k){width:17%;text-align:center}
+  @media(max-width:800px){.modes{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="index.html"><img src="/img/ident-wordmark.svg" alt="Ident" width="70" height="16"></a>
+  <a class="l" href="index.html#how">How it works</a>
+  <a class="l" href="displays.html">Displays</a>
+  <a class="l" href="styles.html">Styles</a>
+  <a class="l" href="pilots.html">For pilots</a>
+  <a class="l" href="parts.html">Parts</a>
+  <a class="l" href="faq.html">FAQ</a>
+  <a class="l" href="airlines.html">Your airline</a>
+  <span class="sp"></span>
+  <a class="l" href="buy.html">Buy</a>
+  <a class="l" href="support.html">Support</a>
+</div></nav>
+
+<header><div class="wrap">
+  <h1>Buy <span class="g">Ident</span></h1>
+  <p class="lead">Buy it once and it shows your roster for as long as you have it. Two optional
+    modes add live data, monthly or yearly: when the aircraft will really land, and when
+    you&rsquo;ll really be through the door.</p>
+</div></header>
+
+<!-- Prices: Mode A 20 Sep; monthly 21 Oct; yearly recommended 24 Oct
+     (STRATEGY.md "Yearly prices"), to be confirmed. Every price here must
+     match licence-server/src/subscriptions.js OFFERS and the Stripe prices.
+     Mode A buys through https://licence.xpdr.aero/buy/software; "?add=live" or
+     "?add=live_plus" brings a new customer back to that mode on the thanks
+     page. "Add to my Ident" goes to the plan page (/account). SHOP CLOSED
+     (2 Nov 2026): at launch, put back every button kept in a "SHOP CLOSED"
+     comment below and drop the "Coming soon" note. -->
+<section class="cream"><div class="wrap">
+  <h2>Three modes</h2>
+  <p class="sub">Start with Mode A. Add C or S whenever you like, and stop again whenever you
+    like: the display drops back to Mode A by itself. The price is all you pay: there&rsquo;s no
+    VAT to add (xpdr.aero isn&rsquo;t VAT-registered) and no other fees, none to set up, cancel,
+    or for a failed payment.</p>
+  <p class="note"><strong>UK customers only, for now.</strong> Ident is sold to people with a UK
+    billing address. Checkout asks for yours; if it isn&rsquo;t in the UK, we refund the payment
+    in full straight away.</p>
+  <p class="note"><strong>Coming soon.</strong> Ident isn&rsquo;t on sale yet. The prices here
+    are what it will cost when it is.</p>
+  <div class="modes">
+    <div class="mode">
+      <h3>Mode A</h3>
+      <p class="price">&pound;19.99</p>
+      <p class="per">once. Yours to keep, updates included.</p>
+      <p class="says">Your roster on the wall.</p>
+      <ul>
+        <li>Where you are, when you report, and when you&rsquo;re home, from your roster and
+          the commute time you set.</li>
+        <li>Delays and diversions, checked every 15&ndash;20 minutes in flight, if you allow flight
+          lookups.</li>
+        <li>The display styles, the wake-up time, the month calendar, and updates.</li>
+      </ul>
+      <div class="acts">
+        <!-- SHOP CLOSED (2 Nov 2026). At launch, put back:
+        <a class="btn primary" href="https://licence.xpdr.aero/buy/software">Buy Mode A, &pound;19.99</a>
+        -->
+        <span class="btn primary soon" aria-disabled="true">Coming soon</span>
+      </div>
+    </div>
+    <div class="mode">
+      <h3>Mode C</h3>
+      <p class="price">&pound;2.99 a month</p>
+      <p class="per">or &pound;29.99 a year (about &pound;2.50 a month: twelve months for the
+        price of ten). On top of Mode A.</p>
+      <p class="says">When the aircraft will really land.</p>
+      <ul>
+        <li>Everything in Mode A.</li>
+        <li>A live landing time, worked out from where the aircraft actually is, so the home time
+          moves with it.</li>
+        <li>A diversion on the wall within minutes of it happening.</li>
+      </ul>
+      <p class="per">Renews every month or year until you cancel. Cancel online any time; full
+        refund within 14 days.</p>
+      <div class="acts">
+        <!-- SHOP CLOSED (2 Nov 2026). At launch, put back:
+        <a class="btn primary" href="https://licence.xpdr.aero/account">Add to my Ident</a>
+        <a class="btn ghost" href="https://licence.xpdr.aero/buy/software?add=live">New? Mode A, then Mode C</a>
+        -->
+        <span class="btn primary soon" aria-disabled="true">Coming soon</span>
+      </div>
+    </div>
+    <div class="mode">
+      <h3>Mode S</h3>
+      <p class="price">&pound;3.99 a month</p>
+      <p class="per">or &pound;39.99 a year (about &pound;3.33 a month: twelve months for the
+        price of ten). On top of Mode A.</p>
+      <p class="says">When you&rsquo;ll really be through the door.</p>
+      <ul>
+        <li>Everything in Mode C.</li>
+        <li>The drive home in live traffic, instead of a fixed commute time.</li>
+        <li>The detailed style, with more of the live flight on the wall.</li>
+      </ul>
+      <p class="per">Renews every month or year until you cancel. Cancel online any time; full
+        refund within 14 days.</p>
+      <div class="acts">
+        <!-- SHOP CLOSED (2 Nov 2026). At launch, put back:
+        <a class="btn primary" href="https://licence.xpdr.aero/account">Add to my Ident</a>
+        <a class="btn ghost" href="https://licence.xpdr.aero/buy/software?add=live_plus">New? Mode A, then Mode S</a>
+        -->
+        <span class="btn primary soon" aria-disabled="true">Coming soon</span>
+      </div>
+    </div>
+  </div>
+  <!-- SHOP CLOSED (2 Nov 2026). At launch, put back:
+  <p class="sub" style="margin-top:18px"><strong>Already have Mode A?</strong> &ldquo;Add to my
+    Ident&rdquo; asks for the licence key from your order email; or use <strong>Add Mode C or
+    Mode S</strong> under Your plan in your display&rsquo;s control panel.
+    <strong>New to Ident?</strong> Buy Mode A, and the page that gives you your licence key
+    offers Mode C or S straight after. You choose monthly or yearly there.</p>
+  -->
+</div></section>
+
+<section class="paper"><div class="wrap">
+  <h2>Side by side</h2>
+  <div class="tablewrap"><table class="cmp modes-t">
+    <thead><tr><th></th><th>Mode A</th><th>Mode C</th><th>Mode S</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Where you are, report time, landing and home times from the roster</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+      <tr><td class="k">Display styles, wake-up time, month calendar, updates</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+      <tr><td class="k">Delays and diversions<span class="why">Mode A: if you allow flight lookups</span></td><td>every 15&ndash;20 min</td><td>within minutes</td><td>within minutes</td></tr>
+      <tr><td class="k">Landing time from the aircraft&rsquo;s live position</td><td class="no">No</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+      <tr><td class="k">Drive home in live traffic</td><td class="no">No</td><td class="no">No</td><td class="yes">&#10003;</td></tr>
+      <tr><td class="k">The detailed style</td><td class="no">No</td><td class="no">No</td><td class="yes">&#10003;</td></tr>
+      <tr><td class="k">What leaves your display<span class="why">Your roster never does, in any mode</span></td><td>nothing, unless you allow flight lookups</td><td>the flight you&rsquo;re on, while airborne</td><td>that, and your home location for the drive</td></tr>
+      <tr><td class="k">Price<span class="why">No VAT; no other fees</span></td><td>&pound;19.99 once</td><td>+ &pound;2.99 a month, or &pound;29.99 a year (about &pound;2.50 a month)</td><td>+ &pound;3.99 a month, or &pound;39.99 a year (about &pound;3.33 a month)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="rnd">Flight data: Flightradar24</p>
+</div></section>
+
+<section class="cream" id="cancel"><div class="wrap">
+  <h2>Paying, renewing and stopping</h2>
+  <div class="facts">
+    <div><h3>What you pay</h3><p>Mode A is &pound;19.99, once. Mode C is &pound;2.99 a month, or
+      &pound;29.99 a year (about &pound;2.50 a month). Mode S is &pound;3.99 a month, or &pound;39.99
+      a year (about &pound;3.33 a month). That&rsquo;s all: no VAT (xpdr.aero isn&rsquo;t
+      VAT-registered), no setup fee, no cancellation fee, no fee for a failed payment.</p></div>
+    <div><h3>When it renews</h3><p>Monthly renews on the same date each month, yearly on the same
+      date each year, at the price you signed up at, until you cancel. If the price ever changes
+      we email you at least 30 days before, and you can cancel first.</p></div>
+    <div><h3>Cancel in two clicks</h3><p>From <a href="support.html#subscription">Manage your
+      subscription</a>, your display&rsquo;s control panel, or the link in our emails. No questions, no offers to click past. You keep the mode to the end of the month
+      or year you&rsquo;ve paid for, then the display goes back to Mode A by itself.</p></div>
+    <div><h3>14 days to change your mind</h3><p>Cancel Mode C or S within 14 days of subscribing
+      and we refund everything you paid for it. A yearly plan gets another 14 days after each
+      renewal, with that year refunded. A Mode A licence has its own
+      <a href="legal.html#refunds">refund terms</a>.</p></div>
+    <div><h3>No nagging</h3><p>No marketing, and no reminder the law doesn&rsquo;t require. Monthly:
+      one about every six months, 15 days before a payment. Yearly: two before each renewal,
+      about 30 and 15 days before, and a note on the day it renews that your 14 days have
+      started, all sent by us. Plus a receipt for each payment.</p></div>
+    <div><h3>Who you&rsquo;re buying from</h3><p>xpdr.aero, in the UK. Stripe handles the card
+      payment, so card details never reach us. Full details in the
+      <a href="legal.html#subscriptions">subscription terms</a>.</p></div>
+  </div>
+  <!-- SHOP CLOSED (2 Nov 2026). At launch, put back:
+  <p style="margin-top:20px"><a class="btn primary" href="https://licence.xpdr.aero/account">Manage or cancel your subscription</a></p>
+  -->
+  <p style="margin-top:20px"><span class="btn primary soon" aria-disabled="true">Coming soon</span></p>
+</div></section>
+
+<section class="paper"><div class="wrap">
+  <h2>Why the names?</h2>
+  <p class="sub" style="max-width:66ch">They&rsquo;re transponder modes. <strong>Mode A</strong>
+    tells air traffic control who you are. <strong>Mode C</strong> adds your altitude,
+    where you really are. <strong>Mode S</strong> adds the data link. Ident is named after the
+    button that makes your aircraft stand out on the controller&rsquo;s screen.</p>
+  <div class="ruled three">
+    <div><h3>Why a subscription?</h3><p>Live data is charged to us for every request, every few
+      minutes, for every display. Modes C and S pay for it. Mode A needs none of it.</p></div>
+    <div><h3>Why yearly is cheaper</h3><p>One payment a year costs us less to take than twelve,
+      and you&rsquo;re with us for longer, so we share that: twelve months for the price of ten.</p></div>
+    <div><h3>Fly for someone else?</h3><p>Ident reads easyJet eCrew rosters today. Don&rsquo;t buy
+      yet, <a href="airlines.html">apply for a free Ident</a> and help us add your airline.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
+  <div class="fl"><a href="index.html">Home</a><a href="faq.html">FAQ</a><a href="legal.html">Terms, privacy and refunds</a></div>
+  <p>Ident is a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>
+</div></footer>
+
+</body></html>

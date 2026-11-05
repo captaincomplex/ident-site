@@ -113,6 +113,22 @@ def explain_remote(remote, lookup, album_uuids) -> list:
     return lines
 
 
+def target_box(requested, manifest: dict) -> tuple:
+    """The size to resize to: --panel if given, else the size the display asks for.
+
+    Ident for E1002 (23 Oct 2026) says "panel": [800, 480] in its manifest, so its
+    pictures arrive at the size it shows and fit its memory and storage. A Pi says
+    nothing, and gets 1600x1200 as before, which covers every Inky panel.
+    """
+    if requested:
+        return PANELS[requested]
+    panel = manifest.get("panel")
+    if (isinstance(panel, (list, tuple)) and len(panel) == 2
+            and all(isinstance(v, int) and 100 <= v <= 4000 for v in panel)):
+        return tuple(panel)
+    return PANELS["13.3"]
+
+
 def raw_to_jpeg(src_path: str) -> bytes:
     """A file Pillow cannot open - camera RAW such as Canon .CR3 - as JPEG bytes.
 
@@ -263,6 +279,7 @@ def sync(host: str, port: int, album: str, box, quality: int,
         raise SystemExit(f"This Mac isn't paired with {host}:{port}. Run with --pair first.")
     panel = Panel(host, port, code)
     info = panel.manifest()
+    box = target_box(box, info)
     album = album or info.get("album") or "Ident"
     remote = set(info.get("photos", []))
 
@@ -347,8 +364,9 @@ def main(argv=None):
     ap.add_argument("--album", default=None,
                     help="Apple Photos album to send. Omit it and the name set in the "
                          "control panel is used, so that is the only place to set it.")
-    ap.add_argument("--panel", choices=sorted(PANELS), default="13.3",
-                    help="Panel size to target (default: 13.3, which covers them all).")
+    ap.add_argument("--panel", choices=sorted(PANELS), default=None,
+                    help="Panel size to target (default: the size the display asks for; "
+                         "a Pi asks for none and gets 13.3, which covers them all).")
     ap.add_argument("--quality", type=int, default=88, help="JPEG quality (default: 88).")
     ap.add_argument("--dry-run", action="store_true",
                     help="Work out what would change, and change nothing.")
@@ -361,7 +379,7 @@ def main(argv=None):
     if args.pair:
         pair(args.host, args.port)
     else:
-        sync(args.host, args.port, args.album, PANELS[args.panel], args.quality,
+        sync(args.host, args.port, args.album, args.panel, args.quality,
              args.dry_run, args.allow_empty, args.list)
 
 

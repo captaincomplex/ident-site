@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ident — terms, privacy and refunds</title>
-<meta name="description" content="Ident's terms of sale, privacy policy and refund policy.">
+<title>Ident: terms, privacy and refunds</title>
+<meta name="description" content="Ident's terms of sale, subscription terms, privacy policy and refund policy.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
@@ -31,6 +31,7 @@
   <a class="l" href="faq.html">FAQ</a>
   <a class="l" href="airlines.html">Your airline</a>
   <span class="sp"></span>
+  <a class="l" href="buy.html">Buy</a>
   <a class="l" href="support.html">Support</a>
 </div></nav>
 
@@ -38,16 +39,29 @@
   <h1>Terms, privacy and refunds</h1>
   <p class="lead">Written to be read. If anything here is unclear,
     <a href="support.html">ask</a> and we'll explain it in plain words.</p>
-  <p class="toc"><a href="#terms">Terms of sale</a><a href="#privacy">Privacy</a><a href="#refunds">Refunds</a></p>
+  <p class="lead"><strong>How we sell.</strong> Every price, the whole price you pay, and every
+    renewal is stated before you pay. Nothing is ticked for you, there are no hidden fees, and cancelling is
+    as easy as signing up, with the way to do it always in plain sight.</p>
+  <p class="toc"><a href="#terms">Terms of sale</a><a href="#subscriptions">Subscriptions</a><a href="#privacy">Privacy</a><a href="#refunds">Refunds</a></p>
 </div></header>
 
 <section class="legal" id="terms"><div class="wrap">
   <h2>Terms of sale</h2>
-  <p class="updated">Last updated 28 September 2026.</p>
+  <p class="updated">Last updated 25 October 2026.</p>
 
   <h3>Who you're buying from</h3>
-  <p>You can contact us at
+  <p id="trader">xpdr.aero is the trading name of STEVEN MARK WYTHE, a sole trader, of 5 SOUTHLANDS AVENUE, HORLEY RH6 8BS.
+    You can contact us at
     <a href="mailto:support@xpdr.aero">support@xpdr.aero</a>.</p>
+  <p>We are the seller of everything on this site: the software, any SD card and the Mode C and
+    Mode S subscriptions. Payments are taken by Stripe, our payment provider, which handles your
+    card details; we never see them. Stripe sends your receipts on our behalf.</p>
+  <p><strong>Who can buy.</strong> For now we sell only to customers in the UK, and prices are in
+    pounds. Checkout asks for your billing address. If it is outside the UK, we refund the whole
+    payment straight away and email you to say why: a Mode A licence bought that way won't
+    activate, and a subscription is ended.</p>
+  <p>xpdr.aero is not registered for VAT, so no VAT is added to our prices: the price you see is
+    the whole price you pay, and our receipts don't show VAT.</p>
 
   <h3>What you're buying</h3>
   <p>You are buying a licence to use the Ident software, together with the build documentation and
@@ -60,10 +74,13 @@
     for as many of your own devices as you like. You may modify it for your own use. You may not
     resell it, redistribute it as your own, or sell devices with it pre-installed without our
     written agreement.</p>
+  <p>This licence is <strong>Mode A</strong>, bought once. <strong>Mode C</strong> and
+    <strong>Mode S</strong> are optional monthly subscriptions on top of it, with their own terms
+    under <a href="#subscriptions">Subscriptions</a> below. Mode A never needs them.</p>
 
   <h3>What Ident needs to work</h3>
   <p>Ident depends on things outside our control: your airline publishing a roster feed we can
-    read, your home network, and — if you enable them — third-party flight-tracking and mapping
+    read, your home network, and, if you enable them, third-party flight-tracking and mapping
     services. We cannot guarantee those will remain available or unchanged. Notably:</p>
   <ul>
     <li>Ident is built and tested against easyJet eCrew calendar feeds. Other airlines may not work.
@@ -73,6 +90,11 @@
     <li>The Raspberry Pi Zero 2 W cannot connect to 5GHz-only Wi-Fi. This is a hardware limitation
       and is stated clearly before purchase.</li>
   </ul>
+
+  <h3>Flight data</h3>
+  <p>Flight data: Flightradar24. Live landing times, positions, flight status and diversions shown
+    by Ident come from Flightradar24, and Ident says so wherever they appear. Ident is independent
+    of Flightradar24 and not endorsed by it.</p>
 
   <h3>Updates</h3>
   <p>Updates are published from time to time and your device can install them. We don't promise a
@@ -99,40 +121,260 @@
     your own country's courts.</p>
 </div></section>
 
+<!-- DRAFT, 24 Oct 2026, for the owner's review. Not yet checked by someone who
+     knows consumer law; it must be before Mode C or Mode S goes on sale.
+     Research, sources and open questions:
+     claude/subscription-terms-research-24-oct-2026.md
+     The welcome email carries this section's text: after changing it, run
+     tools/make_subscription_terms.py (a test fails if they drift apart). -->
+<section class="legal" id="subscriptions"><div class="wrap">
+  <h2>Subscriptions: Mode C and Mode S</h2>
+  <p class="updated">Last updated 25 October 2026.</p>
+
+  <h3>The short version</h3>
+  <ul>
+    <li><strong>Mode C is &pound;2.99 a month or &pound;29.99 a year</strong> (about &pound;2.50 a
+      month). <strong>Mode S is &pound;3.99 a month or &pound;39.99 a year</strong> (about
+      &pound;3.33 a month). That is the whole price: no VAT is added, and there are no other
+      fees. Each is added to
+      Mode A, which you buy once for &pound;19.99.</li>
+    <li>A subscription renews every month, or every year, on the date you started it, and you are
+      charged each time until you cancel. There is no minimum term: the least you will ever pay is
+      one month, or one year if you chose yearly.</li>
+    <li><strong>Cancel any time, online, in a few clicks.</strong> You keep the mode until the end
+      of the month or year you have paid for, then your display goes back to Mode A by itself.</li>
+    <li>Change your mind within 14 days of subscribing and we refund you in full. A yearly plan
+      also gives you 14 days after each renewal to cancel for a full refund of that year.</li>
+    <li>No marketing, and no reminder the law doesn't require: about every six months on a
+      monthly plan, and twice before each renewal on a yearly one.</li>
+    <li>Live data comes from other companies and sometimes fails. When it does, your display falls
+      back to your scheduled times and says so.</li>
+  </ul>
+
+  <h3>Who you're buying from</h3>
+  <p>We sell the way the page opens: every price and renewal stated before you pay, nothing
+    ticked for you, no hidden fees, and cancelling as easy as signing up.</p>
+  <p>Ident is made and supported by xpdr.aero, the trading name of STEVEN MARK WYTHE, a sole trader, of 5 SOUTHLANDS AVENUE, HORLEY RH6 8BS.
+    We sell you the subscription and provide the service. Stripe, our payment provider, takes the
+    payments, holds your card details and sends your receipts on our behalf. Subscriptions are
+    for customers in the UK only, for now; see <a href="#trader">Who can buy</a>. Contact us at <a href="mailto:support@xpdr.aero">support@xpdr.aero</a> about anything,
+    including a payment.</p>
+
+  <h3>What each mode includes</h3>
+  <ul>
+    <li><strong>Mode A</strong> (bought once): your roster on the wall, where you are, when you
+      report and when you're home, from your roster and the commute time you set. Delays and
+      diversions are checked every 15 to 20 minutes in flight, if you allow flight lookups.</li>
+    <li><strong>Mode C</strong>: everything in Mode A, plus a landing time worked out from where
+      the aircraft actually is, so the home time moves with it, and a diversion on the wall
+      within minutes of it happening.</li>
+    <li><strong>Mode S</strong>: everything in Mode C, plus the drive home in live traffic instead
+      of a fixed commute time, and the detailed style.</li>
+  </ul>
+  <p>A subscription works on the display your Mode A licence is linked to. You need a working
+    Ident display with an internet connection; the <a href="displays.html">Displays</a> page says
+    which displays can show each mode. What leaves your display in each mode is described under
+    <a href="#privacy">Privacy</a>. Your roster never leaves it, in any mode.</p>
+
+  <h3>Price and billing date</h3>
+  <p>The price you see is the whole price you pay. xpdr.aero is not registered for VAT, so no VAT
+    is added, and there are no other charges. You choose
+    monthly or yearly when you subscribe. Yearly costs ten months' price for twelve months.</p>
+  <ul>
+    <li><strong>Monthly:</strong> Mode C &pound;2.99, Mode S &pound;3.99. You pay for the first
+      month when you subscribe, and then on the same date each month. If a month is too short to
+      have that date, you pay on its last day.</li>
+    <li><strong>Yearly:</strong> Mode C &pound;29.99, Mode S &pound;39.99. You pay for the first
+      year when you subscribe, and then on the same date each year.</li>
+  </ul>
+  <p>You always pay in advance for the month or year ahead, never before it has started. Prices are in pounds sterling. You can pay by card, or by Apple
+    Pay or Google Pay where your device offers it; the payment page shows the choices before you
+    confirm.</p>
+
+  <h3>How to cancel</h3>
+  <p>You can cancel at any time, including straight after subscribing. To do it online, use
+    <strong>Manage your subscription</strong> on our
+    <a href="support.html#subscription">support page</a>, in your display's control panel, or in
+    the emails we send you about your subscription. There are no questions you have to answer and no offers you have to click
+    past. If you would rather, email
+    <a href="mailto:support@xpdr.aero">support@xpdr.aero</a> and we'll cancel it for you.</p>
+  <p>We email you within 24 hours to confirm, with the date your subscription ends. Cancelling
+    stops all future payments. You keep the mode until the end of the month or year you have
+    paid for (unless you cancel within the 14 days below, when it ends straight away and you are
+    refunded), and then your display goes back to Mode A by itself: there is nothing to switch
+    off. Your Mode A licence is not affected.</p>
+
+  <h3>Your 14 days to change your mind</h3>
+  <p>The law gives you 14 days, starting the day after you subscribe, to cancel without giving a
+    reason. At checkout you'll be asked to tick a box asking us to start your subscription
+    straight away, so you get live data from the moment you pay. Ticking it does not take away
+    your 14 days.</p>
+  <p><strong>If you cancel within those 14 days, we refund everything you have paid for that
+    subscription,</strong> even though you have been using it. The law would let us keep a share
+    for the days you used; we don't. The subscription ends straight away and your display goes
+    back to Mode A. To cancel, use any of the ways above, or tell us clearly in
+    any other way; what matters is that you send it before the 14 days are up. We refund you
+    within 14 days, to the card or account you paid with.</p>
+  <p>The 14 days apply each time you start a new subscription. Moving between Mode C and Mode S,
+    or between monthly and yearly, is a change to the same subscription, not a new one.</p>
+  <p><strong>Yearly plans: 14 more days after each renewal.</strong> On the day a yearly plan
+    renews we email you to say it has renewed and that you have 14 days, counting from the day
+    after, to cancel. If you do, the subscription ends straight away and we refund that year's
+    payment in full.</p>
+
+  <h3>Changing your plan</h3>
+  <p>You can move up from Mode C to Mode S at any time; it starts straight away and you pay only
+    the difference for the rest of the month or year you have paid for. If you move down from
+    Mode S to Mode C, you keep Mode S until the end of the month or year you have paid for, and
+    pay the Mode C price from then on. Moving between monthly and yearly works the same way:
+    what you have paid for is never lost.</p>
+
+  <h3>Refunds after the first 14 days</h3>
+  <p>After the 14 days we don't normally refund part of a month or year: when you cancel, you
+    keep the mode until the period you have paid for ends. But if live data did not work for a
+    real part of a month, because of a fault on our side or a supplier's, tell us and we'll
+    refund that month (on a yearly plan, a twelfth of the year's price).
+    And if we end a mode ourselves (see below), we refund the days you have paid for and won't
+    get.</p>
+  <p>Your legal rights are not affected by any of this. The service must be provided with
+    reasonable care and skill, and must match what we have said it does. If it doesn't, you can
+    ask us to put it right and, if we can't, for some or all of your money back.</p>
+
+  <h3>If a payment fails</h3>
+  <p>If a payment doesn't go through, for example because a card has expired, Stripe
+    tries again over the next two weeks or so and emails you so you can update your details. Your
+    display keeps its mode while that happens. If the payment still fails, the subscription ends
+    and your display goes back to Mode A by itself. We will never charge a fee for a failed
+    payment or chase you for the missed payment, and you can subscribe again whenever you like.</p>
+
+  <h3>Price changes</h3>
+  <p>You pay the price you signed up at until we tell you otherwise. If we need to change it, we
+    will email you at least 30 days before the first payment at the new price, giving the old and
+    the new price and how to cancel. If you don't want to pay the new price, cancel before that
+    payment and you won't pay it. We won't raise the price more than once in any 12 months, and we
+    will say why: usually it will be because the companies that supply the live data have changed
+    what they charge us.</p>
+
+  <h3>Reminders and other emails</h3>
+  <p>We send no marketing, and no reminder the law doesn't require. The ones it does require:</p>
+  <ul>
+    <li><strong>Monthly:</strong> about every six months, a reminder 15 days before the payment
+      that falls at each six-month mark.</li>
+    <li><strong>Yearly:</strong> two reminders before each renewal, about 30 days and 15 days
+      before it, and on the day it renews a notice of your 14 days to cancel.</li>
+  </ul>
+  <p>A reminder says that the subscription will renew, how much you will pay and on what date,
+    and how to cancel, and what you paid last time. We send them ourselves. Apart from these, we email you only to confirm things you have done
+    (subscribing, cancelling, a failed payment) and at least 30 days before any price change. All
+    of them go to the address you subscribed with.</p>
+
+  <h3>What live data can and can't do</h3>
+  <p>Mode C and Mode S use live data from other companies, chiefly Flightradar24 for aircraft
+    positions and Google Maps for traffic. We pay for it, but we don't control it. Aircraft
+    positions can be missing, late or wrong, especially over the sea and where receivers are
+    sparse, and traffic estimates are estimates.</p>
+  <p id="google-maps">Drive times in Mode S use Google Maps content. Your use of it is subject to the
+    <a href="https://maps.google.com/help/terms_maps/">Google Maps/Google Earth Additional Terms of Service</a>
+    and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+  <p>Ident is built never to show a confident wrong answer. When live data is missing or out of
+    date, your display falls back to your scheduled times and says plainly that it has done so,
+    rather than carrying on as if nothing had changed. A live landing or home time is our best
+    estimate, never a promise. As with everything Ident shows, it is a convenience, not an
+    operational tool: see <a href="#terms">Our liability</a>.</p>
+  <p>We aim to keep live data running all the time, but we can't promise it will never stop,
+    for example during maintenance or when a supplier has a fault. If a supplier withdraws its
+    data, or changes its terms so that a mode can no longer work, we will tell you as soon as we
+    know. If we can't put it right, we will end that mode and refund the days you have paid for
+    and won't get.</p>
+
+  <h3>If we end your subscription</h3>
+  <p>We can end Mode C or Mode S by giving you at least 30 days' notice by email, and we refund
+    any days you have paid for beyond the end date. If we have to stop sooner because a supplier
+    has stopped, we will give you as much notice as we can, and refund in the same way. We can end
+    a subscription straight away if it is misused, for example by passing the live data on to
+    others or trying to use one subscription on several displays; we will tell you why. In every
+    case your display goes back to Mode A, which keeps working.</p>
+
+  <h3>Questions and complaints</h3>
+  <p>Email <a href="mailto:support@xpdr.aero">support@xpdr.aero</a>. We aim to reply within two
+    working days. If something has gone wrong, tell us and we will try to put it right. If we
+    can't agree, you can get free, independent advice from the Citizens Advice consumer service
+    (citizensadvice.org.uk).</p>
+  <p>These subscription terms sit alongside the <a href="#terms">terms of sale</a> above, and the
+    same governing law applies.</p>
+</div></section>
+
 <section class="legal" id="privacy"><div class="wrap">
   <h2>Privacy</h2>
-  <p class="updated">Last updated 19 October 2026.</p>
+  <p class="updated">Last updated 25 October 2026.</p>
 
   <h3>The short version</h3>
   <p><strong>Your roster never reaches us.</strong> Ident fetches it from your airline, over your
     own internet connection, and stores it on your own device. We do not receive it, cannot see it,
     and operate no service that holds it. There is no account to create. Apart from the licence checks described below, your
-    display sends us nothing unless you switch on optional diagnostics reporting, which is off by
-    default, never switches itself on, and sends only numbers and fixed words (listed in full in
+    display sends us nothing unless you switch on flight status or diagnostics reporting. Flight
+    status sends us, on the day you fly, the flight number, departure airport and time, which we
+    pass to Flightradar24 and do not keep; the request carries a pass that does not name your
+    licence or your display. Drive times (Mode S) send us, on the way home, your home location
+    (to about 10 metres; a nearby corner will do instead) and where the drive starts, which we pass to Google Maps and do not keep,
+    under a separate pass that names neither your licence nor your flight. Diagnostics reporting is off by
+    default, is switched on only if you choose Full accuracy on the slider below (or switch it
+    on by itself), never switches itself on, and sends only numbers and fixed words (listed in full in
     the <a href="faq.html#privacy">FAQ</a>).</p>
 
   <h3>What your device does</h3>
-  <p>Your display makes outbound connections only to: your roster feed; optionally a
-    flight-tracking service and Google Maps, if you supply keys for them;
+  <p>Your display makes outbound connections only to: your roster feed; optionally, as you choose
+    on the <a href="#slider">slider below</a>, Flightradar24 and Google Maps (both through our server, below)
+    and aviationweather.gov;
     <code>licence.xpdr.aero</code>, our licence server, once at setup to activate your licence
-    and once a day to check for a software update &mdash; those requests carry your licence and
+    and once a day to check for a software update (and, with flight status on, for the pass
+    that flight status uses); those requests carry your licence and
     your device's serial number, and nothing else; the same server, only if you switch on
+    flight status, to pass the day's flight number to Flightradar24 (the answer is
+    cached for a minute or two so displays asking about the same flight share it, then gone);
+    the same server, only on Mode S with drive times on, to pass two points, to about 10 metres (where the
+    drive home starts, and your home location, which can be a nearby corner instead), to Google Maps, in a request of its own
+    that carries no flight, no time and nothing naming your licence (the answer, the drive time
+    and, once a drive, the traffic along it, is passed straight back and not kept; Google handles what it
+    receives under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>);
+    the same server, only if you switch on
     diagnostics reporting, to send one small report a day (numbers and fixed words, not tied to your
     licence or serial number, with no internet address stored); and, on older software versions,
     once on first run to download coastline data for the map styles (newer versions include it).</p>
 
+  <h3 id="slider">What leaves your display, stop by stop</h3>
+  <p>During setup you choose, on one slider, how much your display may send. At the Privacy
+    end only the licence check leaves it; each stop towards Accuracy adds what is described
+    beside it, and you can switch each one on or off by itself later in the control panel.
+    Nothing after the first item is sent until you have chosen and saved a position. These are the same words the display shows.</p>
+  <ol class="stops">
+    <li data-stop="0"><strong>Full privacy:</strong> <span class="says">Your licence key and this display's serial number go to our licence server, licence.xpdr.aero, once when you activate the licence.</span></li>
+    <li data-stop="1"><strong>Roster and updates:</strong> <span class="says">Your display fetches your roster from your own calendar link, and once a day sends your licence key and serial number to licence.xpdr.aero to ask whether there is a new version.</span></li>
+    <li data-stop="2"><strong>Weather:</strong> <span class="says">The code of the airport you are at or flying to goes to aviationweather.gov, the US weather service, at most every 15 minutes.</span></li>
+    <li data-stop="3"><strong>Flight status:</strong> <span class="says">On the day you fly, the flight number, departure airport and time go to our server, licence.xpdr.aero, which asks Flightradar24, the flight data service, for delays, diversions and landing times. Nothing is kept.</span></li>
+    <li data-stop="4"><strong>Drive times:</strong> <span class="says">On Mode S, while you are on your way home, the car park or airport you are driving from and your home location go to our server, licence.xpdr.aero, which asks Google Maps for the drive time in traffic now. No flight, time or licence goes with them, and nothing is kept. Your home location can be a nearby corner or shop rather than your house.</span></li>
+    <li data-stop="5"><strong>Full accuracy:</strong> <span class="says">One small report a day, of counts and fixed words, goes to licence.xpdr.aero, not tied to your licence key or serial number.</span></li>
+  </ol>
+
   <h3>What we actually hold</h3>
   <p>Only what you give us directly:</p>
   <ul>
-    <li><strong>If you buy:</strong> your name, email address and billing details, handled by our
-      payment provider Stripe. For the software, Stripe (shown on your receipt and statement as
-      Link) is the seller of record. For an SD card we are the seller, and we also hold the delivery
-      address to post it. We email your licence key through our email provider, Resend. We keep
+    <li><strong>If you buy:</strong> your name, email address and billing details. We are the
+      seller; Stripe, our payment provider, takes the payment and holds your card details, which
+      we never see. For an SD card we also hold the delivery address to post it. We email your licence key through our email provider, Resend. We keep
       order records as long as tax law requires.</li>
+    <li><strong>If you subscribe to Mode C or Mode S:</strong> your card details stay with Stripe.
+      We hold your email address, which mode you have, whether the subscription is active,
+      cancelled or has a failed payment, its dates, and the reference numbers Stripe gives you as a
+      customer and your subscription, all linked to your licence key so your display knows which
+      mode to show. We use your email address to send the reminders and notices
+      described under <a href="#subscriptions">Subscriptions</a>, which are part of the service,
+      not marketing. We keep these records as long as tax law requires after a subscription
+      ends.</li>
     <li><strong>Your device's serial number:</strong> your display sends it with licence and update
       checks, and we record it against your licence, so one licence can't be shared across several
       devices.</li>
-    <li><strong>If you email support:</strong> your message and anything you attach — including a
+    <li><strong>If you email support:</strong> your message and anything you attach, including a
       diagnostics file, if you choose to send one. Diagnostics deliberately exclude your roster
       contents, your roster URL, API keys, passwords and Wi-Fi passwords; you can read the file in
       full before sending it.</li>
@@ -148,7 +390,7 @@
 
   <h3>A word to crew</h3>
   <p>Your roster may be confidential to your airline. Because Ident keeps it on your own hardware
-    this is a far simpler position than a cloud service — but checking your employer's data and IT
+    this is a far simpler position than a cloud service, but checking your employer's data and IT
     policies is your responsibility, not ours.</p>
 
   <h3>Cookies</h3>
@@ -158,28 +400,30 @@
 
 <section class="legal" id="refunds"><div class="wrap">
   <h2>Refunds</h2>
-  <p class="updated">Last updated 28 September 2026.</p>
+  <p class="updated">Last updated 24 October 2026.</p>
 
   <h3>Your right to cancel</h3>
   <p>For digital products bought online you normally have 14 days to cancel. Because Ident is
     delivered immediately, you'll be asked at checkout to agree that delivery starts straight away
     and to acknowledge that this ends your automatic right to cancel once download begins. That is
-    the legal position — but see below, because we don't intend to hide behind it.</p>
+    the legal position, but see below, because we don't intend to hide behind it.</p>
 
   <h3>What we'll actually do</h3>
   <p><strong>If Ident doesn't work for you, tell us and we'll refund you.</strong> In particular:</p>
   <ul>
-    <li>If your airline's roster can't be read and we can't make it work in reasonable time — full
+    <li>If your airline's roster can't be read and we can't make it work in reasonable time, full
       refund, no argument.</li>
-    <li>If it won't run on hardware from our recommended parts list and we can't fix it — full
+    <li>If it won't run on hardware from our recommended parts list and we can't fix it, full
       refund.</li>
-    <li>If you simply don't get on with it within 30 days of buying — ask, and we'll refund you.</li>
+    <li>If you simply don't get on with it within 30 days of buying, ask, and we'll refund you.</li>
   </ul>
   <p>We'd rather you were happy than keep £19.99 from someone who isn't.</p>
+  <p>For Mode C and Mode S, including the full refund within 14 days, see
+    <a href="#subscriptions">Subscriptions</a>.</p>
 
   <h3>What we can't refund</h3>
   <p>Hardware you bought from someone else. If a Raspberry Pi or a display arrives faulty, that's a
-    matter for the supplier you bought it from — though we'll happily help you work out what's
+    matter for the supplier you bought it from, though we'll happily help you work out what's
     wrong.</p>
 
   <h3>How to ask</h3>
@@ -191,7 +435,7 @@
 <footer><div class="wrap">
   <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
   <div class="fl"><a href="index.html">Home</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></div>
-  <p>Ident — a flight-duty display for pilots. Not affiliated with, endorsed by, or connected to
+  <p>Ident is a flight-duty display for pilots. Not affiliated with, endorsed by, or connected to
     any airline. Not a flight-planning or operational tool.</p>
 </div></footer>
 

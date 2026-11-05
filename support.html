@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ident — support</title>
+<title>Ident: support</title>
 <meta name="description" content="Get help with Ident: setup questions, roster compatibility, Wi-Fi problems and pre-purchase advice.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
@@ -24,14 +24,29 @@
   <a class="l" href="faq.html">FAQ</a>
   <a class="l" href="airlines.html">Your airline</a>
   <span class="sp"></span>
+  <a class="l" href="buy.html">Buy</a>
   <a class="l" href="support.html">Support</a>
 </div></nav>
 
 <header><div class="wrap">
   <h1>Get <span class="g">help</span></h1>
-  <p class="lead">Check the <a href="faq.html">FAQ</a> first — it covers most things. If your
+  <p class="lead">Check the <a href="faq.html">FAQ</a> first: it covers most things. If your
     question isn't there, use the form below and we'll come back to you.</p>
 </div></header>
+
+<!-- The subscription terms (legal.html#subscriptions) send customers here to
+     cancel, so this stays near the top. The plan page is the licence server's
+     /account (licence-server/src/subscriptions.js). -->
+<section id="subscription"><div class="wrap">
+  <h2>Manage your subscription</h2>
+  <p class="sub">Add, switch or cancel Mode C or Mode S, or change your card. You&rsquo;ll need the
+    licence key from your order email, or open it from <strong>Your plan</strong> in your
+    display&rsquo;s control panel. Cancelling takes a minute, with no questions to answer.</p>
+  <!-- SHOP CLOSED (2 Nov 2026). At launch, put back:
+  <p><a class="btn primary" href="https://licence.xpdr.aero/account">Manage your subscription</a></p>
+  -->
+  <p><span class="btn primary soon" aria-disabled="true">Coming soon</span></p>
+</div></section>
 
 <section><div class="wrap">
   <h2>Send a message</h2>
@@ -53,7 +68,7 @@
 
     <label for="topic">WHAT'S THIS ABOUT?</label>
     <select id="topic" name="topic" data-fs-field>
-      <option>Before I buy — will it work for me?</option>
+      <option>Before I buy: will it work for me?</option>
       <option>Roster / airline compatibility</option>
       <option>Setting it up for the first time</option>
       <option>Wi-Fi or network trouble</option>
@@ -85,7 +100,7 @@
 
   <div class="note" style="margin-top:22px;max-width:560px">
     Prefer email? Write to <a href="mailto:support@xpdr.aero">support@xpdr.aero</a>.
-    We aim to reply within two working days — bear with us, this is run by a working pilot.
+    We aim to reply within two working days. Bear with us: this is run by a working pilot.
   </div>
 </div></section>
 
@@ -109,7 +124,7 @@
       <p>The Pi has no battery clock. If it loses Wi-Fi it freezes on the last date it knew.
         Reconnect it and the clock fixes itself in a minute or two.</p></div>
     <div><h3>Won't join Wi-Fi</h3>
-      <p>On a Pi Zero 2 W the network <em>must</em> be 2.4GHz — it cannot see 5GHz at all. Check
+      <p>On a Pi Zero 2 W the network <em>must</em> be 2.4GHz: it cannot see 5GHz at all. Check
         that before anything else.</p></div>
     <div><h3>Roster not appearing</h3>
       <p>Check the calendar link is the full <span class="mono">.ics</span> URL and hasn't expired.
@@ -120,7 +135,7 @@
 <footer><div class="wrap">
   <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
   <div class="fl"><a href="index.html">Home</a><a href="faq.html">FAQ</a></div>
-  <p>Ident — a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>
+  <p>Ident is a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>
 </div></footer>
 
 <script>

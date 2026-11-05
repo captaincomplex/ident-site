@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ident — frequently asked questions</title>
+<title>Ident: frequently asked questions</title>
 <meta name="description" content="Answers about Ident: which display and Raspberry Pi to buy, Wi-Fi requirements, roster compatibility, privacy, remote access, updates and troubleshooting.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
@@ -24,12 +24,13 @@
   <a class="l" href="faq.html">FAQ</a>
   <a class="l" href="airlines.html">Your airline</a>
   <span class="sp"></span>
+  <a class="l" href="buy.html">Buy</a>
   <a class="l" href="support.html">Support</a>
 </div></nav>
 
 <header><div class="wrap">
   <h1>Frequently asked <span class="g">questions</span></h1>
-  <p class="lead">If your question isn't here, <a href="support.html">send it over</a> — real
+  <p class="lead">If your question isn't here, <a href="support.html">send it over</a>. Real
     answers, from someone who flies the line.</p>
 </div></header>
 
@@ -42,35 +43,40 @@
 Raspberry Pi, the e-paper display and an SD card yourself, from whichever supplier you like.
 We don't mark up hardware or hold stock, so you pay the going rate.</p></div></details>
 
-<!-- DRAFT 27 Sep 2026: do not publish until the subscription exists and the
-     adsb.lol tracker is built - see TODO.md "Live data subscription". -->
-<details><summary>Why is there a subscription for live tracking?</summary><div class="body">
-<p>We didn't want one. We hate subscriptions too. Ident is designed to be bought once and then
-you own it. Reading your roster, every display style, the wake-up time, the month calendar
-&mdash; all of it works without paying anything more, for as long as you have it.</p>
+<!-- SHOP CLOSED (2 Nov 2026): at launch, replace "Not on sale yet: coming
+     soon." below with nothing, or with a line about checkout. Prices must
+     match buy.html. -->
+<details><summary>What do Mode C and Mode S add?</summary><div class="body">
+<p>We didn't want a subscription. We hate them too. Ident is designed to be bought once and then
+you own it. Reading your roster, the display styles, the wake-up time, the month calendar,
+all of it works without paying anything more, for as long as you have it.</p>
 
-<p><strong>Free data or detailed data &mdash; your choice.</strong> Live tracking comes in two
-kinds. The free kind uses openly licensed aircraft positions from a network of volunteer
-receivers: where they have coverage, the board follows your aeroplane at no cost to anyone. But
-that coverage is patchy in parts of the Mediterranean and North Africa, and it tells you where the
-aeroplane is rather than when it will land. The detailed kind &mdash; a predicted landing time
-looked up by flight number, and a drive time home in live traffic &mdash; comes from commercial
-providers who charge for every request, every few minutes, for every board. Their terms don't let
-us pass our access on to you, and asking you to open a developer account with each of them didn't
-seem reasonable. So the detailed data is an optional subscription, and it pays those providers.</p>
+<ul>
+<li><strong>Mode A, &pound;19.99, once.</strong> Your scheduled times, from your roster.
+If you allow flight lookups, flight status too: delays and diversions.</li>
+<li><strong>Mode C, &pound;2.99 a month or &pound;29.99 a year.</strong> Live landing times, worked out from the
+aircraft&rsquo;s actual position, and diversions the moment they happen.</li>
+<li><strong>Mode S, &pound;3.99 a month or &pound;39.99 a year.</strong> Everything in Mode C, plus the drive
+time home in traffic and the detailed style.</li>
+</ul>
 
-<p>We wanted to leave both routes open. Free tracking is the default. The detailed data is there
-if you want it. And if you already have your own Flightradar24 API token, you can use that
-instead.</p>
+<p><strong>Why a subscription?</strong> Live data comes from a commercial provider that charges for
+every request, every few minutes, for every board. Their terms don&rsquo;t let us pass our access
+on to you, and asking you to open a developer account of your own didn&rsquo;t seem reasonable.
+So Modes C and S are a subscription, and it pays for that data. The price is all you pay (no
+VAT, no other fees), UK customers only for now, and you can cancel in two clicks; within 14 days you get everything back.
+Not on sale yet: coming soon. <a href="buy.html">Compare the three</a>.</p>
 
 <p><strong>Your data, your call.</strong> Your roster never leaves your display, whichever you
-choose. With the detailed data switched on, the flight you're on passes through our server to the
-provider while you're airborne; turn on live drive times and your home location does too. Neither
-is kept. If you'd rather not share your home location, leave drive times off &mdash; Ident uses
-the commute time you set yourself.</p></div></details>
+choose. With Mode C or S switched on, the flight you're on passes through our server to the
+provider while you're airborne; with Mode S drive times on, your home location (or a nearby corner,
+if you prefer) goes through our server to Google Maps on the way home, in a separate request that
+names no flight. Neither is kept. If you'd rather not share your home location, leave drive times off, Ident uses
+the commute time you set yourself.</p>
+<p class="rnd">Flight data: Flightradar24</p></div></details>
 
 <details><summary>Which display should I choose?</summary><div class="body">
-<p>The <strong>7.3″ Inky Impression</strong> is the one to get if you're unsure — readable across
+<p>The <strong>7.3″ Inky Impression</strong> is the one to get if you're unsure: readable across
 a room and wide enough for the route maps. The <strong>4.0″</strong> is the budget option and works
 well on a desk. The <strong>13.3″</strong> is a proper wall piece but costs considerably more.</p>
 <p>All of them use Pimoroni's Spectra 6 colour e-paper and all are fully supported.</p>
@@ -83,14 +89,14 @@ six. Pimoroni have discontinued it, so it isn't a sensible choice for a new buil
 one it will keep working.</p></div></details>
 
 <details><summary>Which Raspberry Pi do I need?</summary><div class="body">
-<p>Any Pi with a 40-pin header. The Zero 2 W is the cheapest and smallest and is the usual choice —
+<p>Any Pi with a 40-pin header. The Zero 2 W is the cheapest and smallest and is the usual choice,
 <strong>but only if your Wi-Fi broadcasts on 2.4GHz</strong> (see the next question). A Pi 3B+, 4 or
 5 will also work and support 5GHz.</p>
 <p>If you buy a plain Zero 2 W you'll need to solder a 40-pin header. Buy the pre-soldered
 <span class="mono">Zero 2 WH</span> version and you won't.</p></div></details>
 
 <details><summary>Why does the Wi-Fi band matter so much?</summary><div class="body">
-<p>The Raspberry Pi Zero 2 W has a 2.4GHz-only radio. It cannot see 5GHz networks — this is a
+<p>The Raspberry Pi Zero 2 W has a 2.4GHz-only radio. It cannot see 5GHz networks; this is a
 hardware limit with no software workaround.</p>
 <p>Most home routers broadcast both bands, so it's usually fine. Problems arise when a router
 publishes a single network name and steers devices onto 5GHz, or when 2.4GHz has been switched off.
@@ -103,12 +109,12 @@ dual-band Pi.</p></div></details>
 problem entirely.</p></div></details>
 
 <details><summary>How much electricity does it use?</summary><div class="body">
-<p>Very little. A Raspberry Pi Zero 2 W idles at roughly <strong>0.5–1&nbsp;watt</strong> — published
+<p>Very little. A Raspberry Pi Zero 2 W idles at roughly <strong>0.5–1&nbsp;watt</strong>: published
 measurements put it around 100–120&nbsp;mA at 5V, rising towards 250&nbsp;mA with Wi-Fi busy. The
 e-paper panel draws nothing at all while it's just sitting there showing your duty; it only pulls
 current during the ~30 second redraw, which happens a handful of times a day.</p>
 <p>Call it <strong>under 1&nbsp;watt on average</strong>. Left on permanently that's roughly
-6&nbsp;kWh a year — around <strong>£1.50–£2 a year</strong> at typical UK electricity prices, or
+6&nbsp;kWh a year, around <strong>£1.50–£2 a year</strong> at typical UK electricity prices, or
 about the same as leaving a phone charger plugged in.</p>
 <p>Bigger boards cost more to run, though none of it is much. At the current price cap
 (26.32p per kWh) a continuously-powered watt costs about <strong>£2.30 a year</strong>, so:</p>
@@ -121,27 +127,36 @@ about the same as leaving a phone charger plugged in.</p>
   <tr><td class="k">Any Pi + 128×32 LED matrix</td><td data-label="Typical draw">~6–9 W</td><td data-label="Per year">~£15–£20</td></tr>
 </table>
 <p style="margin-top:10px">The LED figures depend heavily on brightness and on how much of the
-panel is lit — Ident's screens are mostly dark, which helps, but a bright board in a hall is the
+panel is lit; Ident's screens are mostly dark, which helps, but a bright board in a hall is the
 one build where the electricity is worth a thought. Board figures are typical published idle
 draws rather than our own measurements.</p></div></details>
 
 <details><summary>Does it need to stay plugged in?</summary><div class="body">
 <p>Yes, for updates. E-paper keeps its image without power, so the display doesn't go blank if you
-unplug it — it simply stops changing. Power draw is very low.</p></div></details>
+unplug it; it simply stops changing. Power draw is very low.</p></div></details>
 
 <h2 class="faqcat">Rosters</h2>
 
 <details><summary>Which airlines does it work with?</summary><div class="body">
 <p>Ident was built and tested against <strong>easyJet eCrew</strong> calendar feeds. Any roster
-published as a standard <span class="mono">.ics</span> calendar has a good chance of working —
+published as a standard <span class="mono">.ics</span> calendar has a good chance of working,
 either as a live feed, or by uploading the file by hand. Reading eCrew roster
 <strong>PDFs</strong> is supported as an optional extra you can install if you need it.</p>
-<p>If you fly for another airline, don't buy yet — <a href="airlines.html">apply for a free
+<p>If you fly for another airline, don't buy yet: <a href="airlines.html">apply for a free
 Ident</a> instead. Help us read your airline's roster and the licence is yours free,
 permanently. If it turns out not to be possible we'll say so rather than take your money.</p></div></details>
 
+<details><summary>What does the board show if the flight diverts?</summary><div class="body">
+<p>If you allow flight lookups, a diversion turns the board red: <strong>DIVERTED</strong>, the
+airport the aircraft is now heading for, and the original destination crossed out. The home time
+is withdrawn and the board says <strong>HOME TBC</strong>, because a home time worked out for the
+original airport would be wrong.</p>
+<p>A new home time appears once your roster has the flight out of the diversion airport. eCrew
+only passes roster changes to your calendar when its app is opened, so <strong>open eCrew again
+once the onward journey has been arranged</strong>, and leave it open for about a minute.</p></div></details>
+
 <details><summary>Can it tell me what time to wake up?</summary><div class="body">
-<p>Yes. Set how long before report you need — 90 minutes by default — and the wake time
+<p>Yes. Set how long before report you need, 90 minutes by default, and the wake time
 appears on days off and while the board counts down to report. Because it's worked out from
 your roster, a change to your report time moves the alarm with it.</p>
 <p>If you commute, there's an option to add that day's travel to report on top, so the first
@@ -150,7 +165,7 @@ at base. Set the wake time to 0 in settings to hide it.</p></div></details>
 
 <details><summary>My commute home is a flight, not a drive. Can it handle that?</summary><div class="body">
 <p>Yes. Tick "I commute to base" in settings and you get three numbers instead of one: the
-ordinary commute for mid-block days — the ten minutes from a crashpad or hotel — plus separate
+ordinary commute for mid-block days, the ten minutes from a crashpad or hotel, plus separate
 times for travelling to base on the first day of a block and getting home after the last one.</p>
 <p>Ident works out which day is which from your roster, so a two-hour flight home is only
 counted on the day you actually take it. The home time stays on screen for the whole
@@ -161,17 +176,29 @@ journey, not just until the last sector lands.</p></div></details>
 times itself. Living in Amsterdam with a Gatwick base, you'd add the morning AMS–LGW: the board
 follows you out of Amsterdam and then hands over to your roster duty when you report, so the
 people at home see one continuous day rather than a gap.</p>
-<p>The same works for anything off-roster with a flight number — deadheading, positioning home,
-or a holiday flight. (Route lookup needs a free AeroDataBox key, set once in Advanced.)</p></div></details>
+<p>The same works for anything off-roster with a flight number: deadheading, positioning home,
+or a holiday flight.</p></div></details>
 
 <details><summary>How does it get my roster?</summary><div class="body">
 <p>You paste your crew calendar link into the control panel once. Ident then re-checks it every 30
 minutes, so roster changes appear without you doing anything.</p></div></details>
 
+<details><summary>How should I set up the eCrew app?</summary><div class="body">
+<p>eCrew copies your roster into a calendar on your phone, and Ident reads that calendar. Out of
+the box eCrew puts a whole day&rsquo;s flying into one calendar entry; Ident is built for one entry
+per flight. In the eCrew app:</p>
+<ol>
+<li>&#9776; &rarr; <strong>Settings</strong> &rarr; turn off <strong>Combine Flights</strong>.</li>
+<li>Turn on <strong>AutoSync</strong>.</li>
+<li><strong>Save</strong>, then &#9776; &rarr; <strong>Upload to Calendar</strong>.</li>
+</ol>
+<p>The calendar only updates while the eCrew app is running, so open it after any roster change.
+If Ident spots several flights in one entry, the control panel reminds you of this setting.</p></div></details>
+
 <details><summary>Where do I find my calendar link?</summary><div class="body">
 <p>Ident needs a <em>web address that serves your calendar</em>, not a calendar file you've
-downloaded &mdash; a file is a snapshot, an address keeps up. Providers name it differently
-&mdash; secret address, private address, subscription link, ICS link &mdash; but it's the same
+downloaded: a file is a snapshot, an address keeps up. Providers name it differently,
+secret address, private address, subscription link, ICS link, but it's the same
 thing: a long, unguessable URL, usually ending <span class="mono">.ics</span>.</p>
 <p><strong>In your crew portal,</strong> look for <em>subscribe</em>, <em>export to calendar</em>
 or <em>iCal feed</em>, and take the link rather than the download. If it will only give you a
@@ -184,12 +211,12 @@ link ever gets out.
 instructions</a>)</p>
 <p><strong>iCloud:</strong> iCloud.com/calendar &rarr; the info button beside the calendar &rarr;
 turn on <strong>Public Calendar</strong> &rarr; <strong>Copy</strong>. The link starts
-<span class="mono">webcal://</span> &mdash; paste it exactly as given, Ident understands it.
+<span class="mono">webcal://</span>; paste it exactly as given, Ident understands it.
 (<a href="https://support.apple.com/guide/icloud/share-a-calendar-mm6b1a9479/icloud" target="_blank" rel="noopener">Apple's
 instructions</a>)</p>
 <p><strong>Outlook.com / Microsoft 365:</strong> Settings &rarr; Calendar &rarr; <em>Shared
 calendars</em> &rarr; <strong>Publish a calendar</strong>, choose the calendar and the option
-showing all details, publish, then copy the <strong>ICS</strong> link &mdash; not the HTML one.
+showing all details, publish, then copy the <strong>ICS</strong> link, not the HTML one.
 (<a href="https://support.microsoft.com/en-us/outlook/share-your-calendar-in-outlook-com" target="_blank" rel="noopener">Microsoft's
 instructions</a>)</p>
 <p><strong>Check it before you paste it.</strong> Opened in a browser, the right link downloads or
@@ -197,12 +224,12 @@ displays text beginning <span class="mono">BEGIN:VCALENDAR</span>. A login page 
 calendar means you've got the view, not the feed.</p>
 <p><strong>And treat it as a password.</strong> Anyone holding that link can read your whole
 roster, indefinitely, without signing in to anything. Don't email it, post it, or send it to
-support &mdash; Ident keeps it out of its own diagnostics export for exactly that reason.</p>
+support: Ident keeps it out of its own diagnostics export for exactly that reason.</p>
 </div></details>
 
 <details><summary>Does it handle standby, training and days off?</summary><div class="body">
 <p>Yes. It recognises standby, training and non-flying codes and shows the right screen. On a day
-off it shows your next duty — the date, report time and where you're going.</p>
+off it shows your next duty: the date, report time and where you're going.</p>
   <div class="qa-figs"><figure><figure class="dev "><img src="img/scenes/f_adty.png" alt="Airport duty on the Solari board" width="1600" height="960" loading="lazy"></figure><figcaption>Airport standby</figcaption></figure><figure><figure class="dev "><img src="img/scenes/f_esby.png" alt="Home standby, as the Swiss style shows it" width="1600" height="960" loading="lazy"></figure><figcaption>Standby from home</figcaption></figure><figure><figure class="dev "><img src="img/scenes/f_dayoff.png" alt="A day off with the next duty underneath" width="1600" height="960" loading="lazy"></figure><figcaption>Day off</figcaption></figure></div>
 </div></details>
 
@@ -213,7 +240,7 @@ off it shows your next duty — the date, report time and where you're going.</p
 </div></details>
 
 <details><summary>Can it show flights I'm travelling on as a passenger?</summary><div class="body">
-<p>Yes — personal flights can be added by flight number and are tracked the same way, with the
+<p>Yes, personal flights can be added by flight number and are tracked the same way, with the
 report time set for leisure travel rather than duty.</p></div></details>
 
 <h2 class="faqcat" id="privacy">Privacy &amp; data</h2>
@@ -247,27 +274,27 @@ reporting on:</p>
     You can turn off automatic installing in the control panel, but the daily check itself can't be turned off.</li>
 </ul>
 <p>Neither carries your roster, your settings or any diagnostics. Everything else your display connects to is a service you set up yourself: your roster feed,
-and optionally flight tracking or Google Maps.</p>
+and optionally the weather. Flight status and drive times go through our server, as above.</p>
 <p>If you do switch reporting on, your display sends one small report a day. It is made only of numbers and
 fixed words, so there is nowhere in it for a roster to travel. This is the complete list of what it
-can contain &mdash; nothing outside this list is accepted, by your display or by our server:</p>
+can contain; nothing outside this list is accepted, by your display or by our server:</p>
 <ul>
-  <li><code>version</code> &mdash; the Ident software version, such as 4.26.0</li>
-  <li><code>product</code> &mdash; which Ident product it is</li>
-  <li><code>hardware</code> &mdash; the kind of device it runs on (for example a Pi Zero 2 W or a Pi 5)</li>
-  <li><code>os</code> &mdash; which Raspberry Pi OS release it runs (bookworm, trixie or other)</li>
-  <li><code>panel</code> &mdash; the screen setting, such as impression_7_3</li>
-  <li><code>style</code> &mdash; the display style you chose, such as board_solari</li>
-  <li><code>uptime_days</code> &mdash; days since the device last restarted</li>
-  <li><code>disk_free</code> &mdash; roughly how much storage is left, in one of four bands</li>
-  <li><code>feed_ok</code> &mdash; how many roster refreshes worked since the last report</li>
-  <li><code>feed_failed_network</code> &mdash; refreshes that failed because something could not be reached</li>
-  <li><code>feed_failed_http</code> &mdash; refreshes where the feed answered with an error</li>
-  <li><code>feed_failed_parse</code> &mdash; refreshes where the feed arrived but could not be read</li>
-  <li><code>render_errors</code> &mdash; how many times drawing the screen failed</li>
-  <li><code>update_check_failed</code> &mdash; how many update checks failed</li>
-  <li><code>unrecognised_days</code> &mdash; how many days in your roster have a code Ident doesn't recognise &mdash; a number, never the code</li>
-  <li><code>custom_codes</code> &mdash; how many roster codes you have described yourself &mdash; a number, never the codes</li>
+  <li><code>version</code>, the Ident software version, such as 4.26.0</li>
+  <li><code>product</code>, which Ident product it is</li>
+  <li><code>hardware</code>, the kind of device it runs on (for example a Pi Zero 2 W or a Pi 5)</li>
+  <li><code>os</code>, which Raspberry Pi OS release it runs (bookworm, trixie or other)</li>
+  <li><code>panel</code>, the screen setting, such as impression_7_3</li>
+  <li><code>style</code>, the display style you chose, such as board_solari</li>
+  <li><code>uptime_days</code>, days since the device last restarted</li>
+  <li><code>disk_free</code>, roughly how much storage is left, in one of four bands</li>
+  <li><code>feed_ok</code>, how many roster refreshes worked since the last report</li>
+  <li><code>feed_failed_network</code>, refreshes that failed because something could not be reached</li>
+  <li><code>feed_failed_http</code>, refreshes where the feed answered with an error</li>
+  <li><code>feed_failed_parse</code>, refreshes where the feed arrived but could not be read</li>
+  <li><code>render_errors</code>, how many times drawing the screen failed</li>
+  <li><code>update_check_failed</code>, how many update checks failed</li>
+  <li><code>unrecognised_days</code>, how many days in your roster have a code Ident doesn't recognise: a number, never the code</li>
+  <li><code>custom_codes</code>, how many roster codes you have described yourself: a number, never the codes</li>
 </ul>
 <p><strong>It never contains:</strong> your roster, flights, dates or places; your calendar link;
 the roster codes themselves; your licence key or your device's serial number; your name, address or
@@ -290,13 +317,19 @@ up. When your roster contains a code Ident doesn't recognise, the control panel 
 top of the page and offers to learn it: choose a day off, a day off with the code kept private,
 standby at home or at the airport, training, or a working day that shows its code. Until you do,
 that day appears on the wall as a plain duty showing the code, so nothing is hidden or invented.
-You can also add codes ahead of time under <em>Airline &middot; tracking &middot; maps &middot;
+You can also add codes ahead of time under <em>Airline &middot; locations &middot;
 hardware</em>. These codes stay on your display; they are never sent to us.</p></div></details>
 
 <details><summary>Is my roster confidential to my airline?</summary><div class="body">
-<p>Worth checking your own company's IT and data policies — some airlines have rules about where
+<p>Worth checking your own company's IT and data policies: some airlines have rules about where
 crew data may be processed. Because Ident keeps everything on your own hardware, it's a far easier
 conversation than a cloud service, but the responsibility is yours.</p></div></details>
+
+<details><summary>Why doesn't Ident show ACARS messages?</summary><div class="body">
+<p>ACARS often carries sensitive information, and most pilots would rather it wasn't seen by
+anyone who doesn't need to see it. Showing it on a wall at home could also tempt pilots to send
+Operations messages they don't need, just to have them appear on the Ident in flight.</p>
+<p>For those reasons, we decided not to include it.</p></div></details>
 
 <h2 class="faqcat">Access &amp; setup</h2>
 
@@ -305,8 +338,8 @@ conversation than a cloud service, but the responsibility is yours.</p></div></d
 browser. It walks you through your base, airline, roster link and a password. Allow an unhurried
 hour for a first build.</p>
 <p>If the display can't find a network it knows, it puts up a Wi-Fi network of its own called
-<b>Ident-Setup</b>. Join that from your phone — the password is <b>identsetup</b>, the same on every
-display — and it will ask you to pick your home Wi-Fi. Once it's on your own network you carry on
+<b>Ident-Setup</b>. Join that from your phone; the password is <b>identsetup</b>, the same on every
+display, and it will ask you to pick your home Wi-Fi. Once it's on your own network you carry on
 with setup there. It won't take your roster link or your panel password over its own hotspot,
 because that hotspot's password is printed here for anyone to read.</p></div></details>
 
@@ -326,18 +359,18 @@ ports on your router.</p>
 
 <details><summary>Is the control panel protected?</summary><div class="body">
 <p>Yes, and not optionally: you set a username and password during setup, minimum six
-characters. The panel shows your roster and holds your calendar link — which is effectively a
-password for your whole schedule — so it isn't something to leave open, even on a home network.
+characters. The panel shows your roster and holds your calendar link, which is effectively a
+password for your whole schedule, so it isn't something to leave open, even on a home network.
 Passwords are stored only as a salted hash.</p>
 <p><strong>Forgotten it?</strong> Take the SD card out, put a file called
 <span class="mono">ident-reset.txt</span> on the small drive that appears when you plug the card
 into a computer, put it back and switch the display on. It clears the password and deletes the
-file — nothing to install, no reflashing. It needs the card in your hand, which is the point.</p>
+file, nothing to install, no reflashing. It needs the card in your hand, which is the point.</p>
 <p>If you expose the panel to the internet, use one of the tunnel options above so the connection
 is encrypted.</p></div></details>
 
 <details><summary>Can I run more than one display?</summary><div class="body">
-<p>Yes. Point each one at the same roster link and they'll stay in step by themselves — no server
+<p>Yes. Point each one at the same roster link and they'll stay in step by themselves, no server
 in the middle. Give each a name (Kitchen, Study) so you can tell them apart.</p></div></details>
 
 <h2 class="faqcat">Running it</h2>
@@ -345,12 +378,12 @@ in the middle. Give each a name (Kitchen, Study) so you can tell them apart.</p>
 <details><summary>How often does the screen update?</summary><div class="body">
 <p>Colour e-paper takes roughly 30 seconds to redraw, so Ident refreshes when something meaningful
 changes rather than continuously. It's a duty board, not a clock.</p>
-<p>While it redraws, the screen flashes — a colour panel runs through its colours several times
+<p>While it redraws, the screen flashes: a colour panel runs through its colours several times
 before it settles. That is normal for this kind of display, not a fault.</p></div></details>
 
 <details><summary>How do I get software updates?</summary><div class="body">
 <p>Your display checks for new versions once a day. A new version installs itself, but only after
-it has been published for three days, and never mid-duty &mdash; a bad release sits on our own wall
+it has been published for three days, and never mid-duty: a bad release sits on our own wall
 for three days before it can reach yours. The control panel shows what you're running, an
 <em>install now</em> button if you'd rather not wait, and a switch to turn the automatic part off.
 Every update is checksum-verified and your working version is backed up first.</p></div></details>
@@ -361,22 +394,22 @@ reach the internet it keeps the last time it knew. Reconnect it to Wi-Fi and the
 itself within a minute or two.</p></div></details>
 
 <details><summary>It won't connect to my Wi-Fi.</summary><div class="body">
-<p>Check the band first — if you're on a Zero 2 W, it must be 2.4GHz. Then check the password and
+<p>Check the band first: if you're on a Zero 2 W, it must be 2.4GHz. Then check the password and
 that the network name is exactly right, including capitals. You can pre-load extra networks (a
 hotel or crashpad) from the control panel while you're still on a working connection.</p>
 <p>After two minutes offline the display gives up and raises its own <b>Ident-Setup</b> network so you
 can rescue it from a phone. The password for that is <b>identsetup</b>.</p></div></details>
 
 <details><summary>The screen looks washed out or the colours are odd.</summary><div class="body">
-<p>Colour e-paper is muted by nature — it reflects light rather than emitting it. Cold rooms make it
-worse; the panel likes normal room temperature. There's also a contrast toggle — hold the third
+<p>Colour e-paper is muted by nature: it reflects light rather than emitting it. Cold rooms make it
+worse; the panel likes normal room temperature. There's also a contrast toggle: hold the third
 button for two seconds.</p></div></details>
 
 <details><summary>How does the scan-to-track code work?</summary><div class="body">
 <p>While a sector is airborne, Ident can show a QR code that opens that flight on a live tracking
 site. Press the third button and it fills the screen, big enough to scan from across the room; it
 goes back to the duty after twenty seconds. You can also leave a small one in the corner of any
-display style — turn it on under Display in the control panel, and pick which corner.</p>
+display style: turn it on under Display in the control panel, and pick which corner.</p>
 <p>The code only exists while a duty is running. On days off, standby and between duties there's
 nothing to track, so nothing is shown. Panels without buttons can still use the corner option.</p>
   <div class="qa-figs"><figure><figure class="dev "><img src="img/scenes/f_qr_corner.png" alt="A small scannable code in the corner of the board" width="1600" height="960" loading="lazy"></figure><figcaption>In the corner</figcaption></figure><figure><figure class="dev "><img src="img/scenes/f_qr_full.png" alt="The code filling the screen" width="1600" height="960" loading="lazy"></figure><figcaption>Full screen</figcaption></figure></div>
@@ -384,11 +417,11 @@ nothing to track, so nothing is shown. Panels without buttons can still use the 
 
 <details><summary>Does the board show sensitive roster codes?</summary><div class="body">
 <p>Not unless you ask it to. These are hidden by default and shown as an ordinary day off, in
-three groups: fitness and absence (<span class="mono">SICK</span>, <span class="mono">S/L</span>, <span class="mono">MED</span>, <span class="mono">LOL</span>, <span class="mono">UNFT</span>, <span class="mono">FTGD</span>, <span class="mono">NSO</span>, <span class="mono">UNCT</span>, <span class="mono">NAVB</span>); work and HR (<span class="mono">MEET</span>, <span class="mono">INT</span>, <span class="mono">SOC</span>, <span class="mono">DISC</span>, <span class="mono">GRV</span>, <span class="mono">SUSP</span>, <span class="mono">TERM</span>, <span class="mono">RESN</span>); and leave and family (<span class="mono">COMP</span>, <span class="mono">CMPU</span>, <span class="mono">MAT</span>, <span class="mono">PAT</span>, <span class="mono">PARL</span>, <span class="mono">UNPD</span>).</p>
+three groups: fitness and absence (<span class="mono">SICK</span>, <span class="mono">S/L</span>, <span class="mono">MED</span>, <span class="mono">LOL</span>, <span class="mono">UNFT</span>, <span class="mono">FTGD</span>, <span class="mono">NSO</span>, <span class="mono">UNCT</span>, <span class="mono">NAVB</span>, <span class="mono">RFDP</span>); work and HR (<span class="mono">MEET</span>, <span class="mono">INT</span>, <span class="mono">SOC</span>, <span class="mono">DISC</span>, <span class="mono">GRV</span>, <span class="mono">SUSP</span>, <span class="mono">TERM</span>, <span class="mono">RESN</span>, <span class="mono">OFLD</span>); and leave and family (<span class="mono">COMP</span>, <span class="mono">CMPU</span>, <span class="mono">MAT</span>, <span class="mono">PAT</span>, <span class="mono">PARL</span>, <span class="mono">UNPD</span>).</p>
 <p><strong>You choose which.</strong> Setup lists them by group, with a select all / none,
 and you tick any you'd rather see. The same list is in settings. Nothing is revealed unless
 you ask.</p>
-<p>Hidden codes aren't merely kept off the screen — they're discarded when your roster is
+<p>Hidden codes aren't merely kept off the screen; they're discarded when your roster is
 parsed, so the original never reaches the device's storage. Nothing that isn't kept can appear
 later through a new display style, a diagnostics export, or a screenshot you send to support.
 The trade-off: revealing a code only affects rosters read afterwards, so saving the setting
@@ -396,7 +429,7 @@ re-reads your feed.</p></div></details>
 
 <details><summary>Can it show the whole month?</summary><div class="body">
 <p>Yes, two ways. Under <em>Days off</em> in the control panel, tick <em>Show the month
-calendar on days off</em>: on a day off the wall shows the whole month as a grid —
+calendar on days off</em>: on a day off the wall shows the whole month as a grid:
 destinations on flying days, standby and days off marked, today boxed. Or set one of the
 buttons to <em>Month calendar</em> to bring it up for a minute at any time. Either needs a
 7&Prime; panel or larger, where there's room to read it.</p>
@@ -406,22 +439,22 @@ buttons to <em>Month calendar</em> to bring it up for a minute at any time. Eith
 <details><summary>Can I show a photo instead on days off?</summary><div class="body">
 <p>Yes. Upload a picture in the control panel and it takes over the screen on days off only,
 cropped to fill the panel. You can keep a single line across the foot showing your next duty,
-or switch that off. Photos are re-saved when uploaded, which strips EXIF — so location tags
+or switch that off. Photos are re-saved when uploaded, which strips EXIF, so location tags
 don't travel with them.</p></div></details>
 
 <details><summary>Can I get a refund?</summary><div class="body">
-<p>Yes — see the terms at checkout for the statutory cancellation period on digital purchases.
+<p>Yes, see the terms at checkout for the statutory cancellation period on digital purchases.
 If Ident won't work with your airline's roster, tell us and we'll sort it out.</p></div></details>
 
-<div class="note" style="margin-top:30px">Still stuck? <a href="support.html">Send us a message</a>
-— include your display size, which Raspberry Pi you're using, and your airline.</div>
+<div class="note" style="margin-top:30px">Still stuck? <a href="support.html">Send us a message</a>, and
+include your display size, which Raspberry Pi you're using, and your airline.</div>
 
 </div></section>
 
 <footer><div class="wrap">
   <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
   <div class="fl"><a href="index.html">Home</a><a href="support.html">Support</a><a href="legal.html">Legal</a></div>
-  <p>Ident — a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>
+  <p>Ident is a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>
 </div></footer>
 
 </body></html>
