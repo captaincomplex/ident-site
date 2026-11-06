@@ -9,23 +9,22 @@
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#14110a">
+<meta name="theme-color" content="#fbfaf7">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav><div class="wrap">
-  <a class="brand" href="index.html"><img src="/img/ident-wordmark.svg" alt="Ident" width="70" height="16"></a>
-  <a class="l" href="index.html#how">How it works</a>
-  <a class="l" href="displays.html">Displays</a>
-  <a class="l" href="styles.html">Styles</a>
-  <a class="l" href="pilots.html">For pilots</a>
-  <a class="l" href="parts.html">Parts</a>
-  <a class="l" href="faq.html">FAQ</a>
-  <a class="l" href="airlines.html">Your airline</a>
-  <span class="sp"></span>
-  <a class="l" href="buy.html">Buy</a>
-  <a class="l" href="support.html">Support</a>
+  <a class="brand" href="index.html"><img src="/img/ident-wordmark-light.svg" alt="Ident" width="70" height="16"></a>
+  <div class="links">
+    <a class="l" href="index.html#how"><span>01</span>How it works</a>
+    <a class="l" href="displays.html"><span>02</span>Displays</a>
+    <a class="l" href="styles.html"><span>03</span>Styles</a>
+    <a class="l" href="pilots.html"><span>04</span>For pilots</a>
+    <a class="l" href="faq.html"><span>05</span>Questions</a>
+    <a class="l" href="support.html" aria-current="page"><span>06</span>Support</a>
+    <a class="l cta" href="buy.html">Prices</a>
+  </div>
 </div></nav>
 
 <header><div class="wrap">
@@ -50,7 +49,7 @@
 
 <section><div class="wrap">
   <h2>Send a message</h2>
-  <p class="sub">Telling us your display size, Raspberry Pi model and airline up front saves a
+  <p class="sub">Telling us which Ident you have (an E1002, or a Pi with its display size and model) and your airline up front saves a
     round trip.</p>
 
   <div class="fs-msg fs-ok" data-fs-success hidden></div>
@@ -82,7 +81,7 @@
     <input id="airline" name="airline" placeholder="e.g. easyJet" data-fs-field>
 
     <label for="setup">YOUR SETUP (if you have one)</label>
-    <input id="setup" name="setup" placeholder="e.g. 4.0&quot; Impression on a Pi 3A+, software v4.21.0" data-fs-field>
+    <input id="setup" name="setup" placeholder="e.g. E1002, or 7.3&quot; Impression on a Pi 3A+, software v4.30.0" data-fs-field>
 
     <label for="message">MESSAGE</label>
     <textarea id="message" name="message" required data-fs-field
@@ -106,8 +105,8 @@
 
 <section><div class="wrap">
   <h2>The guides</h2>
-  <p class="sub">Both of these ship with the software as well. Start with the first one if
-    you have never used a Raspberry Pi.</p>
+  <p class="sub">Both are for Ident for Pi, and ship with the software as well. Start with the first one if
+    you have never used a Raspberry Pi. The E1002 sets itself up from your phone: <a href="faq.html#setup">how</a>.</p>
   <div class="ruled">
     <div><h3><a href="guides/IDENT_BEGINNERS_GUIDE.md">Complete beginner's guide</a></h3>
       <p>What to buy, then two routes: a ready-made memory card set up entirely from your phone, or
@@ -121,10 +120,10 @@
   <p class="sub">These three cover the majority of messages.</p>
   <div class="ruled">
     <div><h3>Wrong date on screen</h3>
-      <p>The Pi has no battery clock. If it loses Wi-Fi it freezes on the last date it knew.
+      <p>Both products set their clock from the internet, so a long time without Wi-Fi can leave the date behind.
         Reconnect it and the clock fixes itself in a minute or two.</p></div>
     <div><h3>Won't join Wi-Fi</h3>
-      <p>On a Pi Zero 2 W the network <em>must</em> be 2.4GHz: it cannot see 5GHz at all. Check
+      <p>On an E1002 or a Pi Zero 2 W the network <em>must</em> be 2.4GHz: neither can see 5GHz at all. Check
         that before anything else.</p></div>
     <div><h3>Roster not appearing</h3>
       <p>Check the calendar link is the full <span class="mono">.ics</span> URL and hasn't expired.
@@ -133,9 +132,15 @@
 </div></section>
 
 <footer><div class="wrap">
-  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
-  <div class="fl"><a href="index.html">Home</a><a href="faq.html">FAQ</a></div>
-  <p>Ident is a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>
+  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="86" height="30"></a>
+  <div class="fl">
+    <a href="displays.html">Displays</a><a href="parts.html">Parts list</a><a href="styles.html">Styles</a>
+    <a href="faq.html">Questions</a><a href="airlines.html">Your airline</a><a href="buy.html">Prices</a>
+    <a href="support.html">Support</a><a href="legal.html">Terms, privacy and refunds</a>
+  </div>
+  <p>Ident is a flight-duty board for the wall, made by xpdr.aero in the UK. Your roster stays in your house.<br>
+    Airline names and logos are the trademarks of their owners and are not supplied with the software; Ident only
+    shows image files you add yourself. Not affiliated with, endorsed by, or connected to any airline. Not a flight-planning or operational tool.</p>
 </div></footer>
 
 <script>

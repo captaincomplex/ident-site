@@ -9,37 +9,39 @@
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#14110a">
+<meta name="theme-color" content="#fbfaf7">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav><div class="wrap">
-  <a class="brand" href="index.html"><img src="/img/ident-wordmark.svg" alt="Ident" width="70" height="16"></a>
-  <a class="l" href="index.html#how">How it works</a>
-  <a class="l" href="displays.html">Displays</a>
-  <a class="l" href="styles.html">Styles</a>
-  <a class="l" href="pilots.html">For pilots</a>
-  <a class="l" href="parts.html">Parts</a>
-  <a class="l" href="faq.html">FAQ</a>
-  <a class="l" href="airlines.html">Your airline</a>
-  <span class="sp"></span>
-  <a class="l" href="buy.html">Buy</a>
-  <a class="l" href="support.html">Support</a>
+  <a class="brand" href="index.html"><img src="/img/ident-wordmark-light.svg" alt="Ident" width="70" height="16"></a>
+  <div class="links">
+    <a class="l" href="index.html#how"><span>01</span>How it works</a>
+    <a class="l" href="displays.html" aria-current="page"><span>02</span>Displays</a>
+    <a class="l" href="styles.html"><span>03</span>Styles</a>
+    <a class="l" href="pilots.html"><span>04</span>For pilots</a>
+    <a class="l" href="faq.html"><span>05</span>Questions</a>
+    <a class="l" href="support.html"><span>06</span>Support</a>
+    <a class="l cta" href="buy.html">Prices</a>
+  </div>
 </div></nav>
 
 <header><div class="wrap herogrid">
   <div class="herotext">
     <h1>Which display?</h1>
-    <p class="lead">Ident drives two quite different kinds of panel. Neither is better;
+    <p class="lead">Ident drives two quite different kinds of display. Neither is better;
       they suit different rooms. Here's how to choose, and what we'd buy.</p>
+    <p class="sub">Colour e-paper comes two ways: <b>Ident for E1002</b>, a ready-made 7.3&Prime; display with its own
+      battery (in testing, not on sale yet), or <b>Ident for Pi</b>, a Raspberry Pi with a Pimoroni panel you
+      put together yourself. LED is Pi only. <a href="parts.html#compare">The two e-paper routes compared</a>.</p>
   </div>
   <div class="hero-dev">
     <div class="hero-pair">
       <figure><figure class="dev "><img src="img/scenes/d_hero_poster_palma.png" alt="The travel poster style on a colour e-paper panel: Mallorca, flying to Palma, home 15:48" width="1600" height="960" loading="lazy"></figure><figcaption>Colour e-paper</figcaption></figure>
       <figure><figure class="dev "><img src="img/scenes/d_led_128x32_helsinki.png" alt="A 128 by 32 LED matrix panel: in flight from Manchester to Helsinki" width="1024" height="256" loading="lazy"></figure><figcaption>LED matrix</figcaption></figure>
     </div>
-    <p class="rnd">Both drawn by Ident's own software from sample rosters. The software is the same either way.</p>
+    <p class="rnd">Drawn by Ident's own software from sample rosters. The LED picture is the simulator's preview: a real panel shows the same lines as plain pixel text, without the arc.</p>
   </div>
 </div></header>
 
@@ -56,10 +58,10 @@
     <tr><td class="k">Looks like</td><td data-label="Colour e-paper">Printed paper in a frame</td><td data-label="LED matrix">An airport departure board</td></tr>
     <tr><td class="k">In a dark room</td><td class="yes" data-label="Colour e-paper">Invisible, no light at all</td><td data-label="LED matrix">Glows; dimmable, but still a light source</td></tr>
     <tr><td class="k">Updates</td><td data-label="Colour e-paper">~30 seconds, on change</td><td class="yes" data-label="LED matrix">Instantly, continuously</td></tr>
-    <tr><td class="k">Power</td><td class="yes" data-label="Colour e-paper">Under a watt; holds image unplugged</td><td data-label="LED matrix">Several watts, more at full brightness</td></tr>
-    <tr><td class="k">Assembly</td><td class="yes" data-label="Colour e-paper">Push onto the header, no soldering</td><td data-label="LED matrix">Ribbon cable, power injection, a bonnet</td></tr>
+    <tr><td class="k">Power</td><td class="yes" data-label="Colour e-paper">Under a watt; holds its picture unplugged; can run on a battery</td><td data-label="LED matrix">Several watts, more at full brightness; mains only</td></tr>
+    <tr><td class="k">Assembly</td><td class="yes" data-label="Colour e-paper">Nothing (E1002), or push onto the Pi, no soldering</td><td data-label="LED matrix">Ribbon cable, power injection, a bonnet</td></tr>
     <tr><td class="k">Best in</td><td data-label="Colour e-paper">Hall, kitchen, bedroom, lounge</td><td data-label="LED matrix">Study, office, workshop, bar</td></tr>
-    <tr><td class="k">Cost</td><td data-label="Colour e-paper">£50–£230 depending on size</td><td data-label="LED matrix">£25–£70 plus a bonnet and supply</td></tr>
+    <tr><td class="k">Cost</td><td data-label="Colour e-paper">£50–£230 for a Pi panel; about £100 for an E1002</td><td data-label="LED matrix">£17–£45 for panels, plus a bonnet and supply</td></tr>
   </table>
   <div class="note" style="margin-top:18px">
     <strong>Short version:</strong> if it's going somewhere you relax, buy e-paper. If you
@@ -101,30 +103,29 @@
   <p class="sub">Standard HUB75 panels, driven through hzeller's <span class="mono">rpi-rgb-led-matrix</span>
     library. Cheap, bright, and the closest thing to a real departure board.</p>
   <div class="leds">
-    <figure class="led w1"><figure class="dev ledf"><img src="img/scenes/d_led_128x32_helsinki.png" alt="A 128 by 32 LED matrix panel: IN FLIGHT, EZY8101, a route arc from Gatwick to Lanzarote, land and home times" width="1024" height="256" loading="lazy"></figure><figcaption>128×32 · in flight, Gatwick to Lanzarote</figcaption></figure>
+    <figure class="led w1"><figure class="dev ledf"><img src="img/scenes/d_led_128x32_helsinki.png" alt="A 128 by 32 LED matrix panel: IN FLIGHT, EZY8101, a route arc from Gatwick to Lanzarote, land and home times" width="1024" height="256" loading="lazy"></figure><figcaption>128×32 · in flight, Gatwick to Lanzarote (simulator)</figcaption></figure>
     <figure class="led w2"><figure class="dev ledf"><img src="img/scenes/d_led_64x32_copenhagen.png" alt="A 64 by 32 LED matrix panel: flight EZY2901 from Edinburgh to Copenhagen, land and home times" width="1024" height="512" loading="lazy"></figure><figcaption>64×32 · in flight, Edinburgh to Copenhagen</figcaption></figure>
     <figure class="led w3"><figure class="dev ledf"><img src="img/scenes/d_led_64x32_oslo.png" alt="A 128 by 32 LED matrix panel on a turnaround in Oslo, with the departure time and home time" width="1024" height="512" loading="lazy"></figure><figcaption>64×32 · turnaround in Oslo</figcaption></figure>
     <figure class="led w4"><figure class="dev ledf"><img src="img/scenes/d_led_64x32_vienna.png" alt="A 64 by 32 LED matrix panel on a turnaround in Vienna, with the departure time and home time" width="1024" height="512" loading="lazy"></figure><figcaption>64×32 · turnaround in Vienna</figcaption></figure>
   </div>
 
+  <p class="note" style="margin:22px 0">These pictures come from Ident's simulator, which draws smooth lettering. A real
+    panel shows the same four lines (what's happening, the route, the landing time and home) in plainer pixel
+    lettering. The route arc you can see on the 128&times;32 picture is the simulator's only; a real panel shows text.</p>
   <table>
     <tr><th>Configuration</th><th>Pixels</th><th>Indicative</th><th>Verdict</th></tr>
-    <tr><td class="k">2 × <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 panels</a> chained</td><td class="mono" data-label="Pixels">128×32</td><td data-label="Indicative">~£50 + bonnet</td>
-      <td data-label="Verdict"><span class="yes">Recommended.</span> The default Ident is tuned for. Wide enough for
-        a full-width route map with a moving marker.</td></tr>
-    <tr><td class="k">Single <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 panel</a></td><td class="mono" data-label="Pixels">64×32</td><td data-label="Indicative">~£25 + bonnet</td>
-      <td data-label="Verdict">Works, on the compact layout. Long routes truncate and scroll.</td></tr>
-    <tr><td class="k">Single <a href="https://thepihut.com/products/64x64-rgb-led-matrix-panel-3mm-pitch" target="_blank" rel="noopener">64×64 panel</a></td><td class="mono" data-label="Pixels">64×64</td><td data-label="Indicative">~£35 + bonnet</td>
-      <td data-label="Verdict"><span class="no">Not yet.</span> One panel to mount and a lovely shape, but the
-        LED layouts are currently drawn for a 32-pixel-high panel; on a 64-high one the
-        text sits in the top half. Support is being added; ask before buying for Ident.</td></tr>
-    <tr><td class="k">4 × <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 chained</a></td><td class="mono" data-label="Pixels">256×32</td><td data-label="Indicative">~£95 + bonnet</td>
-      <td data-label="Verdict">Dramatic on a long wall, but needs a proper 5V supply and careful power injection.</td></tr>
+    <tr><td class="k">Single <a href="https://thepihut.com/products/rgb-full-colour-led-matrix-panel-4mm-pitch-64x32-pixels" target="_blank" rel="noopener">64&times;32 panel</a></td><td class="mono" data-label="Pixels">64&times;32</td><td data-label="Indicative">~&pound;17&ndash;&pound;22 + bonnet</td>
+      <td data-label="Verdict"><span class="yes">Start here.</span> The commonest and cheapest HUB75 panel: one thing to mount, one supply. Long names are cut short.</td></tr>
+    <tr><td class="k">2 &times; 64&times;32 chained</td><td class="mono" data-label="Pixels">128&times;32</td><td data-label="Indicative">~&pound;35&ndash;&pound;45 + bonnet</td>
+      <td data-label="Verdict">Twice as wide, so longer names fit on each line. Two panels to join and mount.</td></tr>
+    <tr><td class="k">Single <a href="https://thepihut.com/products/64x64-rgb-led-matrix-panel-3mm-pitch" target="_blank" rel="noopener">64&times;64 panel</a>, or 128&times;64</td><td class="mono" data-label="Pixels">64&times;64</td><td data-label="Indicative">n/a</td>
+      <td data-label="Verdict"><span class="no">Not yet.</span> A lovely shape, but the LED layout is drawn for a panel 32 pixels high, so the bottom half would stay empty. We'll say so here once a taller layout is drawn and tested on a real panel. Please don't buy one for Ident yet.</td></tr>
   </table>
+  <p class="rnd">Panel prices checked at The Pi Hut on 5 November 2026.</p>
 
   <div class="note" style="margin-top:18px">
     <strong>You'll also need:</strong> an <strong><a href="https://thepihut.com/products/adafruit-rgb-matrix-bonnet-for-raspberry-pi-ada3211" target="_blank" rel="noopener">Adafruit RGB Matrix Bonnet</a></strong> (£14.40, sold out at
-    The Pi Hut at the time of writing; the <a href="https://thepihut.com/products/adafruit-rgb-matrix-hat-rtc-for-raspberry-pi-mini-kit" target="_blank" rel="noopener">Matrix HAT + RTC</a> does the same job) to
+    The Pi Hut on 26 September 2026; the <a href="https://thepihut.com/products/adafruit-rgb-matrix-hat-rtc-for-raspberry-pi-mini-kit" target="_blank" rel="noopener">Matrix HAT + RTC</a> does the same job) to
     drive the panel cleanly, and a <strong><a href="https://thepihut.com/products/5v-4a-power-supply-2-1mm-jack" target="_blank" rel="noopener">5V power supply sized for the panels</a></strong>: not the
     Pi's supply. A 64×32 panel can pull 2–4A on its own at full white. Budget £15–£20 for the
     bonnet and £10–£15 for the supply.
@@ -168,13 +169,15 @@
 </div></section>
 
 <footer><div class="wrap">
-  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
-  <div class="fl"><a href="index.html">Home</a><a href="parts.html">Parts</a>
-    <a href="faq.html">FAQ</a><a href="support.html">Support</a><a href="legal.html">Legal</a></div>
-  <p>Prices are indicative, checked 28 August 2026, and each panel links to two UK
-    suppliers because stock moves. Note Pimoroni quote prices <em>excluding</em> VAT and The
-    Pi Hut include it, so the same panel looks cheaper there than it is. Links go straight to a UK supplier; we take no
-    commission from any of them and you are welcome to shop elsewhere. Not affiliated with, endorsed by, or connected to any airline.</p>
+  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="86" height="30"></a>
+  <div class="fl">
+    <a href="displays.html">Displays</a><a href="parts.html">Parts list</a><a href="styles.html">Styles</a>
+    <a href="faq.html">Questions</a><a href="airlines.html">Your airline</a><a href="buy.html">Prices</a>
+    <a href="support.html">Support</a><a href="legal.html">Terms, privacy and refunds</a>
+  </div>
+  <p>Ident is a flight-duty board for the wall, made by xpdr.aero in the UK. Your roster stays in your house.<br>
+    Airline names and logos are the trademarks of their owners and are not supplied with the software; Ident only
+    shows image files you add yourself. Not affiliated with, endorsed by, or connected to any airline. Not a flight-planning or operational tool.</p>
 </div></footer>
 
 </body></html>

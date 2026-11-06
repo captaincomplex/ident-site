@@ -9,39 +9,41 @@
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#14110a">
+<meta name="theme-color" content="#fbfaf7">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav><div class="wrap">
-  <a class="brand" href="index.html"><img src="/img/ident-wordmark.svg" alt="Ident" width="70" height="16"></a>
-  <a class="l" href="index.html#how">How it works</a>
-  <a class="l" href="displays.html">Displays</a>
-  <a class="l" href="styles.html">Styles</a>
-  <a class="l" href="pilots.html">For pilots</a>
-  <a class="l" href="parts.html">Parts</a>
-  <a class="l" href="faq.html">FAQ</a>
-  <a class="l" href="airlines.html">Your airline</a>
-  <span class="sp"></span>
-  <a class="l" href="buy.html">Buy</a>
-  <a class="l" href="support.html">Support</a>
+  <a class="brand" href="index.html"><img src="/img/ident-wordmark-light.svg" alt="Ident" width="70" height="16"></a>
+  <div class="links">
+    <a class="l" href="index.html#how"><span>01</span>How it works</a>
+    <a class="l" href="displays.html"><span>02</span>Displays</a>
+    <a class="l" href="styles.html"><span>03</span>Styles</a>
+    <a class="l" href="pilots.html"><span>04</span>For pilots</a>
+    <a class="l" href="faq.html" aria-current="page"><span>05</span>Questions</a>
+    <a class="l" href="support.html"><span>06</span>Support</a>
+    <a class="l cta" href="buy.html">Prices</a>
+  </div>
 </div></nav>
 
 <header><div class="wrap">
-  <h1>Frequently asked <span class="g">questions</span></h1>
+  <h1>Questions, <em>answered</em>.</h1>
   <p class="lead">If your question isn't here, <a href="support.html">send it over</a>. Real
     answers, from someone who flies the line.</p>
 </div></header>
 
 <section><div class="wrap">
 
-<h2 class="faqcat">Buying &amp; hardware</h2>
+<h2 class="faqcat" id="choosing"><b>01</b> / Choosing</h2>
 
 <details open><summary>What exactly am I buying?</summary><div class="body">
-<p>The Ident software, plus a step-by-step illustrated build guide and support. You buy the
-Raspberry Pi, the e-paper display and an SD card yourself, from whichever supplier you like.
-We don't mark up hardware or hold stock, so you pay the going rate.</p></div></details>
+<p>The Ident software, with its guide and support. You buy the hardware yourself, from whichever supplier you like: we don't mark up hardware or hold stock, so you pay the going rate.</p><div class="per">
+<div><b class="p">Ident for E1002</b><div><p>One box: Seeed's reTerminal E1002, a 7.3&Prime; colour e-paper display with its own battery, case and stand. Nothing to assemble. In testing, not on sale yet.</p></div></div>
+<div><b class="p">Pi, e-paper</b><div><p>A Raspberry Pi, a Pimoroni Inky Impression panel and a memory card. No soldering. <a href="parts.html#reference">The reference build</a> comes to about &pound;126.</p></div></div>
+<div><b class="p">Pi, LED</b><div><p>A Raspberry Pi, one or two HUB75 LED panels, a matrix bonnet and a separate power supply for the panels. More of a project. <a href="parts.html#led">The LED parts</a>.</p></div></div>
+</div>
+</div></details>
 
 <!-- SHOP CLOSED (2 Nov 2026): at launch, replace "Not on sale yet: coming
      soon." below with nothing, or with a line about checkout. Prices must
@@ -68,19 +70,24 @@ VAT, no other fees), UK customers only for now, and you can cancel in two clicks
 Not on sale yet: coming soon. <a href="buy.html">Compare the three</a>.</p>
 
 <p><strong>Your data, your call.</strong> Your roster never leaves your display, whichever you
-choose. With Mode C or S switched on, the flight you're on passes through our server to the
-provider while you're airborne; with Mode S drive times on, your home location (or a nearby corner,
-if you prefer) goes through our server to Google Maps on the way home, in a separate request that
-names no flight. Neither is kept. If you'd rather not share your home location, leave drive times off, Ident uses
-the commute time you set yourself.</p>
+choose. With flight status on (any mode, Mode A included), the flight number, departure airport
+and scheduled time pass through our server to Flightradar24, from 20 minutes before each flight
+until it lands. With Mode S drive times on, your home location (or a nearby corner, if you prefer)
+goes through our server to Google Maps on the way home, in a separate request that names no flight.
+Neither is kept. If you'd rather not share your home location, leave drive times off; Ident uses
+the commute time you set yourself. <a href="#what-leaves">Everything that leaves your display</a>.</p>
 <p class="rnd">Flight data: Flightradar24</p></div></details>
 
-<details><summary>Which display should I choose?</summary><div class="body">
-<p>The <strong>7.3″ Inky Impression</strong> is the one to get if you're unsure: readable across
-a room and wide enough for the route maps. The <strong>4.0″</strong> is the budget option and works
-well on a desk. The <strong>13.3″</strong> is a proper wall piece but costs considerably more.</p>
-<p>All of them use Pimoroni's Spectra 6 colour e-paper and all are fully supported.</p>
-  <div class="qa-figs"><figure><figure class="dev "><img src="img/scenes/f_epaper_7_3.png" alt="A 7.3 inch e-paper panel showing the Solari board in flight from Edinburgh to Tenerife" width="1600" height="960" loading="lazy"></figure><figcaption>7.3″ e-paper</figcaption></figure><figure><figure class="dev "><img src="img/scenes/f_led_128x32_split.png" alt="A 128 by 32 LED matrix panel in flight from Bristol to Split" width="1024" height="256" loading="lazy"></figure><figcaption>LED matrix, 128×32</figcaption></figure></div>
+<details><summary>Which one should I choose?</summary><div class="body">
+<p>If you'd rather not build anything, or want it on battery, the <b>E1002</b> (once it's on sale). If you want every style, a choice of sizes and settings from your phone at any time, a <b>Pi with e-paper</b>; the 7.3&Prime; pleases most people. If you want it to glow like a departure board in a study or a hall, the <b>LED</b>.</p><p><a href="parts.html#compare">Raspberry Pi or reTerminal, feature by feature</a>, and <a href="displays.html">e-paper or LED</a>.</p>
+</div></details>
+
+<details><summary>Which e-paper size should I choose?</summary><div class="body">
+<p>The 7.3&Prime; Inky Impression if you're unsure: readable across a room and wide enough for the route maps. The 4.0&Prime; is the budget option and works well on a desk or a fridge door. The 13.3&Prime; is a proper wall piece but costs considerably more. All use Pimoroni's six-colour Spectra 6 e-paper and all are fully supported. The E1002 is 7.3&Prime; only.</p>
+</div></details>
+
+<details><summary>Which LED panel size should I choose?</summary><div class="body">
+<p><b>One 64&times;32 panel</b> is the simplest and cheapest: the commonest HUB75 panel there is, about &pound;17&ndash;&pound;22. <b>Two 64&times;32 panels side by side (128&times;32)</b> fit longer names on each line.</p><p><b>64&times;64 and 128&times;64 aren't supported yet.</b> The LED layout is drawn for a panel 32 pixels high, so on a taller panel the bottom half would stay empty. We'd like to support 64&times;64, and we'll say so here once it's drawn and tested on a real panel. Please don't buy one for Ident until then.</p><p>An LED panel shows four lines of text: what's happening, the route, the landing time and the home time. The e-paper styles, the scan-to-track code and the month calendar are e-paper only.</p>
 </div></details>
 
 <details><summary>I already own the 5.7″ Inky Impression. Will it work?</summary><div class="body">
@@ -89,24 +96,18 @@ six. Pimoroni have discontinued it, so it isn't a sensible choice for a new buil
 one it will keep working.</p></div></details>
 
 <details><summary>Which Raspberry Pi do I need?</summary><div class="body">
-<p>Any Pi with a 40-pin header. The Zero 2 W is the cheapest and smallest and is the usual choice,
-<strong>but only if your Wi-Fi broadcasts on 2.4GHz</strong> (see the next question). A Pi 3B+, 4 or
-5 will also work and support 5GHz.</p>
-<p>If you buy a plain Zero 2 W you'll need to solder a 40-pin header. Buy the pre-soldered
-<span class="mono">Zero 2 WH</span> version and you won't.</p></div></details>
+<p>A Raspberry Pi 3 Model A+ is the reference build: header fitted, and its Wi-Fi works on both 2.4&nbsp;GHz and 5&nbsp;GHz. The Pi Zero 2 WH is smaller and uses less power, and is the first choice when you can get one, but its Wi-Fi is 2.4&nbsp;GHz only (see Wi-Fi, below). A Pi 4 (1&nbsp;GB) also works with e-paper. Buy the &ldquo;WH&rdquo; Zero, which has its header fitted; the plain Zero 2 W has nothing to plug the display into. <a href="parts.html#computers">The full list</a>.</p>
+</div></details>
 
-<details><summary>Why does the Wi-Fi band matter so much?</summary><div class="body">
-<p>The Raspberry Pi Zero 2 W has a 2.4GHz-only radio. It cannot see 5GHz networks; this is a
-hardware limit with no software workaround.</p>
-<p>Most home routers broadcast both bands, so it's usually fine. Problems arise when a router
-publishes a single network name and steers devices onto 5GHz, or when 2.4GHz has been switched off.
-If that's your setup, either enable 2.4GHz, give the 2.4GHz band its own name, or choose a
-dual-band Pi.</p></div></details>
+<h2 class="faqcat" id="power"><b>02</b> / Power and Wi-Fi</h2>
 
-<details><summary>Can I use a phone hotspot?</summary><div class="body">
-<p>Usually not with a Zero 2 W. iPhone hotspots default to 5GHz; turning on
-<em>Maximise Compatibility</em> forces 2.4GHz and generally fixes it. A dual-band Pi avoids the
-problem entirely.</p></div></details>
+<details open><summary>Does it need to stay plugged in?</summary><div class="body">
+<div class="per">
+<div><b class="p">Ident for E1002</b><div><p>No. It runs on its own 2000&nbsp;mAh battery and sleeps between checks: every 20 minutes while you're rostered to work, hourly otherwise, and not overnight unless you're working. Seeed quote up to three months on a charge with their own software; <b>we haven't measured Ident's figure yet</b> and will publish it when we have. Charge it from any USB-C charger. Left on USB, choose <i>Plugged in</i> in its settings and it checks every 10 to 15 minutes and keeps its settings page open.</p></div></div>
+<div><b class="p">Pi, e-paper</b><div><p>It's designed to be plugged in: always awake, settings always reachable, and it changes the moment your roster does. If you'd rather have no cable, add a PiSugar battery: it wakes, updates the wall and switches itself off until the next check. Our estimate on the default settings is about four days on the 1200&nbsp;mAh PiSugar 3 and about thirteen on the 5000&nbsp;mAh PiSugar 3 Plus; <b>not yet measured on a finished unit</b>. <a href="parts.html#battery">The battery parts</a>.</p></div></div>
+<div><b class="p">Pi, LED</b><div><p>Yes, always. An LED panel draws several watts, so there's no battery version.</p></div></div>
+</div><p class="callout"><b>Unplugged, or with a flat battery, an e-paper board keeps its last picture.</b> It has no power to change it, so it can't tell you it's old. On battery, the Pi puts the time it was drawn on the board, and both products show a battery warning below 20%, so a flat battery shouldn't be a surprise. Once a board has power again, anything more than two hours behind says &ldquo;Not updated since&rdquo; in plain words. An LED panel simply goes dark.</p>
+</div></details>
 
 <details><summary>How much electricity does it use?</summary><div class="body">
 <p>Very little. A Raspberry Pi Zero 2 W idles at roughly <strong>0.5–1&nbsp;watt</strong>: published
@@ -131,11 +132,66 @@ panel is lit; Ident's screens are mostly dark, which helps, but a bright board i
 one build where the electricity is worth a thought. Board figures are typical published idle
 draws rather than our own measurements.</p></div></details>
 
-<details><summary>Does it need to stay plugged in?</summary><div class="body">
-<p>Yes, for updates. E-paper keeps its image without power, so the display doesn't go blank if you
-unplug it; it simply stops changing. Power draw is very low.</p></div></details>
+<details><summary>Which Wi-Fi does it need?</summary><div class="body">
+<div class="per">
+<div><b class="p">Ident for E1002</b><div><p><b>2.4&nbsp;GHz only.</b> Its radio can't see 5&nbsp;GHz networks; that's the hardware, and no setting changes it.</p></div></div>
+<div><b class="p">Pi, e-paper</b><div><p>The Pi 3 Model A+ and Pi 4 work on 2.4 or 5&nbsp;GHz. The Pi Zero 2 W is <b>2.4&nbsp;GHz only</b>.</p></div></div>
+<div><b class="p">Pi, LED</b><div><p>As the Pi it runs on.</p></div></div>
+</div><p>Most home routers broadcast both bands, so it's usually fine. Trouble comes when a router publishes one network name and steers devices onto 5&nbsp;GHz, or when 2.4&nbsp;GHz has been switched off. If that's yours, switch 2.4&nbsp;GHz on or give it its own name.</p>
+</div></details>
 
-<h2 class="faqcat">Rosters</h2>
+<details><summary>Can I use a phone hotspot?</summary><div class="body">
+<p>Usually not with an E1002 or a Zero 2 W. iPhone hotspots default to 5GHz; turning on
+<em>Maximise Compatibility</em> forces 2.4GHz and generally fixes it. A dual-band Pi avoids the problem.</p></div></details>
+
+<details><summary>What happens if the Wi-Fi goes down?</summary><div class="body">
+<p>The board keeps showing what it last knew, and your roster stays on the device. After two hours without a fresh roster it says &ldquo;Not updated since&rdquo; and the time, so nobody plans around an old picture. Both products set their clock from the internet, so a long outage can also leave the date behind; it corrects itself within a minute or two of reconnecting.</p><p>To rescue it, each one raises its own <span class="mono">Ident-Setup</span> network so you can give it new Wi-Fi from your phone: the Pi by itself after two minutes offline; the E1002 when you hold a button for three seconds and the home Wi-Fi can't be joined.</p>
+</div></details>
+
+<h2 class="faqcat" id="setup"><b>03</b> / Setting up</h2>
+
+<details><summary>What does the screen show before it's set up?</summary><div class="body">
+<p>A getting-started board: SWITCH ON, JOIN WI-FI, ADD ROSTER, and a line saying how to begin. E-paper keeps it with no power, so it's what you see when you open the box. When it raises its setup network, the screen changes to the two steps and a code your phone can scan to join it.</p><div class="per">
+<div><b class="p">Ident for E1002</b><div><p>&ldquo;Switch on, then press the green button.&rdquo;</p></div></div>
+<div><b class="p">Pi, e-paper</b><div><p>&ldquo;Plug in and switch on to begin.&rdquo;</p></div></div>
+<div><b class="p">Pi, LED</b><div><p>The LED panel shows plain text: there isn't room for the board on 32 pixels.</p></div></div>
+</div>
+</div></details>
+
+<details><summary>How do I set it up?</summary><div class="body">
+<div class="per">
+<div><b class="p">Ident for E1002</b><div><p>Switch it on and press the green button. On your phone, join <span class="mono">Ident-Setup</span> (the password is <span class="mono">identsetup</span>), open <span class="mono">http://192.168.4.1</span> if the page doesn't appear, and enter your home Wi-Fi, your roster link, your base and journey times. About a minute later the board appears.</p></div></div>
+<div><b class="p">Pi, e-paper</b><div><p>Flash the memory card, push the display onto the Pi, and switch on. Join <span class="mono">Ident-Setup</span> from your phone (password <span class="mono">identsetup</span>) and pick your home Wi-Fi. Then, on your home network, open the setup page: it walks you through your base, airline, roster link and a password. Allow an unhurried hour for a first build.</p></div></div>
+<div><b class="p">Pi, LED</b><div><p>As the Pi, plus the panel wiring, its own power supply and the LED driver, which is built on the Pi rather than installed. Set aside an afternoon.</p></div></div>
+</div><p>Neither will take your roster link over its own setup network, because that network's password is printed here for anyone to read. Your roster link and passwords are only ever entered on your home network.</p>
+</div></details>
+
+<details><summary>How do I change settings later?</summary><div class="body">
+<div class="per">
+<div><b class="p">Ident for E1002</b><div><p>Hold any button for three seconds. The board joins your Wi-Fi and shows an address (<span class="mono">http://ident-e1002.local</span>, or a number); open it on your phone. The page closes itself after ten minutes. Set to <i>Plugged in</i>, the settings page stays open all the time.</p></div></div>
+<div><b class="p">Pi, e-paper</b><div><p>From the Ident icon on your phone. The first time you open the control panel at <span class="mono">ident.local:8080</span>, add it to your home screen (Share, then Add to Home Screen on an iPhone; the &#8942; menu on Android) and it opens full screen like an app. Any browser on your home network works too. On a PiSugar battery it's asleep most of the time, so plug it in to change anything.</p></div></div>
+</div>
+</div></details>
+
+<details><summary>Can I reach it when I'm away from home?</summary><div class="body">
+<p>On a Pi, yes, and it's optional. The simplest route is a free Cloudflare tunnel, which gives you a web
+address you can open from anywhere without installing anything. Tailscale is the other option and
+gives a permanent private address. Both are free for personal use and neither requires opening
+ports on your router.</p>
+<p>Left switched off, your display is reachable only from your own home network. The E1002 can only be reached on your home network.</p></div></details>
+
+<details><summary>Is the settings page protected?</summary><div class="body">
+<div class="per">
+<div><b class="p">Pi, e-paper</b><div><p>Yes, and not optionally: you set a username and password during setup, at least six characters. The panel shows your roster and holds your calendar link, which is effectively a password for your whole schedule. Passwords are stored only as a salted hash. Forgotten it? Take the memory card out, put a file called <span class="mono">ident-reset.txt</span> on the small drive that appears when you plug the card into a computer, put it back and switch on. It needs the card in your hand, which is the point.</p></div></div>
+<div><b class="p">Ident for E1002</b><div><p>A password is optional, and off until you set one. Set it on the settings page; after five wrong tries sign-in is locked for five minutes. Forgotten it? The setup network, reached by holding a button on the display, never asks for it: that is the way back in, and it needs a hand on the display.</p></div></div>
+</div>
+</div></details>
+
+<details><summary>Can I run more than one display?</summary><div class="body">
+<p>Yes. Point each one at the same roster link and they'll stay in step by themselves, no server
+in the middle. Give each a name (Kitchen, Study) so you can tell them apart.</p></div></details>
+
+<h2 class="faqcat" id="rosters"><b>04</b> / Rosters</h2>
 
 <details><summary>Which airlines does it work with?</summary><div class="body">
 <p>Ident was built and tested against <strong>easyJet eCrew</strong> calendar feeds. Any roster
@@ -145,39 +201,6 @@ either as a live feed, or by uploading the file by hand. Reading eCrew roster
 <p>If you fly for another airline, don't buy yet: <a href="airlines.html">apply for a free
 Ident</a> instead. Help us read your airline's roster and the licence is yours free,
 permanently. If it turns out not to be possible we'll say so rather than take your money.</p></div></details>
-
-<details><summary>What does the board show if the flight diverts?</summary><div class="body">
-<p>If you allow flight lookups, a diversion turns the board red: <strong>DIVERTED</strong>, the
-airport the aircraft is now heading for, and the original destination crossed out. The home time
-is withdrawn and the board says <strong>HOME TBC</strong>, because a home time worked out for the
-original airport would be wrong.</p>
-<p>A new home time appears once your roster has the flight out of the diversion airport. eCrew
-only passes roster changes to your calendar when its app is opened, so <strong>open eCrew again
-once the onward journey has been arranged</strong>, and leave it open for about a minute.</p></div></details>
-
-<details><summary>Can it tell me what time to wake up?</summary><div class="body">
-<p>Yes. Set how long before report you need, 90 minutes by default, and the wake time
-appears on days off and while the board counts down to report. Because it's worked out from
-your roster, a change to your report time moves the alarm with it.</p>
-<p>If you commute, there's an option to add that day's travel to report on top, so the first
-day of a block shows the genuinely early time rather than the one that assumes you're already
-at base. Set the wake time to 0 in settings to hide it.</p></div></details>
-
-<details><summary>My commute home is a flight, not a drive. Can it handle that?</summary><div class="body">
-<p>Yes. Tick "I commute to base" in settings and you get three numbers instead of one: the
-ordinary commute for mid-block days, the ten minutes from a crashpad or hotel, plus separate
-times for travelling to base on the first day of a block and getting home after the last one.</p>
-<p>Ident works out which day is which from your roster, so a two-hour flight home is only
-counted on the day you actually take it. The home time stays on screen for the whole
-journey, not just until the last sector lands.</p></div></details>
-
-<details><summary>I commute to base. Can it show my positioning flight?</summary><div class="body">
-<p>Yes. Add the flight number and date in the control panel and Ident looks up the route and
-times itself. Living in Amsterdam with a Gatwick base, you'd add the morning AMS–LGW: the board
-follows you out of Amsterdam and then hands over to your roster duty when you report, so the
-people at home see one continuous day rather than a gap.</p>
-<p>The same works for anything off-roster with a flight number: deadheading, positioning home,
-or a holiday flight.</p></div></details>
 
 <details><summary>How does it get my roster?</summary><div class="body">
 <p>You paste your crew calendar link into the control panel once. Ident then re-checks it every 30
@@ -239,28 +262,88 @@ off it shows your next duty: the date, report time and where you're going.</p>
   <div class="qa-figs"><figure><figure class="dev"><img src="img/scenes/f_strips_nte_bod.png" alt="The flight strips style on a four-sector day: Bristol to Nantes and back, then Bordeaux and back" width="1600" height="960" loading="lazy"></figure><figcaption>Every sector as a strip: NTE, then BOD</figcaption></figure></div>
 </div></details>
 
+<details><summary>What does the board show if the flight diverts?</summary><div class="body">
+<p>If you allow flight lookups, a diversion turns the board red: <strong>DIVERTED</strong>, the
+airport the aircraft is now heading for, and the original destination crossed out. The home time
+is withdrawn and the board says <strong>HOME TBC</strong>, because a home time worked out for the
+original airport would be wrong.</p>
+<p>A new home time appears once your roster has the flight out of the diversion airport. eCrew
+only passes roster changes to your calendar when its app is opened, so <strong>open eCrew again
+once the onward journey has been arranged</strong>, and leave it open for about a minute.</p></div></details>
+
+<details><summary>Can it tell me what time to wake up?</summary><div class="body">
+<p>Yes. Set how long before report you need, 90 minutes by default, and the wake time
+appears on days off and while the board counts down to report. Because it's worked out from
+your roster, a change to your report time moves the alarm with it.</p>
+<p>If you commute, there's an option to add that day's travel to report on top, so the first
+day of a block shows the genuinely early time rather than the one that assumes you're already
+at base. Set the wake time to 0 in settings to hide it.</p></div></details>
+
+<details><summary>My commute home is a flight, not a drive. Can it handle that?</summary><div class="body">
+<p>Yes. Tick "I commute to base" in settings and you get three numbers instead of one: the
+ordinary commute for mid-block days, the ten minutes from a crashpad or hotel, plus separate
+times for travelling to base on the first day of a block and getting home after the last one.</p>
+<p>Ident works out which day is which from your roster, so a two-hour flight home is only
+counted on the day you actually take it. The home time stays on screen for the whole
+journey, not just until the last sector lands.</p></div></details>
+
+<details><summary>I commute to base. Can it show my positioning flight?</summary><div class="body">
+<p>Yes. Add the flight number and date in the control panel and Ident looks up the route and
+times itself. Living in Amsterdam with a Gatwick base, you'd add the morning AMS–LGW: the board
+follows you out of Amsterdam and then hands over to your roster duty when you report, so the
+people at home see one continuous day rather than a gap.</p>
+<p>The same works for anything off-roster with a flight number: deadheading, positioning home,
+or a holiday flight.</p></div></details>
+
 <details><summary>Can it show flights I'm travelling on as a passenger?</summary><div class="body">
 <p>Yes, personal flights can be added by flight number and are tracked the same way, with the
 report time set for leisure travel rather than duty.</p></div></details>
 
-<h2 class="faqcat" id="privacy">Privacy &amp; data</h2>
+<details><summary>Roster codes: what if Ident doesn't know one?</summary><div class="body">
+<p>Airlines add and change roster codes, and a new one can appear before a software update catches
+up. When your roster contains a code Ident doesn't recognise, the control panel tells you at the
+top of the page and offers to learn it: choose a day off, a day off with the code kept private,
+standby at home or at the airport, training, or a working day that shows its code. Until you do,
+that day appears on the wall as a plain duty showing the code, so nothing is hidden or invented.
+You can also add codes ahead of time under <em>Airline &middot; locations &middot;
+hardware</em>. These codes stay on your display; they are never sent to us.</p></div></details>
 
-<details open><summary>Where is my roster stored?</summary><div class="body">
-<p>On your device, and nowhere else. It is fetched by your Raspberry Pi, from your airline, over
+<h2 class="faqcat" id="privacy"><b>05</b> / Privacy and data</h2>
+
+<details><summary>Where is my roster stored?</summary><div class="body">
+<p>On your device, and nowhere else. It is fetched by your display, from your airline, over
 your own internet connection. We never receive it, cannot see it, and don't operate a service that
 holds it.</p></div></details>
 
-<details><summary>Do I need an account?</summary><div class="body">
-<p>No. There's no sign-up and no cloud login. Nothing about how your display is working is sent to
-us unless you switch on optional diagnostics reporting (see below). The only outbound connections
-your device makes are to your roster feed, an optional flight-tracking service, and our licence
-server for activation and a daily update check.</p></div></details>
+<details id="what-leaves"><summary>What exactly leaves my display?</summary><div class="body">
+<p>Never your roster. Below is everything else your display can send, where it goes and when. On
+a Pi you choose with the privacy slider during setup, and each stop adds the next row; nothing
+after the first row is sent until you have saved a choice, and you can switch each row on or off
+by itself later. The E1002 has no slider: each row has its own switch on its settings page.</p>
+<div class="per">
+<div><b class="p">Licence check</b><div><p>Your licence key and the display's serial number go to our licence server, licence.xpdr.aero, once, when you activate the licence. <strong>Both products, always</strong>: it is the one thing Ident can't work without.</p></div></div>
+<div><b class="p">Roster</b><div><p>Your display fetches your roster from your own calendar link, the same address you would open in a browser. It goes from your airline's or calendar's server to your display; nothing about it comes to us. <strong>Pi:</strong> the &ldquo;Roster and updates&rdquo; stop (below it, you can still upload a roster file in the control panel). <strong>E1002:</strong> always; it is what the display is for.</p></div></div>
+<div><b class="p">Update check</b><div><p>Once a day your display asks licence.xpdr.aero whether there is a new version. The request carries your licence certificate, which names your licence and the display's serial number, so the server knows it is licensed. No roster, settings or diagnostics. <strong>Pi:</strong> the &ldquo;Roster and updates&rdquo; stop; at Full privacy it never checks, and so never updates. <strong>E1002:</strong> on unless you turn off automatic updates.</p></div></div>
+<div><b class="p">Weather</b><div><p>The four-letter code of the airport you are at or flying to (EGKK for Gatwick, say) goes to aviationweather.gov, the US weather service, at most every 15 minutes, while a weather band is chosen. That is the same request anyone looking up that airport's weather makes. <strong>Pi:</strong> the &ldquo;Weather&rdquo; stop. <strong>E1002:</strong> no weather, so never.</p></div></div>
+<div><b class="p">Flight status</b><div><p>From 20 minutes before each flight's scheduled departure until it lands, the flight number, the departure airport and the scheduled departure time go to licence.xpdr.aero: every 10 minutes on the ground, every 20 in the cruise and every 5 near landing. Our server asks Flightradar24, the flight data service, and passes the answer back. It keeps nothing beyond a minute or two of cache, so displays asking about the same flight share one answer. If a flight is never seen, for example because it was cancelled, the display stops asking some hours after it was due.</p><p>The flight request carries a pass, not your licence: about once a day the display shows its licence certificate to get that pass, and that request names no flight. Available on every licence, Mode A included. <strong>Pi:</strong> the &ldquo;Flight status&rdquo; stop. <strong>E1002:</strong> off until you switch on &ldquo;Show flight status&rdquo;.</p></div></div>
+<div><b class="p">Drive time</b><div><p>Mode S only. While you are on your way home, two points go to licence.xpdr.aero: where the drive starts (the car park or airport) and your home location, each rounded to about 10 metres. Our server asks Google Maps for the drive time in traffic and passes it back. No flight, time or licence goes with them, they travel under a separate pass from flight status, and nothing is kept. Your home location can be a nearby corner or shop instead of your house. <strong>Pi:</strong> the &ldquo;Drive times&rdquo; stop. <strong>E1002:</strong> off until you switch it on.</p></div></div>
+<div><b class="p">Diagnostics</b><div><p>One small report a day, of counts and fixed words (the full list is <a href="#diagnostics">below</a>), goes to licence.xpdr.aero, not tied to your licence key or serial number. <strong>Pi:</strong> only at Full accuracy, or if you switch it on by itself. <strong>E1002:</strong> off until you tick it.</p></div></div>
+<div><b class="p">The time</b><div><p>Both products set their clock from public internet time servers. The request asks for the time and carries nothing else.</p></div></div>
+</div>
+<p>Every server your display talks to also sees your home's internet address, as any website you
+visit does. Scanning the flight's QR code opens the flight on Flightradar24 on the phone that
+scanned it; the display itself sends nothing when you do. The same list, in the words the Pi shows
+beside its slider, is in the <a href="legal.html#slider">privacy notice</a>.</p></div></details>
 
-<details open><summary>Does Ident send you any data about my display?</summary><div class="body">
+<details><summary>Do I need an account?</summary><div class="body">
+<p>No. There's no sign-up and no cloud login. What your display sends, and when, is listed in full
+under <a href="#what-leaves">What exactly leaves my display?</a></p></div></details>
+
+<details id="diagnostics"><summary>Does Ident send you any data about my display?</summary><div class="body">
 <p><strong>No data about how your display is working is sent unless you choose to send it.</strong>
 Diagnostics reporting is off when you buy it, stays off until you switch it on, and never switches
-itself on or off. The switch lives on the developer page of the control panel, not in everyday
-settings.</p>
+itself on or off. On a Pi it is the top stop of the privacy slider, Full accuracy, or its own switch
+beside the slider; on an E1002 it is a tick box on the settings page.</p>
 <p>Two things are different, and we'd rather say so plainly than leave you to find out. They are
 about your licence, not about how your display is working, and they happen whether or not you switch
 reporting on:</p>
@@ -271,10 +354,12 @@ reporting on:</p>
   <li><strong>Daily update check.</strong> Once a day your display asks the same server whether a
     newer version of Ident is available. That request carries your licence certificate, which
     names your licence and your display's serial number, so the server knows you are licensed.
-    You can turn off automatic installing in the control panel, but the daily check itself can't be turned off.</li>
+    On a Pi it stops only at the Full privacy end of the slider, and then the board never updates;
+    on an E1002 it stops when you turn off automatic updates.</li>
 </ul>
-<p>Neither carries your roster, your settings or any diagnostics. Everything else your display connects to is a service you set up yourself: your roster feed,
-and optionally the weather. Flight status and drive times go through our server, as above.</p>
+<p>Neither carries your roster, your settings or any diagnostics. The rest of what your display
+can send (the weather, flight status, drive times) is listed under
+<a href="#what-leaves">What exactly leaves my display?</a></p>
 <p>If you do switch reporting on, your display sends one small report a day. It is made only of numbers and
 fixed words, so there is nowhere in it for a roster to travel. This is the complete list of what it
 can contain; nothing outside this list is accepted, by your display or by our server:</p>
@@ -311,110 +396,6 @@ that a screen setting errors. It tells us how many displays hit a problem, never
 stays on your device until you choose to email it to us, and you can read it first.</p>
 </div></details>
 
-<details><summary>Roster codes: what if Ident doesn't know one?</summary><div class="body">
-<p>Airlines add and change roster codes, and a new one can appear before a software update catches
-up. When your roster contains a code Ident doesn't recognise, the control panel tells you at the
-top of the page and offers to learn it: choose a day off, a day off with the code kept private,
-standby at home or at the airport, training, or a working day that shows its code. Until you do,
-that day appears on the wall as a plain duty showing the code, so nothing is hidden or invented.
-You can also add codes ahead of time under <em>Airline &middot; locations &middot;
-hardware</em>. These codes stay on your display; they are never sent to us.</p></div></details>
-
-<details><summary>Is my roster confidential to my airline?</summary><div class="body">
-<p>Worth checking your own company's IT and data policies: some airlines have rules about where
-crew data may be processed. Because Ident keeps everything on your own hardware, it's a far easier
-conversation than a cloud service, but the responsibility is yours.</p></div></details>
-
-<details><summary>Why doesn't Ident show ACARS messages?</summary><div class="body">
-<p>ACARS often carries sensitive information, and most pilots would rather it wasn't seen by
-anyone who doesn't need to see it. Showing it on a wall at home could also tempt pilots to send
-Operations messages they don't need, just to have them appear on the Ident in flight.</p>
-<p>For those reasons, we decided not to include it.</p></div></details>
-
-<h2 class="faqcat">Access &amp; setup</h2>
-
-<details><summary>How do I set it up?</summary><div class="body">
-<p>Flash the SD card, plug the display onto the Pi, power it up, and open the setup page in your
-browser. It walks you through your base, airline, roster link and a password. Allow an unhurried
-hour for a first build.</p>
-<p>If the display can't find a network it knows, it puts up a Wi-Fi network of its own called
-<b>Ident-Setup</b>. Join that from your phone; the password is <b>identsetup</b>, the same on every
-display, and it will ask you to pick your home Wi-Fi. Once it's on your own network you carry on
-with setup there. It won't take your roster link or your panel password over its own hotspot,
-because that hotspot's password is printed here for anyone to read.</p></div></details>
-
-<details><summary>How do I change settings later?</summary><div class="body">
-<p>From the Ident icon on your phone. The first time you open the control panel at
-<b>ident.local:8080</b>, add it to your home screen (Share, then <i>Add to Home Screen</i> on an
-iPhone; the ⋮ menu on Android) and it opens full screen with its own icon, like an app. From there
-you can change the display style, timing, timezone and roster source. Any browser on your home
-network works too.</p></div></details>
-
-<details><summary>Can I reach it when I'm away from home?</summary><div class="body">
-<p>Yes, and it's optional. The simplest route is a free Cloudflare tunnel, which gives you a web
-address you can open from anywhere without installing anything. Tailscale is the other option and
-gives a permanent private address. Both are free for personal use and neither requires opening
-ports on your router.</p>
-<p>Left switched off, your display is reachable only from your own home network.</p></div></details>
-
-<details><summary>Is the control panel protected?</summary><div class="body">
-<p>Yes, and not optionally: you set a username and password during setup, minimum six
-characters. The panel shows your roster and holds your calendar link, which is effectively a
-password for your whole schedule, so it isn't something to leave open, even on a home network.
-Passwords are stored only as a salted hash.</p>
-<p><strong>Forgotten it?</strong> Take the SD card out, put a file called
-<span class="mono">ident-reset.txt</span> on the small drive that appears when you plug the card
-into a computer, put it back and switch the display on. It clears the password and deletes the
-file, nothing to install, no reflashing. It needs the card in your hand, which is the point.</p>
-<p>If you expose the panel to the internet, use one of the tunnel options above so the connection
-is encrypted.</p></div></details>
-
-<details><summary>Can I run more than one display?</summary><div class="body">
-<p>Yes. Point each one at the same roster link and they'll stay in step by themselves, no server
-in the middle. Give each a name (Kitchen, Study) so you can tell them apart.</p></div></details>
-
-<h2 class="faqcat">Running it</h2>
-
-<details><summary>How often does the screen update?</summary><div class="body">
-<p>Colour e-paper takes roughly 30 seconds to redraw, so Ident refreshes when something meaningful
-changes rather than continuously. It's a duty board, not a clock.</p>
-<p>While it redraws, the screen flashes: a colour panel runs through its colours several times
-before it settles. That is normal for this kind of display, not a fault.</p></div></details>
-
-<details><summary>How do I get software updates?</summary><div class="body">
-<p>Your display checks for new versions once a day. A new version installs itself, but only after
-it has been published for three days, and never mid-duty: a bad release sits on our own wall
-for three days before it can reach yours. The control panel shows what you're running, an
-<em>install now</em> button if you'd rather not wait, and a switch to turn the automatic part off.
-Every update is checksum-verified and your working version is backed up first.</p></div></details>
-
-<details><summary>The display is showing the wrong day.</summary><div class="body">
-<p>Almost always a network problem. A Raspberry Pi has no battery-backed clock, so if it can't
-reach the internet it keeps the last time it knew. Reconnect it to Wi-Fi and the clock corrects
-itself within a minute or two.</p></div></details>
-
-<details><summary>It won't connect to my Wi-Fi.</summary><div class="body">
-<p>Check the band first: if you're on a Zero 2 W, it must be 2.4GHz. Then check the password and
-that the network name is exactly right, including capitals. You can pre-load extra networks (a
-hotel or crashpad) from the control panel while you're still on a working connection.</p>
-<p>After two minutes offline the display gives up and raises its own <b>Ident-Setup</b> network so you
-can rescue it from a phone. The password for that is <b>identsetup</b>.</p></div></details>
-
-<details><summary>The screen looks washed out or the colours are odd.</summary><div class="body">
-<p>Colour e-paper is muted by nature: it reflects light rather than emitting it. Cold rooms make it
-worse; the panel likes normal room temperature. There's also a contrast toggle: hold the third
-button for two seconds.</p></div></details>
-
-<details><summary>How does the scan-to-track code work?</summary><div class="body">
-<p>While a sector is airborne, Ident can show a QR code that opens that flight on a live tracking
-site. Press the third button and it fills the screen, big enough to scan from across the room; it
-goes back to the duty after twenty seconds. You can also leave a small one in the corner of any
-display style: turn it on under Display in the control panel, and pick which corner.</p>
-<p>The code only exists while a duty is running. On days off, standby and between duties there's
-nothing to track, so nothing is shown. Panels without buttons can still use the corner option.</p>
-  <div class="qa-figs"><figure><figure class="dev "><img src="img/scenes/f_qr_corner.png" alt="A small scannable code in the corner of the board" width="1600" height="960" loading="lazy"></figure><figcaption>In the corner</figcaption></figure><figure><figure class="dev "><img src="img/scenes/f_qr_full.png" alt="The code filling the screen" width="1600" height="960" loading="lazy"></figure><figcaption>Full screen</figcaption></figure></div>
-</div></details>
-
 <details><summary>Does the board show sensitive roster codes?</summary><div class="body">
 <p>Not unless you ask it to. These are hidden by default and shown as an ordinary day off, in
 three groups: fitness and absence (<span class="mono">SICK</span>, <span class="mono">S/L</span>, <span class="mono">MED</span>, <span class="mono">LOL</span>, <span class="mono">UNFT</span>, <span class="mono">FTGD</span>, <span class="mono">NSO</span>, <span class="mono">UNCT</span>, <span class="mono">NAVB</span>, <span class="mono">RFDP</span>); work and HR (<span class="mono">MEET</span>, <span class="mono">INT</span>, <span class="mono">SOC</span>, <span class="mono">DISC</span>, <span class="mono">GRV</span>, <span class="mono">SUSP</span>, <span class="mono">TERM</span>, <span class="mono">RESN</span>, <span class="mono">OFLD</span>); and leave and family (<span class="mono">COMP</span>, <span class="mono">CMPU</span>, <span class="mono">MAT</span>, <span class="mono">PAT</span>, <span class="mono">PARL</span>, <span class="mono">UNPD</span>).</p>
@@ -427,6 +408,56 @@ later through a new display style, a diagnostics export, or a screenshot you sen
 The trade-off: revealing a code only affects rosters read afterwards, so saving the setting
 re-reads your feed.</p></div></details>
 
+<details><summary>Is my roster confidential to my airline?</summary><div class="body">
+<p>Worth checking your own company's IT and data policies: some airlines have rules about where
+crew data may be processed. Because Ident keeps everything on your own hardware, it's a far easier
+conversation than a cloud service, but the responsibility is yours.</p></div></details>
+
+<details><summary>Why doesn't Ident show ACARS messages?</summary><div class="body">
+<p>ACARS often carries sensitive information, and most pilots would rather it wasn't seen by
+anyone who doesn't need to see it. Showing it on a wall at home could also tempt pilots to send
+Operations messages they don't need, just to have them appear on the Ident in flight.</p>
+<p>For those reasons, we decided not to include it.</p></div></details>
+
+<h2 class="faqcat" id="running"><b>06</b> / Living with it</h2>
+
+<details><summary>How often does the screen change?</summary><div class="body">
+<div class="per">
+<div><b class="p">Ident for E1002</b><div><p>It looks at your roster every 20 minutes while you're rostered to work, more often when a change is likely or during a standby, and hourly otherwise (every 10 to 15 minutes if set to <i>Plugged in</i>). It only redraws when the picture has changed, plus once a day to keep the screen healthy. A redraw takes about 27 seconds on our unit.</p></div></div>
+<div><b class="p">Pi, e-paper</b><div><p>Plugged in, it checks your roster every 30 minutes and redraws when something meaningful changes. A redraw takes about 30 seconds. It's a duty board, not a clock.</p></div></div>
+<div><b class="p">Pi, LED</b><div><p>Instantly. An LED panel can change every second.</p></div></div>
+</div><p>While colour e-paper redraws, it flashes through its colours several times before it settles. That's normal for this kind of screen, not a fault.</p>
+</div></details>
+
+<details><summary>How do I get software updates?</summary><div class="body">
+<div class="per">
+<div><b class="p">Ident for E1002</b><div><p>Once a day it checks for a new version and installs it by itself, but only firmware signed with Ident's key, and only with the battery above 40% or on USB. If a new version fails to start, it goes back to the one before. You can turn automatic installing off in its settings.</p></div></div>
+<div><b class="p">Pi, e-paper</b><div><p>Once a day it checks for a new version. A new version installs itself only after it has been published for three days, and never mid-duty: a bad release sits on our own wall for three days before it can reach yours. Every update is checked before it's installed and your working version is backed up first. The control panel has an install now button and a switch to turn the automatic part off.</p></div></div>
+</div><p>Updates need a licence; the daily check is described under <a href="#privacy">Privacy and data</a>.</p>
+</div></details>
+
+<details><summary>The board is showing the wrong day.</summary><div class="body">
+<p>Almost always a network problem. Neither product keeps time by itself yet: each sets its clock from the internet, so after a long time without Wi-Fi it can be left behind. Reconnect it and it corrects itself within a minute or two. A board more than two hours behind on its roster says &ldquo;Not updated since&rdquo;.</p>
+</div></details>
+
+<details><summary>It won't connect to my Wi-Fi.</summary><div class="body">
+<p>Check the band first: an E1002 or a Pi Zero 2 W needs a 2.4&nbsp;GHz network. Then check the password, and that the network name is exactly right, capitals included. On a Pi you can add extra networks (a hotel or crashpad) from the control panel while it's still connected.</p>
+</div></details>
+
+<details><summary>The screen looks washed out or the colours are odd.</summary><div class="body">
+<p>Colour e-paper is muted by nature: it reflects light rather than emitting it. Cold rooms make it
+worse; the panel likes normal room temperature. On a Pi there's also a contrast toggle: hold the third
+button for two seconds.</p></div></details>
+
+<details><summary>How does the scan-to-track code work?</summary><div class="body">
+<p>While a sector is airborne, Ident can show a QR code that opens that flight on a live tracking
+site. Press a button (the third on a Pi, the middle one on an E1002) and it fills the screen, big enough to scan from across the room, then goes back to the duty. You can also leave a small one in the corner of any
+display style: turn it on under Display in the control panel, and pick which corner.</p>
+<p>The code only exists while a duty is running. On days off, standby and between duties there's
+nothing to track, so nothing is shown. Panels without buttons can still use the corner option. Not on LED panels.</p>
+  <div class="qa-figs"><figure><figure class="dev "><img src="img/scenes/f_qr_corner.png" alt="A small scannable code in the corner of the board" width="1600" height="960" loading="lazy"></figure><figcaption>In the corner</figcaption></figure><figure><figure class="dev "><img src="img/scenes/f_qr_full.png" alt="The code filling the screen" width="1600" height="960" loading="lazy"></figure><figcaption>Full screen</figcaption></figure></div>
+</div></details>
+
 <details><summary>Can it show the whole month?</summary><div class="body">
 <p>Yes, two ways. Under <em>Days off</em> in the control panel, tick <em>Show the month
 calendar on days off</em>: on a day off the wall shows the whole month as a grid:
@@ -437,24 +468,30 @@ buttons to <em>Month calendar</em> to bring it up for a minute at any time. Eith
 </div></details>
 
 <details><summary>Can I show a photo instead on days off?</summary><div class="body">
-<p>Yes. Upload a picture in the control panel and it takes over the screen on days off only,
+<p>Yes, on e-paper. Upload a picture in the control panel and it takes over the screen on days off only,
 cropped to fill the panel. You can keep a single line across the foot showing your next duty,
 or switch that off. Photos are re-saved when uploaded, which strips EXIF, so location tags
 don't travel with them.</p></div></details>
 
 <details><summary>Can I get a refund?</summary><div class="body">
-<p>Yes, see the terms at checkout for the statutory cancellation period on digital purchases.
-If Ident won't work with your airline's roster, tell us and we'll sort it out.</p></div></details>
+<p>Yes. If Ident doesn't work for you, tell us and we'll refund Mode A: in full if your airline's roster can't be read or it won't run on hardware from our parts list, and within 30 days if you simply don't get on with it. Mode C and Mode S: cancel within 14 days and we refund everything you paid for them. The full wording is in <a href="legal.html#refunds">refunds</a>. Hardware you bought elsewhere is a matter for that supplier, though we'll help.</p>
+</div></details>
 
 <div class="note" style="margin-top:30px">Still stuck? <a href="support.html">Send us a message</a>, and
-include your display size, which Raspberry Pi you're using, and your airline.</div>
+include which Ident you have (E1002, or the Pi and its display), and your airline.</div>
 
 </div></section>
 
 <footer><div class="wrap">
-  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
-  <div class="fl"><a href="index.html">Home</a><a href="support.html">Support</a><a href="legal.html">Legal</a></div>
-  <p>Ident is a roster display for pilots. Not affiliated with, endorsed by, or connected to any airline.</p>
+  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="86" height="30"></a>
+  <div class="fl">
+    <a href="displays.html">Displays</a><a href="parts.html">Parts list</a><a href="styles.html">Styles</a>
+    <a href="faq.html">Questions</a><a href="airlines.html">Your airline</a><a href="buy.html">Prices</a>
+    <a href="support.html">Support</a><a href="legal.html">Terms, privacy and refunds</a>
+  </div>
+  <p>Ident is a flight-duty board for the wall, made by xpdr.aero in the UK. Your roster stays in your house.<br>
+    Airline names and logos are the trademarks of their owners and are not supplied with the software; Ident only
+    shows image files you add yourself. Not affiliated with, endorsed by, or connected to any airline. Not a flight-planning or operational tool.</p>
 </div></footer>
 
 </body></html>

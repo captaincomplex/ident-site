@@ -9,23 +9,22 @@
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#14110a">
+<meta name="theme-color" content="#fbfaf7">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav><div class="wrap">
-  <a class="brand" href="index.html"><img src="/img/ident-wordmark.svg" alt="Ident" width="70" height="16"></a>
-  <a class="l" href="index.html#how">How it works</a>
-  <a class="l" href="displays.html">Displays</a>
-  <a class="l" href="styles.html">Styles</a>
-  <a class="l" href="pilots.html">For pilots</a>
-  <a class="l" href="parts.html">Parts</a>
-  <a class="l" href="faq.html">FAQ</a>
-  <a class="l" href="airlines.html">Your airline</a>
-  <span class="sp"></span>
-  <a class="l" href="buy.html">Buy</a>
-  <a class="l" href="support.html">Support</a>
+  <a class="brand" href="index.html"><img src="/img/ident-wordmark-light.svg" alt="Ident" width="70" height="16"></a>
+  <div class="links">
+    <a class="l" href="index.html#how"><span>01</span>How it works</a>
+    <a class="l" href="displays.html"><span>02</span>Displays</a>
+    <a class="l" href="styles.html"><span>03</span>Styles</a>
+    <a class="l" href="pilots.html"><span>04</span>For pilots</a>
+    <a class="l" href="faq.html"><span>05</span>Questions</a>
+    <a class="l" href="support.html"><span>06</span>Support</a>
+    <a class="l cta" href="buy.html">Prices</a>
+  </div>
 </div></nav>
 
 <header><div class="wrap">
@@ -58,12 +57,11 @@
 
 <section id="compare"><div class="wrap">
   <h2>Raspberry Pi or reTerminal?</h2>
-  <p class="sub">The differences that matter, feature by feature. “Coming” means being written
-    for the reTerminal now. Correct as of 10 October 2026.</p>
+  <p class="sub">The differences that matter, feature by feature. Correct as of 6 November 2026.</p>
   <div class="tablewrap"><table class="cmp">
     <tr><th>Feature</th><th>Raspberry Pi build</th><th>reTerminal</th></tr>
-    <tr><td class="k">Always on: changes the moment the roster does</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span> <span class="why">Checks every 20 minutes while you’re working, hourly otherwise, at once on a button press</span></td></tr>
-    <tr><td class="k">Runs for weeks on its own battery</td><td data-label="Raspberry Pi build"><span class="no" aria-label="No">✗</span> <span class="why">Plugged in; an add-on battery lasts days</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span> <span class="why">Built in, charged over USB-C</span></td></tr>
+    <tr><td class="k">Always on: changes the moment the roster does</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span> <span class="why">On battery it checks every 20 minutes while you’re working, hourly otherwise, at once on a button press; every 10 to 15 minutes when plugged in</span></td></tr>
+    <tr><td class="k">Runs for weeks on its own battery</td><td data-label="Raspberry Pi build"><span class="no" aria-label="No">✗</span> <span class="why">Plugged in; an add-on battery lasts days</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span> <span class="why">Built in, charged over USB-C. Seeed quote up to three months; not yet measured with Ident</span></td></tr>
     <tr><td class="k">Nothing to assemble</td><td data-label="Raspberry Pi build"><span class="no" aria-label="No">✗</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span></td></tr>
     <tr><td class="k">Case and stand included</td><td data-label="Raspberry Pi build"><span class="no" aria-label="No">✗</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span></td></tr>
     <tr><td class="k">No SD card to wear out</td><td data-label="Raspberry Pi build"><span class="no" aria-label="No">✗</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span></td></tr>
@@ -72,14 +70,14 @@
     <tr><td class="k">Colour screen</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span> <span class="why">E1002; the E1001 is black and white</span></td></tr>
     <tr><td class="k">Choice of screen size</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span> <span class="why">4.0″, 7.3″, 13.3″</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span> <span class="why">7.3″ or 7.5″</span></td></tr>
     <tr><td class="k">LED departure-board panels</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span></td></tr>
-    <tr><td class="k">Every display style</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="soon">Coming</span> <span class="why">Written and tested by 2 November: every style except the travel poster and the Mode S styles. <a href="styles.html">See which runs where</a></span></td></tr>
-    <tr><td class="k">Scan-to-track QR code</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="soon">Coming</span></td></tr>
-    <tr><td class="k">Live flight tracking</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="soon">Coming</span></td></tr>
-    <tr><td class="k">Airport weather</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="soon">Coming</span></td></tr>
-    <tr><td class="k">Day-off photographs</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="soon">Coming</span></td></tr>
-    <tr><td class="k">Settings from your phone at any time</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span> <span class="why">Hold a button for its setup page; it sleeps the rest of the time</span></td></tr>
+    <tr><td class="k">Most display styles</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span> <span class="why">All 21</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span> <span class="why">All but the travel poster and the two Mode S styles. <a href="styles.html">See which runs where</a></span></td></tr>
+    <tr><td class="k">Scan-to-track QR code</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span> <span class="why">The middle button, by default</span></td></tr>
+    <tr><td class="k">Flight status: delays, diversions, live landing times</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span></td></tr>
+    <tr><td class="k">Airport weather</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span></td></tr>
+    <tr><td class="k">Day-off photographs</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span></td></tr>
+    <tr><td class="k">Settings from your phone at any time</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span> <span class="why">When set to Plugged in. On battery, hold a button for three seconds</span></td></tr>
     <tr><td class="k">PDF roster upload</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span> <span class="why">Calendar link only</span></td></tr>
-    <tr><td class="k">Updates itself</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="soon">Coming</span></td></tr>
+    <tr><td class="k">Updates itself</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span></td></tr>
   </table></div>
 </div></section>
 
@@ -188,17 +186,17 @@
     sold out, before UK import charges. Both 26 September 2026.</div>
 </div></section>
 
-<section><div class="wrap">
+<section id="led"><div class="wrap">
   <h2>Or the LED departure board</h2>
   <p class="sub">The other supported build. Brighter, livelier, and it looks like the board
     at the gate, but it glows, it needs its own power supply, and it is more of a project.
     Mains only; there is no battery version of an LED panel.</p>
-  <div class="pair-one"><figure class="led"><figure class="dev ledf"><img src="img/scenes/p_led_128x32_athens.png" alt="A 128 by 32 LED matrix panel: in flight from Birmingham to Athens, land and home times" width="1024" height="256" loading="lazy"></figure><figcaption>128×32 · the recommended pair of 64×32 panels</figcaption></figure></div>
+  <div class="pair-one"><figure class="led"><figure class="dev ledf"><img src="img/scenes/p_led_128x32_athens.png" alt="A 128 by 32 LED matrix panel: in flight from Birmingham to Athens, land and home times" width="1024" height="256" loading="lazy"></figure><figcaption>128×32, two 64×32 panels side by side. A preview from Ident's simulator; a real panel draws the same four lines in plainer pixel lettering.</figcaption></figure></div>
   <table>
     <tr><th>Part</th><th>Which one</th><th>Indicative</th></tr>
     <tr><td class="k">Panels</td>
-      <td data-label="Which one">2 × <a href="https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch" target="_blank" rel="noopener">64×32 HUB75 panels</a>, chained to 128×32, the size the
-        layouts are drawn for</td><td data-label="Indicative">~£50</td></tr>
+      <td data-label="Which one">One <a href="https://thepihut.com/products/rgb-full-colour-led-matrix-panel-4mm-pitch-64x32-pixels" target="_blank" rel="noopener">64×32 HUB75 panel</a>, the commonest and cheapest.
+        Or two, chained into 128×32, for longer names on each line</td><td data-label="Indicative">~£17–£22 each</td></tr>
     <tr><td class="k">Driver</td>
       <td data-label="Which one"><a href="https://thepihut.com/products/adafruit-rgb-matrix-bonnet-for-raspberry-pi-ada3211" target="_blank" rel="noopener">Adafruit RGB Matrix Bonnet</a>, or the
         <a href="https://thepihut.com/products/adafruit-rgb-matrix-hat-rtc-for-raspberry-pi-mini-kit" target="_blank" rel="noopener">Matrix HAT + RTC</a> when the bonnet is out of stock</td><td data-label="Indicative">£14.40</td></tr>
@@ -208,13 +206,15 @@
     <tr><td class="k">Computer</td>
       <td data-label="Which one"><a href="https://thepihut.com/products/raspberry-pi-3-model-a-plus" target="_blank" rel="noopener">Raspberry Pi 3 Model A+</a>, plus its own
         <a href="https://thepihut.com/products/raspberry-pi-zero-uk-power-supply" target="_blank" rel="noopener">12.5W micro-USB supply</a> and a microSD card</td><td data-label="Indicative">~£40</td></tr>
-    <tr><td class="k"></td><td data-label="Which one"><strong>Total</strong></td><td data-label="Indicative"><strong>~£116</strong></td></tr>
+    <tr><td class="k"></td><td data-label="Which one"><strong>Total</strong></td><td data-label="Indicative"><strong>~£85 with one panel, ~£105 with two</strong></td></tr>
   </table>
   <div class="note" style="margin-top:16px">
-    <strong>What works today:</strong> 128×32 (two panels chained) and 64×32 (one panel).
-    A <strong>64×64</strong> panel is a nicer shape and one thing to mount, but the LED layouts
-    are currently drawn for a 32-pixel-high panel, so half of it would be empty; support is
-    being added. A 32×32 is too narrow for anything useful. Ask before buying either.
+    <strong>What works today:</strong> 64×32 (one panel) and 128×32 (two chained). An LED panel
+    shows four lines of text: what's happening, the route, the landing time and home.
+    <strong>64×64 and 128×64 are not supported yet:</strong> the LED layout is drawn for a panel
+    32 pixels high, so the bottom half would stay empty. We'll say so here once a taller layout
+    is drawn and tested on a real panel. A 32×32 is too narrow. Panel prices checked at The Pi Hut
+    on 5 November 2026.
   </div>
 </div></section>
 
@@ -297,10 +297,15 @@
 </div></section>
 
 <footer><div class="wrap">
-  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
-  <div class="fl"><a href="index.html">Home</a><a href="faq.html">FAQ</a><a href="support.html">Support</a><a href="legal.html">Legal</a></div>
-  <p>Ident is a roster display for pilots. We don't sell hardware and take no commission from any
-    supplier listed. Not affiliated with, endorsed by, or connected to any airline.</p>
+  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="86" height="30"></a>
+  <div class="fl">
+    <a href="displays.html">Displays</a><a href="parts.html">Parts list</a><a href="styles.html">Styles</a>
+    <a href="faq.html">Questions</a><a href="airlines.html">Your airline</a><a href="buy.html">Prices</a>
+    <a href="support.html">Support</a><a href="legal.html">Terms, privacy and refunds</a>
+  </div>
+  <p>Ident is a flight-duty board for the wall, made by xpdr.aero in the UK. Your roster stays in your house.<br>
+    Airline names and logos are the trademarks of their owners and are not supplied with the software; Ident only
+    shows image files you add yourself. Not affiliated with, endorsed by, or connected to any airline. Not a flight-planning or operational tool.</p>
 </div></footer>
 
 </body></html>

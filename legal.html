@@ -9,7 +9,7 @@
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#14110a">
+<meta name="theme-color" content="#fbfaf7">
 <link rel="stylesheet" href="style.css">
 <style>
  .legal h3{margin:26px 0 6px;font-size:17px}
@@ -22,17 +22,16 @@
 <body>
 
 <nav><div class="wrap">
-  <a class="brand" href="index.html"><img src="/img/ident-wordmark.svg" alt="Ident" width="70" height="16"></a>
-  <a class="l" href="index.html#how">How it works</a>
-  <a class="l" href="displays.html">Displays</a>
-  <a class="l" href="styles.html">Styles</a>
-  <a class="l" href="pilots.html">For pilots</a>
-  <a class="l" href="parts.html">Parts</a>
-  <a class="l" href="faq.html">FAQ</a>
-  <a class="l" href="airlines.html">Your airline</a>
-  <span class="sp"></span>
-  <a class="l" href="buy.html">Buy</a>
-  <a class="l" href="support.html">Support</a>
+  <a class="brand" href="index.html"><img src="/img/ident-wordmark-light.svg" alt="Ident" width="70" height="16"></a>
+  <div class="links">
+    <a class="l" href="index.html#how"><span>01</span>How it works</a>
+    <a class="l" href="displays.html"><span>02</span>Displays</a>
+    <a class="l" href="styles.html"><span>03</span>Styles</a>
+    <a class="l" href="pilots.html"><span>04</span>For pilots</a>
+    <a class="l" href="faq.html"><span>05</span>Questions</a>
+    <a class="l" href="support.html"><span>06</span>Support</a>
+    <a class="l cta" href="buy.html">Prices</a>
+  </div>
 </div></nav>
 
 <header><div class="wrap">
@@ -306,7 +305,7 @@
 
 <section class="legal" id="privacy"><div class="wrap">
   <h2>Privacy</h2>
-  <p class="updated">Last updated 25 October 2026.</p>
+  <p class="updated">Last updated 6 November 2026.</p>
 
   <h3>The short version</h3>
   <p><strong>Your roster never reaches us.</strong> Ident fetches it from your airline, over your
@@ -339,8 +338,11 @@
     receives under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>);
     the same server, only if you switch on
     diagnostics reporting, to send one small report a day (numbers and fixed words, not tied to your
-    licence or serial number, with no internet address stored); and, on older software versions,
-    once on first run to download coastline data for the map styles (newer versions include it).</p>
+    licence or serial number, with no internet address stored); public internet time servers, to
+    set its clock, a request that carries nothing but a request for the time; and, on older software versions,
+    once on first run to download coastline data for the map styles (newer versions include it).
+    Every server your display talks to also sees your home's internet address, as any website
+    you visit does.</p>
 
   <h3 id="slider">What leaves your display, stop by stop</h3>
   <p>During setup you choose, on one slider, how much your display may send. At the Privacy
@@ -355,6 +357,12 @@
     <li data-stop="4"><strong>Drive times:</strong> <span class="says">On Mode S, while you are on your way home, the car park or airport you are driving from and your home location go to our server, licence.xpdr.aero, which asks Google Maps for the drive time in traffic now. No flight, time or licence goes with them, and nothing is kept. Your home location can be a nearby corner or shop rather than your house.</span></li>
     <li data-stop="5"><strong>Full accuracy:</strong> <span class="says">One small report a day, of counts and fixed words, goes to licence.xpdr.aero, not tied to your licence key or serial number.</span></li>
   </ol>
+  <p>Flight status asks from 20 minutes before each flight's scheduled departure until it lands
+    (or, for a flight that is never seen, some hours after it was due), every 5 to 20 minutes.
+    The slider is on Ident for Pi. Ident for E1002 has no slider: it has no weather; flight
+    status, drive times and diagnostics are each off until you turn them on in its settings
+    page, and then send exactly what is described above; and its daily update check stops if you
+    turn off automatic updates.</p>
 
   <h3>What we actually hold</h3>
   <p>Only what you give us directly:</p>
@@ -433,10 +441,15 @@
 </div></section>
 
 <footer><div class="wrap">
-  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="98" height="34"></a>
-  <div class="fl"><a href="index.html">Home</a><a href="faq.html">FAQ</a><a href="support.html">Support</a></div>
-  <p>Ident is a flight-duty display for pilots. Not affiliated with, endorsed by, or connected to
-    any airline. Not a flight-planning or operational tool.</p>
+  <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="86" height="30"></a>
+  <div class="fl">
+    <a href="displays.html">Displays</a><a href="parts.html">Parts list</a><a href="styles.html">Styles</a>
+    <a href="faq.html">Questions</a><a href="airlines.html">Your airline</a><a href="buy.html">Prices</a>
+    <a href="support.html">Support</a><a href="legal.html">Terms, privacy and refunds</a>
+  </div>
+  <p>Ident is a flight-duty board for the wall, made by xpdr.aero in the UK. Your roster stays in your house.<br>
+    Airline names and logos are the trademarks of their owners and are not supplied with the software; Ident only
+    shows image files you add yourself. Not affiliated with, endorsed by, or connected to any airline. Not a flight-planning or operational tool.</p>
 </div></footer>
 
 </body></html>
