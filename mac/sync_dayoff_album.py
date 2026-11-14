@@ -281,6 +281,9 @@ def sync(host: str, port: int, album: str, box, quality: int,
     box = target_box(box, info)
     album = album or info.get("album") or "Ident"
     remote = set(info.get("photos", []))
+    if "room" in info:                           # an E1002 says how much its album may hold
+        print(f"Room on the display for about {info['room'] / 1048576:.1f} MB of pictures; "
+              f"those there now take {info.get('used', 0) / 1048576:.1f} MB.")
 
     try:
         import osxphotos

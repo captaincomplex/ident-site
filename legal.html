@@ -20,8 +20,9 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav><div class="wrap">
+<nav aria-label="Main"><div class="wrap">
   <a class="brand" href="index.html"><img src="/img/ident-wordmark-light.svg" alt="Ident" width="70" height="16"></a>
   <div class="links">
     <a class="l" href="index.html#how"><span>01</span>How it works</a>
@@ -32,7 +33,23 @@
     <a class="l" href="support.html"><span>06</span>Support</a>
     <a class="l cta" href="buy.html">Prices</a>
   </div>
+  <div class="phone">
+    <a class="l cta" href="buy.html">Prices</a>
+    <details class="menu"><summary aria-label="Menu"><span class="bars" aria-hidden="true"></span>Menu</summary>
+      <div class="sheet">
+        <a href="index.html#how"><span>01</span>How it works</a>
+        <a href="displays.html"><span>02</span>Displays</a>
+        <a href="styles.html"><span>03</span>Styles</a>
+        <a href="pilots.html"><span>04</span>For pilots</a>
+        <a href="faq.html"><span>05</span>Questions</a>
+        <a href="support.html"><span>06</span>Support</a>
+        <a href="buy.html"><span>07</span>Prices</a>
+      </div>
+    </details>
+  </div>
 </div></nav>
+
+<main id="main">
 
 <header><div class="wrap">
   <h1>Terms, privacy and refunds</h1>
@@ -256,6 +273,9 @@
     what they charge us.</p>
 
   <h3>Reminders and other emails</h3>
+  <!-- MAILING LIST CLOSED (14 Nov 2026). When the launch sign-up opens, replace the line below with:
+  <p>We send no marketing, apart from the one launch email to people who asked for it, and no reminder the law doesn't require. The ones it does require:</p>
+  -->
   <p>We send no marketing, and no reminder the law doesn't require. The ones it does require:</p>
   <ul>
     <li><strong>Monthly:</strong> about every six months, a reminder 15 days before the payment
@@ -385,6 +405,13 @@
     <li><strong>Your device's serial number:</strong> your display sends it with licence and update
       checks, and we record it against your licence, so one licence can't be shared across several
       devices.</li>
+    <!-- MAILING LIST CLOSED (14 Nov 2026). When the launch sign-up opens, add:
+    <li><strong>If you ask to hear when Ident goes on sale:</strong> your email address, and when
+      you asked. We use it for two emails: a link to confirm it's yours, and one email on the day
+      Ident goes on sale. Then we delete it. If you change your mind first, use the link in either
+      email, or write to support@xpdr.aero, and we delete it straight away. Your consent is our
+      reason for holding it. Cloudflare stores it on our licence server and Resend sends the emails.</li>
+    -->
     <li><strong>If you email support:</strong> your message and anything you attach. Sending a
       diagnostics file is entirely up to you; we only ask for one when we can't help without it,
       and you can read it in full before sending. It leaves out your roster, your calendar link
@@ -451,6 +478,8 @@
     five working days of us agreeing.</p>
 </div></section>
 
+</main>
+
 <footer><div class="wrap">
   <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="86" height="30"></a>
   <div class="fl">
@@ -458,6 +487,10 @@
     <a href="faq.html">Questions</a><a href="airlines.html">Your airline</a><a href="buy.html">Prices</a>
     <a href="support.html">Support</a><a href="legal.html">Terms, privacy and refunds</a>
   </div>
+  <ul class="social" aria-label="Ident elsewhere">
+    <li><a href="https://www.instagram.com/ident.aero/" rel="me noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>Instagram</a></li>
+    <!-- Other networks: one <li> each, the same shape, in this list. -->
+  </ul>
   <p>Ident is a flight-duty board for the wall, made by xpdr.aero in the UK. Your roster stays in your house.<br>
     Airline names and logos are the trademarks of their owners and are not supplied with the software; Ident only
     shows image files you add yourself. Not affiliated with, endorsed by, or connected to any airline. Not a flight-planning or operational tool.</p>

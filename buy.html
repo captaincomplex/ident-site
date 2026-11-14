@@ -29,8 +29,9 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav><div class="wrap">
+<nav aria-label="Main"><div class="wrap">
   <a class="brand" href="index.html"><img src="/img/ident-wordmark-light.svg" alt="Ident" width="70" height="16"></a>
   <div class="links">
     <a class="l" href="index.html#how"><span>01</span>How it works</a>
@@ -41,7 +42,23 @@
     <a class="l" href="support.html"><span>06</span>Support</a>
     <a class="l cta" href="buy.html" aria-current="page">Prices</a>
   </div>
+  <div class="phone">
+    <a class="l cta" href="buy.html" aria-current="page">Prices</a>
+    <details class="menu"><summary aria-label="Menu"><span class="bars" aria-hidden="true"></span>Menu</summary>
+      <div class="sheet">
+        <a href="index.html#how"><span>01</span>How it works</a>
+        <a href="displays.html"><span>02</span>Displays</a>
+        <a href="styles.html"><span>03</span>Styles</a>
+        <a href="pilots.html"><span>04</span>For pilots</a>
+        <a href="faq.html"><span>05</span>Questions</a>
+        <a href="support.html"><span>06</span>Support</a>
+        <a href="buy.html" aria-current="page"><span>07</span>Prices</a>
+      </div>
+    </details>
+  </div>
 </div></nav>
+
+<main id="main">
 
 <header><div class="wrap">
   <h1>Buy <span class="g">Ident</span></h1>
@@ -55,7 +72,7 @@
      match licence-server/src/subscriptions.js OFFERS and the Stripe prices.
      Mode A buys through https://licence.xpdr.aero/buy/software; "?add=live" or
      "?add=live_plus" brings a new customer back to that mode on the thanks
-     page. "Add to my Ident" goes to the plan page (/account). SHOP CLOSED
+     page. "Add Mode C" and "Add Mode S" go to the plan page (/account). SHOP CLOSED
      (2 Nov 2026): at launch, put back every button kept in a "SHOP CLOSED"
      comment below and drop the "Coming soon" note. -->
 <section class="cream"><div class="wrap">
@@ -84,7 +101,7 @@
       </ul>
       <div class="acts">
         <!-- SHOP CLOSED (2 Nov 2026). At launch, put back:
-        <a class="btn primary" href="https://licence.xpdr.aero/buy/software">Buy Mode A, &pound;19.99</a>
+        <a class="btn primary" href="https://licence.xpdr.aero/buy/software">Buy Mode A</a>
         -->
         <span class="btn primary soon" aria-disabled="true">Coming soon</span>
       </div>
@@ -105,8 +122,8 @@
         refund within 14 days.</p>
       <div class="acts">
         <!-- SHOP CLOSED (2 Nov 2026). At launch, put back:
-        <a class="btn primary" href="https://licence.xpdr.aero/account">Add to my Ident</a>
-        <a class="btn ghost" href="https://licence.xpdr.aero/buy/software?add=live">New? Mode A, then Mode C</a>
+        <a class="btn primary" href="https://licence.xpdr.aero/account">Add Mode C</a>
+        <a class="btn ghost" href="https://licence.xpdr.aero/buy/software?add=live">Buy A and C</a>
         -->
         <span class="btn primary soon" aria-disabled="true">Coming soon</span>
       </div>
@@ -126,16 +143,16 @@
         refund within 14 days.</p>
       <div class="acts">
         <!-- SHOP CLOSED (2 Nov 2026). At launch, put back:
-        <a class="btn primary" href="https://licence.xpdr.aero/account">Add to my Ident</a>
-        <a class="btn ghost" href="https://licence.xpdr.aero/buy/software?add=live_plus">New? Mode A, then Mode S</a>
+        <a class="btn primary" href="https://licence.xpdr.aero/account">Add Mode S</a>
+        <a class="btn ghost" href="https://licence.xpdr.aero/buy/software?add=live_plus">Buy A and S</a>
         -->
         <span class="btn primary soon" aria-disabled="true">Coming soon</span>
       </div>
     </div>
   </div>
   <!-- SHOP CLOSED (2 Nov 2026). At launch, put back:
-  <p class="sub" style="margin-top:18px"><strong>Already have Mode A?</strong> &ldquo;Add to my
-    Ident&rdquo; asks for the licence key from your order email; or use <strong>Add Mode C or
+  <p class="sub" style="margin-top:18px"><strong>Already have Mode A?</strong> &ldquo;Add Mode C&rdquo; or &ldquo;Add
+    Mode S&rdquo; asks for the licence key from your order email; or use <strong>Add Mode C or
     Mode S</strong> under Your plan in your display&rsquo;s control panel.
     <strong>New to Ident?</strong> Buy Mode A, and the page that gives you your licence key
     offers Mode C or S straight after. You choose monthly or yearly there.</p>
@@ -186,7 +203,7 @@
       <a href="legal.html#subscriptions">subscription terms</a>.</p></div>
   </div>
   <!-- SHOP CLOSED (2 Nov 2026). At launch, put back:
-  <p style="margin-top:20px"><a class="btn primary" href="https://licence.xpdr.aero/account">Manage or cancel your subscription</a></p>
+  <p style="margin-top:20px"><a class="btn primary" href="https://licence.xpdr.aero/account">Manage or cancel</a></p>
   -->
   <p style="margin-top:20px"><span class="btn primary soon" aria-disabled="true">Coming soon</span></p>
 </div></section>
@@ -207,6 +224,8 @@
   </div>
 </div></section>
 
+</main>
+
 <footer><div class="wrap">
   <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="86" height="30"></a>
   <div class="fl">
@@ -214,6 +233,10 @@
     <a href="faq.html">Questions</a><a href="airlines.html">Your airline</a><a href="buy.html">Prices</a>
     <a href="support.html">Support</a><a href="legal.html">Terms, privacy and refunds</a>
   </div>
+  <ul class="social" aria-label="Ident elsewhere">
+    <li><a href="https://www.instagram.com/ident.aero/" rel="me noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>Instagram</a></li>
+    <!-- Other networks: one <li> each, the same shape, in this list. -->
+  </ul>
   <p>Ident is a flight-duty board for the wall, made by xpdr.aero in the UK. Your roster stays in your house.<br>
     Airline names and logos are the trademarks of their owners and are not supplied with the software; Ident only
     shows image files you add yourself. Not affiliated with, endorsed by, or connected to any airline. Not a flight-planning or operational tool.</p>

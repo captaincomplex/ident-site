@@ -13,8 +13,9 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav><div class="wrap">
+<nav aria-label="Main"><div class="wrap">
   <a class="brand" href="index.html"><img src="/img/ident-wordmark-light.svg" alt="Ident" width="70" height="16"></a>
   <div class="links">
     <a class="l" href="index.html#how"><span>01</span>How it works</a>
@@ -25,7 +26,23 @@
     <a class="l" href="support.html"><span>06</span>Support</a>
     <a class="l cta" href="buy.html">Prices</a>
   </div>
+  <div class="phone">
+    <a class="l cta" href="buy.html">Prices</a>
+    <details class="menu"><summary aria-label="Menu"><span class="bars" aria-hidden="true"></span>Menu</summary>
+      <div class="sheet">
+        <a href="index.html#how"><span>01</span>How it works</a>
+        <a href="displays.html" aria-current="page"><span>02</span>Displays</a>
+        <a href="styles.html"><span>03</span>Styles</a>
+        <a href="pilots.html"><span>04</span>For pilots</a>
+        <a href="faq.html"><span>05</span>Questions</a>
+        <a href="support.html"><span>06</span>Support</a>
+        <a href="buy.html"><span>07</span>Prices</a>
+      </div>
+    </details>
+  </div>
 </div></nav>
+
+<main id="main">
 
 <header><div class="wrap herogrid">
   <div class="herotext">
@@ -162,11 +179,16 @@
   <p class="sub">The software is identical. Every style adapts to the panel you own, and you can
     switch panels later without buying anything else.</p>
   <div class="ruled">
-    <div><h4>Same roster, same setup</h4><p>Nothing about the configuration changes between panel types.</p></div>
-    <div><h4>Detected automatically</h4><p>Ident works out which display is fitted at boot.</p></div>
-    <div><h4>Full parts list</h4><p>Including the combinations that don't work: <a href="parts.html">see parts</a>.</p></div>
+    <div><h3>Same roster, same setup</h3><p>Nothing about the configuration changes between panel types.</p></div>
+    <div><h3>Detected automatically</h3><p>Ident works out which display is fitted at boot.</p></div>
+    <div><h3>Full parts list</h3><p>Including the combinations that don't work: <a href="parts.html">see parts</a>.</p></div>
+    <div><h3>Set up from your phone</h3><p>You need no keyboard or monitor. The screen shows how to begin: join its Wi-Fi from your phone, pick your home network and paste your roster link.</p></div>
+    <div><h3>You buy your own parts</h3><p>We sell the software, with no markup on hardware and nothing proprietary.</p></div>
+    <div><h3>Rosters vary by airline</h3><p>Ident is built and tested on easyJet eCrew rosters. Fly for someone else? <a href="airlines.html">Help us add your airline</a> and the software is yours free.</p></div>
   </div>
 </div></section>
+
+</main>
 
 <footer><div class="wrap">
   <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="86" height="30"></a>
@@ -175,6 +197,10 @@
     <a href="faq.html">Questions</a><a href="airlines.html">Your airline</a><a href="buy.html">Prices</a>
     <a href="support.html">Support</a><a href="legal.html">Terms, privacy and refunds</a>
   </div>
+  <ul class="social" aria-label="Ident elsewhere">
+    <li><a href="https://www.instagram.com/ident.aero/" rel="me noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>Instagram</a></li>
+    <!-- Other networks: one <li> each, the same shape, in this list. -->
+  </ul>
   <p>Ident is a flight-duty board for the wall, made by xpdr.aero in the UK. Your roster stays in your house.<br>
     Airline names and logos are the trademarks of their owners and are not supplied with the software; Ident only
     shows image files you add yourself. Not affiliated with, endorsed by, or connected to any airline. Not a flight-planning or operational tool.</p>

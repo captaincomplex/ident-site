@@ -14,8 +14,9 @@
 <script>document.documentElement.className+=" "+(window.matchMedia("(prefers-reduced-motion: reduce)").matches?"":"js");</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav><div class="wrap">
+<nav aria-label="Main"><div class="wrap">
   <a class="brand" href="index.html"><img src="/img/ident-wordmark-light.svg" alt="Ident" width="70" height="16"></a>
   <div class="links">
     <a class="l" href="index.html#how"><span>01</span>How it works</a>
@@ -26,12 +27,41 @@
     <a class="l" href="support.html"><span>06</span>Support</a>
     <a class="l cta" href="buy.html">Prices</a>
   </div>
+  <div class="phone">
+    <a class="l cta" href="buy.html">Prices</a>
+    <details class="menu"><summary aria-label="Menu"><span class="bars" aria-hidden="true"></span>Menu</summary>
+      <div class="sheet">
+        <a href="index.html#how"><span>01</span>How it works</a>
+        <a href="displays.html"><span>02</span>Displays</a>
+        <a href="styles.html" aria-current="page"><span>03</span>Styles</a>
+        <a href="pilots.html"><span>04</span>For pilots</a>
+        <a href="faq.html"><span>05</span>Questions</a>
+        <a href="support.html"><span>06</span>Support</a>
+        <a href="buy.html"><span>07</span>Prices</a>
+      </div>
+    </details>
+  </div>
 </div></nav>
+
+<main id="main">
 
 <header><div class="wrap">
   <h1>Pick a style.</h1>
   <p class="lead">Change it from your phone or with a button on the frame. Each style is shown here on a day that suits it, with the displays it runs on. The reTerminal is in testing and not on sale yet.</p>
 </div></header>
+
+<section id="destinations"><div class="wrap">
+  <p class="label"><b>New</b> / Destination boards</p>
+  <h2>A destination board for every trip</h2>
+  <p class="sub">A painted scene for each of 165 destinations, in five layouts, on Ident for E1002 and Ident for Pi. Choose one like any other style.</p>
+  <div class="destgrid">
+    <figure class="big"><figure class="dev"><img src="img/destinations/lxr-airmail-postcard-800x480.png" alt="Airmail postcard layout: Luxor, en route, expected home 16:00" width="800" height="480" loading="lazy"></figure><figcaption>Airmail postcard &middot; Luxor</figcaption></figure>
+    <figure><figure class="dev"><img src="img/destinations/lis-picture-postcard-800x480.png" alt="Picture postcard layout: greetings from Lisbon, with a tram, expected home 19:40" width="800" height="480" loading="lazy"></figure><figcaption>Picture postcard &middot; Lisbon</figcaption></figure>
+    <figure><figure class="dev"><img src="img/destinations/kef-stamp-800x480.png" alt="Stamp layout: Reykjavik, expected home 20:55" width="800" height="480" loading="lazy"></figure><figcaption>Stamp &middot; Reykjav&iacute;k</figcaption></figure>
+    <figure><figure class="dev"><img src="img/destinations/ath-graphic-print-800x480.png" alt="Graphic print layout: Athens, the Parthenon, expected home 16:05" width="800" height="480" loading="lazy"></figure><figcaption>Graphic print &middot; Athens</figcaption></figure>
+    <figure><figure class="dev"><img src="img/destinations/lxr-arrival-edition-800x480.png" alt="Arrival edition layout: Luxor, Karnak Temple, expected home 16:00" width="800" height="480" loading="lazy"></figure><figcaption>Arrival edition &middot; Luxor</figcaption></figure>
+  </div>
+</div></section>
 
 <div class="bento">
 <section class="c12 dark"><div class="wrap">
@@ -82,6 +112,18 @@
 </div></section>
 </div>
 
+<section id="track"><div class="wrap">
+  <p class="label"><b>Every style</b> / Follow the flight</p>
+  <h2>Scan the screen to watch the flight</h2>
+  <p class="sub">While you're airborne, Ident can show a code that opens your flight on Flightradar24. Keep a small
+    one in the corner, or press a button and it fills the screen, big enough to scan from across the room.</p>
+  <div class="pair">
+    <figure class="dev"><img src="img/scenes/qr_corner_lisbon.png" alt="The board showing IN FLIGHT MAN-LIS, with a small scannable code in the bottom corner" width="1600" height="960" loading="lazy"></figure>
+    <figure class="dev"><img src="img/scenes/qr_full_lisbon.png" alt="The full-screen scan-to-track code for flight EZY5101, Manchester to Lisbon" width="1600" height="960" loading="lazy"></figure>
+  </div>
+</div></section>
+</main>
+
 <footer><div class="wrap">
   <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="86" height="30"></a>
   <div class="fl">
@@ -89,6 +131,10 @@
     <a href="faq.html">Questions</a><a href="airlines.html">Your airline</a><a href="buy.html">Prices</a>
     <a href="support.html">Support</a><a href="legal.html">Terms, privacy and refunds</a>
   </div>
+  <ul class="social" aria-label="Ident elsewhere">
+    <li><a href="https://www.instagram.com/ident.aero/" rel="me noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>Instagram</a></li>
+    <!-- Other networks: one <li> each, the same shape, in this list. -->
+  </ul>
   <p>Ident is a flight-duty board for the wall, made by xpdr.aero in the UK. Your roster stays in your house.<br>
     Airline names and logos are the trademarks of their owners and are not supplied with the software; Ident only
     shows image files you add yourself. Not affiliated with, endorsed by, or connected to any airline. Not a flight-planning or operational tool.</p>

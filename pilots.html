@@ -14,8 +14,9 @@
 <script>document.documentElement.className+=" "+(window.matchMedia("(prefers-reduced-motion: reduce)").matches?"":"js");</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav><div class="wrap">
+<nav aria-label="Main"><div class="wrap">
   <a class="brand" href="index.html"><img src="/img/ident-wordmark-light.svg" alt="Ident" width="70" height="16"></a>
   <div class="links">
     <a class="l" href="index.html#how"><span>01</span>How it works</a>
@@ -26,76 +27,82 @@
     <a class="l" href="support.html"><span>06</span>Support</a>
     <a class="l cta" href="buy.html">Prices</a>
   </div>
+  <div class="phone">
+    <a class="l cta" href="buy.html">Prices</a>
+    <details class="menu"><summary aria-label="Menu"><span class="bars" aria-hidden="true"></span>Menu</summary>
+      <div class="sheet">
+        <a href="index.html#how"><span>01</span>How it works</a>
+        <a href="displays.html"><span>02</span>Displays</a>
+        <a href="styles.html"><span>03</span>Styles</a>
+        <a href="pilots.html" aria-current="page"><span>04</span>For pilots</a>
+        <a href="faq.html"><span>05</span>Questions</a>
+        <a href="support.html"><span>06</span>Support</a>
+        <a href="buy.html"><span>07</span>Prices</a>
+      </div>
+    </details>
+  </div>
 </div></nav>
 
+<main id="main">
 <header><div class="wrap">
-  <h1>For the pilot.</h1>
-  <p class="lead">The wall answers the household. This page is for you: what happens when crewing change their mind, what time to wake, and how a commute fits in.</p>
+  <h1>For the pilot</h1>
+  <p class="lead">The display is for the people at home. This page covers what you'll notice as the pilot:
+    roster changes, your wake-up time, commuting and the settings on your phone.</p>
 </div></header>
 
-<div class="bento">
-<section class="c12 saf"><div class="wrap">
-  <h2 class="reveal">ETA, confirmed.</h2>
-  <p class="sub" style="max-width:70ch">Ident shows your current flight, when it lands and what time you'll be home, and your next duty, so your loved ones can always see how much time they have with you. <strong>Mode A</strong> (&pound;19.99) shows your scheduled times, plus delays and diversions if you allow flight lookups. <strong>Mode C</strong> (&pound;2.99 a month or &pound;29.99 a year) takes the landing time from the aircraft&rsquo;s live position; <strong>Mode S</strong> (&pound;3.99 a month or &pound;39.99 a year) adds the drive time home in traffic. Not on sale yet: coming soon. <a href="buy.html">Compare the three</a>.</p>
-  <p class="rnd" style="margin-top:10px">Flight data: Flightradar24</p>
-</div></section>
-
-<section class="c12 paper"><div class="wrap">
-  <h2 class="reveal">Changes on report? No problem.</h2>
-  <p class="sub">The board re-reads your roster regularly. When it moves, it moves.</p>
-  <div class="ruled "><div><h3>Called from standby?</h3><p>It's on the wall before you've finished packing. No group chat, no relay.</p></div><div><h3>Delayed?</h3><p>Landing and home times slide with the day. Nobody's working off this morning's plan.</p></div><div><h3>Know you're free</h3><p>Days off and early starts show days ahead, the rest of the family can plan without asking.</p></div><div><h3>They know when to call</h3><p>Airborne, turnaround, or already driving. No worrying about whether you can talk.</p></div><div><h3>Tomorrow, from the bedside</h3><p>Report time and where you're going. The two things worth knowing before lights out.</p></div><div><h3>The kids can read it</h3><p>Big destination, plain times. Old enough to read a clock is old enough to work out when Mum or Dad lands.</p></div></div>
-</div></section>
-
-<section class="c7 cream"><div class="wrap">
-  <h2 class="reveal">Ident shows everything you need for the day.</h2>
-  <p class="sub">If you tell Ident how long you take to get ready, Ident gives you an alarm time to set. Ninety minutes before report, or whatever your morning actually takes. When crewing move your report time, the wake time moves with it. Optionally counts the journey to report as well, so if you need to get to your base before day 1, Ident accounts for the extra commute time.</p>
-  <h3 class="lede" style="margin-bottom:8px">The question before the light goes off.</h3>
-  <p class="sub" style="margin:0">Press the button on the frame and the next duty comes up: the date, where you're going, what time to be awake and what time to report. On a day off it's already there.</p>
-</div></section>
-
-<section class="c5 dark" style="align-self:stretch"><div class="wrap" style="display:flex;flex-direction:column;justify-content:center;height:100%">
-  <figure class="dev "><img src="img/scenes/nextduty_wake.png" alt="The next-duty card showing THU 22 OCT, NTE, WAKE 04:40 and REPORT 06:10" width="1600" height="960" loading="lazy"></figure>
-  <p class="rnd" style="margin-top:14px">The next-duty card, with wake time and report time.</p>
-</div></section>
-
-<section class="c12 paper"><div class="wrap">
-  <h2 class="reveal">Commuter? Add your positioning flights.</h2>
-  <p class="sub">Ident makes your planning a little easier.</p>
-  <div class="ruled "><div><h3>Type the flight number</h3><p>Living in Amsterdam, based at Gatwick? Add the 05:00 AMS–LGW and Ident looks up the route and times itself. Two boxes, once.</p></div><div><h3>It becomes part of the day</h3><p>The board follows you out of Amsterdam, then hands over to the roster duty when you report. At home they see one continuous day, not a gap.</p></div><div><h3>Anything off-roster works</h3><p>Deadheading, a night before at a crashpad, the flight home on leave. If it has a flight number, it can go on the board.</p></div><div><h3>All of your travel included</h3><p>Ten minutes from the crashpad mid-block; a two-hour flight home after the last sector. Set both, and the home time is right on the day it matters.</p></div></div>
-</div></section>
-
-<section id="app" class="c12 paper"><div class="wrap">
-  <h2 class="reveal">Control by app.</h2>
-  <p class="sub">Everything is set from your phone: the style, the lettering, your
-    commute, the battery. Add it to your home screen once and it opens full screen with
-    its own icon, no App Store, nothing to update. These are the Pi's screens; the E1002's settings page
-    is laid out the same way.</p>
-  <div class="gal">
-    <div class="navbtns">
-      <button type="button" aria-label="Previous screen" onclick="railScroll(-1,'railApp')"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M13 8H3m4.5-4.5L3 8l4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <button type="button" aria-label="Next screen" onclick="railScroll(1,'railApp')"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    </div>
-    <div class="rail" id="railApp">
-      <div class="slide phone"><img loading="lazy" src="img/app/panel-wall.jpg" alt="The control panel on a phone, showing the wall as it is now: in flight, Gatwick to Nantes, landing 09:25, home 13:43" width="780" height="1688">
-        <div class="t"><h3>The wall, now</h3></div>
-        <p>A live copy of what's on the wall at home.</p></div>
-      <div class="slide phone"><img loading="lazy" src="img/app/panel-styles.jpg" alt="The style picker, a grid of previews of each style" width="780" height="1688">
-        <div class="t"><h3>Pick a style</h3></div>
-        <p>Tap a preview and the wall changes to match.</p></div>
-      <div class="slide phone"><img loading="lazy" src="img/app/panel-privacy.jpg" alt="The roster privacy settings, a list of duty codes grouped by type, each with a tick box" width="780" height="1688">
-        <div class="t"><h3>Only share as much as you choose</h3></div>
-        <p>Sickness, meetings and the rest show as an ordinary day off unless you tick them.</p></div>
-      <div class="slide phone"><img loading="lazy" src="img/app/panel-power.jpg" alt="The power settings: battery at 72 percent, how often to check, overnight sleep and low power mode" width="780" height="1688">
-        <div class="t"><h3>Plugged in or on battery</h3></div>
-        <p>Choose how often it checks, and see how long a charge should last.</p></div>
-      <div class="slide phone"><img loading="lazy" src="img/app/panel-frame.jpg" alt="The picture frame settings: window width and height in centimetres, inches or pixels" width="780" height="1688">
-        <div class="t"><h3>Fits your frame</h3></div>
-        <p>Measure the window in your mount and the board is drawn inside it.</p></div>
-    </div>
-    <div class="galhint">Scroll or swipe</div>
+<section id="changes"><div class="wrap">
+  <p class="label"><b>01</b> / Roster changes</p>
+  <h2>When crewing change your day</h2>
+  <p class="sub">Ident checks your roster link regularly and redraws the board when something changes.
+    Your family sees the new plan as soon as it appears in your roster.</p>
+  <div class="ruled">
+    <div><h3>Called from standby</h3><p>The new duty goes on the board once it's in your roster, so nobody at home waits for a message.</p></div>
+    <div><h3>Delayed</h3><p>With flight lookups on, the landing and home times move with the delay. Without them, the board shows the scheduled times.</p></div>
+    <div><h3>Days off and early starts</h3><p>They show days ahead, so the family can plan without asking you.</p></div>
+    <div><h3>Whether you can talk</h3><p>The board says whether you're airborne, on a turnaround or driving home, so people know when to call.</p></div>
   </div>
 </div></section>
-</div>
+
+<section id="wake"><div class="wrap twocol">
+  <div>
+    <p class="label"><b>02</b> / Wake-up time</p>
+    <h2>A time to set your alarm</h2>
+    <p>Tell Ident how long you take to get ready and it gives you a wake-up time for each duty. If crewing move
+      your report, the wake-up time moves with it. You can add the journey to base as well.</p>
+    <p>Ident only gives a wake-up time when your roster includes a report time. If it doesn't, the board says
+      CHECK REPORT TIME.</p>
+    <p>Press the button on the frame to see the next duty: the date, the destination, your wake-up time and
+      your report time.</p>
+  </div>
+  <figure style="margin:0"><figure class="dev"><img src="img/scenes/nextduty_wake.png" alt="The next-duty card showing THU 22 OCT, NTE, WAKE 04:40 and REPORT 06:10" width="1600" height="960" loading="lazy"></figure>
+    <p class="rnd">Rendering: the next-duty card.</p></figure>
+</div></section>
+
+<section id="commute"><div class="wrap">
+  <p class="label"><b>03</b> / Commuting</p>
+  <h2>Positioning flights and the trip home</h2>
+  <div class="ruled">
+    <div><h3>Add a flight by its number</h3><p>Living in Amsterdam and based at Gatwick? Add the 05:00 AMS&ndash;LGW and Ident looks up the route and times.</p></div>
+    <div><h3>One continuous day</h3><p>The board follows the positioning flight, then switches to the rostered duty when you report.</p></div>
+    <div><h3>Any flight with a number</h3><p>Deadheading, the night before at a crashpad or the flight home on leave can all go on the board.</p></div>
+    <div><h3>Your journey home</h3><p>Set a drive, or a flight home after the last sector, and the home time includes it.</p></div>
+  </div>
+</div></section>
+
+<section id="app"><div class="wrap">
+  <p class="label"><b>04</b> / Settings</p>
+  <h2>Set everything from your phone</h2>
+  <p class="sub">Choose the style, the lettering, your commute and the battery settings. Add the page to your
+    home screen and it opens full screen with its own icon, with nothing to install from an app store.</p>
+  <div class="phones">
+    <figure><img loading="lazy" src="img/app/panel-wall.jpg" alt="The control panel showing the wall as it is now: in flight, Gatwick to Nantes, landing 09:25, home 13:43" width="780" height="1688"><figcaption>What's on the wall now</figcaption></figure>
+    <figure><img loading="lazy" src="img/app/panel-styles.jpg" alt="The style picker, a grid of previews of each style" width="780" height="1688"><figcaption>Choosing a style</figcaption></figure>
+    <figure><img loading="lazy" src="img/app/panel-privacy.jpg" alt="The roster privacy settings, a list of duty codes grouped by type, each with a tick box" width="780" height="1688"><figcaption>Private duties</figcaption></figure>
+  </div>
+  <p class="rnd">Screens from Ident for Pi. The E1002's settings page is laid out the same way.</p>
+  <p style="margin-top:24px">Prices and live-data modes are on the <a href="buy.html">Prices page</a>.</p>
+</div></section>
+</main>
 
 <footer><div class="wrap">
   <a class="xp" href="https://xpdr.aero/"><img src="/img/xpdr-lockup-A2-on-dark.svg" alt="xpdr.aero" width="86" height="30"></a>
@@ -104,6 +111,10 @@
     <a href="faq.html">Questions</a><a href="airlines.html">Your airline</a><a href="buy.html">Prices</a>
     <a href="support.html">Support</a><a href="legal.html">Terms, privacy and refunds</a>
   </div>
+  <ul class="social" aria-label="Ident elsewhere">
+    <li><a href="https://www.instagram.com/ident.aero/" rel="me noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>Instagram</a></li>
+    <!-- Other networks: one <li> each, the same shape, in this list. -->
+  </ul>
   <p>Ident is a flight-duty board for the wall, made by xpdr.aero in the UK. Your roster stays in your house.<br>
     Airline names and logos are the trademarks of their owners and are not supplied with the software; Ident only
     shows image files you add yourself. Not affiliated with, endorsed by, or connected to any airline. Not a flight-planning or operational tool.</p>
