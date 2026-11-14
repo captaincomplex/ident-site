@@ -128,7 +128,7 @@
      tools/make_subscription_terms.py (a test fails if they drift apart). -->
 <section class="legal" id="subscriptions"><div class="wrap">
   <h2>Subscriptions: Mode C and Mode S</h2>
-  <p class="updated">Last updated 25 October 2026.</p>
+  <p class="updated">Last updated 13 November 2026.</p>
 
   <h3>The short version</h3>
   <ul>
@@ -173,7 +173,8 @@
   <p>A subscription works on the display your Mode A licence is linked to. You need a working
     Ident display with an internet connection; the <a href="displays.html">Displays</a> page says
     which displays can show each mode. What leaves your display in each mode is described under
-    <a href="#privacy">Privacy</a>. Your roster never leaves it, in any mode.</p>
+    <a href="#privacy">Privacy</a>. Your roster never leaves your display, in any mode, unless you
+    switch on specific features such as flight tracking, and then only the details described there.</p>
 
   <h3>Price and billing date</h3>
   <p>The price you see is the whole price you pay. xpdr.aero is not registered for VAT, so no VAT
@@ -305,7 +306,7 @@
 
 <section class="legal" id="privacy"><div class="wrap">
   <h2>Privacy</h2>
-  <p class="updated">Last updated 6 November 2026.</p>
+  <p class="updated">Last updated 13 November 2026.</p>
 
   <h3>The short version</h3>
   <p><strong>Your roster never reaches us.</strong> Ident fetches it from your airline, over your
@@ -348,7 +349,9 @@
   <p>During setup you choose, on one slider, how much your display may send. At the Privacy
     end only the licence check leaves it; each stop towards Accuracy adds what is described
     beside it, and you can switch each one on or off by itself later in the control panel.
-    Nothing after the first item is sent until you have chosen and saved a position. These are the same words the display shows.</p>
+    Nothing after the first item is sent until you have chosen and saved a position. Setup starts
+    the slider at Roster and updates: weather, flight status, drive times and diagnostics each stay
+    off until you move the slider to them or switch them on. These are the same words the display shows.</p>
   <ol class="stops">
     <li data-stop="0"><strong>Full privacy:</strong> <span class="says">Your licence key and this display's serial number go to our licence server, licence.xpdr.aero, once when you activate the licence.</span></li>
     <li data-stop="1"><strong>Roster and updates:</strong> <span class="says">Your display fetches your roster from your own calendar link, and once a day sends your licence key and serial number to licence.xpdr.aero to ask whether there is a new version.</span></li>
@@ -382,13 +385,20 @@
     <li><strong>Your device's serial number:</strong> your display sends it with licence and update
       checks, and we record it against your licence, so one licence can't be shared across several
       devices.</li>
-    <li><strong>If you email support:</strong> your message and anything you attach, including a
-      diagnostics file, if you choose to send one. Diagnostics deliberately exclude your roster
-      contents, your roster URL, API keys, passwords and Wi-Fi passwords; you can read the file in
-      full before sending it.</li>
+    <li><strong>If you email support:</strong> your message and anything you attach. Sending a
+      diagnostics file is entirely up to you; we only ask for one when we can't help without it,
+      and you can read it in full before sending. It leaves out your roster, your calendar link
+      (it shows only the name of the site the link points to), passwords, keys, your home and base
+      locations, the names and passwords of Wi-Fi networks, and any name you typed in yourself.
+      The display's recent log is left out too, unless you tick the box to add it: the log can
+      mention airports, flight numbers and times from your roster. We use what you send only to
+      answer you, and never pass it to anyone else.</li>
   </ul>
   <p>We use this only to fulfil your order and answer you. We don't sell it or use it for
-    advertising.</p>
+    advertising, and we pass it to no one except the services that do the job for us: Stripe takes
+    payments and Resend sends our emails. Separately, while you have them switched on, flight status
+    passes the flight number, departure airport and time to Flightradar24, and drive times pass two
+    points on the map to Google Maps, as described above; neither is kept.</p>
 
   <h3>Your rights</h3>
   <p>Under UK GDPR you may ask for a copy of what we hold, ask us to correct or delete it, or
@@ -403,7 +413,8 @@
 
   <h3>Cookies</h3>
   <p>This website sets no cookies and runs no analytics. The control panel on your own device uses
-    a single session cookie to keep you logged in, which never leaves your network.</p>
+    a single session cookie to keep you logged in. It goes only between your browser and your
+    display, and never to us.</p>
 </div></section>
 
 <section class="legal" id="refunds"><div class="wrap">
