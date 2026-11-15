@@ -179,24 +179,20 @@
   <div class="closing">
     <div>
       <h2>Ident isn't on sale yet</h2>
-      <p>Soon you'll be able to leave your email address here and we'll tell you when it is: a link to confirm,
-        then one email on the day it goes on sale. After that we delete your address.</p>
+      <p>Leave your email address and we'll tell you when Ident goes on sale. You'll get a link to confirm
+        first.</p>
       <p class="also">Roster not from eCrew? <a href="airlines.html">Check your airline</a>.</p>
     </div>
-    <!-- MAILING LIST CLOSED (14 Nov 2026): the sign-up needs the licence server's
-         /notify endpoint (D1 + Resend, confirm by email, delete after the launch
-         email; design/website-p1-drafts-2026-11-13/MAILING-LIST.md) and approval.
-         At opening: set action="https://licence.xpdr.aero/notify" method="post",
-         remove the two disabled attributes, set the button text to
-         "Get launch news", and un-comment the privacy wording in legal.html
-         (grep -rn "MAILING LIST CLOSED" docs). -->
-    <form class="signup" novalidate>
+    <form class="signup" action="https://licence.xpdr.aero/notify" method="post" novalidate>
       <label for="su-email">Your email address</label>
       <div class="row">
-        <input id="su-email" name="email" type="email" autocomplete="email" inputmode="email" disabled aria-describedby="su-small">
-        <button type="submit" disabled>Coming soon</button>
+        <input id="su-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="su-small">
+        <button type="submit">Get launch news</button>
       </div>
-      <p class="small" id="su-small">Two emails at most, and a link in each to stop.</p>
+      <label class="tick"><input type="checkbox" name="updates" value="yes"> Keep me updated about Ident (new styles, airlines, offers). Unsubscribe any time.</label>
+      <p class="small" id="su-small">We promise not to spam you. Without the tick: one email when Ident goes on
+        sale, then we delete your address. <a href="legal.html#privacy">How we handle your address</a>.</p>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
     </form>
   </div>
 </div></section>

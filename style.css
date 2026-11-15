@@ -640,6 +640,10 @@ nav .menu .sheet a[aria-current="page"]{color:var(--rust)}
 .signup .small{font-size:.8125rem;color:var(--muted);margin:10px 0 0}
 .signup .fs-msg{margin:0;max-width:none}
 .signup [hidden]{display:none}
+.signup .tick{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;font:400 .9375rem/1.45 var(--sans);color:var(--ink);cursor:pointer}
+.signup .tick input{width:22px;height:22px;min-height:0;flex:none;margin:1px 0 0;accent-color:var(--ink)}
+.signup .tick input:disabled{cursor:not-allowed}
+.signup .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 @media(max-width:860px){
   .reco,.closing{grid-template-columns:1fr}
   .others{grid-template-columns:1fr}
