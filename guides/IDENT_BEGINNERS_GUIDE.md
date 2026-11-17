@@ -282,20 +282,15 @@ plug it in, and it starts by itself. The short, technical version of this route 
 
 Both routes land here. On the first visit to `ident.local:8080` you get a **setup page**. Fill in:
 
-- **Display style** — how the wall looks. You can change it later.
-- **Display name** — anything you like ("Kitchen"). Useful if you ever run two.
-- **Home base** — your base airport code, e.g. `LGW`.
-- **Airline code** — e.g. `U2` for easyJet.
-- **Roster calendar URL** — your calendar link. Leave it blank and add it later if you like;
+- **Code:** tap **Show a code on the display** and type the 4 digits it shows. The phone
+  then stays signed in for 30 days.
+- **Display style:** how the wall looks. You can change it later.
+- **Display name:** anything you like ("Kitchen"). Useful if you ever run two.
+- **Home base:** your base airport code, e.g. `LGW`.
+- **Airline code:** e.g. `U2` for easyJet.
+- **Roster calendar URL:** your calendar link. Leave it blank and add it later if you like;
   **Part 6 explains where to find it**, the one thing that isn't obvious.
-- **Licence key** — `IDNT-XXXX-…`, from your email.
-- **Username and password** — locks the control panel, and it is required: at least six
-  characters. The panel shows your roster and holds your calendar link, which is effectively a
-  password for your whole schedule.
-
-  **If you ever forget it:** take the SD card out, put a file called `ident-reset.txt` on the
-  small drive that appears when you plug the card into a computer, put it back, and switch the
-  display on. It clears the password and deletes the file. No Terminal, no reflashing.
+- **Licence key:** `IDNT-XXXX-…`, from your email.
 
 Press **Finish setup** and you land on the control panel. From here you can:
 
@@ -471,7 +466,7 @@ You can change what each button does in the control panel, under **Buttons**.
 - **Moved house, or the router changed:** you don't need a computer. After two minutes offline the
   display raises its own **Ident-Setup** network. Join it from a phone with the password
   **identsetup**, open `10.42.0.1:8080`, and point it at the new Wi-Fi.
-- **Forgot the panel password:** use the `ident-reset.txt` trick in Part 5.
+- **The page asks for a code:** tap **Show a code on the display** and type the 4 digits it shows.
 - **A Pi Zero 2 W won't join your Wi-Fi:** it only does 2.4GHz.
 
 **Route B only**

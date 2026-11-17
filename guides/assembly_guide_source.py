@@ -467,19 +467,20 @@ c.showPage()
 
 # ============================== PAGE 8 — STEP 5: FINISH SETUP ==============================
 # The first-time setup page (SETUP_PAGE in ident/web/app.py), over the home network. Required there:
-# the licence key (checked online) and a password of at least 6 characters; a username is asked too.
+# the licence key (checked online). No password since 14 Nov 2026: a phone signs in with the code
+# the display shows.
 page_header("", 8, TOTAL)
 stepnum(24*mm, H - 32*mm, 5, 10)
 label(34*mm, H - 35.5*mm, "Finish setting up", 15, INK, "Helvetica-Bold")
-label(34*mm, H - 43*mm, "Now on your own Wi-Fi, same as the display. No cables, no typing of code.", 9.5, GREY)
+label(34*mm, H - 43*mm, "Use a phone or computer on the same Wi-Fi as the display.", 9.5, GREY)
 
 px0, py0, ps = 26*mm, H - 132*mm, 2.6
 phone(px0, py0, ps)
 fill(INK); c.setFont("Helvetica-Bold", 5.4)
 c.drawString(px0 + 6*ps, py0 + 44*ps, "Set up your display")
 fill(GREY); c.setFont("Helvetica", 5)
-for k, t in enumerate(["Display name", "Home base", "Airline code", "Licence key", "Password"]):
-    fy = py0 + 38*ps - k*7*ps
+for k, t in enumerate(["Code", "Display name", "Home base", "Airline code", "Licence key"]):
+    fy = py0 + 39.5*ps - k*6*ps
     c.drawString(px0 + 6*ps, fy, t)
     stroke(LIGHT, 0.8); c.rect(px0 + 6*ps, fy - 4.2*ps, 18*ps, 2.8*ps, stroke=1, fill=0)
 fill(ACC); c.roundRect(px0 + 6*ps, py0 + 5.5*ps, 18*ps, 4*ps, 1.2, stroke=0, fill=1)
@@ -498,13 +499,13 @@ label(70*mm, H - 118.5*mm, "router's device list, with :8080 on the end.", 9, GR
 by = H - 207*mm
 rrect(20*mm, by, W - 40*mm, 66*mm, 4, LIGHT, (0.99, 0.99, 0.98), 1.2)
 label(26*mm, by + 57*mm, "What to enter", 10, INK, "Helvetica-Bold")
-rows = [("Display style", "Pick the look you like. You can change it any time."),
+rows = [("Code", "Tap Show a code on the display, then type the 4 digits it shows."),
+        ("Display style", "Pick the look you like. You can change it any time."),
         ("Display name", "Anything. \"Kitchen\". Useful if you build a second one."),
         ("Home base", "Your base airport code, e.g. LGW."),
         ("Airline code", "Two letters, e.g. U2."),
         ("Roster calendar", "Your crew .ics link. Can be left blank and added later."),
-        ("Licence key", "From your order email: IDNT-XXXX-XXXX-XXXX-XXXX. Checked online."),
-        ("Login", "A username and a password of at least 6 characters. It locks the panel.")]
+        ("Licence key", "From your order email: IDNT-XXXX-XXXX-XXXX-XXXX. Checked online.")]
 yy = by + 48*mm
 for k, v in rows:
     fill(ACC); c.circle(29*mm, yy + 1.2*mm, 1.4*mm, stroke=0, fill=1)

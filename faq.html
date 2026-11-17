@@ -178,9 +178,9 @@ draws rather than our own measurements.</p></div></details>
 <details><summary>How do I set it up?</summary><div class="body">
 <div class="per">
 <div><b class="p">Ident for E1002</b><div><p>Switch it on and press the green button. On your phone, join <span class="mono">Ident-Setup</span> (the password is <span class="mono">identsetup</span>), open <span class="mono">http://192.168.4.1</span> if the page doesn't appear, and enter your home Wi-Fi, your roster link, your base and journey times. About a minute later the board appears.</p></div></div>
-<div><b class="p">Pi, e-paper</b><div><p>Flash the memory card, push the display onto the Pi, and switch on. Join <span class="mono">Ident-Setup</span> from your phone (password <span class="mono">identsetup</span>) and pick your home Wi-Fi. Then, on your home network, open the setup page: it walks you through your base, airline, roster link and a password. Allow an unhurried hour for a first build.</p></div></div>
+<div><b class="p">Pi, e-paper</b><div><p>Flash the memory card, push the display onto the Pi, and switch on. Join <span class="mono">Ident-Setup</span> from your phone (password <span class="mono">identsetup</span>) and pick your home Wi-Fi. Then, on your home network, open the setup page: it walks you through your base, airline and roster link. Allow an unhurried hour for a first build.</p></div></div>
 <div><b class="p">Pi, LED</b><div><p>As the Pi, plus the panel wiring, its own power supply and the LED driver, which is built on the Pi rather than installed. Set aside an afternoon.</p></div></div>
-</div><p>Neither will take your roster link over its own setup network, because that network's password is printed here for anyone to read. Your roster link and passwords are only ever entered on your home network.</p>
+</div><p>On both, you enter your roster link on your home network only, because the setup network's password is printed here for anyone to read.</p>
 </div></details>
 
 <details><summary>How do I change settings later?</summary><div class="body">
@@ -198,10 +198,7 @@ ports on your router.</p>
 <p>Left switched off, your display is reachable only from your own home network. The E1002 can only be reached on your home network.</p></div></details>
 
 <details><summary>Is the settings page protected?</summary><div class="body">
-<div class="per">
-<div><b class="p">Pi, e-paper</b><div><p>Yes, and not optionally: you set a username and password during setup, 6 to 64 characters. The panel shows your roster and holds your calendar link, which is effectively a password for your whole schedule. Passwords are stored only as a salted hash. Forgotten it? Take the memory card out, put a file called <span class="mono">ident-reset.txt</span> on the small drive that appears when you plug the card into a computer, put it back and switch on. It needs the card in your hand, which is the point.</p></div></div>
-<div><b class="p">Ident for E1002</b><div><p>Yes, and not optionally. The first time you open the settings page on your home Wi-Fi, you choose a password, 6 to 64 characters; until you do, that's all the page shows. It is never typed over the display's setup network, whose own password is printed in the guide. After five wrong tries sign-in is locked for five minutes. Forgotten it? Hold any button on the display for 3 seconds, then again: on the setup network that opens, tick <i>I've forgotten the password</i>, and choose a new one on your Wi-Fi. It needs a hand on the display, which is the point.</p></div></div>
-</div>
+<p>Yes. To sign in, tap <b>Show a code on the display</b> (on the E1002 you can also hold any button for 3 seconds) and type the 4-digit code the display shows. That phone stays signed in for 30 days. Only someone who can see the display can sign in. <b>Sign out every phone</b>, at the foot of the page, signs them all out.</p>
 </div></details>
 
 <details><summary>Can I run more than one display?</summary><div class="body">
