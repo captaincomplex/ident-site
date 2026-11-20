@@ -58,7 +58,7 @@
 <p>The Ident software, with its guide and support. You buy the hardware yourself, from whichever supplier you like: we don't mark up hardware or hold stock, so you pay the going rate.</p><div class="per">
 <div><b class="p">Ident for E1002</b><div><p>One box: Seeed's reTerminal E1002, a 7.3&Prime; colour e-paper display with its own battery, case and stand. Nothing to assemble. In testing, not on sale yet.</p></div></div>
 <div><b class="p">Pi, e-paper</b><div><p>A Raspberry Pi, a Pimoroni Inky Impression panel and a memory card. No soldering. <a href="parts.html#reference">The reference build</a> comes to about &pound;126.</p></div></div>
-<div><b class="p">Pi, LED</b><div><p>A Raspberry Pi, one or two HUB75 LED panels, a matrix bonnet and a separate power supply for the panels. More of a project. <a href="parts.html#led">The LED parts</a>.</p></div></div>
+<div><b class="p">Pi, LED</b><div><p>A Raspberry Pi, two 64&times;32 HUB75 LED panels, a matrix bonnet and a separate power supply for the panels. More of a project. <a href="parts.html#led">The LED parts</a>.</p></div></div>
 </div>
 </div></details>
 
@@ -66,33 +66,13 @@
      soon." below with nothing, or with a line about checkout. Prices must
      match buy.html. -->
 <details><summary>What do Mode C and Mode S add?</summary><div class="body">
-<p>We didn't want a subscription. We hate them too. Ident is designed to be bought once and then
-you own it. Reading your roster, the display styles, the wake-up time, the month calendar,
-all of it works without paying anything more, for as long as you have it.</p>
-
+<p>Mode A is bought once and keeps working for as long as you have it: your roster, every style, the wake-up time and the month calendar.</p>
 <ul>
-<li><strong>Mode A, &pound;19.99, once.</strong> Your scheduled times, from your roster.
-If you allow flight lookups, flight status too: delays and diversions.</li>
-<li><strong>Mode C, &pound;2.99 a month or &pound;29.99 a year.</strong> Live landing times, worked out from the
-aircraft&rsquo;s actual position, and diversions the moment they happen.</li>
-<li><strong>Mode S, &pound;3.99 a month or &pound;39.99 a year.</strong> Everything in Mode C, plus the drive
-time home in traffic and the detailed style.</li>
+<li><strong>Mode A, &pound;19.99, once.</strong> Your scheduled times, from your roster. If you allow flight lookups, delays and diversions too.</li>
+<li><strong>Mode C, &pound;2.99 a month or &pound;29.99 a year.</strong> Live landing times from the aircraft&rsquo;s actual position, and diversions as they happen.</li>
+<li><strong>Mode S, &pound;3.99 a month or &pound;39.99 a year.</strong> Everything in Mode C, plus the drive home in traffic and the detailed style.</li>
 </ul>
-
-<p><strong>Why a subscription?</strong> Live data comes from a commercial provider that charges for
-every request, every few minutes, for every board. Their terms don&rsquo;t let us pass our access
-on to you, and asking you to open a developer account of your own didn&rsquo;t seem reasonable.
-So Modes C and S are a subscription, and it pays for that data. The price is all you pay (no
-VAT, no other fees), UK customers only for now, and you can cancel in two clicks; within 14 days you get everything back.
-Not on sale yet: coming soon. <a href="buy.html">Compare the three</a>.</p>
-
-<p><strong>Your data, your call.</strong> Your roster never leaves your display, unless you
-switch on specific features such as flight tracking, and then only the details below. With flight status on (any mode, Mode A included), the flight number, departure airport
-and scheduled time pass through our server to Flightradar24, from 20 minutes before each flight
-until it lands. With Mode S drive times on, your home location (or a nearby corner, if you prefer)
-goes through our server to Google Maps on the way home, in a separate request that names no flight.
-Neither is kept. If you'd rather not share your home location, leave drive times off; Ident uses
-the commute time you set yourself. <a href="#what-leaves">Everything that leaves your display</a>.</p>
+<p>Modes C and S are subscriptions because the live flight data is charged for every request, for every display, and its terms don&rsquo;t let us pass our access on to you. The price is all you pay, with no VAT or other fees. UK customers only for now. Cancel in two clicks; within 14 days you get everything back. Not on sale yet. <a href="buy.html">Compare the three</a>, or see <a href="#what-leaves">what each one sends</a>.</p>
 <p class="rnd">Flight data: Flightradar24</p></div></details>
 
 <details><summary>Which one should I choose?</summary><div class="body">
@@ -100,11 +80,13 @@ the commute time you set yourself. <a href="#what-leaves">Everything that leaves
 </div></details>
 
 <details><summary>Which e-paper size should I choose?</summary><div class="body">
-<p>The 7.3&Prime; Inky Impression if you're unsure: readable across a room and wide enough for the route maps. The 4.0&Prime; is the budget option and works well on a desk or a fridge door. The 13.3&Prime; is a proper wall piece but costs considerably more. All use Pimoroni's six-colour Spectra 6 e-paper and all are fully supported. The E1002 is 7.3&Prime; only.</p>
+<p>The 7.3&Prime; Inky Impression if you're unsure: readable across a room and wide enough for the route maps. The 4.0&Prime; is the budget option and works well on a desk or a fridge door, but it is too small for the month and week views. The 13.3&Prime; is a proper wall piece but costs considerably more. All use Pimoroni's six-colour Spectra 6 e-paper and all are fully supported. The E1002 is 7.3&Prime; only.</p>
 </div></details>
 
 <details><summary>Which LED panel size should I choose?</summary><div class="body">
-<p><b>One 64&times;32 panel</b> is the simplest and cheapest: the commonest HUB75 panel there is, about &pound;17&ndash;&pound;22. <b>Two 64&times;32 panels side by side (128&times;32)</b> fit longer names on each line.</p><p><b>64&times;64 and 128&times;64 aren't supported yet.</b> The LED layout is drawn for a panel 32 pixels high, so on a taller panel the bottom half would stay empty. We'd like to support 64&times;64, and we'll say so here once it's drawn and tested on a real panel. Please don't buy one for Ident until then.</p><p>An LED panel shows four lines of text: what's happening, the route, the landing time and the home time. The e-paper styles, the scan-to-track code and the month calendar are e-paper only.</p>
+<p><b>Two 64&times;32 panels, chained side by side to make 128&times;32.</b> Ident shows four lines on an LED panel: what's happening, the flight and route, the landing time and the home time. At 128 pixels wide every line fits. The 64&times;32 panel is the commonest HUB75 panel there is, about &pound;17&ndash;&pound;22 each; buy two of the same pitch from the same supplier.</p>
+<p><b>One 64&times;32 panel</b> works, but cuts the flight line short (&ldquo;EZY8101 LG&rdquo;). <b>64&times;64 and 128&times;64 panels</b> aren't supported yet: Ident draws only on the top 32 rows, so half the panel stays dark. Please don't buy one for Ident until this page says they work.</p>
+<p>The e-paper styles, the scan-to-track code and the month calendar are e-paper only.</p>
 </div></details>
 
 <details><summary>I already own the 5.7″ Inky Impression. Will it work?</summary><div class="body">
@@ -116,53 +98,68 @@ one it will keep working.</p></div></details>
 <p>A Raspberry Pi 3 Model A+ is the reference build: header fitted, and its Wi-Fi works on both 2.4&nbsp;GHz and 5&nbsp;GHz. The Pi Zero 2 WH is smaller and uses less power, and is the first choice when you can get one, but its Wi-Fi is 2.4&nbsp;GHz only (see Wi-Fi, below). A Pi 4 (1&nbsp;GB) also works with e-paper. Buy the &ldquo;WH&rdquo; Zero, which has its header fitted; the plain Zero 2 W has nothing to plug the display into. <a href="parts.html#computers">The full list</a>.</p>
 </div></details>
 
-<h2 class="faqcat" id="power"><b>02</b> / Power and Wi-Fi</h2>
+<h2 class="faqcat" id="power"><b>02</b> / Power, Wi-Fi and outages</h2>
 
-<details open><summary>Does it need to stay plugged in?</summary><div class="body">
+<details open id="side-by-side"><summary>How does each display cope with power and Wi-Fi?</summary><div class="body">
+<div class="tablewrap"><table class="cmp hw">
+  <thead><tr><th></th><th>Pi with e-paper</th><th>Pi with LED panel</th><th>Ident for E1002</th></tr></thead>
+  <tr><td class="k">Stays plugged in?</td>
+    <td data-label="Pi with e-paper">Yes, by design. A PiSugar battery is optional.</td>
+    <td data-label="Pi with LED panel">Yes, always, with a separate supply for the panel.</td>
+    <td data-label="Ident for E1002">No. It has its own battery and charges over USB-C.</td></tr>
+  <tr><td class="k">On battery</td>
+    <td data-label="Pi with e-paper">About 4 days on a PiSugar 3, about 13 on a PiSugar 3 Plus. Our estimate, not yet measured.</td>
+    <td data-label="Pi with LED panel">No battery version.</td>
+    <td data-label="Ident for E1002">Not measured yet. Seeed quote up to three months with their own software.</td></tr>
+  <tr><td class="k">Wi-Fi</td>
+    <td data-label="Pi with e-paper">2.4 or 5&nbsp;GHz on a Pi 3 A+ or Pi 4. 2.4&nbsp;GHz only on a Pi Zero 2 W.</td>
+    <td data-label="Pi with LED panel">As the Pi it runs on.</td>
+    <td data-label="Ident for E1002">2.4&nbsp;GHz only.</td></tr>
+  <tr><td class="k">Power cut</td>
+    <td data-label="Pi with e-paper">The last picture stays on the screen. It starts again by itself when the power returns.</td>
+    <td data-label="Pi with LED panel">The panel goes dark. It starts again by itself when the power returns.</td>
+    <td data-label="Ident for E1002">Carries on, on its battery.</td></tr>
+  <tr><td class="k">Wi-Fi down</td>
+    <td data-label="Pi with e-paper">Shows what it last knew. After two hours it adds &ldquo;Not updated since&rdquo; and the time.</td>
+    <td data-label="Pi with LED panel">Shows what it last knew, with no warning that it is old.</td>
+    <td data-label="Ident for E1002">Shows what it last knew. After two hours it adds &ldquo;Not updated since&rdquo; and the time.</td></tr>
+  <tr><td class="k">In the dark</td>
+    <td data-label="Pi with e-paper">No light of its own, like paper.</td>
+    <td data-label="Pi with LED panel">Glows, so it reads in a dark hall.</td>
+    <td data-label="Ident for E1002">No light of its own, like paper.</td></tr>
+  <tr><td class="k">Electricity</td>
+    <td data-label="Pi with e-paper">About &pound;1&ndash;&pound;7 a year, depending on the Pi.</td>
+    <td data-label="Pi with LED panel">About &pound;15&ndash;&pound;20 a year.</td>
+    <td data-label="Ident for E1002">Only what it takes to recharge.</td></tr>
+</table></div>
+</div></details>
+
+<details><summary>Does it need to stay plugged in?</summary><div class="body">
 <div class="per">
-<div><b class="p">Ident for E1002</b><div><p>No. It runs on its own 2000&nbsp;mAh battery and sleeps between checks: every 20 minutes while you're rostered to work, hourly otherwise, and not overnight unless you're working. Seeed quote up to three months on a charge with their own software; <b>we haven't measured Ident's figure yet</b> and will publish it when we have. Charge it from any USB-C charger. Left on USB, choose <i>Plugged in</i> in its settings and it checks every 10 to 15 minutes and keeps its settings page open.</p></div></div>
-<div><b class="p">Pi, e-paper</b><div><p>It's designed to be plugged in: always awake, settings always reachable, and it changes the moment your roster does. If you'd rather have no cable, add a PiSugar battery: it wakes, updates the wall and switches itself off until the next check. Our estimate on the default settings is about four days on the 1200&nbsp;mAh PiSugar 3 and about thirteen on the 5000&nbsp;mAh PiSugar 3 Plus; <b>not yet measured on a finished unit</b>. <a href="parts.html#battery">The battery parts</a>.</p></div></div>
-<div><b class="p">Pi, LED</b><div><p>Yes, always. An LED panel draws several watts, so there's no battery version.</p></div></div>
-</div><p class="callout"><b>Unplugged, or with a flat battery, an e-paper board keeps its last picture.</b> It has no power to change it, so it can't tell you it's old. On battery, the Pi puts the time it was drawn on the board, and both products show a battery warning below 20%, so a flat battery shouldn't be a surprise. Once a board has power again, anything more than two hours behind says &ldquo;Not updated since&rdquo; in plain words. An LED panel simply goes dark.</p>
+<div><b class="p">Ident for E1002</b><div><p>No. It runs on its 2000&nbsp;mAh battery and sleeps between checks: every 20 minutes while you're rostered to work, hourly otherwise, and not overnight unless you're working. We haven't measured Ident's battery life yet and will publish it when we have. Left on USB, choose <i>Plugged in</i> in its settings: it then checks every 10 to 15 minutes and keeps its settings page open.</p></div></div>
+<div><b class="p">Pi, e-paper</b><div><p>It's designed to be plugged in, so it is always awake and its settings are always reachable. For no cable, add a <a href="parts.html#battery">PiSugar battery</a>: the Pi wakes, updates the screen and switches itself off until the next check. To change settings, plug it in.</p></div></div>
+<div><b class="p">Pi, LED</b><div><p>Yes, always. An LED panel draws several watts and needs its own 5&nbsp;V supply.</p></div></div>
+</div><p class="callout">With no power, an e-paper screen keeps its last picture and can't change it to say it's old. On battery, both products warn below 20%, and the Pi prints the time it last drew the screen.</p>
 </div></details>
 
 <details><summary>How much electricity does it use?</summary><div class="body">
-<p>Very little. A Raspberry Pi Zero 2 W idles at roughly <strong>0.5–1&nbsp;watt</strong>: published
-measurements put it around 100–120&nbsp;mA at 5V, rising towards 250&nbsp;mA with Wi-Fi busy. The
-e-paper panel draws nothing at all while it's just sitting there showing your duty; it only pulls
-current during the ~30 second redraw, which happens a handful of times a day.</p>
-<p>Call it <strong>under 1&nbsp;watt on average</strong>. Left on permanently that's roughly
-6&nbsp;kWh a year, around <strong>£1.50–£2 a year</strong> at typical UK electricity prices, or
-about the same as leaving a phone charger plugged in.</p>
-<p>Bigger boards cost more to run, though none of it is much. At the current price cap
-(26.32p per kWh) a continuously-powered watt costs about <strong>£2.30 a year</strong>, so:</p>
+<p>At the current price cap (26.32p per kWh), one watt left on all year costs about &pound;2.30. These are typical published figures, not our own measurements:</p>
 <table style="margin-top:10px">
   <tr><th>Build</th><th>Typical draw</th><th>Per year</th></tr>
-  <tr><td class="k">Pi Zero 2 W + e-paper</td><td data-label="Typical draw">~0.5 W</td><td data-label="Per year">~£1.20</td></tr>
-  <tr><td class="k">Pi 3 Model A+ + e-paper</td><td data-label="Typical draw">~1.4 W</td><td data-label="Per year">~£3</td></tr>
-  <tr><td class="k">Pi 4 + e-paper</td><td data-label="Typical draw">~2.7 W</td><td data-label="Per year">~£6</td></tr>
-  <tr><td class="k">Pi 5 + e-paper</td><td data-label="Typical draw">~3 W</td><td data-label="Per year">~£7</td></tr>
-  <tr><td class="k">Any Pi + 128×32 LED matrix</td><td data-label="Typical draw">~6–9 W</td><td data-label="Per year">~£15–£20</td></tr>
+  <tr><td class="k">Pi Zero 2 W + e-paper</td><td data-label="Typical draw">~0.5 W</td><td data-label="Per year">~&pound;1.20</td></tr>
+  <tr><td class="k">Pi 3 Model A+ + e-paper</td><td data-label="Typical draw">~1.4 W</td><td data-label="Per year">~&pound;3</td></tr>
+  <tr><td class="k">Pi 4 + e-paper</td><td data-label="Typical draw">~2.7 W</td><td data-label="Per year">~&pound;6</td></tr>
+  <tr><td class="k">Any Pi + LED panels</td><td data-label="Typical draw">~6&ndash;9 W</td><td data-label="Per year">~&pound;15&ndash;&pound;20</td></tr>
 </table>
-<p style="margin-top:10px">The LED figures depend heavily on brightness and on how much of the
-panel is lit; Ident's screens are mostly dark, which helps, but a bright board in a hall is the
-one build where the electricity is worth a thought. Board figures are typical published idle
-draws rather than our own measurements.</p></div></details>
+<p style="margin-top:10px">E-paper draws nothing while it shows a picture, only during the 30-second redraw. An LED panel's draw depends on its brightness and how much of it is lit.</p></div></details>
 
 <details><summary>Which Wi-Fi does it need?</summary><div class="body">
-<div class="per">
-<div><b class="p">Ident for E1002</b><div><p><b>2.4&nbsp;GHz only.</b> Its radio can't see 5&nbsp;GHz networks; that's the hardware, and no setting changes it.</p></div></div>
-<div><b class="p">Pi, e-paper</b><div><p>The Pi 3 Model A+ and Pi 4 work on 2.4 or 5&nbsp;GHz. The Pi Zero 2 W is <b>2.4&nbsp;GHz only</b>.</p></div></div>
-<div><b class="p">Pi, LED</b><div><p>As the Pi it runs on.</p></div></div>
-</div><p>Most home routers broadcast both bands, so it's usually fine. Trouble comes when a router publishes one network name and steers devices onto 5&nbsp;GHz, or when 2.4&nbsp;GHz has been switched off. If that's yours, switch 2.4&nbsp;GHz on or give it its own name.</p>
+<p>The E1002 and the Pi Zero 2 W need <b>2.4&nbsp;GHz</b> Wi-Fi. The Pi 3 Model A+ and Pi 4 work on 2.4 or 5&nbsp;GHz. Most home routers offer both. If yours has 2.4&nbsp;GHz switched off, or steers everything onto 5&nbsp;GHz under one name, switch 2.4&nbsp;GHz on or give it its own name.</p>
+<p>On an iPhone hotspot, turn on <em>Maximise Compatibility</em> to give the E1002 or a Zero 2 W the 2.4&nbsp;GHz it needs.</p>
 </div></details>
 
-<details><summary>Can I use a phone hotspot?</summary><div class="body">
-<p>Usually not with an E1002 or a Zero 2 W. iPhone hotspots default to 5GHz; turning on
-<em>Maximise Compatibility</em> forces 2.4GHz and generally fixes it. A dual-band Pi avoids the problem.</p></div></details>
-
 <details><summary>What happens if the Wi-Fi goes down?</summary><div class="body">
-<p>The board keeps showing what it last knew, and your roster stays on the device. After two hours without a fresh roster it says &ldquo;Not updated since&rdquo; and the time, so nobody plans around an old picture. Both products set their clock from the internet, so a long outage can also leave the date behind; it corrects itself within a minute or two of reconnecting.</p><p>To rescue it, each one raises its own <span class="mono">Ident-Setup</span> network so you can give it new Wi-Fi from your phone: the Pi by itself after two minutes offline; the E1002 when you hold a button for three seconds and the home Wi-Fi can't be joined.</p>
+<p>The display keeps showing what it last knew, and your roster stays on it. E-paper adds &ldquo;Not updated since&rdquo; and the time after two hours; an LED panel does not yet. The clock comes from the internet, so a long outage can leave the date behind; it corrects itself a minute or two after the Wi-Fi returns.</p><p>To give it new Wi-Fi, each one raises its own <span class="mono">Ident-Setup</span> network for your phone to join: the Pi by itself after two minutes offline, the E1002 when you hold a button for three seconds and it can't join the home Wi-Fi.</p>
 </div></details>
 
 <h2 class="faqcat" id="setup"><b>03</b> / Setting up</h2>
@@ -208,19 +205,22 @@ in the middle. Give each a name (Kitchen, Study) so you can tell them apart.</p>
 <h2 class="faqcat" id="rosters"><b>04</b> / Rosters</h2>
 
 <details><summary>Which airlines does it work with?</summary><div class="body">
-<p>Ident was built and tested against <strong>easyJet eCrew</strong> calendar feeds. Any roster
-published as a standard <span class="mono">.ics</span> calendar has a good chance of working,
-either as a live feed, or by uploading the file by hand. Reading eCrew roster
-<strong>PDFs</strong> is supported as an optional extra you can install if you need it.</p>
-<p>If you fly for another airline, don't buy yet: <a href="airlines.html">apply for a free
+<p>Ident was built and tested against <strong>easyJet eCrew</strong> calendar feeds. It also
+reads the calendar link from <a href="#rosterbuster"><strong>RosterBuster</strong></a>, for any
+airline RosterBuster supports. We built that from RosterBuster's published settings and have
+not yet seen a real RosterBuster roster, so tell us what it gets wrong. Any roster published as
+a standard <span class="mono">.ics</span> calendar has a good chance of working, either as a
+live feed or by uploading the file by hand. Reading eCrew roster <strong>PDFs</strong> is an
+optional extra you can install if you need it.</p>
+<p>If your airline isn't covered, don't buy yet: <a href="airlines.html">apply for a free
 Ident</a> instead. Help us read your airline's roster and the licence is yours free,
 permanently. If it turns out not to be possible we'll say so rather than take your money.</p></div></details>
 
 <details><summary>How does it get my roster?</summary><div class="body">
-<p>You paste your crew calendar link into the control panel once. Ident then re-checks it every 30
+<p>You paste <a href="#roster-link">your roster link</a> into the control panel once. Ident then re-checks it every 30
 minutes, so roster changes appear without you doing anything.</p></div></details>
 
-<details><summary>How should I set up the eCrew app?</summary><div class="body">
+<details id="ecrew"><summary>How should I set up the eCrew app?</summary><div class="body">
 <p>eCrew copies your roster into a calendar on your phone, and Ident reads that calendar. Out of
 the box eCrew puts a whole day&rsquo;s flying into one calendar entry; Ident is built for one entry
 per flight. In the eCrew app:</p>
@@ -232,14 +232,33 @@ per flight. In the eCrew app:</p>
 <p>The calendar only updates while the eCrew app is running, so open it after any roster change.
 If Ident spots several flights in one entry, the control panel reminds you of this setting.</p></div></details>
 
-<details><summary>Where do I find my calendar link?</summary><div class="body">
-<p>Ident needs a <em>web address that serves your calendar</em>, not a calendar file you've
-downloaded: a file is a snapshot, an address keeps up. Providers name it differently,
-secret address, private address, subscription link, ICS link, but it's the same
-thing: a long, unguessable URL, usually ending <span class="mono">.ics</span>.</p>
-<p><strong>In your crew portal,</strong> look for <em>subscribe</em>, <em>export to calendar</em>
-or <em>iCal feed</em>, and take the link rather than the download. If it will only give you a
-file, upload that in the control panel instead.</p>
+<details id="rosterbuster"><summary>How do I use RosterBuster?</summary><div class="body">
+<p>RosterBuster can give you a private calendar link with your whole roster in it. Ident reads
+that link.</p>
+<ol>
+<li>In the RosterBuster app: <strong>Settings &rarr; Events</strong>. Set <strong>Flight number
+prefix</strong> to <strong>IATA</strong>. Turn on <strong>Generate report</strong>, so the board
+shows your real report time.</li>
+<li>On rosterbuster.com, signed in: <strong>Settings &rarr; Export &rarr; Calendar &rarr; Enable
+webcal link</strong>. Copy the link. It starts
+<span class="mono">https://rosterbuster.com/ical/private/</span>.</li>
+<li>Paste it into Ident as your roster link, with <strong>RosterBuster</strong> chosen above the
+link box.</li>
+</ol>
+<p>RosterBuster's layover events can be on or off; Ident ignores them. Your roster is already on
+RosterBuster's servers: the link sends it from there to your display, and nothing comes to
+us.</p>
+<p>If the link ever gets out, make a new one in the app: <strong>Calendars &rarr; WebCal &rarr;
+Unsubscribe</strong>, tick <strong>Generate new WebCal URL</strong>, then
+<strong>Subscribe</strong>. Paste the new link into Ident.</p></div></details>
+
+<details id="roster-link"><summary>Where do I find my roster link?</summary><div class="body">
+<p>Ident needs a link to your calendar, not a downloaded calendar file: a link keeps up with changes, a file doesn't. It is a long web address, usually ending <span class="mono">.ics</span>, and it may be called a secret address, subscription link or ICS link.</p>
+<div class="per">
+<div><b class="p">eCrew</b><div><p>eCrew copies your roster into your phone's calendar. <a href="#ecrew">Set up eCrew</a> first, then copy that calendar's link from Google or iCloud, below.</p></div></div>
+<div><b class="p">RosterBuster</b><div><p>Follow <a href="#rosterbuster">the RosterBuster steps</a>.</p></div></div>
+<div><b class="p">Crew portal</b><div><p>Look for <em>subscribe</em>, <em>export to calendar</em> or <em>iCal feed</em>, and copy the link rather than download the file. If it only gives a file, upload that in the control panel.</p></div></div>
+</div>
 <p><strong>Google Calendar:</strong> on a computer, Settings &rarr; <em>Settings for my
 calendars</em> &rarr; the calendar &rarr; <strong>Integrate calendar</strong> &rarr; copy
 <strong>Secret address in iCal format</strong>. There's a <em>Reset</em> button beside it if the
@@ -256,12 +275,8 @@ calendars</em> &rarr; <strong>Publish a calendar</strong>, choose the calendar a
 showing all details, publish, then copy the <strong>ICS</strong> link, not the HTML one.
 (<a href="https://support.microsoft.com/en-us/outlook/share-your-calendar-in-outlook-com" target="_blank" rel="noopener">Microsoft's
 instructions</a>)</p>
-<p><strong>Check it before you paste it.</strong> Opened in a browser, the right link downloads or
-displays text beginning <span class="mono">BEGIN:VCALENDAR</span>. A login page or a normal-looking
-calendar means you've got the view, not the feed.</p>
-<p><strong>And treat it as a password.</strong> Anyone holding that link can read your whole
-roster, indefinitely, without signing in to anything. Don't email it, post it, or send it to
-support: Ident keeps it out of its own diagnostics export for exactly that reason.</p>
+<p><strong>To check it,</strong> open it in a browser: the right link downloads or shows text beginning <span class="mono">BEGIN:VCALENDAR</span>. A login page or a normal-looking calendar is the wrong link.</p>
+<p><strong>Keep it private.</strong> Anyone with the link can read your whole roster without signing in. Don't email it, post it or send it to support; Ident keeps it out of its own support report.</p>
 </div></details>
 
 <details><summary>Does it handle standby, training and days off?</summary><div class="body">
@@ -342,7 +357,7 @@ by itself later. The E1002 has no slider: each row has its own switch on its set
 <div><b class="p">Weather</b><div><p>The four-letter code of the airport you are at or flying to (EGKK for Gatwick, say) goes to aviationweather.gov, the US weather service, at most every 15 minutes, while a weather band is chosen. That is the same request anyone looking up that airport's weather makes. <strong>Pi:</strong> the &ldquo;Weather&rdquo; stop. <strong>E1002:</strong> no weather, so never.</p></div></div>
 <div><b class="p">Flight status</b><div><p>From 20 minutes before each flight's scheduled departure until it lands, the flight number, the departure airport and the scheduled departure time go to licence.xpdr.aero: every 10 minutes on the ground, every 20 in the cruise and every 5 near landing. Our server asks Flightradar24, the flight data service, and passes the answer back. It keeps nothing beyond a minute or two of cache, so displays asking about the same flight share one answer. If a flight is never seen, for example because it was cancelled, the display stops asking some hours after it was due.</p><p>The flight request carries a pass, not your licence: about once a day the display shows its licence certificate to get that pass, and that request names no flight. Available on every licence, Mode A included. <strong>Pi:</strong> the &ldquo;Flight status&rdquo; stop, off until you choose it. A display set up before November 2026 keeps its roster and updates, and asks you once in the control panel whether to turn flight status back on. <strong>E1002:</strong> off until you switch on &ldquo;Show flight status&rdquo;.</p></div></div>
 <div><b class="p">Drive time</b><div><p>Mode S only. While you are on your way home, two points go to licence.xpdr.aero: where the drive starts (the car park or airport) and your home location, each rounded to about 10 metres. Our server asks Google Maps for the drive time in traffic and passes it back. No flight, time or licence goes with them, they travel under a separate pass from flight status, and nothing is kept. Your home location can be a nearby corner or shop instead of your house. <strong>Pi:</strong> the &ldquo;Drive times&rdquo; stop. <strong>E1002:</strong> off until you switch it on.</p></div></div>
-<div><b class="p">Diagnostics</b><div><p>One small report a day, of counts and fixed words (the full list is <a href="#diagnostics">below</a>), goes to licence.xpdr.aero, not tied to your licence key or serial number. <strong>Pi:</strong> only at Full accuracy, or if you switch it on by itself. <strong>E1002:</strong> off until you tick it.</p></div></div>
+<div><b class="p">Diagnostics</b><div><p>One small report a day, of counts and fixed words (<a href="legal.html#diagnostics-report">the full list</a>), goes to licence.xpdr.aero, not tied to your licence key or serial number. <strong>Pi:</strong> only at Full accuracy, or if you switch it on by itself. <strong>E1002:</strong> off until you tick it.</p></div></div>
 <div><b class="p">The time</b><div><p>Both products set their clock from public internet time servers. The request asks for the time and carries nothing else.</p></div></div>
 </div>
 <p>Every server your display talks to also sees your home's internet address, as any website you
@@ -359,56 +374,8 @@ under <a href="#what-leaves">What exactly leaves my display?</a></p></div></deta
 Diagnostics reporting is off when you buy it, stays off until you switch it on, and never switches
 itself on or off. On a Pi it is the top stop of the privacy slider, Full accuracy, or its own switch
 beside the slider; on an E1002 it is a tick box on the settings page.</p>
-<p>Two things are different, and we'd rather say so plainly than leave you to find out. They are
-about your licence, not about how your display is working, and they happen whether or not you switch
-reporting on:</p>
-<ul>
-  <li><strong>Licence check at setup.</strong> When you enter your licence key, your display contacts
-    our licence server once to activate it. That request carries your licence key and your display's
-    serial number, so the server can tie the licence to that one display.</li>
-  <li><strong>Daily update check.</strong> Once a day your display asks the same server whether a
-    newer version of Ident is available. That request carries your licence certificate, which
-    names your licence and your display's serial number, so the server knows you are licensed.
-    On a Pi it stops only at the Full privacy end of the slider, and then the board never updates;
-    on an E1002 it stops when you turn off automatic updates.</li>
-</ul>
-<p>Neither carries your roster, your settings or any diagnostics. The rest of what your display
-can send (the weather, flight status, drive times) is listed under
-<a href="#what-leaves">What exactly leaves my display?</a></p>
-<p>If you do switch reporting on, your display sends one small report a day. It is made only of numbers and
-fixed words, so there is nowhere in it for a roster to travel. This is the complete list of what it
-can contain; nothing outside this list is accepted, by your display or by our server:</p>
-<ul>
-  <li><code>version</code>, the Ident software version, such as 4.26.0</li>
-  <li><code>product</code>, which Ident product it is</li>
-  <li><code>hardware</code>, the kind of device it runs on (for example a Pi Zero 2 W or a Pi 5)</li>
-  <li><code>os</code>, which Raspberry Pi OS release it runs (bookworm, trixie or other)</li>
-  <li><code>panel</code>, the screen setting, such as impression_7_3</li>
-  <li><code>style</code>, the display style you chose, such as board_solari</li>
-  <li><code>uptime_days</code>, days since the device last restarted</li>
-  <li><code>disk_free</code>, roughly how much storage is left, in one of four bands</li>
-  <li><code>feed_ok</code>, how many roster refreshes worked since the last report</li>
-  <li><code>feed_failed_network</code>, refreshes that failed because something could not be reached</li>
-  <li><code>feed_failed_http</code>, refreshes where the feed answered with an error</li>
-  <li><code>feed_failed_parse</code>, refreshes where the feed arrived but could not be read</li>
-  <li><code>render_errors</code>, how many times drawing the screen failed</li>
-  <li><code>update_check_failed</code>, how many update checks failed</li>
-  <li><code>unrecognised_days</code>, how many days in your roster have a code Ident doesn't recognise: a number, never the code</li>
-  <li><code>custom_codes</code>, how many roster codes you have described yourself: a number, never the codes</li>
-</ul>
-<p><strong>It never contains:</strong> your roster, flights, dates or places; your calendar link;
-the roster codes themselves; your licence key or your device's serial number; your name, address or
-home location; Wi-Fi names or passwords; or your internet address (our server does not keep it).</p>
-<p>Each display makes a random ID of its own when you switch reporting on. It is not linked to your
-licence, your order or you. The report is not tied to who bought the display.</p>
-<p><strong>You can check before anything is sent.</strong> The developer page shows the exact report
-as it would go out now, a list of every send, a <em>Send now</em> button, and a button that asks our
-server to delete everything held for your display and makes your display forget its ID. Reports we
-keep are removed automatically after 180 days.</p>
-<p>What we use it for: seeing, for example, that one software version fails to read a roster, or
-that a screen setting errors. It tells us how many displays hit a problem, never whose.</p>
-<p>Reporting is separate from the support file you can download from the same page. That file
-stays on your device until you choose to email it to us, and you can read it first.</p>
+<p>Two requests go whether or not reporting is on, because they concern your licence: the licence check when you activate it, and the daily update check. Neither carries your roster, settings or diagnostics; both are described in <a href="#what-leaves">What exactly leaves my display?</a></p>
+<p>If you do switch it on, your display sends one small report a day, made only of numbers and fixed words, so there is nowhere in it for a roster to travel. <a href="legal.html#diagnostics-report">Everything a report can contain</a>, and how to see or delete it, is in the privacy notice.</p>
 </div></details>
 
 <details><summary>Does the board show sensitive roster codes?</summary><div class="body">
@@ -477,8 +444,8 @@ nothing to track, so nothing is shown. Panels without buttons can still use the 
 <p>Yes, two ways. Under <em>Days off</em> in the control panel, tick <em>Show the month
 calendar on days off</em>: on a day off the wall shows the whole month as a grid:
 destinations on flying days, standby and days off marked, today boxed. Or set one of the
-buttons to <em>Month calendar</em> to bring it up for a minute at any time. Either needs a
-7&Prime; panel or larger, where there's room to read it.</p>
+buttons to <em>Month calendar</em> to bring it up for a minute at any time.</p>
+<p><strong>The month and week views need a 7.3&Prime; screen or larger:</strong> the E1002, or the 7.3&Prime; or 13.3&Prime; Inky. On the 4.0&Prime; and the old 5.7&Prime; they are too small to read, so Ident doesn't offer them there.</p>
   <div class="qa-figs"><figure><figure class="dev "><img src="img/scenes/f_month.png" alt="The month calendar on a day off" width="1600" height="960" loading="lazy"></figure><figcaption>The month, on a day off</figcaption></figure></div>
 </div></details>
 

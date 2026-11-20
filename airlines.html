@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ident: airline not supported? Apply for a free one</title>
-<meta name="description" content="Ident reads easyJet eCrew rosters today. Fly for someone else? Help us add your airline and the software is yours free, for good.">
+<meta name="description" content="Ident reads easyJet eCrew rosters and RosterBuster's calendar link. Fly for someone else? Help us add your airline and the software is yours free, for good.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
@@ -46,14 +46,14 @@
 
 <header><div class="wrap">
   <h1>Airline not supported? <span class="g">Apply for a free Ident</span></h1>
-  <p class="lead">Ident reads easyJet eCrew rosters today. Every other airline is a
-    format nobody has looked at yet. Help us read yours and the software is
-    yours, free, permanently, including everything that comes after.</p>
+  <p class="lead">Ident reads easyJet eCrew rosters, and RosterBuster's calendar link for
+    any airline RosterBuster supports (<a href="faq.html#rosterbuster">how to set it up</a>). For
+    any other roster, help us read it and the software is yours free, permanently, including
+    everything that comes after.</p>
 </div></header>
 
 <section><div class="wrap">
-  <h2>The deal, plainly</h2>
-  <p class="sub">You give us the format. We do the work. You keep the software.</p>
+  <h2>How it works</h2>
   <div class="ruled three">
     <div>
       <h3>You send a sample</h3>
@@ -62,20 +62,19 @@
     </div>
     <div>
       <h3>We write the parser</h3>
-      <p>Usually a few evenings. We'll come back with questions: duty codes are
-        never as obvious as they look.</p>
+      <p>Usually a few evenings, with some questions for you about your duty codes.</p>
     </div>
     <div>
       <h3>You test it, and keep it</h3>
       <p>You run it against your real roster and tell us what's wrong. When it's
-        right, your licence is free. No expiry, no upgrade later.</p>
+        right, your licence is free, with no expiry.</p>
     </div>
   </div>
 </div></section>
 
 <section><div class="wrap">
   <h2>Your codes, in plain words on the wall</h2>
-  <p class="sub" style="max-width:62ch">Whatever your airline calls a day, Ident shows it in words a family can read. Here are three of the examples from the form below, as they come out.</p>
+  <p class="sub" style="max-width:62ch">Ident shows each duty in words a family can read. These are the three example codes from the form below.</p>
   <div class="trio">
     <figure><figure class="dev "><img src="img/scenes/a_adty.png" alt="The Solari board showing AIRPORT DUTY, LGW, ADTY 06:00 to 14:00 and home 14:53" width="1600" height="960" loading="lazy"></figure><figcaption>ADTY: airport standby</figcaption></figure>
     <figure><figure class="dev "><img src="img/scenes/a_esby.png" alt="The status colour style in yellow: on standby until 19:00, could be called in" width="1600" height="960" loading="lazy"></figure><figcaption>ESBY: standby from home</figcaption></figure>
@@ -85,31 +84,30 @@
 </div></section>
 
 <section><div class="wrap">
-  <h2>What we actually need</h2>
-  <p class="sub">In rough order of usefulness.</p>
+  <h2>What to send</h2>
+  <p class="sub">Most useful first.</p>
   <div class="ruled three">
     <div><h3>A calendar feed</h3>
-      <p>If your airline offers an <span class="mono">.ics</span> subscription, AIMS eCrew,
-        CrewLink, Sabre and others do: that's the whole job, and the quickest route.
-        <strong>Don't send us the link itself:</strong> it's a password in URL form. Tell us
-        which system it comes from and we'll take it from there.</p></div>
+      <p>If your airline offers an <span class="mono">.ics</span> subscription (AIMS eCrew,
+        CrewLink, Sabre and others do), this is the quickest route. Tell us which system it
+        comes from; don't send the link itself. If you use RosterBuster and Ident shows a code
+        it doesn't know, tell us the letters and what they mean.</p></div>
     <div><h3>Or a roster PDF</h3>
-      <p>The monthly one you already download. Black out your name, staff number and
-        anyone else who appears on it. We need the shape of the page, not who you are.</p></div>
+      <p>The monthly one you already download, with your name, staff number and anyone else
+        on it blacked out.</p></div>
     <div><h3>Your duty codes</h3>
-      <p>What your airline calls a day off, standby, positioning, training, sick. This is
-        the part that actually takes the time, and the part only you know.</p></div></div>
+      <p>What your airline calls a day off, standby, positioning, training and sickness.
+        Only you can tell us these, and they take the longest.</p></div></div>
   <div class="note" style="margin-top:22px;max-width:640px">
-    <strong>On your data.</strong> Send a redacted sample, not a live feed. We use it to
-    write the parser and delete it when the parser works: we don't want a copy of your
-    roster and we've built the product specifically so we never hold one. Once it's
-    running, your roster stays on your own device, as it does for everyone else.
+    <strong>Your sample.</strong> A person reads it to work out the format. It isn't uploaded
+    anywhere or given to any service, and it is deleted once the parser works, or sooner if
+    you ask. Never send your live calendar link: anyone holding it can read your roster. Once
+    your airline is supported, your roster stays on your own device, as it does for everyone else.
   </div>
 </div></section>
 
 <section><div class="wrap">
   <h2>Apply</h2>
-  <p class="sub">No form-filling marathon. Four boxes.</p>
 
   <div class="fs-msg fs-ok" data-fs-success hidden></div>
   <div class="fs-msg fs-bad" data-fs-error hidden></div>
@@ -144,9 +142,8 @@ ESBY = standby from home
 D/O  = day off
 </textarea>
     <div class="note" style="margin:8px 0 0;max-width:none;font-size:13px">
-      This is the part only you can supply, and the part that takes us longest to guess.
-      Overwrite the examples above with yours. Anything you're unsure of, say so: a
-      wrong guess about a code is how a standby ends up on the wall as a flight.
+      Replace the examples with your airline's codes, and say which ones you're unsure of.
+      A wrong guess can put a standby on the wall as a flight.
     </div>
 
     <label for="message">ANYTHING ELSE</label>
@@ -163,42 +160,23 @@ D/O  = day off
   </form>
 
   <div class="note" style="margin-top:26px;max-width:640px">
-    <strong>Then send the sample roster by email.</strong> The form above can't carry a
-    file, and we'd rather not build somewhere for other people's rosters to pile up.
-    Attach it to a message to
+    <strong>Then email a sample roster</strong>, since the form can't carry a file. Attach it to a message to
     <a id="mailLink" href="mailto:support@xpdr.aero?subject=Ident%3A%20sample%20roster">support@xpdr.aero</a>,
     a month's roster as you download it, with your name, staff number and anyone else
-    on it blacked out. PDF, .ics, HTML, a screenshot of the crew portal: whatever you
-    actually get.
+    on it blacked out: PDF, .ics, HTML or a screenshot of the crew portal, whatever you get.
   </div>
 </div></section>
 
 <section><div class="wrap">
-  <h2>What happens to it</h2>
-  <div class="ruled">
-    <div><h3>It's read once, by a person</h3>
-      <p>Your sample is opened to work out the format and write the parser. It isn't
-        uploaded anywhere, fed to a service, or kept after the work is done.</p></div>
-    <div><h3>Deleted when the parser works</h3>
-      <p>Once your airline is supported the sample is deleted. Ask for it sooner and
-        we'll delete it sooner: the codes are the useful part, not the file.</p></div>
-    <div><h3>Never send the live link</h3>
-      <p>Your calendar subscription URL is a password. Don't put it in the form or the
-        email. Tell us which crewing system it comes from instead.</p></div></div>
-</div></section>
-
-<section><div class="wrap">
-  <h2>Honest small print</h2>
+  <h2>Before you apply</h2>
   <div class="ruled">
     <div><h3>It might not be possible</h3>
-      <p>Some airlines publish nothing a device can read. If yours is one of them we'll
-        tell you straight rather than string you along.</p></div>
-    <div><h3>It takes as long as it takes</h3>
-      <p>This is built by a working pilot around a roster of his own. Weeks, not days,
-        and more if your airline changes its format halfway through.</p></div>
+      <p>Some airlines publish nothing a device can read. If yours is one, we'll tell you.</p></div>
+    <div><h3>It takes weeks</h3>
+      <p>Ident is built by a working pilot around their own roster, so expect weeks rather than
+        days, and longer if your airline changes its format part way through.</p></div>
     <div><h3>You still buy your own hardware</h3>
-      <p>The free part is the software. The display and Raspberry Pi come from the
-        usual places: see <a href="parts.html">parts</a>.</p></div></div>
+      <p>The software is free; the display comes from the usual shops. See <a href="parts.html">parts</a>.</p></div></div>
 </div></section>
 
 </main>

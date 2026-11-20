@@ -112,6 +112,27 @@ def explain_remote(remote, lookup, album_uuids) -> list:
     return lines
 
 
+def describe_in_way(names, lookup) -> str:
+    """The pictures an E1002 needs taken out of the album so its new maps fit, named as
+    Photos names them (album_room/OPTIONS.md, option B, chosen 14 Nov 2026); "" if none.
+
+    *names* are the display's own (a Photos ID and a code), which nobody could find;
+    *lookup(uuid)* returns (original filename, date) for a photo in this library, or None.
+    """
+    if not names:
+        return ""
+    shown = []
+    for name in names:
+        uuid = uuid_of(name)
+        found = lookup(uuid) if uuid else None
+        if found:
+            fname, when = found
+            shown.append(f"{fname} ({when.day} {when:%b %Y})" if when else fname)
+        else:
+            shown.append(f"{name} (not in this Mac's Photos library)")
+    return "To make room for the display's new maps, take these out of the album: " + ", ".join(shown)
+
+
 def target_box(requested, manifest: dict) -> tuple:
     """The size to resize to: --panel if given, else the size the display asks for.
 
@@ -298,6 +319,14 @@ def sync(host: str, port: int, album: str, box, quality: int,
     print(f"Reading Apple Photos album {album!r}; targeting {box[0]}x{box[1]}")
     db = osxphotos.PhotosDB()
     photos = [p for p in db.photos(albums=[album]) if p.isphoto]
+    if info.get("in_way"):                       # an E1002 whose new maps don't fit yet
+        def named(uuid):
+            try:
+                hit = db.photos(uuid=[uuid])
+            except Exception:
+                hit = []
+            return (hit[0].original_filename, hit[0].date) if hit else None
+        print(describe_in_way(info["in_way"], named))
     if listing:
         print(f"  on the display now: {len(remote)} picture(s)")
         def lookup(uuid):

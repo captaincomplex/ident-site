@@ -46,9 +46,8 @@
 
 <header><div class="wrap">
   <h1>What to buy, <span class="g">and what not to pair</span></h1>
-  <p class="lead">Ident is software: you source the hardware yourself. Start with how much you
-    want to build, then pick the parts. Every supported option is here, and so are the
-    combinations that will waste your money.</p>
+  <p class="lead">Ident is software; you buy the hardware yourself. Choose how much you want to
+    build, then the parts. The combinations that don't work are at the end.</p>
 </div></header>
 
 <section id="choose"><div class="wrap">
@@ -87,7 +86,7 @@
     <tr><td class="k">Colour screen</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span> <span class="why">E1002; the E1001 is black and white</span></td></tr>
     <tr><td class="k">Choice of screen size</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span> <span class="why">4.0″, 7.3″, 13.3″</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span> <span class="why">7.3″ or 7.5″</span></td></tr>
     <tr><td class="k">LED departure-board panels</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span></td></tr>
-    <tr><td class="k">Most display styles</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span> <span class="why">All 21</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span> <span class="why">All but the travel poster and the two Mode S styles. <a href="styles.html">See which runs where</a></span></td></tr>
+    <tr><td class="k">Most display styles</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span> <span class="why">All 21</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span> <span class="why">All but Destinations, which follows. <a href="styles.html">See which runs where</a></span></td></tr>
     <tr><td class="k">Scan-to-track QR code</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span> <span class="why">The middle button, by default</span></td></tr>
     <tr><td class="k">Flight status: delays, diversions, live landing times</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="yes" aria-label="Yes">✓</span></td></tr>
     <tr><td class="k">Airport weather</td><td data-label="Raspberry Pi build"><span class="yes" aria-label="Yes">✓</span></td><td data-label="reTerminal"><span class="no" aria-label="No">✗</span></td></tr>
@@ -123,24 +122,20 @@
       <td data-label="Redraw">2–5 seconds</td></tr>
   </table>
   <div class="note" style="margin-top:16px"><strong>Battery life.</strong> Seeed's three months
-    is on their own software and settings. Ident checks your roster every 20 minutes while
-    you're working and hourly otherwise, but only redraws the screen when something has
-    changed (the redraw is where most of the power goes), and once a day regardless, to
-    keep the screen healthy. We'll publish a measured figure once testing is done; until
-    then, treat three months as the best case, not a promise. The colour screen uses more
-    per redraw than the black-and-white one. Both charge from any USB-C charger.</div>
-  <div class="note" style="margin-top:12px"><strong>The screen flashes when it redraws: that's
-    normal.</strong> The colour E1002 runs through its colours several times over 15–30
-    seconds before it settles; the black-and-white E1001 flickers briefly. It is how these
-    screens work, not a fault.</div>
+    is with their own software. Ident checks your roster every 20 minutes while you're working
+    and hourly otherwise, and redraws only when something changes, plus once a day. We'll
+    publish a measured figure after testing; until then treat three months as the best case.
+    Both charge from any USB-C charger.</div>
+  <div class="note" style="margin-top:12px"><strong>The screen flashes when it redraws.</strong>
+    The colour E1002 runs through its colours for 15–30 seconds before it settles; the
+    black-and-white E1001 flickers briefly. Both are normal.</div>
   <p class="sub" style="margin-top:14px">Prices checked 26 September 2026. The E1002 was out of
     stock at Smart Home Shop UK (£116.99) and RS (£125.86) that day.</p>
 </div></section>
 
 <section id="reference"><div class="wrap">
   <h2>Intermediate: the Raspberry Pi reference build</h2>
-  <p class="sub">If you don't want to think about it, buy these four things. This is the
-    combination the software is developed and tested against.</p>
+  <p class="sub">These four parts are what Ident is developed and tested on.</p>
   <table>
     <tr><th>Part</th><th>Which one</th><th>Indicative</th></tr>
     <tr><td class="k">Display</td>
@@ -171,14 +166,10 @@
 
 <section id="battery"><div class="wrap">
   <h2>Or run it on a battery</h2>
-  <p class="sub">The Raspberry Pi build is designed to be plugged in, and that is what we
-    recommend. If you'd rather it had no cable, it can run on a battery too, or choose the
-    reTerminal, which is built to. E-paper keeps its picture with no power at all, so Ident
-    can live on a battery: it wakes, updates the wall, and switches itself off until the next check.
-    Checks come every 20 minutes while you're rostered to work and once an hour
-    otherwise, and you choose the times in the control panel's <em>Power</em> card.
-    Add one of these to the reference build: they fit underneath the Pi and leave
-    the display's connector free.</p>
+  <p class="sub">We recommend keeping the Pi plugged in. For no cable, add one of these: it
+    fits underneath the Pi, and Ident then wakes, updates the screen and switches off until the
+    next check (every 20 minutes while you're rostered to work, hourly otherwise; you can change
+    the times in the control panel's <em>Power</em> card).</p>
   <table>
     <tr><th>Part</th><th>Which one</th><th>Indicative</th></tr>
     <tr><td class="k">Battery for a Pi Zero 2 W</td>
@@ -208,12 +199,11 @@
   <p class="sub">The other supported build. Brighter, livelier, and it looks like the board
     at the gate, but it glows, it needs its own power supply, and it is more of a project.
     Mains only; there is no battery version of an LED panel.</p>
-  <div class="pair-one"><figure class="led"><figure class="dev ledf"><img src="img/scenes/p_led_128x32_athens.png" alt="A 128 by 32 LED matrix panel: in flight from Birmingham to Athens, land and home times" width="1024" height="256" loading="lazy"></figure><figcaption>128×32, two 64×32 panels side by side. A preview from Ident's simulator; a real panel draws the same four lines in plainer pixel lettering.</figcaption></figure></div>
+  <div class="pair-one"><figure class="led"><figure class="dev ledf"><img src="img/scenes/led_px_128x32_inflight.png" alt="Two chained 64 by 32 LED panels: IN FLIGHT, EZY8101 LGW to ACE, LAND 11:15, HOME about 17:13" width="1024" height="256" loading="lazy"></figure><figcaption>128×32, two 64×32 panels side by side, pixel for pixel.</figcaption></figure></div>
   <table>
     <tr><th>Part</th><th>Which one</th><th>Indicative</th></tr>
     <tr><td class="k">Panels</td>
-      <td data-label="Which one">One <a href="https://thepihut.com/products/rgb-full-colour-led-matrix-panel-4mm-pitch-64x32-pixels" target="_blank" rel="noopener">64×32 HUB75 panel</a>, the commonest and cheapest.
-        Or two, chained into 128×32, for longer names on each line</td><td data-label="Indicative">~£17–£22 each</td></tr>
+      <td data-label="Which one">Two <a href="https://thepihut.com/products/rgb-full-colour-led-matrix-panel-4mm-pitch-64x32-pixels" target="_blank" rel="noopener">64×32 HUB75 panels</a> of the same pitch, chained into 128×32</td><td data-label="Indicative">~£17–£22 each</td></tr>
     <tr><td class="k">Driver</td>
       <td data-label="Which one"><a href="https://thepihut.com/products/adafruit-rgb-matrix-bonnet-for-raspberry-pi-ada3211" target="_blank" rel="noopener">Adafruit RGB Matrix Bonnet</a>, or the
         <a href="https://thepihut.com/products/adafruit-rgb-matrix-hat-rtc-for-raspberry-pi-mini-kit" target="_blank" rel="noopener">Matrix HAT + RTC</a> when the bonnet is out of stock</td><td data-label="Indicative">£14.40</td></tr>
@@ -223,15 +213,12 @@
     <tr><td class="k">Computer</td>
       <td data-label="Which one"><a href="https://thepihut.com/products/raspberry-pi-3-model-a-plus" target="_blank" rel="noopener">Raspberry Pi 3 Model A+</a>, plus its own
         <a href="https://thepihut.com/products/raspberry-pi-zero-uk-power-supply" target="_blank" rel="noopener">12.5W micro-USB supply</a> and a microSD card</td><td data-label="Indicative">~£40</td></tr>
-    <tr><td class="k"></td><td data-label="Which one"><strong>Total</strong></td><td data-label="Indicative"><strong>~£85 with one panel, ~£105 with two</strong></td></tr>
+    <tr><td class="k"></td><td data-label="Which one"><strong>Total</strong></td><td data-label="Indicative"><strong>~£105</strong></td></tr>
   </table>
   <div class="note" style="margin-top:16px">
-    <strong>What works today:</strong> 64×32 (one panel) and 128×32 (two chained). An LED panel
-    shows four lines of text: what's happening, the route, the landing time and home.
-    <strong>64×64 and 128×64 are not supported yet:</strong> the LED layout is drawn for a panel
-    32 pixels high, so the bottom half would stay empty. We'll say so here once a taller layout
-    is drawn and tested on a real panel. A 32×32 is too narrow. Panel prices checked at The Pi Hut
-    on 5 November 2026.
+    <strong>Two 64×32 panels</strong> show every line in full. One 64×32 works but cuts the flight
+    line short. <strong>64×64 and 128×64 aren't supported yet:</strong> Ident draws only on the top
+    32 rows. Panel prices checked at The Pi Hut on 5 November 2026.
   </div>
 </div></section>
 
@@ -246,7 +233,7 @@
     <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-7-3-2025-edition" target="_blank" rel="noopener">7.3″ (2025)</a> <span style="opacity:.6;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono" data-label="Resolution">800×480</td><td data-label="Colours">6 (Spectra)</td>
       <td data-label="Verdict"><span class="yes">Recommended.</span> Best balance of size, price and legibility.</td></tr>
     <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-4-0" target="_blank" rel="noopener">4.0″</a> <span style="opacity:.6;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono" data-label="Resolution">600×400</td><td data-label="Colours">6 (Spectra)</td>
-      <td data-label="Verdict">Cheapest entry. Fine on a desk; small for a wall.</td></tr>
+      <td data-label="Verdict">Cheapest entry. Fine on a desk; small for a wall, with no month or week views.</td></tr>
     <tr><td class="k"><a href="https://thepihut.com/products/inky-impression-13-3-2025-edition" target="_blank" rel="noopener">13.3″</a> <span style="opacity:.6;font-size:.85em">· <a href="https://shop.pimoroni.com/products/inky-impression" target="_blank" rel="noopener">Pimoroni</a></span></td><td class="mono" data-label="Resolution">1600×1200</td><td data-label="Colours">6 (Spectra)</td>
       <td data-label="Verdict">Superb but expensive, and noticeably slower to redraw.</td></tr>
     <tr><td class="k">5.7″</td><td class="mono" data-label="Resolution">600×448</td><td data-label="Colours">7 (ACeP)</td>
@@ -283,7 +270,7 @@
 
 <section><div class="wrap">
   <h2>Combinations that don't work</h2>
-  <p class="sub">Every one of these has cost somebody an evening.</p>
+  <p class="sub">Avoid these.</p>
   <div class="warn"><strong>Plain Zero 2 W (no header) + any Inky panel</strong><p>There's nothing to plug the display into. Buy the “WH” version, which has the
       header already fitted, or, if only the plain board is in stock, add a solderless
       press-fit header. This is the single most common ordering mistake.</p></div>

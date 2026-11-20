@@ -132,6 +132,7 @@ td.k{white-space:nowrap;color:var(--ink);font-weight:600}
 .tablewrap{overflow-x:auto}
 table.cmp td.k{white-space:normal}
 table.cmp th:not(:first-child),table.cmp td:not(.k){width:32%}
+table.cmp.hw th:not(:first-child),table.cmp.hw td:not(.k){width:27%}
 .cmp .yes,.cmp .no{font-size:1.0625rem;margin-right:4px}
 .soon{color:var(--rust);font-weight:500}
 .why{display:block;color:var(--muted);font-size:.8125rem;margin-top:2px}
@@ -434,6 +435,7 @@ html:not(.js) .explode .hint{display:none}
 .flow li{overflow:visible}
 
 /* LED tile v2: four panels, two widths, one grid */
+.ledstack{display:grid;gap:22px;max-width:760px;margin-top:28px}.ledstack .half{max-width:50%}
 .leds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 22px;align-items:start;margin-top:28px}
 .led{margin:0}
 .led.w1,.led.w3{grid-column:1/-1}
@@ -465,6 +467,7 @@ details .body>*:not(table):not(.qa-figs):not(.tablewrap),.legal .wrap>*:not(tabl
   table:not(.keep-table),table:not(.keep-table) tbody,table:not(.keep-table) tr,table:not(.keep-table) td{display:block;width:100%}
   table:not(.keep-table) tr{border-top:1.5px solid var(--line);padding:12px 0}
   table:not(.keep-table) td{border:0;padding:4px 0;width:100%!important;white-space:normal!important}
+  table.cmp.hw tr{padding:12px 14px}
   table:not(.keep-table) td[data-label]::before{content:attr(data-label);display:block;font-size:.6875rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
   table.cmp td:not(.k){width:100%!important}
   .tablewrap{overflow:visible}
@@ -666,3 +669,29 @@ nav .menu .sheet a[aria-current="page"]{color:var(--rust)}
 .phones figcaption{font:400 .75rem/1.4 var(--mono);color:var(--muted);margin-top:8px}
 .twocol{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
 @media(max-width:860px){.twocol{grid-template-columns:1fr}.phones{gap:10px}}
+
+/* ---- calmer scale (draft, 20 Nov 2026: "still far too big in a web browser") ----
+   One block so it can be judged, tuned or removed in one place. Body text stays at 1rem. */
+:root{--max:1040px}
+header,section{padding:clamp(26px,3vw,40px) 0}
+header{padding-top:clamp(22px,2.6vw,34px)}
+section.photo,section.bleed{padding:clamp(22px,2.6vw,32px) 0}
+h1{font-size:clamp(1.875rem,1.4rem + 1.5vw,2.625rem);line-height:1.08;margin-bottom:14px}
+h2{font-size:clamp(1.4375rem,1.2rem + .7vw,1.75rem);line-height:1.18;margin-bottom:10px}
+h3{font-size:1.0625rem}
+.lede{font-size:clamp(1.1875rem,1.05rem + .4vw,1.3125rem)}
+.lead{font-size:1.0625rem;margin-bottom:18px}
+p.sub{margin-bottom:20px}
+.home-hero{grid-template-columns:1.1fr .9fr}
+.herofig{max-width:440px;justify-self:end;width:100%}
+.photo-band img{aspect-ratio:3/1;max-height:340px;object-position:50% 38%}
+.reco{grid-template-columns:.85fr 1.15fr}
+.reco .shotreal{max-width:420px}
+.three{gap:clamp(18px,2.4vw,28px)}
+.three h3{font-size:1rem;margin-top:12px}
+.closing h2{font-size:clamp(1.375rem,1.2rem + .5vw,1.625rem)}
+.prices2 b{font-size:1.3125rem}
+.iggrid .more b{font-size:1.25rem}
+.dev.big{padding:10px}
+.destgrid{max-width:900px}
+@media(max-width:760px){.photo-band img{aspect-ratio:4/3;max-height:none}.herofig{max-width:none}}

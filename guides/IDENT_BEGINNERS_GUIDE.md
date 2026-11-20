@@ -435,7 +435,38 @@ get a download, or a screen full of text starting `BEGIN:VCALENDAR`. If you get 
 login page or a normal-looking calendar, that's the wrong link — it's the *view*
 of the calendar, not the feed.
 
----
+### Getting your roster from RosterBuster
+
+RosterBuster gives you a calendar link directly, so there is no second
+calendar to set up.
+
+**Step 1: Set RosterBuster up for Ident.** In the RosterBuster app, open
+**Settings → Events**:
+
+- Set **Flight number prefix** to **IATA**. Ident then reads your flights'
+  numbers whatever airline you fly for, and any positioning flight on
+  another airline shows as that airline's flight.
+- Turn on **Generate report**. Without it, Ident works out a report time and
+  the board marks it as worked out.
+- **Offdownroute (Layover) Duration** can be on or off. Ident ignores
+  layover events.
+
+**Step 2: Get the link.** On a computer, sign in at rosterbuster.com and go
+to **Settings → Export → Calendar → Enable webcal link**. Copy the link. It
+starts `https://rosterbuster.com/ical/private/`.
+
+**Step 3: Give the link to Ident.** In the control panel's **Roster** card,
+choose **RosterBuster** under *Where does your roster come from?*, paste the
+link and press **Pull feed now**. Check the week view: your flights should
+show with their numbers and the right days.
+
+- The reTerminal's setup page has the same choice and takes the same link.
+- If the link gets out, make a new one in the RosterBuster app:
+  **Calendars → WebCal → Unsubscribe**, tick **Generate new WebCal URL**,
+  then **Subscribe**. The old link stops updating. Paste the new one into
+  Ident.
+- Ident has not yet been tried on a real RosterBuster feed. If a duty shows
+  as an unknown code, send us the letters (never the link).
 
 ---
 
