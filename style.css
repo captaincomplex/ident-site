@@ -536,7 +536,7 @@ ol.parts li::before{border:1px solid var(--line);background:var(--card);color:va
 .prices b{display:block;font:400 2rem/1.1 var(--serif);margin-bottom:6px}
 .prices span{font:400 .8125rem/1.6 var(--mono);color:var(--muted)}
 .hero2{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
-@media(max-width:860px){.three,.prices{grid-template-columns:1fr}.prices>div{border-left:0;border-top:1px solid var(--line)}.prices>div:first-child{border-top:0}.hero2{grid-template-columns:1fr}}
+@media(max-width:719px){.three,.prices{grid-template-columns:1fr}.prices>div{border-left:0;border-top:1px solid var(--line)}.prices>div:first-child{border-top:0}.hero2{grid-template-columns:1fr}}
 
 /* phone: the wordmark, then the links on one line that scrolls sideways */
 @media(max-width:860px){
@@ -647,7 +647,7 @@ nav .menu .sheet a[aria-current="page"]{color:var(--rust)}
 .signup .tick input{width:22px;height:22px;min-height:0;flex:none;margin:1px 0 0;accent-color:var(--ink)}
 .signup .tick input:disabled{cursor:not-allowed}
 .signup .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-@media(max-width:860px){
+@media(max-width:719px){
   .reco,.closing{grid-template-columns:1fr}
   .others{grid-template-columns:1fr}
   .looks{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -718,4 +718,30 @@ details summary{font-size:1.0625rem;padding:13px 0}
   body{font-size:.9375rem}
   .lead{font-size:1rem}
   details .body{font-size:.9375rem}
+}
+
+/* ---- header (21 Nov 2026) ----
+   The full row of links stays down to 720px wide (it switched to the phone
+   Menu at 860px). Between 720 and 1000px the 01-06 numbers drop out so the
+   row fits. With a mouse or trackpad the buttons are 36px tall; on touch
+   screens they stay at the 44px a finger needs. */
+@media(max-width:860px){
+  nav .links{display:flex}
+  nav .phone{display:none}
+}
+@media(max-width:1000px){
+  nav a.l span{display:none}
+  nav a.l{padding:0 7px}
+  nav a.l.cta{padding:0 14px;margin-left:4px}
+}
+@media(max-width:719px){
+  nav .links{display:none}
+  nav .phone{display:flex;align-items:center;gap:8px}
+  nav .phone a.l.cta{margin-left:0}
+}
+@media(pointer:fine){
+  nav .wrap{height:52px}
+  nav a.l{min-height:36px}
+  nav .menu summary{min-height:36px}
+  nav .brand{min-height:36px}
 }
