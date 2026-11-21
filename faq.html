@@ -58,7 +58,7 @@
 <p>The Ident software, with its guide and support. You buy the hardware yourself, from whichever supplier you like: we don't mark up hardware or hold stock, so you pay the going rate.</p><div class="per">
 <div><b class="p">Ident for E1002</b><div><p>One box: Seeed's reTerminal E1002, a 7.3&Prime; colour e-paper display with its own battery, case and stand. Nothing to assemble. In testing, not on sale yet.</p></div></div>
 <div><b class="p">Pi, e-paper</b><div><p>A Raspberry Pi, a Pimoroni Inky Impression panel and a memory card. No soldering. <a href="parts.html#reference">The reference build</a> comes to about &pound;126.</p></div></div>
-<div><b class="p">Pi, LED</b><div><p>A Raspberry Pi, two 64&times;32 HUB75 LED panels, a matrix bonnet and a separate power supply for the panels. More of a project. <a href="parts.html#led">The LED parts</a>.</p></div></div>
+<div><b class="p">Pi, LED</b><div><p>A Raspberry Pi, one or two 64&times;32 HUB75 LED panels, a matrix bonnet and a separate power supply for the panels. More of a project. <a href="parts.html#led">The LED parts</a>.</p></div></div>
 </div>
 </div></details>
 
@@ -84,8 +84,8 @@
 </div></details>
 
 <details><summary>Which LED panel size should I choose?</summary><div class="body">
-<p><b>Two 64&times;32 panels, chained side by side to make 128&times;32.</b> Ident shows four lines on an LED panel: what's happening, the flight and route, the landing time and the home time. At 128 pixels wide every line fits. The 64&times;32 panel is the commonest HUB75 panel there is, about &pound;17&ndash;&pound;22 each; buy two of the same pitch from the same supplier.</p>
-<p><b>One 64&times;32 panel</b> works, but cuts the flight line short (&ldquo;EZY8101 LG&rdquo;). <b>64&times;64 and 128&times;64 panels</b> aren't supported yet: Ident draws only on the top 32 rows, so half the panel stays dark. Please don't buy one for Ident until this page says they work.</p>
+<p><b>At least one 64&times;32 panel.</b> Ident shows four lines on an LED panel: what's happening, the flight and route, the landing time and the home time. On one 64&times;32 panel a line too long for it scrolls sideways, then starts again. Two 64&times;32 panels chained side by side (128&times;32) show every line at once, with nothing scrolling. The 64&times;32 panel is the commonest HUB75 panel there is, about &pound;17&ndash;&pound;22 each; if you buy two, buy the same pitch from the same supplier.</p>
+<p><b>64&times;64 and 128&times;64 panels</b> aren't supported yet: Ident draws only on the top 32 rows, so half the panel stays dark. Please don't buy one for Ident until this page says they work.</p>
 <p>The e-paper styles, the scan-to-track code and the month calendar are e-paper only.</p>
 </div></details>
 
@@ -121,7 +121,7 @@ one it will keep working.</p></div></details>
     <td data-label="Ident for E1002">Carries on, on its battery.</td></tr>
   <tr><td class="k">Wi-Fi down</td>
     <td data-label="Pi with e-paper">Shows what it last knew. After two hours it adds &ldquo;Not updated since&rdquo; and the time.</td>
-    <td data-label="Pi with LED panel">Shows what it last knew, with no warning that it is old.</td>
+    <td data-label="Pi with LED panel">Shows what it last knew. After two hours the top line says &ldquo;Not updated&rdquo; and the time, in yellow, and the rest turns grey.</td>
     <td data-label="Ident for E1002">Shows what it last knew. After two hours it adds &ldquo;Not updated since&rdquo; and the time.</td></tr>
   <tr><td class="k">In the dark</td>
     <td data-label="Pi with e-paper">No light of its own, like paper.</td>
@@ -159,7 +159,7 @@ one it will keep working.</p></div></details>
 </div></details>
 
 <details><summary>What happens if the Wi-Fi goes down?</summary><div class="body">
-<p>The display keeps showing what it last knew, and your roster stays on it. E-paper adds &ldquo;Not updated since&rdquo; and the time after two hours; an LED panel does not yet. The clock comes from the internet, so a long outage can leave the date behind; it corrects itself a minute or two after the Wi-Fi returns.</p><p>To give it new Wi-Fi, each one raises its own <span class="mono">Ident-Setup</span> network for your phone to join: the Pi by itself after two minutes offline, the E1002 when you hold a button for three seconds and it can't join the home Wi-Fi.</p>
+<p>The display keeps showing what it last knew, and your roster stays on it. After two hours, e-paper adds &ldquo;Not updated since&rdquo; and the time; an LED panel puts &ldquo;Not updated&rdquo; and the time on its top line and turns the rest grey. The clock comes from the internet, so a long outage can leave the date behind; it corrects itself a minute or two after the Wi-Fi returns.</p><p>To give it new Wi-Fi, each one raises its own <span class="mono">Ident-Setup</span> network for your phone to join: the Pi by itself after two minutes offline, the E1002 when you hold a button for three seconds and it can't join the home Wi-Fi.</p>
 </div></details>
 
 <h2 class="faqcat" id="setup"><b>03</b> / Setting up</h2>

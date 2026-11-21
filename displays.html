@@ -78,7 +78,7 @@
     <tr><td class="k">Power</td><td class="yes" data-label="Colour e-paper">Under a watt; holds its picture unplugged; can run on a battery</td><td data-label="LED matrix">Several watts, more at full brightness; mains only</td></tr>
     <tr><td class="k">Assembly</td><td class="yes" data-label="Colour e-paper">Nothing (E1002), or push onto the Pi, no soldering</td><td data-label="LED matrix">Ribbon cable, power injection, a bonnet</td></tr>
     <tr><td class="k">Best in</td><td data-label="Colour e-paper">Hall, kitchen, bedroom, lounge</td><td data-label="LED matrix">Study, office, workshop, bar</td></tr>
-    <tr><td class="k">Cost</td><td data-label="Colour e-paper">£50–£230 for a Pi panel; about £100 for an E1002</td><td data-label="LED matrix">£35–£45 for two panels, plus a bonnet and supply</td></tr>
+    <tr><td class="k">Cost</td><td data-label="Colour e-paper">£50–£230 for a Pi panel; about £100 for an E1002</td><td data-label="LED matrix">£17–£22 a panel (one or two), plus a bonnet and supply</td></tr>
   </table>
   <div class="note" style="margin-top:18px">
     For a room where you relax, buy e-paper. If you
@@ -122,16 +122,18 @@
   <div class="ledstack">
     <figure class="led"><figure class="dev ledf"><img src="img/scenes/led_px_128x32_inflight.png" alt="Two chained 64 by 32 LED panels: IN FLIGHT, EZY8101 LGW to ACE, LAND 11:15, HOME about 17:13" width="1024" height="256" loading="lazy"></figure><figcaption>128&times;32, two panels &middot; in flight</figcaption></figure>
     <figure class="led"><figure class="dev ledf"><img src="img/scenes/led_px_128x32_turnaround.png" alt="Two chained 64 by 32 LED panels: TURNAROUND, EZY1502 OSL to BRS, DEP 10:20, HOME about 14:13" width="1024" height="256" loading="lazy"></figure><figcaption>128&times;32, two panels &middot; turnaround</figcaption></figure>
-    <figure class="led half"><figure class="dev ledf"><img src="img/scenes/led_px_64x32_inflight.png" alt="One 64 by 32 LED panel: the same screen, with the flight line cut to EZY8101 LG" width="512" height="256" loading="lazy"></figure><figcaption>64&times;32, one panel &middot; the flight line is cut short</figcaption></figure>
+    <figure class="led half"><figure class="dev ledf"><img src="img/scenes/led_px_64x32_inflight.gif" alt="One 64 by 32 LED panel: the same screen, with the flight line EZY8101 LGW to ACE scrolling sideways because it is too long for the panel" width="512" height="256" loading="lazy"></figure><figcaption>64&times;32, one panel &middot; long lines scroll</figcaption></figure>
+    <figure class="led"><figure class="dev ledf"><img src="img/scenes/led_px_128x32_stale.png" alt="Two chained 64 by 32 LED panels with an out-of-date roster: NOT UPDATED TUE 08:10 in yellow on the top line, the flight, land and home times in grey" width="1024" height="256" loading="lazy"></figure><figcaption>128&times;32 &middot; the roster hasn't updated for two hours</figcaption></figure>
+    <figure class="led half"><figure class="dev ledf"><img src="img/scenes/led_px_64x32_stale.gif" alt="One 64 by 32 LED panel with an out-of-date roster: NOT UPDATED TUE 08:10 in yellow scrolling across the top line, the rest in grey" width="512" height="256" loading="lazy"></figure><figcaption>64&times;32 &middot; the same warning, scrolling</figcaption></figure>
   </div>
 
   <p class="note" style="margin:22px 0">These pictures show every pixel the panel lights, in the places Ident puts them. The letter shapes on a real panel differ slightly.</p>
   <table>
     <tr><th>Configuration</th><th>Pixels</th><th>Indicative</th><th>Verdict</th></tr>
     <tr><td class="k">2 &times; <a href="https://thepihut.com/products/rgb-full-colour-led-matrix-panel-4mm-pitch-64x32-pixels" target="_blank" rel="noopener">64&times;32 panels</a>, chained</td><td class="mono" data-label="Pixels">128&times;32</td><td data-label="Indicative">~&pound;35&ndash;&pound;45 + bonnet</td>
-      <td data-label="Verdict"><span class="yes">Recommended.</span> Every line fits. Buy two of the same pitch from the same supplier.</td></tr>
+      <td data-label="Verdict"><span class="yes">Works.</span> Every line fits at once, nothing scrolls. Buy two of the same pitch from the same supplier.</td></tr>
     <tr><td class="k">One 64&times;32 panel</td><td class="mono" data-label="Pixels">64&times;32</td><td data-label="Indicative">~&pound;17&ndash;&pound;22 + bonnet</td>
-      <td data-label="Verdict">Works, but the flight and route line is cut short.</td></tr>
+      <td data-label="Verdict"><span class="yes">The minimum.</span> Lines too long for the panel scroll sideways.</td></tr>
     <tr><td class="k">64&times;64 or 128&times;64</td><td class="mono" data-label="Pixels">64 tall</td><td data-label="Indicative">n/a</td>
       <td data-label="Verdict"><span class="no">Not supported yet.</span> Ident draws only on the top 32 rows, so half the panel stays dark. Please don't buy one for Ident until this page says it works.</td></tr>
   </table>
@@ -141,7 +143,7 @@
     <strong>You'll also need:</strong> an <strong><a href="https://thepihut.com/products/adafruit-rgb-matrix-bonnet-for-raspberry-pi-ada3211" target="_blank" rel="noopener">Adafruit RGB Matrix Bonnet</a></strong> (£14.40, sold out at
     The Pi Hut on 26 September 2026; the <a href="https://thepihut.com/products/adafruit-rgb-matrix-hat-rtc-for-raspberry-pi-mini-kit" target="_blank" rel="noopener">Matrix HAT + RTC</a> does the same job) to
     drive the panel cleanly, and a <strong><a href="https://thepihut.com/products/5v-4a-power-supply-2-1mm-jack" target="_blank" rel="noopener">5V power supply sized for the panels</a></strong>: not the
-    Pi's supply. Each 64×32 panel can pull 2–4A at full white, so two panels want a 5V supply of at least 4A. Budget £15–£20 for the
+    Pi's supply. Each 64×32 panel can pull 2–4A at full white; a 5V supply of at least 4A covers one or two. Budget £15–£20 for the
     bonnet and £10–£15 for the supply.
   </div>
 
